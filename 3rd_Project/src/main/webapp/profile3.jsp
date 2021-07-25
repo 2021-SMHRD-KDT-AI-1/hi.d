@@ -47,6 +47,16 @@
     <link rel="shortcut icon" href="imgs/instagram.png">
     <!-- И№До css -->
     <style type="text/css">
+    
+    .pic > a > img{
+    
+    border-radius: 40px
+    }
+    
+    
+    
+    
+    
 h1 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 30px;
