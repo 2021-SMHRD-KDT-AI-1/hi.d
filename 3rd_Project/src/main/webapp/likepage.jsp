@@ -347,14 +347,14 @@ textarea {
                     </ul>
                     <ul class="menu">
                         <li><a
-							onclick="location.href='likepage.html'" href="#">
+							onclick="location.href='likepage.jsp'" href="#">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
                         <li><a
-							onclick="location.href='profile3.html'" href="#">
+							onclick="location.href='profile3.jsp'" href="#">
                                 <div class="sprite_user_icon_outline"></div>
                             </a></li>
                         <li class="bg"></li>

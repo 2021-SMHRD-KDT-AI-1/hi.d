@@ -183,12 +183,14 @@ html, body {
 		<header id="header">
 			<section class="inner">
 
-				<h1 class="logo">
-					<a href="index.html">
-						<div class="sprite_insta_icon"></div>
-						<div class="sprite_write_logo"></div>
-					</a>
-				</h1>
+
+                <h1 class="logo">
+                    <a href="index.jsp">
+                        <div class="sprite_insta_icon"></div>
+                        <div class="sprite_write_logo"></div>
+                    </a>
+                </h1>
+
 
 				<div class="search_box">
 					<input type="text" placeholder="°Ë»ö" id="search-field">
@@ -198,17 +200,22 @@ html, body {
 					</div>
 				</div>
 
-				<div class="right_icons">
-					<a href="new_post.html">
-						<div class="sprite_camera_icon"></div>
-					</a> <a href="login.html">
-						<div class="sprite_compass_icon"></div>
-					</a> <a href="follow.html">
-						<div class="sprite_heart_icon_outline"></div>
-					</a> <a href="profile.html">
-						<div class="sprite_user_icon_outline"></div>
-					</a>
-				</div>
+
+                <div class="right_icons">
+                    <a href="new_post.jsp">
+                        <div class="sprite_camera_icon"></div>
+                    </a>
+                    <a href="login.jsp">
+                        <div class="sprite_compass_icon"></div>
+                    </a>
+                    <a href="follow.jsp">
+                        <div class="sprite_heart_icon_outline"></div>
+                    </a>
+                    <a href="profile.jsp">
+                        <div class="sprite_user_icon_outline"></div>
+                    </a>
+                </div>
+
 
 			</section>
 
@@ -367,13 +374,22 @@ html, body {
 						</div>
 					</div>
 
-					<button class="button" onclick="location.href='index.html';">
+
+                    <button class="button"
+						onclick="location.href='index.jsp';">
+
 						<img src="/imgs/bear.png">
 					</button>
-					<button class="button" onclick="location.href='index.html';">
+
+                    <button class="button"
+						onclick="location.href='index.jsp';">
+
 						<img src="/imgs/Black-Dog-PNG.png">
 					</button>
-					<button class="button" onclick="location.href='index.html';">
+
+                    <button class="button"
+						onclick="location.href='index.jsp';">
+
 						<img src="/imgs/Black-Dog-PNG.png">
 					</button>
 				</div>
