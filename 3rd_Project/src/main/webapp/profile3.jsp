@@ -44,14 +44,12 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/pullpushedit.css">
     <link rel="shortcut icon" href="imgs/instagram.png">
     <!-- И№До css -->
     <style type="text/css">
     
-    .pic > a > img{
-    
-    border-radius: 40px
-    }
+
     
     
     
