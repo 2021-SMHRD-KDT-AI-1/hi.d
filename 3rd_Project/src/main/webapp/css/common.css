@@ -328,3 +328,14 @@ body {
 
 }
 
+
+
+
+
+/*detail_edit*/
+
+    .pic > a > img{
+
+        border-radius: 40px;
+    }
+
