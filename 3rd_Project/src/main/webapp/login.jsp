@@ -404,18 +404,18 @@ li a:hover {
                     <div class="flex1">
                         <div class="modal2"> 
                            <div class="modal-content2">
-                    <form action="#post.php" class="join_form"
+                    <form action="JoinCon" class="join_form"
 										method="POST">
                     <div class="title1">JOIN</div>
                         
                     <p class="join_user_name">
-                        <label for="user_id">ID:</label>
-                        <input type="text" id="user_id">
+                        <label for="user_id">EMAIL:</label>
+                        <input type="text" id="user_id" name="email">
                     </p>
 
                     <p class="join_user_password">
                         <label for="user_pw">PW:</label>
-                        <input type="text" id="user_pw">
+                        <input type="text" id="user_pw" name="pw">
                     </p>
 
                     <input type="submit" id="submit_btn1" value="´ÙÀ½"
