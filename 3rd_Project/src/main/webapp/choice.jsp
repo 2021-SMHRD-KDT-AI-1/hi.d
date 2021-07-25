@@ -263,8 +263,7 @@ html, body {
                                             <div class="post_btn">
                                                 <div class="plus_icon">
                                                     <span></span>
-                                                    <span></sp
-                                                        an>
+                                                    <span></span>
                                                 
 											</div>
                                         
