@@ -8,64 +8,61 @@
 </head>
 <body>
 	<!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-	content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport"
+<meta charset="UTF-8">
+<meta name="viewport"
 	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-    <!-- Facebook Meta Tags / 페이스북 오픈 그래프 ㅇ -->
-    <meta property="og:url"
-	content="http://kindtiger.dothome.co.kr/insta">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="instagram">
-    <meta property="og:description" content="instagram clone">
-    <meta property="og:image"
+<!-- Facebook Meta Tags / 페이스북 오픈 그래프 ㅇ -->
+<meta property="og:url" content="http://kindtiger.dothome.co.kr/insta">
+<meta property="og:type" content="website">
+<meta property="og:title" content="instagram">
+<meta property="og:description" content="instagram clone">
+<meta property="og:image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-    .
-    <!-- Twitter Meta Tags / 트위터 -->
-    <meta name="twitter:card" content="instagram clone">
-    <meta name="twitter:title" content="instagram">
-    <meta name="twitter:description" content="instagram clone">
-    <meta name="twitter:image"
+.
+<!-- Twitter Meta Tags / 트위터 -->
+<meta name="twitter:card" content="instagram clone">
+<meta name="twitter:title" content="instagram">
+<meta name="twitter:description" content="instagram clone">
+<meta name="twitter:image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
-    <!-- Google / Search Engine Tags / 구글 검색 엔진 -->
-    <meta itemprop="name" content="instagram">
-    <meta itemprop="description" content="instagram clone">
-    <meta itemprop="image"
+<!-- Google / Search Engine Tags / 구글 검색 엔진 -->
+<meta itemprop="name" content="instagram">
+<meta itemprop="description" content="instagram clone">
+<meta itemprop="image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-    
-    <!-- Line Awesome CDN Link/ 라디오버튼 아이콘 링크-->
-    <link rel="stylesheet"
+
+<!-- Line Awesome CDN Link/ 라디오버튼 아이콘 링크-->
+<link rel="stylesheet"
 	href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-        
-
-
-
-
-    <title>instagram</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/new_profile.css">
-    <link rel="shortcut icon" href="imgs/instagram.png">
 
 
 
 
 
+<title>instagram</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="css/new_profile.css">
+<link rel="shortcut icon" href="imgs/instagram.png">
 
-    <style>
+
+
+
+
+
+<style>
 
 /* ------------------------------------------------------------------------------1안*/
 html, body {
@@ -181,10 +178,11 @@ html, body {
 <body>
 
 
-    <section id="container">
+	<section id="container">
 
-        <header id="header">
-            <section class="inner">
+		<header id="header">
+			<section class="inner">
+
 
                 <h1 class="logo">
                     <a href="index.jsp">
@@ -193,15 +191,15 @@ html, body {
                     </a>
                 </h1>
 
-                <div class="search_box">
-                    <input type="text" placeholder="검색"
-						id="search-field">
 
-                    <div class="fake_field">
-                        <span class="sprite_small_search_icon"></span>
-                        <span>검색</span>
-                    </div>
-                </div>
+				<div class="search_box">
+					<input type="text" placeholder="검색" id="search-field">
+
+					<div class="fake_field">
+						<span class="sprite_small_search_icon"></span> <span>검색</span>
+					</div>
+				</div>
+
 
                 <div class="right_icons">
                     <a href="new_post.jsp">
@@ -218,143 +216,129 @@ html, body {
                     </a>
                 </div>
 
-            </section>
 
-        </header>
+			</section>
 
-        <section id="main_container">
-            <span style="align-items: center; font-size: 200%;">누구의 계정으로 로그인 할까요??</span>
+		</header>
 
-        </section>
+		<section id="main_container">
+			<span style="align-items: center; font-size: 200%;">누구의 계정으로
+				로그인 할까요??</span>
+
+		</section>
 
 
 
 
-        <section id="main_container">
-            <div class="inner">
+		<section id="main_container">
+			<div class="inner">
 				<!--이너 초이스로 엘리언 센터 css 만들고 하위 정사각 버튼 -->
 
 
 
-              <!-- <div class="page"></div>
+				<!-- <div class="page"></div>
 
                     <button class="fun-btn"><img src= "/imgs/Black-Dog-PNG.png"></button>
                     <button class="fun-btn"><img src= "/imgs/Black-Dog-PNG.png"></button>
                     <button class="fun-btn"><img src= "/imgs/Black-Dog-PNG.png"></button>
                   
                   
-                  </div>--> 
+                  </div>-->
 
-                <div class="wrap">
-                    <button class="plus_button">
-                        <img src="/imgs/plus.png" style="opacity: 20%;">
+				<div class="wrap">
+					<button class="plus_button">
+						<img src="/imgs/plus.png" style="opacity: 20%;">
 					</button>
-                         <!-- 프로필 편집 모달창 -->
-                         <div class="modal1"> 
-                            <div class="modal-content1"
-							style="overflow:scroll; width:700px; height:800px;">
-                                <form action="#post.php"
-								class="post_form" method="POST">
-                                    <div class="title">
-                                        NEW PROFILE
-                                    </div>
-                                    <div class="preview">
-                                        <div class="upload">
-                                            <div class="post_btn">
-                                                <div class="plus_icon">
-                                                    <span></span>
-                                                    <span></span>
-                                                
+					<!-- 프로필 편집 모달창 -->
+					<div class="modal1">
+						<div class="modal-content1"
+							style="overflow: scroll; width: 700px; height: 800px;">
+							<form action="PetJoinCon" class="post_form" method="POST">
+								<div class="title">NEW PROFILE</div>
+								<div class="preview">
+									<div class="upload">
+										<div class="post_btn">
+											<div class="plus_icon">
+												<span></span> <span></span>
+
 											</div>
-                                        
-                                                <p>프로필 이미지 추가</p>
-                                                <canvas id="imageCanvas"></canvas>
-                                                <!--<p><img id="img_id" src="#" style="width: 300px; height: 300px; object-fit: cover" alt="thumbnail"></p>-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <input type="file" name="photo"
-										id="id_photo" required="required">
-                                    </p>
-                    
-                                    <p class="join_pet_nick">
-                                        <input class="pet_nick"
-										type="text" id="pet_nick" placeholder="Pet-NickName"
-										style="width: 100%;">
-                                    </p>
-                                   
-                    
-                                    <div class="radio-buttons">
-                                        <label class="custom-radio">
-                                          <input type="radio"
-										name="radio_gender" />
-                                          <span class="radio-btn">
-                                            <i class="las la-check"></i>
-                                            <div class="genders-icon">
-                                             <i class="las la-mars"></i>
-                                              <h4>Male</h4>
-                                            </div>
-                                          </span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio"
-										name="radio_gender" />
-                                            <span class="radio-btn">
-                                              <i class="las la-check"></i>
-                                              <div class="genders-icon">
-                                                <i class="las la-venus"></i>
-                                                <h4>Female</h4>
-                                              </div>
-                                            </span>
-                                          </label>
-                                    </div>  
-                    
-                    
-                    
-                                    
-                                    <div class="radio-buttons">
-                                        <label class="custom-radio">
-                                          <input type="radio"
-										name="radio_pet" value="1" onclick="DogOrCat(event)" />
-                                          <span class="radio-btn">
-                                            <i class="las la-check"></i>
-                                            <div class="genders-icon">
-                                                <i class="las la-dog"></i>
-                                              <h4>Dog</h4>
-                                            </div>
-                                          </span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio"
-										name="radio_pet" value="2" onclick="DogOrCat(event)" />
-                                            <span class="radio-btn">
-                                              <i class="las la-check"></i>
-                                              <div class="genders-icon">
-                                                <i class="las la-cat"></i>
-                                                <h4>cat</h4>
-                                              </div>
-                                            </span>
-                                          </label>
-                                    </div>  
-                                
-                    
-                                    <!-- <p class="join_pet_species_of" >  
+
+											<p>프로필 이미지 추가</p>
+											<canvas id="imageCanvas"></canvas>
+											<!--<p><img id="img_id" src="#" style="width: 300px; height: 300px; object-fit: cover" alt="thumbnail"></p>-->
+										</div>
+									</div>
+								</div>
+								<p>
+									<input type="file" name="photo" id="id_photo"
+										required="required" name="pet_profile">
+								</p>
+
+								<p class="join_pet_nick">
+									<input class="pet_nick" type="text" id="pet_nick"
+										placeholder="Pet-NickName" style="width: 100%;" name="pet_nick">
+								</p>
+
+
+								<div class="radio-buttons">
+									<label class="custom-radio"> <input type="radio"
+										name="radio_gender" value="M"/> <span class="radio-btn"> <i
+											class="las la-check"></i>
+											<div class="genders-icon">
+												<i class="las la-mars"></i>
+												<h4>Male</h4>
+											</div>
+									</span>
+									</label> <label class="custom-radio"> <input type="radio"
+										name="radio_gender" value="F"/> <span class="radio-btn"> <i
+											class="las la-check"></i>
+											<div class="genders-icon">
+												<i class="las la-venus"></i>
+												<h4>Female</h4>
+											</div>
+									</span>
+									</label>
+								</div>
+
+
+
+
+								<div class="radio-buttons">
+									<label class="custom-radio"> <input type="radio"
+										name="radio_pet" value="D" onclick="DogOrCat(event)" /> <span
+										class="radio-btn"> <i class="las la-check"></i>
+											<div class="genders-icon">
+												<i class="las la-dog"></i>
+												<h4>Dog</h4>
+											</div>
+									</span>
+									</label> <label class="custom-radio"> <input type="radio"
+										name="radio_pet" value="C" onclick="DogOrCat(event)" /> <span
+										class="radio-btn"> <i class="las la-check"></i>
+											<div class="genders-icon">
+												<i class="las la-cat"></i>
+												<h4>cat</h4>
+											</div>
+									</span>
+									</label>
+								</div>
+
+
+								<!-- <p class="join_pet_species_of" >  
                                         <div>Dog<input type="radio" name="pet_species_of" value="dog">
                                             Cat<input type="radio" name="pet_species_of" value="cat"></div>
                                     </p> -->
-                                    
-                                    <p class="species">
-                                        <select name="species"
-										style="width: 100%; height: 25px;">
-                                          
-                                        </select>
-                                    </p>
-                    
-                    
-                    
-                    
-                    <!-- 
+
+								<p class="species">
+									<select name="species" style="width: 100%; height: 25px;">
+
+									</select>
+								</p>
+
+
+
+
+								<!-- 
                                     <p class="join_dog_species">
                                         <select id="dog_species" name="dog_species" style="width: 100%; height: 25px;">
                                             <option value="포메라니안">포메라니안</option>
@@ -381,43 +365,47 @@ html, body {
                                         </select>
                                     </p>
                                      -->
-                                    <p>
-                                        <textarea name="content"
-										id="text_field" cols="50" rows="5"
+								<p>
+									<textarea name="content" id="text_field" cols="50" rows="5"
 										placeholder="140자 까지 등록 가능합니다. #태그명 을 통해서 검색 태그를 등록할 수 있습니다.예시 : I # love # insta!"></textarea>
-                                    </p>
-                                    <input class="submit_btn"
-									type="submit" value="저장">
-                                </form>
-                            </div>
-                         </div>
+								</p>
+								<input class="submit_btn" type="submit" value="저장">
+							</form>
+						</div>
+					</div>
+
 
                     <button class="button"
 						onclick="location.href='index.jsp';">
+
 						<img src="/imgs/bear.png">
 					</button>
+
                     <button class="button"
 						onclick="location.href='index.jsp';">
+
 						<img src="/imgs/Black-Dog-PNG.png">
 					</button>
+
                     <button class="button"
 						onclick="location.href='index.jsp';">
+
 						<img src="/imgs/Black-Dog-PNG.png">
 					</button>
-                  </div>
+				</div>
 
 
 
 
-            </div>
+			</div>
 
-            </div>
-        </section>
+			</div>
+		</section>
 
-    </section>
+	</section>
 
 
-<script>
+	<script>
     
     $('.fun-btn').on('click', function(event) {
     $(this).toggleClass('start-fun');
@@ -435,7 +423,7 @@ html, body {
 
 </script>
 
-<script>
+	<script>
     //
     var fileInput  = document.querySelector("#id_photo"),
         button     = document.querySelector(".input-file-trigger" ),
@@ -467,7 +455,7 @@ html, body {
  
 </script>
 
-<script>
+	<script>
     //라디오버튼 눌러서 체크박스 값 불러오기
 var dog_species_list = ['푸들', '믹스견', '말티즈', '리트리버', '포메라니안'];
 var cat_species_list = ['러시안블루', '뱅갈', '말티즈', '요크숏테리어'];
@@ -501,7 +489,7 @@ function DogOrCat(event){
 </script>
 
 
-<script type="text/javascript"> 
+	<script type="text/javascript"> 
     // *모달 스크립트 *
     var modal1 = document.querySelector(".modal1"); 
     var plus_button = document.querySelector(".plus_button"); 
