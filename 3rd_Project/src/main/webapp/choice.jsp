@@ -187,7 +187,7 @@ html, body {
             <section class="inner">
 
                 <h1 class="logo">
-                    <a href="index.html">
+                    <a href="index.jsp">
                         <div class="sprite_insta_icon"></div>
                         <div class="sprite_write_logo"></div>
                     </a>
@@ -204,16 +204,16 @@ html, body {
                 </div>
 
                 <div class="right_icons">
-                    <a href="new_post.html">
+                    <a href="new_post.jsp">
                         <div class="sprite_camera_icon"></div>
                     </a>
-                    <a href="login.html">
+                    <a href="login.jsp">
                         <div class="sprite_compass_icon"></div>
                     </a>
-                    <a href="follow.html">
+                    <a href="follow.jsp">
                         <div class="sprite_heart_icon_outline"></div>
                     </a>
-                    <a href="profile.html">
+                    <a href="profile.jsp">
                         <div class="sprite_user_icon_outline"></div>
                     </a>
                 </div>
@@ -394,15 +394,15 @@ html, body {
                          </div>
 
                     <button class="button"
-						onclick="location.href='index.html';">
+						onclick="location.href='index.jsp';">
 						<img src="/imgs/bear.png">
 					</button>
                     <button class="button"
-						onclick="location.href='index.html';">
+						onclick="location.href='index.jsp';">
 						<img src="/imgs/Black-Dog-PNG.png">
 					</button>
                     <button class="button"
-						onclick="location.href='index.html';">
+						onclick="location.href='index.jsp';">
 						<img src="/imgs/Black-Dog-PNG.png">
 					</button>
                   </div>

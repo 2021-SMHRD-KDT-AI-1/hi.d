@@ -321,7 +321,7 @@ li a:hover {
             <section class="inner">
 
                 <h1 class="logo">
-                    <a href="index.html">
+                    <a href="index.jsp">
                         <div class="sprite_insta_icon"></div>
                         <div class="sprite_write_logo"></div>
                     </a>
@@ -346,7 +346,7 @@ li a:hover {
                     </ul>
                     <ul class="menu">
                         <li><a
-							onclick="location.href='likepage.html'" href="#">
+							onclick="location.href='likepage.jsp'" href="#">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
@@ -488,7 +488,7 @@ li a:hover {
 							src="imgs/img_section/img01.jpg" alt=""></a>
                     </div>
                     <div class="pic">
-                        <a href="follow.html"><img
+                        <a href="follow.jsp"><img
 							src="imgs/img_section/img02.jpg" alt=""></a>
                     </div>
                     <div class="pic">
