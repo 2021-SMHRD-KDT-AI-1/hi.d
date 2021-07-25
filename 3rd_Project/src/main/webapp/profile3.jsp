@@ -451,12 +451,7 @@
                         <li class="bg"></li>
                     </ul>
 
-
                 </div>
-
-
-
-
 
             </section>
 
