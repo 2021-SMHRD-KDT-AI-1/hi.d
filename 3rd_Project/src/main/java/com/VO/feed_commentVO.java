@@ -6,6 +6,7 @@ public class feed_commentVO {
 	int feed_num;
 	String comment_content;
 	String like_pet;
+	
 	public feed_commentVO(int comment_num, int pet_num, int feed_num, String comment_content, String like_pet) {
 		super();
 		this.comment_num = comment_num;
