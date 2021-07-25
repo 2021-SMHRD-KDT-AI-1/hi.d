@@ -50,7 +50,7 @@
     
     .pic > a > img{
     
-    border-radius: 40px
+    border-radius: 45px
     }
     
     
