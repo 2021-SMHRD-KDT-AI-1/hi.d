@@ -362,6 +362,61 @@
         } 
 
 
+            /* Hover_Zoom_in CSS */
+    
+            .active {
+                padding: 0;
+            }
+    
+            .active:last-child {
+                padding-bottom: 60px;
+            }
+    
+            .active::after {
+                content: ¡±;
+                clear: both;
+                display: block;
+            }
+    
+            .active div {
+                position: relative;
+                float: left;
+                width: 300px;
+                height: 200px;
+                margin: 0 0 0 25px;
+                padding: 0;
+            }
+    
+            .active div:first-child {
+                margin-left: 0;
+            }
+    
+            .mylist_contents div {
+                width: 300px;
+                height: 200px;
+                margin: 0;
+                padding: 0;
+                background: #fff;
+                overflow: hidden;
+            }
+    
+            .mylist_contents div img {
+                width: 300px;
+                height: auto;
+                -webkit-transition: .3s ease-in-out;
+                transition: .3s ease-in-out;
+            }
+    
+            .mylist_contents div:hover img {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+
+
+
+
+
+
     </style>
 </head>
 
