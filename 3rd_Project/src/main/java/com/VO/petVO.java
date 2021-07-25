@@ -20,7 +20,7 @@ public class petVO {
 		this.pet_gen = pet_gen;
 		this.species = species;
 		this.email = email;
-	}
+	}//
 
 	
 	public petVO(String email, String pet_num, String pet_nick, String pet_introduce) {
