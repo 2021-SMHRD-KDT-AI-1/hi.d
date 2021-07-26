@@ -173,7 +173,7 @@ public class feedDAO {
 		feedVO one_feed = null;
 		try {
 			getConn();
-			sql = "select * from feedinfo where feed_content like %#" + tag + "%";
+			sql = "select * from feedinfo where feed_content like '%#" + tag + "%'";
 			psmt = conn.prepareStatement(sql);
 			
 			rs = psmt.executeQuery();
