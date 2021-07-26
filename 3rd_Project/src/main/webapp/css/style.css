@@ -128,11 +128,6 @@ body{
     display: none;
 }
 
-#header .right_icons{
-    width: 132px;
-    display: flex;
-    justify-content: space-between;
-}
 #header .right_icons > div{
 
 }
