@@ -93,6 +93,7 @@ html, body {
 	outline: none;
 	margin: 10px;
 }
+
 /* 프로필편집 추가 버튼 */
 .plus_button {
 	max-width: 15%;
@@ -208,9 +209,7 @@ html, body {
                     <a href="login.jsp">
                         <div class="sprite_compass_icon"></div>
                     </a>
-                    <a href="follow.jsp">
-                        <div class="sprite_heart_icon_outline"></div>
-                    </a>
+
                     <a href="profile.jsp">
                         <div class="sprite_user_icon_outline"></div>
                     </a>
