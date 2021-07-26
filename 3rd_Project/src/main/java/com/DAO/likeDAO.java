@@ -135,7 +135,7 @@ public class likeDAO {
 	}
 	
 	// 좋아요 취소
-	public int delete_like(int feed_num, int pet_num) {
+	public int Delete_like(int feed_num, int pet_num) {
 		String like_pet = "";
 		try {
 			getConn();
@@ -184,8 +184,36 @@ public class likeDAO {
 
 	}
 	
-	
 	// 댓글 좋아요 취소
-	
+	public int DeleteCommentlike(int comment_num, int feed_num, int pet_num) {
+		String like_pet = "";
+		try {
+			getConn();
+			sql = "select like_pet from feed_comment where like_pet like '%?%' ";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				like_pet = rs.getString(5);
+			}
+			
+			like_pet = like_pet.replace(pet_num+"", "");
+			
+			sql = "update feed_comment set like_pet = ? where comment_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, like_pet);
+			psmt.setInt(2, comment_num);
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 	
 }
