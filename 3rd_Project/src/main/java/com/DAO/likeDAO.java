@@ -56,27 +56,22 @@ public class likeDAO {
 	}
 	
 	//내가 피드에 좋아요를 눌렀는가
-	public feedVO Like(String like_pet) {
+	public boolean Like(int feed_num, String like_pet) {
 		// select는 리턴타입이 다르다
+		boolean like_feed = false;
+		int getfeed_num;
 		try {
-
 			getConn();
-
-			sql = "select * from feedinfo where like_pet like '%?%'";
+			sql = "select feed_num from feedinfo where like_pet like '%?%'";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, like_pet);
 
 			rs = psmt.executeQuery();
 
 			if(rs.next()) {
-
-				int getfeed_num = rs.getInt(1);
-			
-
-				if (like_pet.equals(getfeed_num)) {
-
-					vo_feed = new feedVO(getfeed_num);
-					
+				getfeed_num = rs.getInt(1);
+				if (feed_num == getfeed_num) {
+					like_feed = true;
 				}
 			}
 
@@ -85,7 +80,7 @@ public class likeDAO {
 		} finally {
 			close();
 		}
-		return vo_feed;
+		return like_feed;
 	}
 	
 	// 좋아요 한 피드 모두 가져오기
@@ -122,34 +117,44 @@ public class likeDAO {
 
 	//좋아요 추가
 	public int Updatelike(feedVO feedlike) {
-
 		try { 
-
 			getConn();
-
-			sql = "update feedinfo set like_pet = ? ||','|| ?";
-
+			sql = "update feedinfo set like_pet = ? || ',' || ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, feedlike.getLike_pet());
 			psmt.setInt(2, feedlike.getPet_num());
 
 			cnt = psmt.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
 		return cnt;
-
 	}
 	
 	// 좋아요 취소
-	public int delete_like(int pet_num) {
+	public int delete_like(int feed_num, int pet_num) {
+		String like_pet = "";
 		try {
 			getConn();
-			sql = "delete from feedinfo where like_pet like '%?%' ";
+			sql = "select like_pet from feedinfo where like_pet like '%?%' ";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, pet_num);
+
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				like_pet = rs.getString(1);
+			}
+			
+			like_pet = like_pet.replace(pet_num+"", "");
+			
+			sql = "update feedinfo set like_pet = ? where feed_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, like_pet);
+			psmt.setInt(2, feed_num);
 			
 			cnt = psmt.executeUpdate();
 			
@@ -160,15 +165,11 @@ public class likeDAO {
 		}
 		return cnt;
 	}
-	
+	// 댓글 좋아요
 	public int UpdateCommentlike(feedVO commentlike) {
-
 		try { 
-
 			getConn();
-
-			sql = "update feed_comment set like_pet = ? ||','|| ?";
-
+			sql = "update feed_comment set like_pet = ? || ',' || ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, commentlike.getLike_pet());
 			psmt.setInt(2, commentlike.getPet_num());
@@ -182,6 +183,9 @@ public class likeDAO {
 		return cnt;
 
 	}
+	
+	
+	// 댓글 좋아요 취소
 	
 	
 }
