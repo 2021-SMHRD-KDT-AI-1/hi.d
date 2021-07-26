@@ -70,6 +70,7 @@ html, body {
 }
 
 .button {
+
   max-width: 15%;
 
   font-family: 'Roboto', sans-serif;
@@ -108,10 +109,6 @@ html, body {
   }
   
 
-.button > img{
-    height: 100%;
-    width: 100%;
-}
 
 .plus_button> img{
     height: 100%;
@@ -242,10 +239,14 @@ html, body {
                     <a href="login.html">
                         <div class="sprite_compass_icon"></div>
                     </a>
+
                     <a href="follow.html">
                         <div class="sprite_heart_icon_outline"></div>
                     </a>
-                    <a href="profile.html">
+                  
+
+                    <a href="profile.jsp">
+ 
                         <div class="sprite_user_icon_outline"></div>
                     </a>
                 </div>
