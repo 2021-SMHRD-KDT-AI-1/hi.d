@@ -124,6 +124,14 @@ public class petDAO {
 			
 			getConn();
 			
+			sql = "insert into petinfo(pet_num, pet_profile) "
+					+ "values(pet_num_seq.currval, ?)";
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1,  pet_profile);
+			
+			cnt = psmt.executeUpdate();
+			
 			
 			
 		} catch (Exception e) {
@@ -134,12 +142,19 @@ public class petDAO {
 		return cnt;
 	}
 	
-	public int updateprofile(String pet_profile) {
+	public int update(String pet_nick, String pet_profile, String pet_introduce ) {
 		try {
 			
 			getConn();
 			
+			sql = "update petinfo set pet_nick=?, pet_profile, pet_introduce";
 			
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, pet_nick);
+			psmt.setString(2, pet_profile);
+			psmt.setString(3, pet_introduce);
+			
+			cnt = psmt.executeUpdate();
 			
 		} catch (Exception e) {
 			e.printStackTrace();

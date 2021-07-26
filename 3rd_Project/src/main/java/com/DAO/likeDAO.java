@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.VO.feedVO;
 import com.VO.feed_commentVO;
@@ -54,17 +55,19 @@ public class likeDAO {
 	}
 	
 	
-	public int Like(String like_pet) {
+	public ArrayList<feedVO> select() {
 
 		try {
 
 			getConn();
 
-			sql = "insert into feedinfo values(?)";
+			sql = "select * from feedinfo where like_pet like %pet_num%";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, like_pet);
+			rs = psmt.executeQuery();
 
-			cnt = psmt.executeUpdate();
+			while (rs.next()) {
+				
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
