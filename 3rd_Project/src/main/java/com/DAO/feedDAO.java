@@ -242,6 +242,7 @@ public class feedDAO {
 		return cnt;
 	}
 	
+	// 피드 수정
 	public int update_feed(feedVO feed) {
 		try {
 			getConn();

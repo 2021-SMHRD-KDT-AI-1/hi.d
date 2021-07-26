@@ -33,6 +33,11 @@ public class feedVO {
 		this.upload_time = upload_time;
 	}
 
+	public feedVO(int feed_num) {
+		super();
+		this.feed_num = feed_num;
+	}
+
 	public int getFeed_num() {
 		return feed_num;
 	}

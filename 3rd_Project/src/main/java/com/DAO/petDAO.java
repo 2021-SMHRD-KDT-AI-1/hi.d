@@ -53,6 +53,7 @@ public class petDAO {
 		}
 	}
 	
+	//프로필 생성
 	public int PetJoin(String pet_num, String pet_nick, String pet_profile, String pet_introduce, String pet_gen,
 			String species, String email) {
 
@@ -79,6 +80,7 @@ public class petDAO {
 		return cnt;
 	}
 	
+	// 프로필 선택
 	public ArrayList<petVO> select(String email)  {
 		
 		ArrayList<petVO> arr = new ArrayList<petVO> ();
@@ -117,7 +119,7 @@ public class petDAO {
 	}
 
 	
-	
+	// 프로필 사진 업로드 
 	public int loadProfile(String pet_profile) {
 		
 		try {
@@ -142,6 +144,8 @@ public class petDAO {
 		return cnt;
 	}
 	
+	
+	// 프로필 수정
 	public int update(String pet_nick, String pet_profile, String pet_introduce ) {
 		try {
 			

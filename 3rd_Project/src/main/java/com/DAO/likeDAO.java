@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.VO.feedVO;
 import com.VO.feed_commentVO;
+import com.VO.memberVO;
 import com.VO.petVO;
 
 public class likeDAO {
@@ -54,27 +55,132 @@ public class likeDAO {
 		}
 	}
 	
-	
-	public ArrayList<feedVO> select() {
-
+	//내가 피드에 좋아요를 눌렀는가
+	public feedVO Like(String like_pet) {
+		// select는 리턴타입이 다르다
 		try {
 
 			getConn();
 
-			sql = "select * from feedinfo where like_pet like %pet_num%";
+			sql = "select * from feedinfo where like_pet like '%?%'";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, like_pet);
+
 			rs = psmt.executeQuery();
 
-			while (rs.next()) {
-				
+			if(rs.next()) {
+
+				int getfeed_num = rs.getInt(1);
+			
+
+				if (like_pet.equals(getfeed_num)) {
+
+					vo_feed = new feedVO(getfeed_num);
+					
+				}
 			}
 
+		} catch (Exception e) {
+			e.printStackTrace(); // try문이 실행이 안되면 오류를 출력해주는 문
+		} finally {
+			close();
+		}
+		return vo_feed;
+	}
+	
+	// 좋아요 한 피드 모두 가져오기
+	public ArrayList<feedVO> get_like(String like_pet){
+		ArrayList<feedVO> likes = new ArrayList<>();
+		feedVO one_like = null;
+		try {
+			getConn();
+			sql = "select * from feedinfo where like_pet like '%?%'";
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, like_pet);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				one_like.setFeed_num(rs.getInt(1));
+				one_like.setPet_num(rs.getInt(2));
+				one_like.setImg_addr(rs.getString(3));
+				one_like.setFeed_content(rs.getString(4));
+				one_like.setLike_pet(rs.getString(5));
+				one_like.setF_lock(rs.getString(6));
+				one_like.setUpload_time(rs.getDate(7));
+				likes.add(one_like);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return likes;
+	}
+
+	//좋아요 추가
+	public int Updatelike(feedVO feedlike) {
+
+		try { 
+
+			getConn();
+
+			sql = "update feedinfo set like_pet = ? ||','|| ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, feedlike.getLike_pet());
+			psmt.setInt(2, feedlike.getPet_num());
+
+			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
 		return cnt;
+
+	}
+	
+	// 좋아요 취소
+	public int delete_like(int pet_num) {
+		try {
+			getConn();
+			sql = "delete from feedinfo where like_pet like '%?%' ";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	public int UpdateCommentlike(feedVO commentlike) {
+
+		try { 
+
+			getConn();
+
+			sql = "update feed_comment set like_pet = ? ||','|| ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, commentlike.getLike_pet());
+			psmt.setInt(2, commentlike.getPet_num());
+
+			cnt = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+
 	}
 	
 	
