@@ -505,7 +505,7 @@ textarea#profile_edit_textarea {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a href="#">
+						<li><a href="likepage.jsp">
 								<div class="sprite_compass_icon"></div>
 						</a></li>
 						<li class="bg"></li>
@@ -588,9 +588,9 @@ textarea#profile_edit_textarea {
 
 
 						<ul class="middle">
-							<li><span>게시물</span> 3</li>
-							<li><span>팔로워</span> 3</li>
-							<li><span>팔로우</span> 3</li>
+							<li><span>게시물</span> <span>3</span></li>
+							<li><span>팔로워</span> <span>3</span></li>
+							<li><span>팔로우</span> <span>3</span></li>
 						</ul>
 
 						<div class="bottom">
@@ -608,13 +608,13 @@ textarea#profile_edit_textarea {
 					<div class="profile_wrap_right">
 						<div class="emotion_counts">
 							<ul class="emotion_count">
-								<li><span>총게시물</span> <span>9</span></li>
-								<li><span>기쁨/행복</span> 5</li>
-								<li><span>슬픔</span> 2</li>
-								<li><span>불안/공포</span> 1</li>
-								<li><span>이상증상</span> 1</li>
+							<!-- 최근 감정 상태 해시태그 공유  -->
+								<li><span>최근 나의 상태는?</span> </li>
+								<li><span OnClick="location.href='#'" onfocus="blur();">#행복해</span></li>
+								<li><span OnClick="location.href='#'">#외출중</span></li>
+								<li><span OnClick="location.href='#'">#배고파_죽겠어</span></li>
+								<li><span OnClick="location.href='#'">#왜불러?</span></li>
 							</ul>
-
 						</div>
 					</div>
 
