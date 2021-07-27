@@ -410,7 +410,6 @@ textarea#profile_edit_textarea {
 	height: 200px;
 	margin: 0;
 	padding: 0;
-	background: #fff;
 	overflow: hidden;
 }
 

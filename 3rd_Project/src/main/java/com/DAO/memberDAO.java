@@ -91,7 +91,6 @@ public class memberDAO {
 
 					vo = new memberVO(getemail, getpw);
 					System.out.println(vo.getEmail());
-					System.out.println(vo.getPw());
 				}
 			}
 

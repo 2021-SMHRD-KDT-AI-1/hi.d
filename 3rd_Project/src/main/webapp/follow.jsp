@@ -48,6 +48,95 @@
 	display: flex;
 	justify-content: center;
 }
+
+
+
+
+
+
+/* new_header style */
+/* @font-face {
+            font-family: 'HeydingsCommonIconsRegular';
+            src: url('http://ianfarb.com/random/heydings_icons-webfont.eot');
+            src: url('http://ianfarb.com/random/heydings_icons-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('http://ianfarb.com/random/heydings_icons-webfont.woff') format('woff'),
+                 url('http://ianfarb.com/random/heydings_icons-webfont.ttf') format('truetype'),
+                 url('http://ianfarb.com/random/heydings_icons-webfont.svg#HeydingsCommonIconsRegular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+
+        } */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #e5e5e5;
+}
+
+.bg {
+	position: fixed;
+	z-index: -4;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: .25s;
+	pointer-events: none;
+}
+
+li {
+	list-style: none;
+}
+
+li a {
+	display: block;
+	float: left;
+	width: 20%;
+	text-align: center;
+	font-family: 'HeydingsCommonIconsRegular', Helvetida Neue, sans-serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-size: 40px;
+	color: #fff;
+	background: #ccc;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
+	transition: .25s;
+}
+
+li a:hover {
+	margin: -10px 0 0 0;
+}
+
+.menu {
+	width: 500px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.right_icons .menu:first-child a {
+	background: transparent !important;
+}
+
+.right_icons .menu:nth-child(2) a {
+	background: transparent !important;
+}
+
+.right_icons .menu:nth-child(3) a {
+	background: transparent !important;
+}
+
+.right_icons .menu:nth-child(4) a {
+	background: transparent !important;
+}
+
+.right_icons .menu:nth-child(5) a {
+	background: transparent !important;
+}
+
 </style>
 
 </head>
@@ -56,9 +145,15 @@
 
 	<section id="container">
 
+<<<<<<< HEAD
 		<header id="header">
 			<section class="h_inner">
+=======
+        <header id="header">
+            <section class="inner">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
+<<<<<<< HEAD
 				<h1 class="logo">
 					<a href="index.jsp">
 						<div class="sprite_insta_icon"></div>
@@ -75,8 +170,49 @@
 						<span class=sprite_small_search_icon></span> <span>검색</span>
 					</div>
 				</div>
+=======
+                <h1 class="logo">
+                    <a href="test4.html">
+                        <div class="sprite_insta_icon"></div>
+                        <div class="sprite_write_logo"></div>
+                    </a>
+                </h1>
+
+                <div class="search_box">
+                    <input type="text" placeholder="검색"
+						id="search-field">
+
+                    <div class="fake_field">
+                        <span class="sprite_small_search_icon"></span>
+                        <span>검색</span>
+                    </div>
+                </div>
+
+                <div class="right_icons">
+                    <ul class="menu">
+                        <li><a class="trigger" href="#">
+                                <div class="sprite_camera_icon"></div>
+                            </a></li>
+                        <li class="bg"></li>
+                    </ul>
+                    <ul class="menu">
+                        <li><a
+							onclick="location.href='likepage.jsp'" href="#">
+                                <div class="sprite_compass_icon"></div>
+                            </a></li>
+                        <li class="bg"></li>
+                    </ul>
+                    <ul class="menu">
+                        <li><a
+							onclick="location.href='profile3.jsp'" href="#">
+                                <div class="sprite_user_icon_outline"></div>
+                            </a></li>
+                        <li class="bg"></li>
+                    </ul>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
 
+<<<<<<< HEAD
 				<div class="right_icons">
 					<a href="new_post.jsp"><div class="sprite_camera_icon"></div></a> <a
 						href="login.jsp"><div class="sprite_compass_icon"></div></a> <a
@@ -85,6 +221,18 @@
 				</div>
 			</section>
 		</header>
+=======
+
+                </div>
+
+
+
+
+
+            </section>
+
+        </header>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
 
 		<div id="main_container">
