@@ -858,6 +858,7 @@ li a:hover {
 
 
     <script type="text/javascript">
+    //사이드 메뉴 고정
         $(window).scroll(function (event) {
             if (jQuery(window).scrollTop() > jQuery(".side_box").offset().top) {
                 jQuery(".chase").css("position", "fixed");
@@ -875,6 +876,7 @@ li a:hover {
 
 
     <script>
+    //무한스크롤 스크립트
         var count = 2;
         window.onscroll = function () {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight * 0.9) {
