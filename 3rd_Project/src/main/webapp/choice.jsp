@@ -150,12 +150,11 @@ html, body {
             position: absolute; 
             top: 50%; 
             left: 50%; 
-            transform: translate(-50%, -50%); 
-            background-color: white; 
+            transform: translate(-50%, -50%);  
             padding: 1rem 1.5rem; 
             width: 700px; 
             height: 850px; 
-            border-radius: 0.5rem; 
+      
         } 
 
 
@@ -172,17 +171,22 @@ html, body {
   display:flex;
 }
 
-.modal-content1{
+.post_form{
     width: 650px;
     padding: 0px 13px 0px 13px;
     overflow-y: scroll;
     height: 800px;
     box-sizing: border-box;
     margin-right: 50px;
+    border-radius: 10px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* 스크롤바 설정*/
-.modal-content1::-webkit-scrollbar{
+.post_form::-webkit-scrollbar{
     width:8px;
     /* 스크롤바 길이 안 먹힘 */
     height: 4px;
@@ -190,16 +194,16 @@ html, body {
 }
 
 /* 스크롤바 막대 설정*/
-.modal-content1::-webkit-scrollbar-thumb{
-    
+.post_form::-webkit-scrollbar-thumb{
+    border-radius: 10px;
     background-color: #8373e6;
    
 }
 
 /* 스크롤바 뒷 배경 설정*/
-.modal-content1::-webkit-scrollbar-track{
+.post_form::-webkit-scrollbar-track{
     background-color: #d4cef85e;
-    border-radius: 50px;  
+    border-radius: 10px;  
 }
 /*  new_header style */
 @font-face {
@@ -305,6 +309,8 @@ li a:hover {
                     <a href="index.jsp">
                         <div class="sprite_insta_icon"></div>
                         <div class="sprite_write_logo"></div>
+                       
+               
                     </a>
                 </h1>
 

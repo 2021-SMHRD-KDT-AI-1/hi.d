@@ -233,6 +233,8 @@ textarea {
 	height: 350px;
 	box-sizing: border-box;
 	margin-right: 0px;
+
+}
 }
 
 /* 스크롤바 설정*/

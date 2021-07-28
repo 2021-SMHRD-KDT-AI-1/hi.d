@@ -10,13 +10,24 @@ body {
     height: 30px;
 }
 
-.sprite_write_logo {
-    display: inline-block;
+.sprite_write_logo{
+	display:inline-block;
     background: url('../imgs/icons/textlogo.png');
-    background-size: 105px 35px;
-    width: 105px;
+    background-size: 100px 35px;
+    width: 100px;
     height: 35px;
+    
 }
+
+.sprite_write_logo:hover{
+	 background: url('../imgs/GIF/text.gif');
+	background-size: 100px 90px;
+    width: 100px;
+    height: 90px;
+	 
+}
+
+
 
 .sprite_compass_icon {
     display: inline-block;

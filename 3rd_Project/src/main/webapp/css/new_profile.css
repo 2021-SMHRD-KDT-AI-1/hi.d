@@ -118,7 +118,6 @@
 .post_form{
     padding: 40px;
     background-color: #fff;
-    border: 1px solid #e6e6e6;
     margin: 0 0 10px;
 }
 
@@ -127,6 +126,7 @@
     font-weight: 400;
     font-size: 30px;
     text-align: center;
+    margin-top: 20px;
 }
 
 
@@ -225,6 +225,8 @@
     width: 100%;
     padding: 0;
     margin-top: 10px;
+    margin-bottom: 20px;
+
 }
 
 .join_pet_gen+div{
