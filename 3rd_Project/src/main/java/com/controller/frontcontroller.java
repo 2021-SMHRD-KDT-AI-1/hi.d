@@ -23,7 +23,7 @@ public class frontcontroller extends HttpServlet {
 //			con = new LoginCon();
 		} else if(result.equals("JoinCon.do")) {
 //			con = new JoinCon();
-		} else if(result.equals("LogoutCon.do:")) {
+		} else if(result.equals("LogoutCon.do")) {
 //			con = new LogoutCon();
 		}
 		String moveURL = con.execute(request, response);
