@@ -57,9 +57,9 @@
 	}
 
 .clicked_detail_button{ /*클릭 시 적용되는 style 속성*/
-		border-color: #ffa2a2;
-		color: #ffa2a2;
-		background: #ffeaea;
+		border-color: #ec7600;
+		color: #ec7600;
+		background: #ffe2c6;
 	}
 
 .detail .top #trigger_profile_edit{
@@ -125,7 +125,7 @@
     left:0;
     bottom:-5px;
     transition:all 0.5s;
-    background:#dd2d76;
+    background:#ff8040;
 }
 
 .detail .about > span.on:after{
@@ -147,12 +147,21 @@
 }
 
 .profile_wrap_right .emotion_counts{
-	margin-top:20px
+	margin-top:20px;
+	margin-left:30px;
 }
 
 .detail .emotion_count{
     display: flex;
     align-items: center;
+}
+
+ /* 감정 카운트 */
+ul.emotion_count li, ol.emotion_count li {
+    padding: 5px 0px 5px 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+    font-size: 12px;
 }
 
 .contents_container{
