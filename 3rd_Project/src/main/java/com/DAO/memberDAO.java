@@ -55,7 +55,7 @@ public class memberDAO {
 
 			getConn();
 
-			sql = "insert into petinfo values(?,?)";
+			sql = "insert into memberinfo values(?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, email);
 			psmt.setString(2, pw);
@@ -86,7 +86,11 @@ public class memberDAO {
 
 				String getemail = rs.getString(1);
 				String getpw = rs.getString(2);
-
+				
+				if(getpw==null) {
+					return null;
+				}
+				
 				if (pw.equals(getpw)) {
 
 					vo = new memberVO(getemail, getpw);
