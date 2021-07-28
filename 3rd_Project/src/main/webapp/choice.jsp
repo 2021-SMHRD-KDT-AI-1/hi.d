@@ -381,7 +381,7 @@ li a:hover {
                          <div class="flex">
                          <div class="modal1"> 
                             <div class="modal-content1">
-                                <form action="#post.php" class="post_form" method="POST">
+                                <form action="PetJoinCon.do" class="post_form" method="POST">
                                     <div class="title">
                                         NEW PROFILE
                                     </div>
@@ -390,8 +390,7 @@ li a:hover {
                                             <div class="post_btn">
                                                 <div class="plus_icon">
                                                     <span></span>
-                                                    <span></sp
-                                                        an>
+                                                    <span></span>
                                                 </div>
                                         
                                                 <p>프로필 이미지 추가</p>
@@ -405,13 +404,13 @@ li a:hover {
                                     </p>
                     
                                     <p class="join_pet_nick">
-                                        <input class="pet_nick" type="text" id="pet_nick" placeholder="Pet-NickName" style="width: 100%;">
+                                        <input class="pet_nick" type="text" id="pet_nick" placeholder="Pet-NickName" style="width: 100%;" name="pet_nick">
                                     </p>
                                    
                     
                                     <div class="radio-buttons">
                                         <label class="custom-radio">
-                                          <input type="radio" name="radio_gender"  />
+                                          <input type="radio" name="radio_gender"  value="M"/>
                                           <span class="radio-btn">
                                             <i class="las la-check"></i>
                                             <div class="genders-icon">
@@ -421,7 +420,7 @@ li a:hover {
                                           </span>
                                         </label>
                                         <label class="custom-radio">
-                                            <input type="radio" name="radio_gender" />
+                                            <input type="radio" name="radio_gender" value="F"/>
                                             <span class="radio-btn">
                                               <i class="las la-check"></i>
                                               <div class="genders-icon">
@@ -437,7 +436,7 @@ li a:hover {
                                     
                                     <div class="radio-buttons">
                                         <label class="custom-radio">
-                                          <input type="radio" name="radio_pet" value="1" onclick="DogOrCat(event)"/>
+                                          <input type="radio" name="radio_pet" value="D" onclick="DogOrCat(event)" />
                                           <span class="radio-btn">
                                             <i class="las la-check"></i>
                                             <div class="genders-icon">
@@ -447,7 +446,7 @@ li a:hover {
                                           </span>
                                         </label>
                                         <label class="custom-radio">
-                                            <input type="radio" name="radio_pet" value="2" onclick="DogOrCat(event)"/>
+                                            <input type="radio" name="radio_pet" value="C" onclick="DogOrCat(event)" />
                                             <span class="radio-btn">
                                               <i class="las la-check"></i>
                                               <div class="genders-icon">

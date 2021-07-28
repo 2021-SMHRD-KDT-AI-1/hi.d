@@ -145,9 +145,35 @@ li a:hover {
 
    <section id="container">
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
         <header id="header">
+<<<<<<< HEAD
             <section class="h_inner">
             
+=======
+            <section class="inner">
+
+				<h1 class="logo">
+					<a href="index.jsp">
+						<div class="sprite_insta_icon"></div>
+						<div>
+							<div class="sprite_write_logo"></div>
+						</div>
+					</a>
+				</h1>
+
+				<div class="search_field">
+					<input type="text" placeholder="검색" tabindex="0">
+
+					<div class="fake_field">
+						<span class=sprite_small_search_icon></span> <span>검색</span>
+					</div>
+				</div>
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
                 <h1 class="logo">
                     <a href="test4.html">
                         <div class="sprite_insta_icon"></div>
@@ -198,6 +224,10 @@ li a:hover {
             </section>
 
         </header>
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
 
       <div id="main_container">
