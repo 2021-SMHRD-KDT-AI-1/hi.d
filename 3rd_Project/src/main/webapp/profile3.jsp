@@ -1,3 +1,4 @@
+<%@page import="com.VO.petVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -543,7 +544,8 @@ textarea#profile_edit_textarea {
 					<div class="detail">
 						<div class="top">
 							<div class="user_name">MY_PET_ID</div>
-							<div class="detail_button" id="trigger_profile_edit" meau-index="0">프로필 편집</div>
+							<div class="detail_button" id="trigger_profile_edit"
+								meau-index="0">프로필 편집</div>
 
 							<!-- 프로필 편집 모달창 -->
 							<div class="modal_profile_edit">
@@ -551,9 +553,10 @@ textarea#profile_edit_textarea {
 									<span class="profile_edit_closebutton">&times;</span>
 									<h1 class="title">프로필 편집</h1>
 									<label></label>
-									<form action="#post.php" method="POST">
+									<form action="PetUpdateCon.do" method="POST">
 										<label></label>
 										<div class="profile_preview">
+
 											<!-- 이미지 미리보기 영역 -->
 											<div class="profile-edit-upload">
 												<div class="post_btn">
@@ -567,9 +570,10 @@ textarea#profile_edit_textarea {
 										<label></label>
 										<p>
 											<!-- 첨부파일(이미지파일만 업로드) -->
-											<input type="file" id="profile_photo" accept="image/*"
-												onchange="setprofile_editthumbnail(event);" />
-										</p>
+											
+											<input name="pet_profile" type="file" id="profile_photo"
+												accept="image/*" onchange="setprofile_editthumbnail(event);" />
+											</p>
 
 										<label for="petnick">Pet-NickName</label> <input type="text"
 											name="petnick" placeholder="변경할 닉네임"> <label></label>
@@ -593,11 +597,11 @@ textarea#profile_edit_textarea {
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br> 안녕하세요 다남입니다.</span>
+							<span>Intro Text<br> 안녕하세요 다남입니다.
+							</span>
 						</div>
 
-						<br>
-						<br>
+						<br> <br>
 						<p class="about">
 							<span class="nick_name">공개 게시물</span> <span class="book_mark">다이어리</span>
 						</p>
@@ -607,8 +611,8 @@ textarea#profile_edit_textarea {
 					<div class="profile_wrap_right">
 						<div class="emotion_counts">
 							<ul class="emotion_count">
-							<!-- 최근 감정 상태 해시태그 공유  -->
-								<li><span>최근 나의 상태는?</span> </li>
+								<!-- 최근 감정 상태 해시태그 공유  -->
+								<li><span>최근 나의 상태는?</span></li>
 								<li><span OnClick="location.href='#'" onfocus="blur();">#행복해</span></li>
 								<li><span OnClick="location.href='#'">#외출중</span></li>
 								<li><span OnClick="location.href='#'">#배고파_죽겠어</span></li>
@@ -690,7 +694,7 @@ textarea#profile_edit_textarea {
 
 	</section>
 
-	<script src = 'js/jquery-3.6.0.min.js'></script>
+	<script src='js/jquery-3.6.0.min.js'></script>
 	<script src="js/profile.js"></script>
 	<script type="text/javascript"> 
         // *NewPost 모달 스크립트 *
@@ -789,7 +793,7 @@ textarea#profile_edit_textarea {
 		    /*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
 		    var index = $(this).attr('menu-index');
 		    /*클릭한 <div>에  clicked_menu 클래스 추가*/
-			$('.detail_button[menu-index=' + index + ']').addClass('clicked_detail_button'); 
+			$('x.detail_button[menu-index=' + inde + ']').addClass('clicked_detail_button'); 
 		    /*그 외 <div>는  clicked_menu 클래스 삭제*/
 			$('.detail_button[menu-index!=' + index + ']').removeClass('clicked_detail_button');
 		}).mouseout(function(){

@@ -1,8 +1,12 @@
 
+<%@page import="com.VO.petVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.petDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
@@ -294,9 +298,11 @@ li a:hover {
 </head>
 
 <body>
-
-
-    <section id="container">
+<%
+	petVO vo = (petVO)session.getAttribute("vo");
+%>
+	
+	<section id="container">
 
         <header id="header">
             <section class="inner">
@@ -559,7 +565,27 @@ li a:hover {
 </script>
 
 <script>
+	
+	
+		
     //라디오버튼 눌러서 체크박스 값 불러오기
+    //<%
+    	//try {
+    	//	petDAO dao = new petDAO();
+    	//	ArrayList<String> species_list = dao.species_select(String CorD);
+    	
+    	//	for(int i=0; i<species_list.size(); i++){
+    	//		out.print(species_list.get(i).getspeices);
+    	//	}
+    	
+    	
+    	//}catch (Exception e) {
+    	//	e.printStackTrace();
+    //	}
+  //  %>
+
+</script>
+
 var dog_species_list = ['푸들', '믹스견', '말티즈', '리트리버', '포메라니안'];
 var cat_species_list = ['러시안블루', '뱅갈', '말티즈', '요크숏테리어'];
 

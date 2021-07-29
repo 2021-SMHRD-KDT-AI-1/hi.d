@@ -18,27 +18,26 @@ public class PetJoinCon implements Command{
 		
 		String moveURL = "";
 		HttpSession session = request.getSession();
-		petVO vo_pet = (petVO) session.getAttribute("vo_pet");
-		speciesVO vo_species = (speciesVO) session.getAttribute("vo_species");
+		String getEmail = (String) session.getAttribute("email");
+		speciesVO getSpecies = (speciesVO) session.getAttribute("CorD");
 		
-		String photo = request.getParameter("photo");	
+		
+		String pet_profile = request.getParameter("photo");	
 		String pet_nick = request.getParameter("pet_nick");
-		String radio_gender = request.getParameter("radio_gender");	
-		String species = request.getParameter("species");	
-		String content = request.getParameter("content");	
+		String pet_gen = request.getParameter("radio_gender");	
+		String species = request.getParameter("radio_pet");	
+		String pet_introduce = request.getParameter("content");	
 		
-		String radio_pet = request.getParameter("radio_pet");
 		
+		petVO vo = new petVO(pet_nick, pet_profile,pet_introduce, pet_gen,species);
+		petDAO dao = new petDAO();
+		int cnt = dao.PetJoin(vo);
 		
 		System.out.println(pet_nick);
-		System.out.println(radio_pet);
-		
-		petDAO dao = new petDAO();
-		
-		int cnt = dao.PetJoin(vo_pet);
+		System.out.println(pet_gen);
 		
 		if (cnt > 0) {
-			petVO vo_new  = new petVO(pet_nick, photo,  content, radio_gender, vo_species.getCorD(), vo_pet.getEmail());
+			petVO vo_new  = new petVO(pet_nick, pet_profile,  pet_introduce, pet_gen, species, getEmail);
 			session.setAttribute("vo", vo_new);
 			moveURL = "choice.jsp";
 		}
