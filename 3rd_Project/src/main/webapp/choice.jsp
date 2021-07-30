@@ -300,19 +300,6 @@ li a:hover {
 	background: transparent !important;
 }
 </style>
-<script type="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-	$(function({
-		function getList() {
-			$.ajax({
-				url : "${}"
-			}
-			
-			
-			)
-	
-	))
-</script>
 </head>
 
 <body>
@@ -458,16 +445,17 @@ li a:hover {
 
 
 									<div class="radio-buttons">
-										<label class="custom-radio"> <input type="radio"
-											name="radio_pet" value="D" onclick="DogOrCat(event)" /> <span
+										<label class="custom-radio"> <input type="radio" id="radio_pet"
+											name="radio_pet" value="D" onclick="ajaxSpecies()" /> <span
 											class="radio-btn"> <i class="las la-check"></i>
 												<div class="genders-icon">
 													<i class="las la-dog"></i>
 													<h4>Dog</h4>
 												</div>
 										</span>
-										</label> <label class="custom-radio"> <input type="radio"
-											name="radio_pet" value="C" onclick="DogOrCat(event)" /> <span
+										</label> 
+										<label class="custom-radio"> <input type="radio" id="radio_pet"
+											name="radio_pet" value="C" onclick="ajaxSpecies()" /> <span
 											class="radio-btn"> <i class="las la-check"></i>
 												<div class="genders-icon">
 													<i class="las la-cat"></i>
@@ -577,39 +565,6 @@ li a:hover {
   //  %>
 
  </script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
-		$(function(){
-		$("button").click(function(){
-		$.ajax({
-		url : 'choice.jsp', //데이터베이스에 접근해 현재페이지로 결과를 뿌려줄 페이지
-		mathod : 'post',
-		data : {
-		userId : 'hong123' //dbGet.jsp페이지로 데이터를 보냄
-		},
-		success : function(item){ //DB접근 후 가져온 데이터
-		console.log($.trim(item)); //jsp페이지 통째로 가져오다보니 공백을 자를 필요가 있음.
-				}
-			})
-		})
-	})
-</script> -->
-
-<%
-/*try {
-	petDAO dao = new petDAO();
-	ArrayList<speciesVO> species_list = dao.species_select();
-	
-	for(int i=0;i<species_list.size();i++){
-		out.print("<tr>");
-		out.print("<td>" + species_list + "</td>");
-		out.print("</tr>");
-	}
-}catch (Exception e) {
-	e.printStackTrace();
-}*/
-%>
 
 
 	<script>
@@ -625,7 +580,7 @@ li a:hover {
 			if (event.target.value == 1) {
 				for (var i = 0; i < dog_species_list.length; i++) {
 					var option_val = document.createElement("option");
-					option_val.value = dog_species_list[i];
+					option_val.value = dog_species_list[i]	;
 					var text = document.createTextNode(dog_species_list[i]);
 					option_val.appendChild(text);
 					species.appendChild(option_val);
@@ -666,13 +621,53 @@ li a:hover {
     submit_btn.addEventListener("click", toggleModal); 
     window.addEventListener("click", windowOnClick); 
 
-</script>
-
-<script type="text/javascript">
-function func() {
-	swal("","로그인을 해주세요","warning");
-}
-</script>
+	</script>
+	
+	<script type="text/javascript">
+	function func() {
+		swal("","로그인을 해주세요","warning");
+	}
+	</script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+	<script type="text/javascript">
+		function ajaxSpecies(){
+			var cord = $("#radio_pet").val();
+			
+			$.ajax({
+				type : "get",
+				url : "SpeciesAjax",
+				data : {cord : cord},
+				dataType : "text",
+				success : function(data){
+					alert("hello")
+					while (this.firstChild) {
+						this.removeChild(this.firstChild);
+					}
+					if (cord=="D") {
+						for (var i = 0; i < data.size(); i++) {
+							var option_val = document.createElement("option");
+							option_val.value = data.get(i);
+							var text = document.createTextNode(data.get(i));
+							option_val.appendChild(text);
+							species.appendChild(option_val);
+						}
+					} else {
+						for (var i = 0; i < data.size(); i++) {
+							var option_val = document.createElement("option");
+							option_val.value = data.get(i);
+							var text = document.createTextNode(data.get(i));
+							option_val.appendChild(text);
+							species.appendChild(option_val);
+						}
+					}
+				},
+				error : function(){
+					alert("error!")
+				}
+			});
+		}
+	</script>
 
 </body>
 </html>
