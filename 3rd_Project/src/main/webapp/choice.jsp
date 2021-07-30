@@ -393,93 +393,7 @@ li a:hover {
                   
                   </div>-->
 
-<<<<<<< HEAD
-                <div class="wrap">
-                    <button class="plus_button">
-                        <img src= "/imgs/plus.png" style="opacity: 20%;"></button>
-                         <!-- 프로필 편집 모달창 -->
-                         <div class="flex">
-                         <div class="modal1"> 
-                            <div class="modal-content1">
-                                <form action="#post.php" class="post_form" method="POST">
-                                    <div class="title">
-                                        NEW PROFILE
-                                    </div>
-                                    <div class="preview">
-                                        <div class="upload">
-                                            <div class="post_btn">
-                                                <div class="plus_icon">
-                                                    <span></span>
-                                                    <span></span>
-                                                </div>
-                                        
-                                                <p>프로필 이미지 추가</p>
-                                                <canvas id="imageCanvas"></canvas>
-                                                <!--<p><img id="img_id" src="#" style="width: 300px; height: 300px; object-fit: cover" alt="thumbnail"></p>-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <input type="file" name="photo" id="id_photo" required="required">
-                                    </p>
-                    
-                                    <p class="join_pet_nick">
-                                        <input class="pet_nick" type="text" id="pet_nick" placeholder="Pet-NickName" style="width: 100%;">
-                                    </p>
-                                   
-                    
-                                    <div class="radio-buttons">
-                                        <label class="custom-radio">
-                                          <input type="radio" name="radio_gender"/>
-                                          <span class="radio-btn">
-                                            <i class="las la-check"></i>
-                                            <div class="genders-icon">
-                                             <i class="las la-mars"></i>
-                                              <h4>Male</h4>
-                                            </div>
-                                          </span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="radio_gender"/>
-                                            <span class="radio-btn">
-                                              <i class="las la-check"></i>
-                                              <div class="genders-icon">
-                                                <i class="las la-venus"></i>
-                                                <h4>Female</h4>
-                                              </div>
-                                            </span>
-                                          </label>
-                                    </div>  
-                    
-                    
-                    
-                                    
-                                    <div class="radio-buttons">
-                                        <label class="custom-radio">
-                                          <input type="radio" name="radio_pet" value="1" onclick="DogOrCat(event)"/>
-                                          <span class="radio-btn">
-                                            <i class="las la-check"></i>
-                                            <div class="genders-icon">
-                                                <i class="las la-dog"></i>
-                                              <h4>Dog</h4>
-                                            </div>
-                                          </span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="radio_pet" value="2" onclick="DogOrCat(event)"/>
-                                            <span class="radio-btn">
-                                              <i class="las la-check"></i>
-                                              <div class="genders-icon">
-                                                <i class="las la-cat"></i>
-                                                <h4>cat</h4>
-                                              </div>
-                                            </span>
-                                          </label>
-                                    </div>  
-                                
-                    
-                                    <!-- <p class="join_pet_species_of" >  
-=======
+
 				<div class="wrap">
 					<button class="plus_button">
 						<img src="/imgs/plus.png" style="opacity: 20%;">
@@ -560,7 +474,6 @@ li a:hover {
 
 
 									<!-- <p class="join_pet_species_of" >  
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
                                         <div>Dog<input type="radio" name="pet_species_of" value="dog">
                                             Cat<input type="radio" name="pet_species_of" value="cat"></div>
                                     </p> -->
