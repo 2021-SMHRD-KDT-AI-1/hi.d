@@ -10,22 +10,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
+
 import com.DAO.petDAO;
 
 @WebServlet("/SpeciesAjax")
 public class SpeciesAjax extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("hello?");
-		String pet_cord = request.getParameter("cord_species");
+		String pet_cord = request.getParameter("cord");
 		petDAO dao = new petDAO();
 		ArrayList<String> speciess = dao.species_select(pet_cord);
+
+		JSONObject tempJson = new JSONObject();
 		
 		response.setContentType("text/html;charset=euc-kr");
 
 		PrintWriter out = response.getWriter();
-		out.print(speciess);
 		
+		for(int i = 0; i < speciess.size(); i++) {
+			tempJson.put(i, speciess.get(i));
+			
+		}
+		out.print(tempJson);
 	}
 
 }

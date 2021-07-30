@@ -445,7 +445,7 @@ li a:hover {
 
 
 									<div class="radio-buttons">
-										<label class="custom-radio"> <input type="radio" id="radio_pet"
+										<label class="custom-radio"> <input type="radio" class="radio_pet"
 											name="radio_pet" value="D" onclick="ajaxSpecies()" /> <span
 											class="radio-btn"> <i class="las la-check"></i>
 												<div class="genders-icon">
@@ -454,7 +454,7 @@ li a:hover {
 												</div>
 										</span>
 										</label> 
-										<label class="custom-radio"> <input type="radio" id="radio_pet"
+										<label class="custom-radio"> <input type="radio" class="radio_pet"
 											name="radio_pet" value="C" onclick="ajaxSpecies()" /> <span
 											class="radio-btn"> <i class="las la-check"></i>
 												<div class="genders-icon">
@@ -472,7 +472,7 @@ li a:hover {
                                     </p> -->
 
 									<p class="species">
-										<select name="species" style="width: 100%; height: 25px;">
+										<select class="species" style="width: 100%; height: 25px;">
 
 										</select>
 									</p>
@@ -631,35 +631,20 @@ li a:hover {
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
 	<script type="text/javascript">
+	$(".radio_pet").click(
 		function ajaxSpecies(){
-			var cord = $("#radio_pet").val();
+			var cord = $(this).val();
 			
 			$.ajax({
 				type : "get",
 				url : "SpeciesAjax",
 				data : {cord : cord},
-				dataType : "text",
+				dataType : "json",
 				success : function(data){
-					alert("hello")
-					while (this.firstChild) {
-						this.removeChild(this.firstChild);
-					}
-					if (cord=="D") {
-						for (var i = 0; i < data.size(); i++) {
-							var option_val = document.createElement("option");
-							option_val.value = data.get(i);
-							var text = document.createTextNode(data.get(i));
-							option_val.appendChild(text);
-							species.appendChild(option_val);
-						}
-					} else {
-						for (var i = 0; i < data.size(); i++) {
-							var option_val = document.createElement("option");
-							option_val.value = data.get(i);
-							var text = document.createTextNode(data.get(i));
-							option_val.appendChild(text);
-							species.appendChild(option_val);
-						}
+					$("p.species select.species").empty();
+					for(var i = 0; i < Object.keys(data).length; i++){
+						var $option = $("<option>" + data[i] + "</option>")
+						$("p.species>select").append($option);
 					}
 				},
 				error : function(){
@@ -667,6 +652,7 @@ li a:hover {
 				}
 			});
 		}
+		)
 	</script>
 
 </body>
