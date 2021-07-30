@@ -21,7 +21,7 @@
 <meta property="og:description" content="instagram clone">
 <meta property="og:image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-.
+
 <!-- Twitter Meta Tags / 트위터 -->
 <meta name="twitter:card" content="instagram clone">
 <meta name="twitter:title" content="instagram">
@@ -33,7 +33,7 @@
 <meta itemprop="name" content="instagram">
 <meta itemprop="description" content="instagram clone">
 <meta itemprop="image"
-	cxontent="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
+	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
 
 <title>instagram</title>
@@ -136,37 +136,19 @@ li a:hover {
 
 </head>
 <body>
-
-
 	<section id="container">
-
 
         <header id="header">
             <section class="inner">
 
 				<h1 class="logo">
 					<a href="index.jsp">
-						<div class="sprite_insta_icon"></div>
 						<div>
+							<div class="sprite_insta_icon"></div>
 							<div class="sprite_write_logo"></div>
 						</div>
 					</a>
 				</h1>
-
-				<div class="search_field">
-					<input type="text" placeholder="검색" tabindex="0">
-
-					<div class="fake_field">
-						<span class=sprite_small_search_icon></span> <span>검색</span>
-					</div>
-				</div>
-
-                <h1 class="logo">
-                    <a href="test4.html">
-                        <div class="sprite_insta_icon"></div>
-                        <div class="sprite_write_logo"></div>
-                    </a>
-                </h1>
 
                 <div class="search_box">
                     <input type="text" placeholder="검색"
