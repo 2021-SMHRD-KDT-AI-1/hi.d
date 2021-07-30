@@ -417,7 +417,7 @@ li a:hover {
 
                 <h1 class="sprite_insta_big_logo title"></h1>
 
-                <form action="LoginCon" method="post">
+                <form action="LoginCon.do" method="post">
                     <p class="login_user_name">
                         <label for="user_name">사용자명:</label>
                         <input type="text" id="user_name" name="email">
@@ -427,7 +427,17 @@ li a:hover {
                         <label for="user_password">비밀번호:</label>
                         <input type="text" id="user_password" name="pw">
                     </p>
+<<<<<<< HEAD
                     <input type="submit" class="login_submit" value="로그인">
+=======
+                    <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
+                        
+
+                            <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
+
+                        
+               
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
                 </form>
 
 
@@ -442,7 +452,7 @@ li a:hover {
                     <div class="flex1">
                         <div class="modal2"> 
                            <div class="modal-content2">
-                    <form action="JoinCon" class="join_form"
+                    <form action="JoinCon.do" class="join_form"
 										method="POST">
                     <div class="title1">JOIN</div>
                         

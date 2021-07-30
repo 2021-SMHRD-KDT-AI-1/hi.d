@@ -145,15 +145,10 @@ li a:hover {
 
 	<section id="container">
 
-<<<<<<< HEAD
-		<header id="header">
-			<section class="h_inner">
-=======
+
         <header id="header">
             <section class="inner">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
-<<<<<<< HEAD
 				<h1 class="logo">
 					<a href="index.jsp">
 						<div class="sprite_insta_icon"></div>
@@ -170,7 +165,7 @@ li a:hover {
 						<span class=sprite_small_search_icon></span> <span>°Ë»ö</span>
 					</div>
 				</div>
-=======
+
                 <h1 class="logo">
                     <a href="test4.html">
                         <div class="sprite_insta_icon"></div>
@@ -209,6 +204,7 @@ li a:hover {
                             </a></li>
                         <li class="bg"></li>
                     </ul>
+<<<<<<< HEAD
 >>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
 
@@ -222,6 +218,9 @@ li a:hover {
 			</section>
 		</header>
 =======
+=======
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
                 </div>
 
 
@@ -231,7 +230,7 @@ li a:hover {
             </section>
 
         </header>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
+
 
 
 		<div id="main_container">

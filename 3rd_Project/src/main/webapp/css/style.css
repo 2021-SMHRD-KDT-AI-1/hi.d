@@ -678,7 +678,7 @@ body{
 
 .side_box > .chase > article{
     border: 1px solid rgba(0,0,0,0.09);
-    border-radius: 3px;
+    border-radius: 30px;
     margin-bottom: 20px;
     width: 291px;
     font-size: 14px;
@@ -882,7 +882,7 @@ body{
 .contents{
     max-width: 614px;
     border: 1px solid rgba(0,0,0,0.09);
-    border-radius: 3px;
+    border-radius: 30px;
     margin-bottom: 60px;
     background: white;
 }

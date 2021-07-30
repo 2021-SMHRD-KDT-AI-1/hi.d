@@ -20,11 +20,15 @@ public class frontcontroller extends HttpServlet {
 		Command con = null;
 		
 		if(result.equals("LoginCon.do")) {
-//			con = new LoginCon();
+			con = new LoginCon();
 		} else if(result.equals("JoinCon.do")) {
-//			con = new JoinCon();
-		} else if(result.equals("LogoutCon.do:")) {
-//			con = new LogoutCon();
+			con = new JoinCon();
+		} else if(result.equals("PetJoinCon.do")) {
+			con = new PetJoinCon();
+		} else if(result.equals("PetUpdateCon.do")) {
+			con = new PetUpdateCon();
+		} else if(result.equals("FeedUpload.do")) {
+			con = new FeedUpload();
 		}
 		String moveURL = con.execute(request, response);
 		response.sendRedirect(moveURL);

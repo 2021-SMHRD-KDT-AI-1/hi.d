@@ -1,3 +1,4 @@
+<%@page import="com.VO.petVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -546,7 +547,7 @@ textarea#profile_edit_textarea {
 								<span class="post_closebutton">&times;</span>
 								<h1 class="title">NEW POST</h1>
 								<label></label>
-								<form class="upload_form" action="#post.php" method="POST">
+								<form class="upload_form" action="FeedUpload.do" method="POST">
 									<label></label>
 									<div class="preview">
 										<!-- 이미지 미리보기 영역 -->
@@ -645,9 +646,10 @@ textarea#profile_edit_textarea {
 									<span class="profile_edit_closebutton">&times;</span>
 									<h1 class="title">프로필 편집</h1>
 									<label></label>
-									<form action="#post.php" method="POST">
+									<form action="PetUpdateCon.do" method="POST">
 										<label></label>
 										<div class="profile_preview">
+
 											<!-- 이미지 미리보기 영역 -->
 											<div class="profile-edit-upload">
 												<div class="post_btn">
@@ -661,9 +663,10 @@ textarea#profile_edit_textarea {
 
 										<p>
 											<!-- 첨부파일(이미지파일만 업로드) -->
-											<input type="file" id="profile_photo" accept="image/*"
-												onchange="setprofile_editthumbnail(event);" />
-										</p>
+											
+											<input name="pet_profile" type="file" id="profile_photo"
+												accept="image/*" onchange="setprofile_editthumbnail(event);" />
+											</p>
 
 										<label for="petnick">Pet-NickName</label> <input type="text"
 											name="petnick" placeholder="변경할 닉네임"> <label></label>
@@ -876,6 +879,7 @@ textarea#profile_edit_textarea {
 		//* 버튼 이벤트 스크립트*
 		$('.detail_button').each(function(index) {
 			$(this).attr('menu-index', index);
+<<<<<<< HEAD
 		}).mouseover(
 				function() {
 					/*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
@@ -894,6 +898,21 @@ textarea#profile_edit_textarea {
 							'clicked_detail_button');
 				})
 
+=======
+		}).mouseover(function(){
+		    /*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
+		    var index = $(this).attr('menu-index');
+		    /*클릭한 <div>에  clicked_menu 클래스 추가*/
+			$('x.detail_button[menu-index=' + inde + ']').addClass('clicked_detail_button'); 
+		    /*그 외 <div>는  clicked_menu 클래스 삭제*/
+			$('.detail_button[menu-index!=' + index + ']').removeClass('clicked_detail_button');
+		}).mouseout(function(){
+			 /*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
+		    var index = $(this).attr('menu-index');
+			$('.detail_button[menu-index=' + index + ']').removeClass('clicked_detail_button');
+		})
+		
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 		;
 
 		$('.post_submit').on('click', function() {

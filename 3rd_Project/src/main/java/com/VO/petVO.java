@@ -21,8 +21,37 @@ public class petVO {
 		this.species = species;
 		this.email = email;
 	}//
-
 	
+	
+	public petVO(String pet_nick, String pet_profile, String pet_introduce, String pet_gen, String species,
+			String email) {
+		this.pet_nick = pet_nick;
+		this.pet_profile = pet_profile;
+		this.pet_introduce = pet_introduce;
+		this.pet_gen = pet_gen;
+		this.species = species;
+		this.email = email;
+	}
+
+
+
+	public petVO(String pet_nick, String pet_profile, String pet_introduce) {
+		super();
+		this.pet_nick = pet_nick;
+		this.pet_profile = pet_profile;
+		this.pet_introduce = pet_introduce;
+	}
+
+
+	public petVO(String pet_nick, String pet_profile, String pet_introduce, String pet_gen, String species) {
+		this.pet_nick = pet_nick;
+		this.pet_profile = pet_profile;
+		this.pet_introduce = pet_introduce;
+		this.pet_gen = pet_gen;
+		this.species = species;
+	}
+
+
 	public petVO(String email, String pet_num, String pet_nick, String pet_introduce) {
 		this.email = email;
 		this.pet_num = pet_num;
@@ -30,11 +59,8 @@ public class petVO {
 		this.pet_introduce = pet_introduce;
 	}
 	
-	public petVO(String email,  String pet_nick, String pet_introduce) {
-		this.email = email;
-		this.pet_nick = pet_nick;
-		this.pet_introduce = pet_introduce;
-	}
+
+
 
 	public String getPet_num() {
 		return pet_num;

@@ -412,8 +412,13 @@ li a:hover {
                 <span class="close-button">&times;</span>
                 <h1 class="title">NEW POST</h1>
                 <label></label>
+<<<<<<< HEAD
                 <form class="upload_form" action="#post.php"
                method="POST">
+=======
+                <form class="upload_form" action="FeedUpload.do"
+					method="POST">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
                     <label></label>
                     <div class="preview">
                         <!-- 이미지 미리보기 영역 -->
