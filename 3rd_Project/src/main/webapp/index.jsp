@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+   pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!DOCTYPE html>
+   <!DOCTYPE html>
 
 <html lang="en">
 
@@ -15,34 +15,34 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
-	content="width=device-width, initial-scale=1.0">
+   content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <meta charset="UTF-8">
     <meta name="viewport"
-	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
     <!-- Facebook Meta Tags / 페이스북 오픈 그래프 -->
     <meta property="og:url"
-	content="http://kindtiger.dothome.co.kr/insta">
+   content="http://kindtiger.dothome.co.kr/insta">
     <meta property="og:type" content="website">
     <meta property="og:title" content="instagram">
     <meta property="og:description" content="instagram clone">
     <meta property="og:image"
-	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
+   content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
     .
     <!-- Twitter Meta Tags / 트위터 -->
     <meta name="twitter:card" content="instagram clone">
     <meta name="twitter:title" content="instagram">
     <meta name="twitter:description" content="instagram clone">
     <meta name="twitter:image"
-	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
+   content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
     <!-- Google / Search Engine Tags / 구글 검색 엔진 -->
     <meta itemprop="name" content="instagram">
     <meta itemprop="description" content="instagram clone">
     <meta itemprop="image"
-	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
+   content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
 
     <title>instagram</title>
@@ -55,288 +55,288 @@
 
 
  
-        <!-- 모달네비게이션바 css 
-        -->
+ <!-- 모달네비게이션바 css -->
     <style type="text/css">
 .modal .body {
-	text-align: center;
-	display: block;
-	margin: 0 auto;
-	font-size: 16px;
-	color: #999;
+   text-align: center;
+   display: block;
+   margin: 0 auto;
+   font-size: 16px;
+   color: #999;
 }
 
 .modal .title {
-	font-family: 'Oswald', sans-serif;
-	margin: 0%;
-	font-size: 30px;
-	color: #353535ea;
+   font-family: 'Oswald', sans-serif;
+   margin: 0%;
+   font-size: 30px;
+   color: #353535ea;
 }
 
 .modal label {
-	display: block;
-	margin-top: 20px;
-	letter-spacing: 2px;
+   display: block;
+   margin-top: 20px;
+   letter-spacing: 2px;
 }
 
 /* form {  
  
     } */
 input, textarea {
-	width: 439px;
-	height: 27px;
-	background-color: #efefef;
-	border-radius: 6px;
-	border: 1px solid #dedede;
-	padding: 10px;
-	margin-top: 3px;
-	font-size: 0.9em;
-	color: #3a3a3a;
+   width: 439px;
+   height: 27px;
+   background-color: #efefef;
+   border-radius: 6px;
+   border: 1px solid #dedede;
+   padding: 10px;
+   margin-top: 3px;
+   font-size: 0.9em;
+   color: #3a3a3a;
 }
 
 input#chk_open {
-	width: 20px;
-	height: 20px;
+   width: 20px;
+   height: 20px;
 }
 
 textarea {
-	height: 100px;
-	background-color: #efefef;
+   height: 100px;
+   background-color: #efefef;
 }
 
 #submit {
-	width: 127px;
-	height: 48px;
-	text-align: center;
-	border: none;
-	margin-top: 20px;
-	cursor: pointer;
+   width: 127px;
+   height: 48px;
+   text-align: center;
+   border: none;
+   margin-top: 20px;
+   cursor: pointer;
 }
 
 #submit:hover {
-	color: #fff;
-	background-color: #353535ea;
-	opacity: 0.9;
+   color: #fff;
+   background-color: #353535ea;
+   opacity: 0.9;
 }
 
 #cancel {
-	width: 127px;
-	height: 48px;
-	text-align: center;
-	border: none;
-	margin-top: 20px;
-	cursor: pointer;
+   width: 127px;
+   height: 48px;
+   text-align: center;
+   border: none;
+   margin-top: 20px;
+   cursor: pointer;
 }
 
 #cancel:hover {
-	color: #fff;
-	background-color: #353535ea;
-	opacity: 0.9;
+   color: #fff;
+   background-color: #353535ea;
+   opacity: 0.9;
 }
 
 .modal {
-	z-index: 1;
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	opacity: 0;
-	visibility: hidden;
-	transform: scale(1.1);
-	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform
-		0.25s;
+   z-index: 1;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   opacity: 0;
+   visibility: hidden;
+   transform: scale(1.1);
+   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform
+      0.25s;
 }
 
 .modal_check {
-	text-align: center;
+   text-align: center;
 }
 
 .modal-content {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: white;
-	padding: 1rem 1.5rem;
-	width: 1100px;
-	height: 700px;
-	border-radius: 0.5rem;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: white;
+   padding: 1rem 1.5rem;
+   width: 1100px;
+   height: 700px;
+   border-radius: 0.5rem;
 }
 
 .upload {
-	max-width: 550px;
-	width: 450px;
-	height: 450px;
-	border: 1px solid #e6e6e6;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	/* position: relative; */
-	float: center;
+   max-width: 550px;
+   width: 450px;
+   height: 450px;
+   border: 1px solid #e6e6e6;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* position: relative; */
+   float: center;
 }
 
 .behavior_analysis {
-	max-width: 350px;
-	height: 350px;
-	border: 1px solid #e6e6e6;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+   max-width: 350px;
+   height: 350px;
+   border: 1px solid #e6e6e6;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
 }
 
 .close-button {
-	float: right;
-	width: 1.5rem;
-	line-height: 1.5rem;
-	text-align: center;
-	cursor: pointer;
-	border-radius: 0.25rem;
-	background-color: lightgray;
+   float: right;
+   width: 1.5rem;
+   line-height: 1.5rem;
+   text-align: center;
+   cursor: pointer;
+   border-radius: 0.25rem;
+   background-color: lightgray;
 }
 
 .modal-content p, h1, label {
-	text-align: center;
+   text-align: center;
 }
 
 .modal-content input {
-	align-items: center;
+   align-items: center;
 }
 
 .close-button:hover {
-	background-color: darkgray;
+   background-color: darkgray;
 }
 
 .show-modal {
-	z-index: 5;
-	opacity: 1;
-	visibility: visible;
-	transform: scale(1.0);
-	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+   z-index: 5;
+   opacity: 1;
+   visibility: visible;
+   transform: scale(1.0);
+   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .upload_form {
-	column-count: 2;
-	column-gap: 100px;
+   column-count: 2;
+   column-gap: 100px;
 }
 </style>
     <style>
 /* 스크롤 설정*/
 .recommend {
-	width: auto;
-	padding: 0px 10px 0px 10px;
-	overflow-y: scroll;
-	height: 350px;
-	box-sizing: border-box;
-	margin-right: 0px;
+   width: auto;
+   padding: 0px 10px 0px 10px;
+   overflow-y: scroll;
+   height: 350px;
+   box-sizing: border-box;
+   margin-right: 0px;
 }
 
 /* 스크롤바 설정*/
 .recommend::-webkit-scrollbar {
-	width: 5px;
-	height: 3px;
+   width: 5px;
+   height: 3px;
 }
 
 /* 스크롤바 막대 설정*/
 .recommend::-webkit-scrollbar-thumb {
-	background-color: #7c7b80;
+   background-color: #7c7b80;
+   border-radius: 70px
 }
 
 /* 스크롤바 뒷 배경 설정*/
 .recommend::-webkit-scrollbar-track {
-	background-color: #d4cef85e;
-	border-radius: 70px;
+   background-color: #d4cef85e;
+   
 }
 
 /*  new_header style */
 @font-face {
-	font-family: 'HeydingsCommonIconsRegular';
-	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot');
-	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot?#iefix')
-		format('embedded-opentype'),
-		url('http://ianfarb.com/random/heydings_icons-webfont.woff')
-		format('woff'),
-		url('http://ianfarb.com/random/heydings_icons-webfont.ttf')
-		format('truetype'),
-		url('http://ianfarb.com/random/heydings_icons-webfont.svg#HeydingsCommonIconsRegular')
-		format('svg');
-	font-weight: normal;
-	font-style: normal;
+   font-family: 'HeydingsCommonIconsRegular';
+   src: url('http://ianfarb.com/random/heydings_icons-webfont.eot');
+   src: url('http://ianfarb.com/random/heydings_icons-webfont.eot?#iefix')
+      format('embedded-opentype'),
+      url('http://ianfarb.com/random/heydings_icons-webfont.woff')
+      format('woff'),
+      url('http://ianfarb.com/random/heydings_icons-webfont.ttf')
+      format('truetype'),
+      url('http://ianfarb.com/random/heydings_icons-webfont.svg#HeydingsCommonIconsRegular')
+      format('svg');
+   font-weight: normal;
+   font-style: normal;
 }
 
 * {
-	margin: 0;
-	padding: 0;
+   margin: 0;
+   padding: 0;
 }
 
 body {
-	background: #e5e5e5;
+   background: #e5e5e5;
 }
 
 .bg {
-	position: fixed;
-	z-index: -4;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	transition: .25s;
-	pointer-events: none;
+   position: fixed;
+   z-index: -4;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   transition: .25s;
+   pointer-events: none;
 }
 
 li {
-	list-style: none;
+   list-style: none;
 }
 
 li a {
-	display: block;
-	float: left;
-	width: 20%;
-	text-align: center;
-	font-family: 'HeydingsCommonIconsRegular', Helvetida Neue, sans-serif;
-	font-weight: 700;
-	letter-spacing: 1px;
-	font-size: 40px;
-	color: #fff;
-	background: #ccc;
-	text-decoration: none;
-	text-transform: uppercase;
-	text-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
-	transition: .25s;
+   display: block;
+   float: left;
+   width: 20%;
+   text-align: center;
+   font-family: 'HeydingsCommonIconsRegular', Helvetida Neue, sans-serif;
+   font-weight: 700;
+   letter-spacing: 1px;
+   font-size: 40px;
+   color: #fff;
+   background: #ccc;
+   text-decoration: none;
+   text-transform: uppercase;
+   text-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
+   transition: .25s;
 }
 
 li a:hover {
-	margin: -10px 0 0 0;
+   margin: -10px 0 0 0;
 }
 
 .menu {
-	width: 500px;
-	border-radius: 10px;
-	overflow: hidden;
+   width: 500px;
+   border-radius: 10px;
+   overflow: hidden;
 }
 
 .right_icons .menu:first-child a {
-	background: transparent !important;
+   background: transparent !important;
 }
 
 .right_icons .menu:nth-child(2) a {
-	background: transparent !important;
+   background: transparent !important;
 }
 
 .right_icons .menu:nth-child(3) a {
-	background: transparent !important;
+   background: transparent !important;
 }
 
 .right_icons .menu:nth-child(4) a {
-	background: transparent !important;
+   background: transparent !important;
 }
 
 .right_icons .menu:nth-child(5) a {
-	background: transparent !important;
+   background: transparent !important;
 }
 </style>
 
@@ -360,7 +360,7 @@ li a:hover {
 
                 <div class="search_box">
                     <input type="text" placeholder="검색"
-						id="search-field">
+                  id="search-field">
 
                     <div class="fake_field">
                         <span class="sprite_small_search_icon"></span>
@@ -377,14 +377,14 @@ li a:hover {
                     </ul>
                     <ul class="menu">
                         <li><a
-							onclick="location.href='likepage.jsp'" href="#">
+                     onclick="location.href='likepage.jsp'" href="#">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
                         <li><a
-							onclick="location.href='profile3.jsp'" href="#">
+                     onclick="location.href='profile3.jsp'" href="#">
                                 <div class="sprite_user_icon_outline"></div>
                             </a></li>
                         <li class="bg"></li>
@@ -412,7 +412,7 @@ li a:hover {
                 <span class="close-button">&times;</span>
                 <h1 class="title">NEW POST</h1>
                 <label></label>
-                <form class="upload_form" action="#post.php"
+                <form class="upload_form" action="FeedUpload.do"
 					method="POST">
                     <label></label>
                     <div class="preview">
@@ -431,16 +431,16 @@ li a:hover {
                     <p>
                         <!-- 첨부파일(이미지파일만 업로드) -->
                         <input type="file" name="photo" id="id_photo"
-							accept="video/*|image/*" onchange="setThumbnail(event);" />
+                     accept="video/*|image/*" onchange="setThumbnail(event);" />
                     </p>
 
                     <label></label>
                     <p>
                         <!-- 공개 비공개 -->
                         <input type="radio" id="chk_open"
-							name="chk_open" value="공개" checked="checked">공개
+                     name="chk_open" value="공개" checked="checked">공개
                         <input type="radio" id="chk_open"
-							name="chk_open" value="비공개">비공개
+                     name="chk_open" value="비공개">비공개
                     </p>
 
                     <label for="behavior_analysis">Hi,Dear!</label>
@@ -475,7 +475,7 @@ li a:hover {
                             <div class="user_container">
                                 <div class="div_profile_img">
                                     <img class="profile_img"
-										src="imgs/thumb.jpeg" alt="프로필이미지">
+                              src="imgs/thumb.jpeg" alt="프로필이미지">
                                 </div>
                                 <div class="user_name">
                                     <div class="nick_name m_text">KindTiger</div>
@@ -485,10 +485,10 @@ li a:hover {
                             </div>
 
                             <div class="sprite_more_icon"
-								data-name="more">
+                        data-name="more">
                                 <ul class="toggle_box">
                                     <li><input type="submit"
-										class="follow" value="팔로우" data-name="follow"></li>
+                              class="follow" value="팔로우" data-name="follow"></li>
                                     <li>수정</li>
                                     <li>삭제</li>
                                 </ul>
@@ -501,9 +501,9 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-									<img class="personal_contents" src="imgs/img_section/img01.jpg"
-										alt="visual01">
-								</div>
+                           <img class="personal_contents" src="imgs/img_section/img01.jpg"
+                              alt="visual01">
+                        </div>
                             </div>
                         </div>
 
@@ -514,16 +514,16 @@ li a:hover {
                             <div class="left_icons">
                                 <div class="heart_btn">
                                     <div
-										class="sprite_heart_icon_outline" name="39"
-										data-name="heartbeat"></div>
+                              class="sprite_heart_icon_outline" name="39"
+                              data-name="heartbeat"></div>
                                 </div>
                                 <div class="sprite_bubble_icon"></div>
                                 <div class="sprite_share_icon"
-									data-name="share"></div>
+                           data-name="share"></div>
                             </div>
                             <div class="right_icon">
                                 <div class="sprite_bookmark_outline"
-									data-name="bookmark"></div>
+                           data-name="bookmark"></div>
                             </div>
                         </div>
 
@@ -540,7 +540,7 @@ li a:hover {
 
                         <div class="comment_container">
                             <div class="comment"
-								id="comment-list-ajax-post37">
+                        id="comment-list-ajax-post37">
                                 <div class="comment-detail">
                                     <div class="nick_name m_text">dongdong2</div>
                                     <div class="comment_reple">강아지가 너무 귀여워요~!</div>
@@ -548,7 +548,7 @@ li a:hover {
                             </div>
                             <div class="small_heart">
                                 <div
-									class="sprite_small_heart_icon_outline"></div>
+                           class="sprite_small_heart_icon_outline"></div>
                             </div>
                         </div>
 
@@ -559,11 +559,11 @@ li a:hover {
 
 
                         <div class="comment_field"
-							id="add-comment-post37">
+                     id="add-comment-post37">
                             <input type="text" class="inputReple"
-								placeholder="댓글달기...">
+                        placeholder="댓글달기...">
                             <div class="upload_btn m_text"
-								data-name="comment">게시</div>
+                        data-name="comment">게시</div>
                         </div>
 
 
@@ -581,7 +581,7 @@ li a:hover {
                             <div class="user_container">
                                 <div class="div_profile_img">
                                     <img class="profile_img"
-										src="imgs/thumb.jpeg" alt="프로필이미지">
+                              src="imgs/thumb.jpeg" alt="프로필이미지">
                                 </div>
                                 <div class="user_name">
                                     <div class="nick_name m_text">KindTiger</div>
@@ -591,10 +591,10 @@ li a:hover {
                             </div>
 
                             <div class="sprite_more_icon"
-								data-name="more">
+                        data-name="more">
                                 <ul class="toggle_box">
                                     <li><input type="submit"
-										class="follow" value="팔로우" data-name="follow"></li>
+                              class="follow" value="팔로우" data-name="follow"></li>
                                     <li>수정</li>
                                     <li>삭제</li>
                                 </ul>
@@ -607,9 +607,9 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-									<img class="personal_contents" src="imgs/img_section/img01.jpg"
-										alt="visual01">
-								</div>
+                           <img class="personal_contents" src="imgs/img_section/img01.jpg"
+                              alt="visual01">
+                        </div>
                             </div>
                         </div>
 
@@ -620,16 +620,16 @@ li a:hover {
                             <div class="left_icons">
                                 <div class="heart_btn">
                                     <div
-										class="sprite_heart_icon_outline" name="39"
-										data-name="heartbeat"></div>
+                              class="sprite_heart_icon_outline" name="39"
+                              data-name="heartbeat"></div>
                                 </div>
                                 <div class="sprite_bubble_icon"></div>
                                 <div class="sprite_share_icon"
-									data-name="share"></div>
+                           data-name="share"></div>
                             </div>
                             <div class="right_icon">
                                 <div class="sprite_bookmark_outline"
-									data-name="bookmark"></div>
+                           data-name="bookmark"></div>
                             </div>
                         </div>
 
@@ -646,7 +646,7 @@ li a:hover {
 
                         <div class="comment_container">
                             <div class="comment"
-								id="comment-list-ajax-post37">
+                        id="comment-list-ajax-post37">
                                 <div class="comment-detail">
                                     <div class="nick_name m_text">dongdong2</div>
                                     <div class="comment_reple">강아지가 너무 귀여워요~!</div>
@@ -654,7 +654,7 @@ li a:hover {
                             </div>
                             <div class="small_heart">
                                 <div
-									class="sprite_small_heart_icon_outline"></div>
+                           class="sprite_small_heart_icon_outline"></div>
                             </div>
                         </div>
 
@@ -665,11 +665,11 @@ li a:hover {
 
 
                         <div class="comment_field"
-							id="add-comment-post37">
+                     id="add-comment-post37">
                             <input type="text" class="inputReple"
-								placeholder="댓글달기...">
+                        placeholder="댓글달기...">
                             <div class="upload_btn m_text"
-								data-name="comment">게시</div>
+                        data-name="comment">게시</div>
                         </div>
 
 
@@ -686,7 +686,7 @@ li a:hover {
                             <div class="user_profile">
                                 <div class="profile_thumb">
                                     <img src="imgs/thumb.jpeg"
-										alt="프로필사진">
+                              alt="프로필사진">
                                 </div>
                                 <div class="detail">
                                     <div class="id m_text">KindTiger</div>
@@ -706,7 +706,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -717,7 +717,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -728,7 +728,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -739,7 +739,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -750,7 +750,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -761,7 +761,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -780,7 +780,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -790,7 +790,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -800,7 +800,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -810,7 +810,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -820,7 +820,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -830,7 +830,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-												alt="프로필사진">
+                                    alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -848,7 +848,7 @@ li a:hover {
 
 
         
-		</section>
+      </section>
 
     </section>
 

@@ -1,3 +1,4 @@
+<%@page import="com.VO.petVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
 <meta property="og:description" content="instagram clone">
 <meta property="og:image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-.
+
 <!-- Twitter Meta Tags / 트위터 -->
 <meta name="twitter:card" content="instagram clone">
 <meta name="twitter:title" content="instagram">
@@ -30,12 +31,12 @@
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
 
-<title>instagram</title>
+<title>Hi Dear</title>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/profile.css">
-<link rel="shortcut icon" href="#">
+<link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 <style>
 /* new_header style */
@@ -143,7 +144,7 @@ h1 {
 
 label {
 	display: block;
-	margin-top: 20px;
+	margin-top: 15px;
 	letter-spacing: 2px;
 }
 
@@ -154,7 +155,7 @@ input, textarea {
 	border-radius: 6px;
 	border: 1px solid #dedede;
 	padding: 10px;
-	margin-top: 3px;
+	margin-top: 8px;
 	font-size: 0.9em;
 	color: #3a3a3a;
 }
@@ -164,10 +165,76 @@ input, textarea {
 	font-size: 0.9em;
 }
 
+/*	행동 분석 버튼 CSS - 기본
+	input.behavior_submit_button {
+	display: flex;
+	width: 230px;
+	height: 50px;
+	position: relative;
+	border: none;
+	color: #5f6368;
+	border-radius: 1vw;
+	display: inline-block;
+	padding: 6px 8px 6px 8px;
+	cursor: pointer;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.behavior_submit_button:hover {
+	color: #fff;
+	background-color: #ffa042;
+	opacity: 0.9;
+}*/
+
+/* 행동 분석 버튼 CSS - 화려함*/
+input.behavior_submit_button{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.behavior_submit_button {
+    width: 230px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.behavior_submit_button:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.behavior_submit_button:focus {
+    outline: none;
+}
+
+.behavior_submit_button {
+    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+
+
 input.chk_open {
 	width: 15px;
 	height: 15px;
-	margin: 20px 50px 0px 20px;
+	margin: 15px 30px 10px 20px;
 }
 
 textarea#post_textarea {
@@ -224,7 +291,7 @@ textarea#post_textarea {
 
 .behavior_analysis {
 	max-width: 350px;
-	height: 350px;
+	height: 320px;
 	border: 1px solid #e6e6e6;
 	margin: 3px auto;
 	display: flex;
@@ -397,7 +464,7 @@ textarea#profile_edit_textarea {
 	float: left;
 	width: 300px;
 	height: 200px;
-	margin: 0 0 0 25px;
+	margin: 0 0 0 0;
 	padding: 0;
 }
 
@@ -421,6 +488,26 @@ textarea#profile_edit_textarea {
 }
 
 .mylist_contents div:hover img {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.bookmark_contents div {
+	width: 300px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.bookmark_contents div img {
+	width: 300px;
+	height: auto;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.bookmark_contents div:hover img {
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
@@ -460,7 +547,7 @@ textarea#profile_edit_textarea {
 								<span class="post_closebutton">&times;</span>
 								<h1 class="title">NEW POST</h1>
 								<label></label>
-								<form class="upload_form" action="#post.php" method="POST">
+								<form class="upload_form" action="FeedUpload.do" method="POST">
 									<label></label>
 									<div class="preview">
 										<!-- 이미지 미리보기 영역 -->
@@ -471,14 +558,23 @@ textarea#profile_edit_textarea {
 												</div>
 												<p>NEW POST</p>
 											</div>
+											<label></label><label></label>
 										</div>
 									</div>
 									<label></label>
 									<p>
 										<!-- 첨부파일(이미지파일만 업로드) -->
 										<input type="file" name="photo" id="post_photo"
-											accept="video/*|image/*" onchange="setpostthumbnail(event);" />
+											accept="video/*" onchange="setpostthumbnail(event);" />
 									</p>
+
+									<div>
+										<input type="button" class="behavior_submit_button"
+											value="행동 분석하기">
+									</div>
+									
+									<label for="behavior_analysis">Hi,Dear!</label>
+									<div class="behavior_analysis"></div>
 
 									<p id="post_chk_open">
 										<!-- 공개 비공개 -->
@@ -488,8 +584,6 @@ textarea#profile_edit_textarea {
 											name="chk_open" value="비공개">
 									</div>
 									</p>
-									<label for="behavior_analysis">Hi,Dear!</label>
-									<div class="behavior_analysis"></div>
 
 									<label for="contents">Contents</label>
 									<textarea id="post_textarea" name="contents"
@@ -543,7 +637,8 @@ textarea#profile_edit_textarea {
 					<div class="detail">
 						<div class="top">
 							<div class="user_name">MY_PET_ID</div>
-							<div class="detail_button" id="trigger_profile_edit" meau-index="0">프로필 편집</div>
+							<div class="detail_button" id="trigger_profile_edit"
+								meau-index="0">프로필 편집</div>
 
 							<!-- 프로필 편집 모달창 -->
 							<div class="modal_profile_edit">
@@ -551,9 +646,10 @@ textarea#profile_edit_textarea {
 									<span class="profile_edit_closebutton">&times;</span>
 									<h1 class="title">프로필 편집</h1>
 									<label></label>
-									<form action="#post.php" method="POST">
+									<form action="PetUpdateCon.do" method="POST">
 										<label></label>
 										<div class="profile_preview">
+
 											<!-- 이미지 미리보기 영역 -->
 											<div class="profile-edit-upload">
 												<div class="post_btn">
@@ -564,12 +660,13 @@ textarea#profile_edit_textarea {
 												</div>
 											</div>
 										</div>
-										<label></label>
+
 										<p>
 											<!-- 첨부파일(이미지파일만 업로드) -->
-											<input type="file" id="profile_photo" accept="image/*"
-												onchange="setprofile_editthumbnail(event);" />
-										</p>
+											
+											<input name="pet_profile" type="file" id="profile_photo"
+												accept="image/*" onchange="setprofile_editthumbnail(event);" />
+											</p>
 
 										<label for="petnick">Pet-NickName</label> <input type="text"
 											name="petnick" placeholder="변경할 닉네임"> <label></label>
@@ -582,7 +679,7 @@ textarea#profile_edit_textarea {
 								</div>
 							</div>
 
-							<div class="detail_button" id="trigger_logout" meau-index="1">로그아웃</div>
+							<div class="detail_button" id="trigger_logout" meau-index="1" onClick="location.href='choice.jsp'">로그아웃</div>
 						</div>
 
 
@@ -593,11 +690,11 @@ textarea#profile_edit_textarea {
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br> 안녕하세요 다남입니다.</span>
+							<span>Intro Text<br> 안녕하세요 다남입니다.
+							</span>
 						</div>
 
-						<br>
-						<br>
+						<br> <br>
 						<p class="about">
 							<span class="nick_name">공개 게시물</span> <span class="book_mark">다이어리</span>
 						</p>
@@ -607,8 +704,8 @@ textarea#profile_edit_textarea {
 					<div class="profile_wrap_right">
 						<div class="emotion_counts">
 							<ul class="emotion_count">
-							<!-- 최근 감정 상태 해시태그 공유  -->
-								<li><span>최근 나의 상태는?</span> </li>
+								<!-- 최근 감정 상태 해시태그 공유  -->
+								<li><span>최근 나의 상태는?</span></li>
 								<li><span OnClick="location.href='#'" onfocus="blur();">#행복해</span></li>
 								<li><span OnClick="location.href='#'">#외출중</span></li>
 								<li><span OnClick="location.href='#'">#배고파_죽겠어</span></li>
@@ -624,11 +721,10 @@ textarea#profile_edit_textarea {
 						<a href="#"><img src="imgs/img_section/img01.jpg" alt=""></a>
 					</div>
 					<div class="pic">
-						<a href="follow.html"><img src="imgs/img_section/img02.jpg"
-							alt=""></a>
+						<a href="follow.html"><img src="imgs/img_section/img02.jpg" alt=""></a>
 					</div>
 					<div class="pic">
-						<a href=#"> <img src="imgs/img_section/img03.jpg" alt=""></a>
+						<a href="#"> <img src="imgs/img_section/img03.jpg" alt=""></a>
 					</div>
 					<div class="pic">
 						<a href="#"> <img src="imgs/img_section/img02.jpg" alt=""></a>
@@ -651,7 +747,7 @@ textarea#profile_edit_textarea {
 				</div>
 
 
-				<div class="bookmark_contents contents_container">
+				<div class="bookmark_contents contents_container active">
 					<div class="pic">
 						<a href="#"><img src="imgs/img_section/img03.jpg" alt=""></a>
 					</div>
@@ -680,144 +776,142 @@ textarea#profile_edit_textarea {
 						<a href="#"> <img src="imgs/img_section/img02.jpg" alt=""></a>
 					</div>
 				</div>
-
-
-
-
 			</section>
 		</div>
 
 
 	</section>
 
-	<script src = 'js/jquery-3.6.0.min.js'></script>
+	<script src='js/jquery-3.6.0.min.js'></script>
 	<script src="js/profile.js"></script>
-	<script type="text/javascript"> 
-        // *NewPost 모달 스크립트 *
-        var modal_post = document.querySelector(".modal_post"); 
-        var trigger_post = document.querySelector(".trigger_post"); 
-        var closeButton_post = document.querySelector(".post_closebutton"); 
-        var cancelButton_post = document.querySelector(".post_cancel");
-    
-       //console.log(modal);
-    
-       function posttoggleModal() { 
-            modal_post.classList.toggle("post-show-modal"); 
-        }
-    
-       function postwindowOnClick(event) { 
-            if (event.target === modal_post) { 
-                posttoggleModal(); 
-            } 
-        }
-    
-        trigger_post.addEventListener("click", posttoggleModal); 
-        closeButton_post.addEventListener("click", posttoggleModal); 
-        cancelButton_post.addEventListener("click", posttoggleModal); 
-        window.addEventListener("click", postwindowOnClick); 
-  
+	<script type="text/javascript">
+		// *NewPost 모달 스크립트 *
+		var modal_post = document.querySelector(".modal_post");
+		var trigger_post = document.querySelector(".trigger_post");
+		var closeButton_post = document.querySelector(".post_closebutton");
+		var cancelButton_post = document.querySelector(".post_cancel");
 
-    // NewPost 이미지 미리보기 
-    function setpostthumbnail(event) { 
-        var post_reader = new FileReader();
-            
-        post_reader.onload = function(event) { 
-             var post_to_remove = document.querySelector("div.post-upload");
-            while(post_to_remove.firstChild){
-                post_to_remove.removeChild(post_to_remove.firstChild);
-            }
-            var post_img = document.createElement("img");
-            post_img.setAttribute("src", event.target.result); 
-            post_img.style.width="450px";
-            post_img.style.height="450px";
-            document.querySelector("div.post-upload").appendChild(post_img); 
-        }; 
-            
-        post_reader.readAsDataURL(event.target.files[0]); }
+		//console.log(modal);
 
+		function posttoggleModal() {
+			modal_post.classList.toggle("post-show-modal");
+		}
 
+		function postwindowOnClick(event) {
+			if (event.target === modal_post) {
+				posttoggleModal();
+			}
+		}
 
+		trigger_post.addEventListener("click", posttoggleModal);
+		closeButton_post.addEventListener("click", posttoggleModal);
+		cancelButton_post.addEventListener("click", posttoggleModal);
+		window.addEventListener("click", postwindowOnClick);
 
+		// NewPost 이미지 미리보기 
+		function setpostthumbnail(event) {
+			var post_reader = new FileReader();
 
-        // *profile_edit 모달 스크립트 *
-        var modal_profile_edit = document.querySelector(".modal_profile_edit"); 
-        var trigger_profile_edit = document.querySelector("#trigger_profile_edit"); 
-        var closeButton_profile_edit = document.querySelector(".profile_edit_closebutton"); 
-        var cancelButton_profile_edit= document.querySelector(".profile_edit_cancel");
+			post_reader.onload = function(event) {
+				var post_to_remove = document.querySelector("div.post-upload");
+				while (post_to_remove.firstChild) {
+					post_to_remove.removeChild(post_to_remove.firstChild);
+				}
+				var post_img = document.createElement("img");
+				post_img.setAttribute("src", event.target.result);
+				post_img.style.width = "450px";
+				post_img.style.height = "450px";
+				document.querySelector("div.post-upload").appendChild(post_img);
+			};
 
-        //console.log(modal);
+			post_reader.readAsDataURL(event.target.files[0]);
+		}
 
-        function profile_edittoggleModal() { 
-            modal_profile_edit.classList.toggle("profile-edit-show-modal"); 
-        }
+		// *profile_edit 모달 스크립트 *
+		var modal_profile_edit = document.querySelector(".modal_profile_edit");
+		var trigger_profile_edit = document
+				.querySelector("#trigger_profile_edit");
+		var closeButton_profile_edit = document
+				.querySelector(".profile_edit_closebutton");
+		var cancelButton_profile_edit = document
+				.querySelector(".profile_edit_cancel");
 
-        function profile_editwindowOnClick(event) { 
-            if (event.target === modal_profile_edit) { 
-                profile_edittoggleModal(); 
-            } 
-        }
+		//console.log(modal);
 
-        trigger_profile_edit.addEventListener("click", profile_edittoggleModal); 
-        closeButton_profile_edit.addEventListener("click", profile_edittoggleModal); 
-        cancelButton_profile_edit.addEventListener("click", profile_edittoggleModal); 
-        window.addEventListener("click", profile_editwindowOnClick); 
+		function profile_edittoggleModal() {
+			modal_profile_edit.classList.toggle("profile-edit-show-modal");
+		}
 
+		function profile_editwindowOnClick(event) {
+			if (event.target === modal_profile_edit) {
+				profile_edittoggleModal();
+			}
+		}
 
+		trigger_profile_edit.addEventListener("click", profile_edittoggleModal);
+		closeButton_profile_edit.addEventListener("click",
+				profile_edittoggleModal);
+		cancelButton_profile_edit.addEventListener("click",
+				profile_edittoggleModal);
+		window.addEventListener("click", profile_editwindowOnClick);
 
-        // Profile_edit 이미지 미리보기 
-        function setprofile_editthumbnail(event) { 
-            var profile_edit_reader = new FileReader();
-            
-            profile_edit_reader.onload = function(event) { 
-                var proflie_to_remove = document.querySelector("div.profile-edit-upload");
-                while(proflie_to_remove.firstChild){
-                    proflie_to_remove.removeChild(proflie_to_remove.firstChild);
-                }
-                var profile_img = document.createElement("img");
-                profile_img.setAttribute("src", event.target.result); 
-                profile_img.style.width="250px";
-                profile_img.style.height="250px";
-                document.querySelector("div.profile-edit-upload").appendChild(profile_img); 
-            }; 
-            
-            profile_edit_reader.readAsDataURL(event.target.files[0]); }
-        
-        //* 버튼 이벤트 스크립트*
-        $('.detail_button').each(function(index){
+		// Profile_edit 이미지 미리보기 
+		function setprofile_editthumbnail(event) {
+			var profile_edit_reader = new FileReader();
+
+			profile_edit_reader.onload = function(event) {
+				var proflie_to_remove = document
+						.querySelector("div.profile-edit-upload");
+				while (proflie_to_remove.firstChild) {
+					proflie_to_remove.removeChild(proflie_to_remove.firstChild);
+				}
+				var profile_img = document.createElement("img");
+				profile_img.setAttribute("src", event.target.result);
+				profile_img.style.width = "250px";
+				profile_img.style.height = "250px";
+				document.querySelector("div.profile-edit-upload").appendChild(
+						profile_img);
+			};
+
+			profile_edit_reader.readAsDataURL(event.target.files[0]);
+		}
+
+		//* 버튼 이벤트 스크립트*
+		$('.detail_button').each(function(index) {
 			$(this).attr('menu-index', index);
+
 		}).mouseover(function(){
 		    /*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
 		    var index = $(this).attr('menu-index');
 		    /*클릭한 <div>에  clicked_menu 클래스 추가*/
-			$('.detail_button[menu-index=' + index + ']').addClass('clicked_detail_button'); 
+			$('x.detail_button[menu-index=' + inde + ']').addClass('clicked_detail_button'); 
 		    /*그 외 <div>는  clicked_menu 클래스 삭제*/
 			$('.detail_button[menu-index!=' + index + ']').removeClass('clicked_detail_button');
 		}).mouseout(function(){
 			 /*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
 		    var index = $(this).attr('menu-index');
 			$('.detail_button[menu-index=' + index + ']').removeClass('clicked_detail_button');
-		})
-		
-		;
-        
-        $('.post_submit').on('click',function(){
-        	//servlet -> database -> choice.jsp(a태그로 만들기)
-        	// 보내줄 데이터를 json구조로 만들어주기
-        	// split함수를 사용해서 데이터를 구조화하기!
-        	let data = {"tag":$('#post_textarea').val()};
+		});
+
+		$('.post_submit').on('click', function() {
+			//servlet -> database -> choice.jsp(a태그로 만들기)
+			// 보내줄 데이터를 json구조로 만들어주기
+			// split함수를 사용해서 데이터를 구조화하기!
+			let data = {
+				"tag" : $('#post_textarea').val()
+			};
 			$.ajax({
 				url : "servlet주소!",
-				data: data,
-				success : function(){
+				data : data,
+				success : function() {
 					console.log("데이터 보내기 성공!")
 				}
 			})
-        	
-        	//textarea 텍스트 데이터를 가져오는 코드
-        })
-        
 
-</script>
+			//textarea 텍스트 데이터를 가져오는 코드
+		})
+		
+	</script>
 
 </body>
 

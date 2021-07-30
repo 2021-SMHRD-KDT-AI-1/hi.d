@@ -49,6 +49,7 @@ public class memberDAO {
 		}
 	}
 
+	
 	public int Join(String email, String pw) {
 
 		try {
