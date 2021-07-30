@@ -1,3 +1,5 @@
+<%@page import="com.VO.feedVO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -24,7 +26,7 @@
     <meta property="og:description" content="instagram clone">
     <meta property="og:image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-    .
+
     <!-- Twitter Meta Tags / 트위터 -->
     <meta name="twitter:card" content="instagram clone">
     <meta name="twitter:title" content="instagram">
@@ -314,7 +316,11 @@ textarea {
 </head>
 
 <body>
-
+<%
+	ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("search_feed");
+	System.out.print(feeds.get(0));
+	
+%>
 
     <section id="container">
 
@@ -329,8 +335,10 @@ textarea {
                 </h1>
 
                 <div class="search_box">
+                <form action="searchpage.do nethod="post>
                     <input type="text" placeholder="검색"
-						id="search-field">
+						id="search-field" name="search">
+						</form>
 
                     <div class="fake_field">
                         <span class="sprite_small_search_icon"></span>

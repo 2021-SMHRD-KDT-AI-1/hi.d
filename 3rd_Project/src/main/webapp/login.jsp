@@ -23,7 +23,7 @@
     <meta property="og:description" content="instagram clone">
     <meta property="og:image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-    .
+
     <!-- Twitter Meta Tags / 트위터 -->
     <meta name="twitter:card" content="instagram clone">
     <meta name="twitter:title" content="instagram">
@@ -301,6 +301,50 @@ li a:hover {
 .right_icons .menu:nth-child(5) a {
 	background: transparent !important;
 }
+
+/*로그인버튼 CSS*/
+.form input .login_button{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.login_button{
+    width: 230px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.login_button:hover{
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.login_button:focus{
+    outline: none;
+}
+
+.login_button_button{
+    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+
 </style>
 
 </head>
@@ -373,7 +417,7 @@ li a:hover {
 
                 <h1 class="sprite_insta_big_logo title"></h1>
 
-                <form action="LoginCon" method="post">
+                <form action="LoginCon.do" method="post">
                     <p class="login_user_name">
                         <label for="user_name">사용자명:</label>
                         <input type="text" id="user_name" name="email">
@@ -383,13 +427,13 @@ li a:hover {
                         <label for="user_password">비밀번호:</label>
                         <input type="text" id="user_password" name="pw">
                     </p>
-                    <a onclick="location.href='choice.jsp'" href="#">로그인
-                        <!--
+
+                    <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
+                        
 
                             <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
 
-                        -->
-                </a>
+                        
                 </form>
 
 
@@ -404,7 +448,7 @@ li a:hover {
                     <div class="flex1">
                         <div class="modal2"> 
                            <div class="modal-content2">
-                    <form action="JoinCon" class="join_form"
+                    <form action="JoinCon.do" class="join_form"
 										method="POST">
                     <div class="title1">JOIN</div>
                         
@@ -476,7 +520,7 @@ li a:hover {
  // *모달 스크립트 *
  var modal2 = document.querySelector(".modal2"); 
  var join_btn = document.querySelector(".join_btn"); 
-  var submit_btn1 = document.querySelector(".submit_btn1"); 
+ var submit_btn1 = document.querySelector(".submit_btn1"); 
 
 
 //    console.log(modal1);

@@ -177,7 +177,12 @@ ul.emotion_count li, ol.emotion_count li {
     max-width:300px;
     max-height:300px;
     overflow:hidden;
+<<<<<<< HEAD
     margin-bottom: 18px;
+=======
+    margin-buttom:18px;
+   
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 }
 
 .contents_container .pic img{

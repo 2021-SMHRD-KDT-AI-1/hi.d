@@ -111,9 +111,11 @@ body {
 
 .sprite_insta_big_logo {
     display: inline-block;
-    background: url('../imgs/background02.png') no-repeat -98px -150px;
-    width: 175px;
-    height: 51px;
+    background: url('../imgs/icons/imagelogo.png');
+    text-align: center;
+    background-size: 200px 80px;
+    width: 200px;
+    height: 80px;
 }
 
 .sprite_plus_icon {

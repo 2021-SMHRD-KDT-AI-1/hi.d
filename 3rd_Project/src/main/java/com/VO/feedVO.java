@@ -32,6 +32,14 @@ public class feedVO {
 		this.f_lock = f_lock;
 		this.upload_time = upload_time;
 	}
+	
+	public feedVO(int pet_num, String img_addr, String feed_content, String f_lock) {
+		super();
+		this.pet_num = pet_num;
+		this.img_addr = img_addr;
+		this.feed_content = feed_content;
+		this.f_lock = f_lock;
+	}
 
 	public feedVO(int feed_num) {
 		super();
@@ -41,6 +49,7 @@ public class feedVO {
 	public int getFeed_num() {
 		return feed_num;
 	}
+	
 	public void setFeed_num(int feed_num) {
 		this.feed_num = feed_num;
 	}

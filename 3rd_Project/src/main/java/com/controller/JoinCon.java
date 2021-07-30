@@ -24,7 +24,7 @@ public class JoinCon implements Command{
 			moveURL = "choice.jsp";
 		}
 		
-		return null;
+		return moveURL;
 	}
 
 		
