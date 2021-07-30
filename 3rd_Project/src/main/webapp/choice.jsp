@@ -18,20 +18,7 @@
 <meta name="viewport"
 	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-<<<<<<< HEAD
-    <!-- Facebook Meta Tags / 페이스북 오픈 그래프 -->
-    <meta property="og:url" content="http://kindtiger.dothome.co.kr/insta">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="instagram">
-    <meta property="og:description" content="instagram clone">
-    <meta property="og:image" content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
-    <!-- Twitter Meta Tags / 트위터 -->
-    <meta name="twitter:card" content="instagram clone">
-    <meta name="twitter:title" content="instagram">
-    <meta name="twitter:description" content="instagram clone">
-    <meta name="twitter:image" content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-=======
 <!-- Facebook Meta Tags / 페이스북 오픈 그래프 -->
 <meta property="og:url" content="http://kindtiger.dothome.co.kr/insta">
 <meta property="og:type" content="website">
@@ -39,7 +26,6 @@
 <meta property="og:description" content="instagram clone">
 <meta property="og:image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
 <!-- Twitter Meta Tags / 트위터 -->
 <meta name="twitter:card" content="instagram clone">
@@ -513,17 +499,7 @@ li a:hover {
                                             <option value="기타">기타</option>
                                         </select>
                                     </p>
-<<<<<<< HEAD
-                    -->
-                                    <p>
-                                        <textarea name="content" id="text_field" cols="50" rows="5" placeholder="140자 까지 등록 가능합니다. #태그명 을 통해서 검색 태그를 등록할 수 있습니다.예시 : I # love # insta!"></textarea>
-                                    </p>
-                                    <input class="submit_btn" type="submit" value="저장">
-                                </form>
-                            </div>
-                         </div>
-                         </div>
-=======
+
                                      -->
 									<p>
 										<textarea name="content" id="text_field" cols="50" rows="5"
@@ -534,14 +510,8 @@ li a:hover {
 							</div>
 						</div>
 					</div>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
-<<<<<<< HEAD
-                    <button class="button"><img src= "imgs/bear.png"></button>
-                    <button class="button"><img src= "imgs/Black-Dog-PNG.png"></button>
-                    <button class="button"><img src= "imgs/Black-Dog-PNG.png"></button>
-                  </div>
-=======
+
 					<button class="button">
 						<img src="/imgs/bear.png">
 					</button>
@@ -552,7 +522,6 @@ li a:hover {
 						<img src="/imgs/Black-Dog-PNG.png">
 					</button>
 				</div>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
 
 
@@ -604,7 +573,7 @@ li a:hover {
 	
 		
     //라디오버튼 눌러서 체크박스 값 불러오기
-    //<%
+    <%
     	//try {
     	//	petDAO dao = new petDAO();
     	//	ArrayList<String> species_list = dao.species_select(String CorD);
@@ -619,8 +588,7 @@ li a:hover {
     //	}
   //  %>
 
- 
-<!-- </script>
+ </script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>

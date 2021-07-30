@@ -427,17 +427,13 @@ li a:hover {
                         <label for="user_password">비밀번호:</label>
                         <input type="text" id="user_password" name="pw">
                     </p>
-<<<<<<< HEAD
-                    <input type="submit" class="login_submit" value="로그인">
-=======
+
                     <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
                         
 
                             <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
 
                         
-               
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
                 </form>
 
 

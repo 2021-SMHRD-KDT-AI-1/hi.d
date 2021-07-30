@@ -204,11 +204,7 @@ li a:hover {
                             </a></li>
                         <li class="bg"></li>
                     </ul>
-<<<<<<< HEAD
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
-
-<<<<<<< HEAD
 				<div class="right_icons">
 					<a href="new_post.jsp"><div class="sprite_camera_icon"></div></a> <a
 						href="login.jsp"><div class="sprite_compass_icon"></div></a> <a
@@ -217,10 +213,6 @@ li a:hover {
 				</div>
 			</section>
 		</header>
-=======
-=======
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
                 </div>
 
 

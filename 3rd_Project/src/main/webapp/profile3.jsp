@@ -879,26 +879,7 @@ textarea#profile_edit_textarea {
 		//* 버튼 이벤트 스크립트*
 		$('.detail_button').each(function(index) {
 			$(this).attr('menu-index', index);
-<<<<<<< HEAD
-		}).mouseover(
-				function() {
-					/*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
-					var index = $(this).attr('menu-index');
-					/*클릭한 <div>에  clicked_menu 클래스 추가*/
-					$('.detail_button[menu-index=' + index + ']').addClass(
-							'clicked_detail_button');
-					/*그 외 <div>는  clicked_menu 클래스 삭제*/
-					$('.detail_button[menu-index!=' + index + ']').removeClass(
-							'clicked_detail_button');
-				}).mouseout(
-				function() {
-					/*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
-					var index = $(this).attr('menu-index');
-					$('.detail_button[menu-index=' + index + ']').removeClass(
-							'clicked_detail_button');
-				})
 
-=======
 		}).mouseover(function(){
 		    /*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
 		    var index = $(this).attr('menu-index');
@@ -910,10 +891,7 @@ textarea#profile_edit_textarea {
 			 /*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
 		    var index = $(this).attr('menu-index');
 			$('.detail_button[menu-index=' + index + ']').removeClass('clicked_detail_button');
-		})
-		
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
-		;
+		});
 
 		$('.post_submit').on('click', function() {
 			//servlet -> database -> choice.jsp(a태그로 만들기)
