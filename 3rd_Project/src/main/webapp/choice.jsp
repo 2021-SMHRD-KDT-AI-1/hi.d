@@ -34,10 +34,11 @@
     
     <!-- Line Awesome CDN Link/ 라디오버튼 아이콘 링크-->
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-        
-
-
-
+    
+    
+    <!-- 경고창 css 링크-->    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 
     <title>instagram</title>
     <link rel="stylesheet" href="css/reset.css">
@@ -62,7 +63,7 @@ html, body {
 }
 
 .wrap {
-  height: 100%;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +72,7 @@ html, body {
 
 .button {
 
-  max-width: 15%;
+  max-width: 10%;
 
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
@@ -90,7 +91,7 @@ html, body {
   }
   /* 프로필편집 추가 버튼 */
   .plus_button {
-  max-width: 15%;
+  max-width: 10%;
 
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
@@ -303,7 +304,7 @@ li a:hover {
     <section id="container">
 
         <header id="header">
-            <section class="inner">
+            <section class="inner" onclick="func()" width="500">
 
                 <h1 class="logo">
                     <a href="index.jsp">
@@ -315,8 +316,8 @@ li a:hover {
                 </h1>
 
                 <div class="search_box">
-                    <input type="text" placeholder="검색"
-						id="search-field">
+                    <input type="text" placeholder="검색" id="search-field">
+						
 
                     <div class="fake_field">
                         <span class="sprite_small_search_icon"></span>
@@ -333,14 +334,14 @@ li a:hover {
                     </ul>
                     <ul class="menu">
                         <li><a
-							onclick="location.href='likepage.jsp'" href="#">
+							onclick="" href="#">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
                         <li><a
-							onclick="location.href='profile3.jsp'" href="#">
+							onclick="" href="#">
                                 <div class="sprite_user_icon_outline"></div>
                             </a></li>
                         <li class="bg"></li>
@@ -358,8 +359,9 @@ li a:hover {
 
         </header>
 
+
         <section id="main_container">
-            <span style="align-items: center; font-size: 200%;">누구의 계정으로 로그인 할까요??</span>
+            <!--<span style="align-items: center; font-size: 200%;">누구의 계정으로 로그인 할까요??</span> -->
 
         </section>
 
@@ -382,7 +384,7 @@ li a:hover {
 
                 <div class="wrap">
                     <button class="plus_button">
-                        <img src= "/imgs/plus.png" style="opacity: 20%;"></button>
+                        <img src= "imgs/plus.png" style="opacity: 20%;"></button>
                          <!-- 프로필 편집 모달창 -->
                          <div class="flex">
                          <div class="modal1"> 
@@ -396,8 +398,8 @@ li a:hover {
                                             <div class="post_btn">
                                                 <div class="plus_icon">
                                                     <span></span>
-                                                    <span></sp
-                                                        an>
+                                                    <span></span>
+                                                        
                                                 </div>
                                         
                                                 <p>프로필 이미지 추가</p>
@@ -515,9 +517,8 @@ li a:hover {
                          </div>
                          </div>
 
-                    <button class="button"><img src= "/imgs/bear.png"></button>
-                    <button class="button"><img src= "/imgs/Black-Dog-PNG.png"></button>
-                    <button class="button"><img src= "/imgs/Black-Dog-PNG.png"></button>
+                    <button class="button"><img src= "/imgs/.png"></button>
+               
                   </div>
 
 
@@ -624,6 +625,11 @@ function DogOrCat(event){
 
 </script>
 
+<script type="text/javascript">
+function func() {
+	swal("","로그인을 해주세요","warning");
+}
+</script>
 
 </body>
 

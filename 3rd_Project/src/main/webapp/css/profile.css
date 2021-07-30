@@ -12,7 +12,7 @@
 }
 
 .profile_img{
-	border : 1px #e6e6e6; 
+   border : 1px #e6e6e6; 
     width: 200px;
     height: 200px;
     overflow:hidden;
@@ -46,21 +46,21 @@
 }
 
 .detail_button{ /*기본 menu 버튼 style 속성*/   
-		position: relative;
-		color: #5f6368;
-		border: solid 1px #dadce0;
-		border-radius: 1vw;
-		display: inline-block;
-		padding: 6px 8px 6px 8px; 
-		/*padding: top right bottom left*/
-		cursor: pointer;
-	}
+      position: relative;
+      color: #5f6368;
+      border: solid 1px #dadce0;
+      border-radius: 1vw;
+      display: inline-block;
+      padding: 6px 8px 6px 8px; 
+      /*padding: top right bottom left*/
+      cursor: pointer;
+   }
 
 .clicked_detail_button{ /*클릭 시 적용되는 style 속성*/
-		border-color: #ec7600;
-		color: #ec7600;
-		background: #ffe2c6;
-	}
+      border-color: #ec7600;
+      color: #ec7600;
+      background: #ffe2c6;
+   }
 
 .detail .top #trigger_profile_edit{
     font-size: 15px;
@@ -99,8 +99,6 @@
     font-size: 15px;
     font-weight: 600;
 }
-
-
 
 
 .detail .middle > li{
@@ -147,8 +145,8 @@
 }
 
 .profile_wrap_right .emotion_counts{
-	margin-top:20px;
-	margin-left:30px;
+   margin-top:20px;
+   margin-left:30px;
 }
 
 .detail .emotion_count{
@@ -156,7 +154,7 @@
     align-items: center;
 }
 
- /* 감정 카운트 */
+ /* 최근 감정 해시태그 */
 ul.emotion_count li, ol.emotion_count li {
     padding: 5px 0px 5px 5px;
     margin-bottom: 5px;
@@ -171,7 +169,6 @@ ul.emotion_count li, ol.emotion_count li {
     display: none;
 }
 
-
 .contents_container.active{
     display: flex;
 }
@@ -181,8 +178,6 @@ ul.emotion_count li, ol.emotion_count li {
     max-height:300px;
     overflow:hidden;
     margin-bottom: 18px;
-
-
 }
 
 .contents_container .pic img{
@@ -191,19 +186,17 @@ ul.emotion_count li, ol.emotion_count li {
 }
 
 
-@media screen and (max-width:1000px){
+@media screen and (min-width:300px) and (max-width:1000px) {
 
     .contents_container {
-        justify-content: center;
-
+        justify-content: space-between;
     }
 
 
     .contents_container .pic{
-        margin:10px;
+        /* margin:10px; */
     }
 }
-
 
 
 

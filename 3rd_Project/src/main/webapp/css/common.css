@@ -47,10 +47,10 @@ body {
 
 .sprite_heart_icon_outline {
     display: inline-block;
-    background: url('../imgs/like_icon.png'); 
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
+    background: url('../imgs/icons/like_icon.png'); 
+    background-size: 21px 24px;
+    width: 21px;
+    height: 24px;
 }
 
 .sprite_small_search_icon {
@@ -70,9 +70,9 @@ body {
 .sprite_bubble_icon {
     display: inline-block;
     background: url('../imgs/icons/reply_icon.png');
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
+    background-size: 21px 24px;
+    width: 21px;
+    height: 24px;
 }
 
 .sprite_share_icon {

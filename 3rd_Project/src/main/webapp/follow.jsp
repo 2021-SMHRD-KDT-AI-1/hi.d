@@ -41,6 +41,173 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="shortcut icon" href="imgs/instagram.png">
+  <style type="text/css">
+.modal .body {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	font-size: 16px;
+	color: #999;
+}
+
+.modal .title {
+	font-family: 'Oswald', sans-serif;
+	margin: 0%;
+	font-size: 30px;
+	color: #353535ea;
+}
+
+.modal label {
+	display: block;
+	margin-top: 20px;
+	letter-spacing: 2px;
+}
+
+/* form {  
+ 
+    } */
+input, textarea {
+	width: 439px;
+	height: 27px;
+	background-color: #efefef;
+	border-radius: 6px;
+	border: 1px solid #dedede;
+	padding: 10px;
+	margin-top: 3px;
+	font-size: 0.9em;
+	color: #3a3a3a;
+}
+
+input#chk_open {
+	width: 20px;
+	height: 20px;
+}
+
+textarea {
+	height: 100px;
+	background-color: #efefef;
+}
+
+#submit {
+	width: 127px;
+	height: 48px;
+	text-align: center;
+	border: none;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#submit:hover {
+	color: #fff;
+	background-color: #353535ea;
+	opacity: 0.9;
+}
+
+#cancel {
+	width: 127px;
+	height: 48px;
+	text-align: center;
+	border: none;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#cancel:hover {
+	color: #fff;
+	background-color: #353535ea;
+	opacity: 0.9;
+}
+
+.modal {
+	z-index: 1;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(1.1);
+	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform
+		0.25s;
+}
+
+.modal_check {
+	text-align: center;
+}
+
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 1rem 1.5rem;
+	width: 1100px;
+	height: 700px;
+	border-radius: 0.5rem;
+}
+
+.upload {
+	max-width: 550px;
+	width: 450px;
+	height: 450px;
+	border: 1px solid #e6e6e6;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* position: relative; */
+	float: center;
+}
+
+.behavior_analysis {
+	max-width: 350px;
+	height: 350px;
+	border: 1px solid #e6e6e6;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.close-button {
+	float: right;
+	width: 1.5rem;
+	line-height: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 0.25rem;
+	background-color: lightgray;
+}
+
+.modal-content p, h1, label {
+	text-align: center;
+}
+
+.modal-content input {
+	align-items: center;
+}
+
+.close-button:hover {
+	background-color: darkgray;
+}
+
+.show-modal {
+	z-index: 5;
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1.0);
+	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.upload_form {
+	column-count: 2;
+	column-gap: 100px;
+}
+</style>
 
 <style>
 .b_inner .contents_box {
@@ -137,6 +304,48 @@ li a:hover {
 	background: transparent !important;
 }
 
+/*팔로우게시물 더보기메뉴*/
+.sprite_more_icon{
+  
+  margin: 16px;
+  background-color: white;
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  top: 3px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 43px;
+  right:-20px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+ .dropdown-content a:hover {background-color: #ddd;}
+   
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover.dropbtn {background-color: #3e8e41;}
+
+
+
+
+
 </style>
 
 </head>
@@ -144,33 +353,10 @@ li a:hover {
 
 
 	<section id="container">
-
-<<<<<<< HEAD
-		<header id="header">
-			<section class="h_inner">
-=======
         <header id="header">
             <section class="inner">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
-<<<<<<< HEAD
-				<h1 class="logo">
-					<a href="index.jsp">
-						<div class="sprite_insta_icon"></div>
-						<div>
-							<div class="sprite_write_logo"></div>
-						</div>
-					</a>
-				</h1>
 
-				<div class="search_field">
-					<input type="text" placeholder="검색" tabindex="0">
-
-					<div class="fake_field">
-						<span class=sprite_small_search_icon></span> <span>검색</span>
-					</div>
-				</div>
-=======
                 <h1 class="logo">
                     <a href="test4.html">
                         <div class="sprite_insta_icon"></div>
@@ -209,19 +395,9 @@ li a:hover {
                             </a></li>
                         <li class="bg"></li>
                     </ul>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 
 
-<<<<<<< HEAD
-				<div class="right_icons">
-					<a href="new_post.jsp"><div class="sprite_camera_icon"></div></a> <a
-						href="login.jsp"><div class="sprite_compass_icon"></div></a> <a
-						href="follow.jsp"><div class="sprite_heart_icon_outline"></div></a>
-					<a href="profile.jsp"><div class="sprite_user_icon_outline"></div></a>
-				</div>
-			</section>
-		</header>
-=======
+
 
                 </div>
 
@@ -232,8 +408,59 @@ li a:hover {
             </section>
 
         </header>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
+ <h1>업로드 창 띄우기</h1>
+        <!-- 버튼 -->
+        <button class="trigger">게시물 업로드</button>
 
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h1 class="title">NEW POST</h1>
+                <label></label>
+                <form class="upload_form" action="#post.php"
+					method="POST">
+                    <label></label>
+                    <div class="preview">
+                        <!-- 이미지 미리보기 영역 -->
+                        <div class="upload">
+                            <div class="post_btn">
+                                <div class="logo_icon">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <p>NEW POST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        <!-- 첨부파일(이미지파일만 업로드) -->
+                        <input type="file" name="photo" id="id_photo"
+							accept="video/*|image/*" onchange="setThumbnail(event);" />
+                    </p>
+
+                    <label></label>
+                    <p>
+                        <!-- 공개 비공개 -->
+                        <input type="radio" id="chk_open"
+							name="chk_open" value="공개" checked="checked">공개
+                        <input type="radio" id="chk_open"
+							name="chk_open" value="비공개">비공개
+                    </p>
+
+                    <label for="behavior_analysis">Hi,Dear!</label>
+                    <div class="behavior_analysis"></div>
+
+                    <label for="contents">Contents</label>
+                    <textarea name="contents" placeholder="#해시태그 & 문구입력"></textarea>
+
+                    <div class="modal_check">
+                        <input type="button" id="cancel" value="취소">
+                        <input type="submit" id="submit" value="업로드">
+                    </div>
+                </form>
+            </div>
+        </div>
 
 		<div id="main_container">
 
@@ -252,7 +479,14 @@ li a:hover {
 									<div class="country">Seoul, South Korea</div>
 								</div>
 							</div>
-							<div class="sprite_more_icon"></div>
+							
+							<div class ="dropdown">
+					<div class="sprite_more_icon"></div>
+							  <div class="dropdown-content">
+								   <a href="#">게시물 수정</a>
+								   <a href="#">게시물 삭제</a>
+							</div>								
+							</div>
 						</header>
 
 						<div class="img_section">
@@ -324,7 +558,64 @@ li a:hover {
 
 	</section>
 
-	<!--<script src="js/insta.js"></script>-->
+	<script type="text/javascript">
+	
+	// *모달 스크립트 *
+    var modal = document.querySelector(".modal");
+    var trigger = document.querySelector(".trigger");
+    var closeButton = document.querySelector(".close-button");
+    var cancelButton = document.querySelector("#cancel");
+
+    //console.log(modal);
+
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    cancel.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+
+    // // 편집 이미지 추가 
+    // var fileInput  = document.querySelector( "#id_photo" )
+
+    //    // Show image
+    //    fileInput.addEventListener('change', handleImage, false);
+    //    var canvas = document.getElementById('imageCanvas');
+    //    var ctx = canvas.getContext('2d');
+
+
+    // 이미지 미리보기 
+    function setThumbnail(event) {
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+            var to_remove = document.querySelector("div.upload");
+            while (to_remove.firstChild) {
+                to_remove.removeChild(to_remove.firstChild);
+            }
+            var img = document.createElement("img");
+            img.setAttribute("src", event.target.result);
+            img.style.width = "450px";
+            img.style.height = "450px";
+            document.querySelector("div.upload").appendChild(img);
+        };
+
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+	
+	
+	
+	
+	</script>
 </body>
 </html>
 </body>
