@@ -154,7 +154,7 @@ input, textarea {
 	border-radius: 6px;
 	border: 1px solid #dedede;
 	padding: 10px;
-	margin-top: 3px;
+	margin-top: 8px;
 	font-size: 0.9em;
 	color: #3a3a3a;
 }
@@ -570,7 +570,7 @@ pic::-webkit-media-controls {
 											<label></label><label></label>
 										</div>
 									</div>
-									<label></label>
+						
 									<p>
 										<!-- 첨부파일(이미지파일만 업로드) -->
 										<input type="file" name="photo" id="post_photo"
@@ -839,11 +839,11 @@ pic::-webkit-media-controls {
 				while (post_to_remove.firstChild) {
 					post_to_remove.removeChild(post_to_remove.firstChild);
 				}
-				var post_img = document.createElement("img");
-				post_img.setAttribute("src", event.target.result);
-				post_img.style.width = "450px";
-				post_img.style.height = "450px";
-				document.querySelector("div.post-upload").appendChild(post_img);
+				var post_video = document.createElement("video");
+				post_video.setAttribute("src", event.target.result);
+				post_video.style.width = "450px";
+				post_video.style.height = "350px";
+				document.querySelector("div.post-upload").appendChild(post_video);
 			};
 
 			post_reader.readAsDataURL(event.target.files[0]);
@@ -921,17 +921,6 @@ pic::-webkit-media-controls {
 
 		;
 
-		// 동영상 미리보기 hover
-		// const VideoController = function(isHovering, videoElement){
-		// 	if (isHovering == true)
-		// 	{
-		// 		videoElement.play();
-		// 	}
-		// 	else if (isHovering == false)
-		// 	{
-		// 		videoElement.pause();
-		// 	}
-		// }
 
 		$('.post_submit').on('click', function() {
 			//servlet -> database -> choice.jsp(a태그로 만들기)
