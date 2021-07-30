@@ -20,7 +20,7 @@
     <meta property="og:title" content="instagram">
     <meta property="og:description" content="instagram clone">
     <meta property="og:image" content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-    .
+
     <!-- Twitter Meta Tags / 트위터 -->
     <meta name="twitter:card" content="instagram clone">
     <meta name="twitter:title" content="instagram">
@@ -390,8 +390,7 @@ li a:hover {
                                             <div class="post_btn">
                                                 <div class="plus_icon">
                                                     <span></span>
-                                                    <span></sp
-                                                        an>
+                                                    <span></span>
                                                 </div>
                                         
                                                 <p>프로필 이미지 추가</p>
@@ -411,7 +410,7 @@ li a:hover {
                     
                                     <div class="radio-buttons">
                                         <label class="custom-radio">
-                                          <input type="radio" name="radio_gender"  />
+                                          <input type="radio" name="radio_gender"/>
                                           <span class="radio-btn">
                                             <i class="las la-check"></i>
                                             <div class="genders-icon">
@@ -421,7 +420,7 @@ li a:hover {
                                           </span>
                                         </label>
                                         <label class="custom-radio">
-                                            <input type="radio" name="radio_gender" />
+                                            <input type="radio" name="radio_gender"/>
                                             <span class="radio-btn">
                                               <i class="las la-check"></i>
                                               <div class="genders-icon">
@@ -499,7 +498,7 @@ li a:hover {
                                             <option value="기타">기타</option>
                                         </select>
                                     </p>
-                                     -->
+                    -->
                                     <p>
                                         <textarea name="content" id="text_field" cols="50" rows="5" placeholder="140자 까지 등록 가능합니다. #태그명 을 통해서 검색 태그를 등록할 수 있습니다.예시 : I # love # insta!"></textarea>
                                     </p>
@@ -509,9 +508,9 @@ li a:hover {
                          </div>
                          </div>
 
-                    <button class="button"><img src= "/imgs/bear.png"></button>
-                    <button class="button"><img src= "/imgs/Black-Dog-PNG.png"></button>
-                    <button class="button"><img src= "/imgs/Black-Dog-PNG.png"></button>
+                    <button class="button"><img src= "imgs/bear.png"></button>
+                    <button class="button"><img src= "imgs/Black-Dog-PNG.png"></button>
+                    <button class="button"><img src= "imgs/Black-Dog-PNG.png"></button>
                   </div>
 
 

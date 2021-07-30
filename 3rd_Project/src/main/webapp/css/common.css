@@ -36,10 +36,10 @@ body {
 
 .sprite_heart_icon_outline {
     display: inline-block;
-    background: url('../imgs/like_icon.png'); 
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
+    background: url('../imgs/icons/like_icon.png'); 
+    background-size: 21px 24px;
+    width: 21px;
+    height: 24px;
 }
 
 .sprite_small_search_icon {
@@ -59,9 +59,9 @@ body {
 .sprite_bubble_icon {
     display: inline-block;
     background: url('../imgs/icons/reply_icon.png');
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
+    background-size: 21px 24px;
+    width: 21px;
+    height: 24px;
 }
 
 .sprite_share_icon {
@@ -100,9 +100,11 @@ body {
 
 .sprite_insta_big_logo {
     display: inline-block;
-    background: url('../imgs/background02.png') no-repeat -98px -150px;
-    width: 175px;
-    height: 51px;
+    background: url('../imgs/icons/imagelogo.png');
+    text-align: center;
+    background-size: 200px 80px;
+    width: 200px;
+    height: 80px;
 }
 
 .sprite_plus_icon {
