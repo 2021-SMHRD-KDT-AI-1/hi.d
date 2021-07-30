@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import com.VO.emotionVO;
 import com.VO.memberVO;
 import com.VO.petVO;
-import com.VO.speciesVO;
 
 public class petDAO {
 
@@ -54,21 +53,18 @@ public class petDAO {
 		}
 	}
 	
-	
-
-	
 	//프로필 생성
-	public int PetJoin(petVO vo) {
+	public int PetJoin(petVO petinfo) {
 		try {
 			getConn();
 			sql = "insert into petinfo values(pet_num_seq.nextval, ?, ?, ?, ?, ?, ?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getPet_nick());
-			psmt.setString(2, vo.getPet_profile());
-			psmt.setString(3, vo.getPet_introduce());
-			psmt.setString(4, vo.getPet_gen());
-			psmt.setString(5, vo.getSpecies());
-			psmt.setString(6, vo.getEmail());
+			psmt.setString(1, petinfo.getPet_nick());
+			psmt.setString(2, petinfo.getPet_profile());
+			psmt.setString(3, petinfo.getPet_introduce());
+			psmt.setString(4, petinfo.getPet_gen());
+			psmt.setString(5, petinfo.getSpecies());
+			psmt.setString(6, petinfo.getEmail());
 
 			cnt = psmt.executeUpdate();
 
@@ -78,34 +74,6 @@ public class petDAO {
 			close();
 		}
 		return cnt;
-	}
-	
-	// 종 모아둔거
-	public ArrayList<String> species_select(String CorD) {
-			ArrayList<String> species_list = new ArrayList<>();
-			try {
-				getConn();
-				sql="select species from species where CorD = ?";
-				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, CorD);
-
-				rs = psmt.executeQuery();
-				
-				while(rs.next()) {
-					String getSpecies = rs.getString(1);
-					String getCorD = rs.getString(2);
-
-					if (CorD.equals(getCorD)) {
-						species_list.add(getSpecies);
-					}
-				}
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				close();
-			}
-			return species_list;
 	}
 	
 	// 프로필 선택
@@ -140,7 +108,7 @@ public class petDAO {
 	}
 
 	// 프로필 수정 //vo묶기
-	public int update_pet(String pet_nick, String pet_profile, String pet_introduce) {
+	public int update_pet(petVO petinfo) {
 		try {
 			
 			getConn();
@@ -148,9 +116,9 @@ public class petDAO {
 			sql = "update petinfo set pet_nick = ?, pet_profile = ?, pet_introduce = ?";
 			
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, pet_nick);
-			psmt.setString(2, pet_profile);
-			psmt.setString(3, pet_introduce);
+			psmt.setString(1, petinfo.getPet_nick());
+			psmt.setString(2, petinfo.getPet_profile());
+			psmt.setString(3, petinfo.getPet_introduce());
 			
 			cnt = psmt.executeUpdate();
 			
@@ -211,8 +179,5 @@ public class petDAO {
 		}
 		return cnt;
 	}
-
-	
-
 	
 }
