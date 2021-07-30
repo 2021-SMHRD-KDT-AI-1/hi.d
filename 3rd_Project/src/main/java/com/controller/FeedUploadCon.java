@@ -12,7 +12,7 @@ import com.VO.petVO;
 import com.VO.speciesVO;
 import com.command.Command;
 
-public class FeedUpload implements Command{
+public class FeedUploadCon implements Command{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {

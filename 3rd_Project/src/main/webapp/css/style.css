@@ -862,7 +862,7 @@ body{
 
 
 #main_container{
-    padding-top: 130px;
+    padding-top: 100px;
     display: flex;
     justify-content: center;
 }
@@ -1201,7 +1201,7 @@ body{
     }
 
     #main_container{
-        padding-top: 220px;
+        padding-top: 60px;
     }
     #main_container .inner{
         width: 93.5%;

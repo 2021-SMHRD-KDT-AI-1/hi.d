@@ -607,8 +607,9 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                           <img class="personal_contents" src="imgs/img_section/img01.jpg"
-                              alt="visual01">
+                           <video class="personal_contents" controls>
+                           <source src="videos/dog1.mp4" type="video/mp4"/>
+                           </video>
                         </div>
                             </div>
                         </div>
@@ -951,13 +952,37 @@ li a:hover {
                 //이미지 섹션안 trans_inner안 trans_inner_inner
 
 
-                var new_personal_contents = document.createElement("img")
+                
+                
+                //이부분source 값 추가 어떻게하는지?
+                		
+                		
+                		
+//                var new_personal_contents = document.createElement("img")
+//
+//                new_personal_contents.classList.add("personal_contents")
+//
+//                new_personal_contents.src = "imgs/img_section/img01.jpg"
+//                new_trans_inner_inner.append(new_personal_contents)
+                //이미지 부분 영상으로 변경 
+                
+                
+                var new_personal_contents = document.createElement("video")
 
                 new_personal_contents.classList.add("personal_contents")
+                
+                var video_source =  document.createElement("source")
+                
+                video_source.src = "videos/dog1.mp4"
+                
+                //타입부분 어케추가하누 ㅜㅠㅜㅠㅜㅠㅜ
+                //<source src="videos/dog1.mp4" type="video/mp4"/>
 
-                new_personal_contents.src = "imgs/img_section/img01.jpg"
+                new_personal_contents.append(video_source)
+                
                 new_trans_inner_inner.append(new_personal_contents)
-                //이미지 
+                
+                
 
 
 
