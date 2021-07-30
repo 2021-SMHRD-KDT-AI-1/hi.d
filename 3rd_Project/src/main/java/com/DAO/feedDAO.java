@@ -194,6 +194,34 @@ public class feedDAO {
 		}
 		return feeds;
 	}
+	
+	//  search 피드 전부 가져오기
+	public ArrayList<feedVO> search_feed(String tag){
+		ArrayList<feedVO> feeds = new ArrayList<>();
+		feedVO one_feed = null;
+		try {
+			getConn();
+			sql = "select * from feedinfo where feed_content like '%" + tag + "%'";
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				one_feed.setFeed_num(rs.getInt(1));
+				one_feed.setPet_num(rs.getInt(2));
+				one_feed.setImg_addr(rs.getString(3));
+				one_feed.setFeed_content(rs.getString(4));
+				one_feed.setLike_pet(rs.getString(5));
+				one_feed.setF_lock(rs.getString(6));
+				one_feed.setUpload_time(rs.getDate(7));
+				feeds.add(one_feed);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return feeds;
+	}
 
 	// n번째 글부터 m번째 글까지 가져오기
 	public ArrayList<feedVO> get_feed_n_to_m(int n, int m){

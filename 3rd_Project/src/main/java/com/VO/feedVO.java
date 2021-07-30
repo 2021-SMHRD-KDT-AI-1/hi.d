@@ -41,6 +41,7 @@ public class feedVO {
 	public int getFeed_num() {
 		return feed_num;
 	}
+	
 	public void setFeed_num(int feed_num) {
 		this.feed_num = feed_num;
 	}

@@ -1,3 +1,6 @@
+<%@page import="com.VO.feedVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="jdk.internal.misc.FileSystemOption"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -314,7 +317,11 @@ textarea {
 </head>
 
 <body>
-
+<%
+	ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("search_feed");
+	System.out.print(feeds.get(0));
+	
+%>
 
     <section id="container">
 
@@ -329,8 +336,10 @@ textarea {
                 </h1>
 
                 <div class="search_box">
+                <form action="searchpage.do nethod="post>
                     <input type="text" placeholder="°Ë»ö"
-						id="search-field">
+						id="search-field" name="search">
+						</form>
 
                     <div class="fake_field">
                         <span class="sprite_small_search_icon"></span>
