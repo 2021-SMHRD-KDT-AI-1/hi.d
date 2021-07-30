@@ -412,7 +412,7 @@ li a:hover {
                 <span class="close-button">&times;</span>
                 <h1 class="title">NEW POST</h1>
                 <label></label>
-                <form class="upload_form" action="FeedUpload.do"
+                <form class="upload_form" action="FeedUploadCon.do"
 					method="POST">
                     <label></label>
                     <div class="preview">
@@ -1169,6 +1169,7 @@ li a:hover {
         }
 
     </script>
+    	
 
 
 </body>

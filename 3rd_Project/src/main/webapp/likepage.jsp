@@ -316,10 +316,10 @@ textarea {
 </head>
 
 <body>
-<%
+<%/*
 	ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("search_feed");
 	System.out.print(feeds.get(0));
-	
+*/	
 %>
 
     <section id="container">
