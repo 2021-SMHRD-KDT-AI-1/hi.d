@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import com.DAO.feedDAO;
 import com.DAO.memberDAO;
 import com.DAO.petDAO;
+import com.VO.feedVO;
 import com.VO.petVO;
 import com.VO.speciesVO;
 import com.command.Command;
@@ -27,7 +28,8 @@ public class FeedUpload implements Command{
 		
 		
 		feedDAO dao = new feedDAO();
-		int cnt = dao.feed_upload(getPet_num, img_addr, f_lock, feed_content);
+		feedVO vo = new feedVO(getPet_num, img_addr, f_lock, feed_content);
+		int cnt = dao.feed_upload(vo);
 		
 		
 		if (cnt > 0) {

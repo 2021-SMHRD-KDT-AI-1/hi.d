@@ -606,7 +606,7 @@ li a:hover {
 </script> -->
 
 <%
-try {
+/*try {
 	petDAO dao = new petDAO();
 	ArrayList<speciesVO> species_list = dao.species_select();
 	
@@ -617,7 +617,7 @@ try {
 	}
 }catch (Exception e) {
 	e.printStackTrace();
-}
+}*/
 %>
 
 

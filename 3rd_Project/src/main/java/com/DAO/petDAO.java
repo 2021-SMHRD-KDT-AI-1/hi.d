@@ -81,8 +81,8 @@ public class petDAO {
 	}
 	
 	// Á¾ ¸ð¾ÆµÐ°Å
-	public ArrayList<speciesVO> species_select(String CorD) {
-			ArrayList<speciesVO> species_list = new ArrayList<speciesVO>();
+	public ArrayList<String> species_select(String CorD) {
+			ArrayList<String> species_list = new ArrayList<>();
 			try {
 				getConn();
 				sql="select species from species where CorD = ?";
@@ -94,7 +94,6 @@ public class petDAO {
 				while(rs.next()) {
 					String getSpecies = rs.getString(1);
 					String getCorD = rs.getString(2);
-
 
 					if (CorD.equals(getCorD)) {
 						species_list.add(getSpecies);
