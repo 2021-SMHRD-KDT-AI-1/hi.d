@@ -461,7 +461,7 @@ textarea#profile_edit_textarea {
 								<span class="post_closebutton">&times;</span>
 								<h1 class="title">NEW POST</h1>
 								<label></label>
-								<form class="upload_form" action="#post.php" method="POST">
+								<form class="upload_form" action="FeedUpload.do" method="POST">
 									<label></label>
 									<div class="preview">
 										<!-- 이미지 미리보기 영역 -->

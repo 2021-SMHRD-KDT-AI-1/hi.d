@@ -27,6 +27,8 @@ public class frontcontroller extends HttpServlet {
 			con = new PetJoinCon();
 		} else if(result.equals("PetUpdateCon.do")) {
 			con = new PetUpdateCon();
+		} else if(result.equals("FeedUpload.do")) {
+			con = new FeedUpload();
 		}
 		String moveURL = con.execute(request, response);
 		response.sendRedirect(moveURL);

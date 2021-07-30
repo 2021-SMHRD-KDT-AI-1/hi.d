@@ -412,7 +412,7 @@ li a:hover {
                 <span class="close-button">&times;</span>
                 <h1 class="title">NEW POST</h1>
                 <label></label>
-                <form class="upload_form" action="#post.php"
+                <form class="upload_form" action="FeedUpload.do"
 					method="POST">
                     <label></label>
                     <div class="preview">
