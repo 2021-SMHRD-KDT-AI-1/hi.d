@@ -25,15 +25,12 @@ public class frontcontroller extends HttpServlet {
 			con = new JoinCon();
 		} else if(result.equals("PetJoinCon.do")) {
 			con = new PetJoinCon();
-<<<<<<< HEAD
 		} else if(result.equals("searchpageCon.do")) {
 			con = new searchpageCon();
-=======
 		} else if(result.equals("PetUpdateCon.do")) {
 			con = new PetUpdateCon();
 		} else if(result.equals("FeedUpload.do")) {
 			con = new FeedUpload();
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 		}
 		String moveURL = con.execute(request, response);
 		response.sendRedirect(moveURL);
