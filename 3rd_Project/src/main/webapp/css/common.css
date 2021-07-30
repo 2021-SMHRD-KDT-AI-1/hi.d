@@ -20,7 +20,7 @@ body {
 }
 
 .sprite_write_logo:hover{
-	 background: url('../imgs/GIF/text.gif');
+	/*background: url('../imgs/GIF/text.gif');*/
 	background-size: 100px 90px;
     width: 100px;
     height: 90px;
