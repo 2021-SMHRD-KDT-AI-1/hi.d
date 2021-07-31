@@ -96,7 +96,7 @@ html, body {
 /* 프로필편집 추가 버튼 */
 .plus_button {
 	/* max-width : 10% -> 15%*/
-	max-width: 15%;
+	max-width: 10%;
 	font-family: 'Roboto', sans-serif;
 	font-size: 11px;
 	text-transform: uppercase;
@@ -148,7 +148,7 @@ html, body {
 		0.25s;
 }
 
-.modal-content1 {
+.post_form {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -175,14 +175,14 @@ html, body {
 }
 
 /* post_form 에서 modal-content1으로 클래스 변경*/
-.modal-content1 {
+.post_form {
 	width: 650px;
 	padding: 0px 13px 0px 13px;
 	overflow-y: scroll;
 	height: 800px;
 	box-sizing: border-box;
 	margin-right: 50px;
-	/* 있었던 속성*/
+	
 	/*border-radius: 10px; 
     position: absolute;
     top: 50%;
@@ -190,25 +190,24 @@ html, body {
     transform: translate(-50%, -50%);
 	*/
 }
-
 /* 스크롤바 설정*/
 /*post_form에서 modal-content1으로 클래스 변경*/
-.modal-content1::-webkit-scrollbar {
+.post_form::-webkit-scrollbar {
 	width: 8px;
 	/* 스크롤바 길이 안 먹힘 */
-	height: 4px;
+	
 }
 
 /* 스크롤바 막대 설정*/
 /*post_form에서 modal-content1으로 클래스 변경*/
-.modal-content1::-webkit-scrollbar-thumb {
+.post_form::-webkit-scrollbar-thumb {
 	/* border-radius: 10px; 없어짐*/
 	background-color: #8373e6;
 }
 
 /* 스크롤바 뒷 배경 설정*/
 /*post_form에서 modal-content1으로 클래스 변경*/
-.modal-content1::-webkit-scrollbar-track {
+.post_form::-webkit-scrollbar-track {
 	background-color: #d4cef85e;
 	/* border-radius: 10px -> 50px;*/
 	border-radius: 50px;
@@ -312,8 +311,7 @@ li a:hover {
 
 		<header id="header">
 			<section class="inner">
-			<!-- <section class="inner" onclick="func()" width="500"> -->
-				
+			 <section class="inner" onclick="func()" width="500"> 
 				<h1 class="logo">
 					<a href="index.jsp">
 						<div class="sprite_insta_icon"></div>
@@ -343,7 +341,8 @@ li a:hover {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='profile3.jsp'" href="#">
+						<li><a onclick="location.href='profile3.jsp'
+						" href="#">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 						<li class="bg"></li>
@@ -388,12 +387,12 @@ li a:hover {
 
 				<div class="wrap">
 					<button class="plus_button">
-						<img src="/imgs/plus.png" style="opacity: 20%;">
+						<img src="imgs/plus.png" style="opacity: 20%;">
 					</button>
 					<!-- 프로필 편집 모달창 -->
 					<div class="flex">
 						<div class="modal1">
-							<div class="modal-content1">
+							<div>
 								<form action="PetJoinCon.do" class="post_form" method="POST">
 									<div class="title">NEW PROFILE</div>
 									<div class="preview">
@@ -489,15 +488,11 @@ li a:hover {
 					</div>
 
 
+					
 					<button class="button">
-						<img src="/imgs/bear.png">
+						<img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">
 					</button>
-					<button class="button">
-						<img src="/imgs/Black-Dog-PNG.png">
-					</button>
-					<button class="button">
-						<img src="/imgs/Black-Dog-PNG.png">
-					</button>
+					
 				</div>
 
 
@@ -575,6 +570,9 @@ li a:hover {
 		swal("","로그인을 해주세요","warning");
 	}
 	</script>
+	
+	
+	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
 	<script type="text/javascript">
