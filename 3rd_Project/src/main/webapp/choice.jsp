@@ -472,7 +472,7 @@ li a:hover {
                                     </p> -->
 
 									<p class="species">
-										<select class="species" style="width: 100%; height: 25px;">
+										<select class="species" name="species_list" style="width: 100%; height: 25px;">
 
 										</select>
 									</p>
