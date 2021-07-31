@@ -576,7 +576,6 @@ pic::-webkit-media-controls {
 										<input type="file" name="photo" id="post_photo"
 											accept="video/*" onchange="setpostthumbnail(event);" />
 									</p>
-
 									<div>
 										<input type="button" class="behavior_submit_button"
 											value="행동 분석하기">
