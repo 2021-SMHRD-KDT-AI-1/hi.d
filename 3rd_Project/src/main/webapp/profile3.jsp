@@ -588,7 +588,7 @@ textarea#profile_edit_textarea {
 									<label for="contents">Contents</label>
 									<textarea id="post_textarea" name="contents"
 										placeholder="#해시태그 & 문구입력"></textarea>
-									<input type="button" class="post_cancel" value="취소"> <input
+									<input type="reset" class="post_cancel" value="취소"> <input
 										type="submit" class="post_submit" value="업로드">
 								</form>
 							</div>
@@ -914,6 +914,7 @@ textarea#profile_edit_textarea {
 		})
 		
 	</script>
-
+	
+	
 </body>
 </html>

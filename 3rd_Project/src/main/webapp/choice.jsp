@@ -540,60 +540,6 @@ li a:hover {
  
 </script>
 
-	<script>
-	
-	
-		
-    //라디오버튼 눌러서 체크박스 값 불러오기
-    <%
-    	//try {
-    	//	petDAO dao = new petDAO();
-    	//	ArrayList<String> species_list = dao.species_select(String CorD);
-    	
-    	//	for(int i=0; i<species_list.size(); i++){
-    	//		out.print(species_list.get(i).getspeices);
-    	//	}
-    	
-    	
-    	//}catch (Exception e) {
-    	//	e.printStackTrace();
-    //	}
-  //  %>
-
- </script>
-
-
-	<script>
-		var dog_species_list = [ '푸들', '믹스견', '말티즈', '리트리버', '포메라니안' ];
-		var cat_species_list = [ '러시안블루', '뱅갈', '말티즈', '요크숏테리어' ];
-		function
-
-		DogOrCat(event) {
-			var species = document.querySelector('p.species>select');
-			while (species.firstChild) {
-				species.removeChild(species.firstChild);
-			}
-			if (event.target.value == 1) {
-				for (var i = 0; i < dog_species_list.length; i++) {
-					var option_val = document.createElement("option");
-					option_val.value = dog_species_list[i]	;
-					var text = document.createTextNode(dog_species_list[i]);
-					option_val.appendChild(text);
-					species.appendChild(option_val);
-				}
-			} else {
-				for (var i = 0; i < cat_species_list.length; i++) {
-					var option_val = document.createElement("option");
-					option_val.value = cat_species_list[i];
-					var text = document.createTextNode(cat_species_list[i]);
-					option_val.appendChild(text);
-					species.appendChild(option_val);
-				}
-			}
-		}
-	</script>
-
-
 	<script type="text/javascript"> 
     // *모달 스크립트 *
     var modal1 = document.querySelector(".modal1"); 
