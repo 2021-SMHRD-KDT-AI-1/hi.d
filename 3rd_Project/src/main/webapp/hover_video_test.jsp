@@ -179,6 +179,7 @@ input, textarea {
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
+
 .behavior_submit_button:hover {
 	color: #fff;
 	background-color: #ffa042;
