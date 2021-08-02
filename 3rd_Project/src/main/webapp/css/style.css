@@ -123,12 +123,12 @@ body{
 }
 
 
-#search-field:focus ~ .fake_field > span:nth-child(1){
+#search-field:focus + .fake_field > span:nth-child(1){
     transform:translateX(-105px);
 }
 
 
-#search-field:focus ~ .fake_field > span:nth-child(2){
+#search-field:focus + .fake_field > span:nth-child(2){
     display: none;
 }
 
