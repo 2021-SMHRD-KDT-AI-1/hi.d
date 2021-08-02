@@ -18,7 +18,7 @@ public class PetJoinCon implements Command{
 		
 		String moveURL = "";
 		HttpSession session = request.getSession();
-		String getEmail = (String) session.getAttribute("email");
+		String email = ((memberVO)session.getAttribute("vo")).getEmail();
 		speciesVO getSpecies = (speciesVO) session.getAttribute("CorD");
 		
 		
@@ -29,10 +29,12 @@ public class PetJoinCon implements Command{
 		String pet_introduce = request.getParameter("content");	
 		String species_list = request.getParameter("species_list");
 		
-		petVO vo = new petVO(pet_nick, pet_profile,pet_introduce, pet_gen, species_list);
+		petVO vo_pet = new petVO(pet_nick, pet_profile,pet_introduce, pet_gen, species_list, email);
+//		vo_pet.setEmail(email);
 		petDAO dao = new petDAO();
-		int cnt = dao.PetJoin(vo);
+		int cnt = dao.PetJoin(vo_pet);
 		
+		System.out.println(email);
 		System.out.println(pet_profile);
 		System.out.println(pet_nick);
 		System.out.println(pet_gen);
@@ -41,7 +43,7 @@ public class PetJoinCon implements Command{
 		System.out.println(species_list);
 		
 		if (cnt > 0) {
-			petVO vo_new  = new petVO(pet_nick, pet_profile, pet_introduce, pet_gen, cord, species_list, getEmail);
+			petVO vo_new  = new petVO(pet_nick, pet_profile, pet_introduce, pet_gen, cord, species_list, email);
 			session.setAttribute("vo", vo_new);
 			moveURL = "choice.jsp";
 		}

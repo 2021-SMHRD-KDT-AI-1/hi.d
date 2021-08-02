@@ -1,8 +1,12 @@
+<%@page import="org.apache.tomcat.util.http.fileupload.FileUpload"%>
 <%@page import="com.VO.speciesVO"%>
 <%@page import="com.VO.memberVO"%>
 <%@page import="com.VO.petVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.petDAO"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.io.File"%>
+<%@ page import="java.io.FileOutputStream"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -43,9 +47,11 @@
 <link rel="stylesheet"
 	href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
-<!-- 경고창 css 링크-->    
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+<!-- 경고창 css 링크-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 
 
 <title>instagram</title>
@@ -304,16 +310,14 @@ li a:hover {
 </head>
 
 <body>
-	<%
-	petVO vo = (petVO)session.getAttribute("vo");
-%>
+
 
 	<section id="container">
 
 		<header id="header">
 			<section class="inner">
-			<!-- <section class="inner" onclick="func()" width="500"> -->
-				
+				<!-- <section class="inner" onclick="func()" width="500"> -->
+
 				<h1 class="logo">
 					<a href="index.jsp">
 						<div class="sprite_insta_icon"></div>
@@ -400,8 +404,7 @@ li a:hover {
 										<div class="upload">
 											<div class="post_btn">
 												<div class="plus_icon">
-													<span></span>
-													<span></span>
+													<span></span> <span></span>
 												</div>
 
 												<p>프로필 이미지 추가</p>
@@ -416,9 +419,8 @@ li a:hover {
 									</p>
 
 									<p class="join_pet_nick">
-										<input class="pet_nick" id="pet_nick" name="pet_nick" type="text" 
-											placeholder="Pet-NickName" style="width: 100%;"
-											>
+										<input class="pet_nick" id="pet_nick" name="pet_nick"
+											type="text" placeholder="Pet-NickName" style="width: 100%;">
 									</p>
 
 
@@ -446,18 +448,19 @@ li a:hover {
 
 
 									<div class="radio-buttons">
-										<label class="custom-radio"> <input type="radio" class="radio_pet"
-											name="radio_pet" value="D" onclick="ajaxSpecies()" /> <span
-											class="radio-btn"> <i class="las la-check"></i>
+										<label class="custom-radio"> <input type="radio"
+											class="radio_pet" name="radio_pet" value="D"
+											onclick="ajaxSpecies()" /> <span class="radio-btn"> <i
+												class="las la-check"></i>
 												<div class="genders-icon">
 													<i class="las la-dog"></i>
 													<h4>Dog</h4>
 												</div>
 										</span>
-										</label> 
-										<label class="custom-radio"> <input type="radio" class="radio_pet"
-											name="radio_pet" value="C" onclick="ajaxSpecies()" /> <span
-											class="radio-btn"> <i class="las la-check"></i>
+										</label> <label class="custom-radio"> <input type="radio"
+											class="radio_pet" name="radio_pet" value="C"
+											onclick="ajaxSpecies()" /> <span class="radio-btn"> <i
+												class="las la-check"></i>
 												<div class="genders-icon">
 													<i class="las la-cat"></i>
 													<h4>cat</h4>
@@ -473,7 +476,8 @@ li a:hover {
                                     </p> -->
 
 									<p class="species">
-										<select class="species" name="species_list" style="width: 100%; height: 25px;">
+										<select class="species" name="species_list"
+											style="width: 100%; height: 25px;">
 
 										</select>
 									</p>
@@ -490,7 +494,7 @@ li a:hover {
 
 
 					<button class="button">
-						<img src="/imgs/bear.png">
+						<img src="img.jpg" />
 					</button>
 					<button class="button">
 						<img src="/imgs/Black-Dog-PNG.png">
@@ -623,14 +627,16 @@ li a:hover {
     window.addEventListener("click", windowOnClick); 
 
 	</script>
-	
+
 	<script type="text/javascript">
 	function func() {
 		swal("","로그인을 해주세요","warning");
 	}
 	</script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
 	<script type="text/javascript">
 	$(".radio_pet").click(
 		function ajaxSpecies(){
@@ -655,6 +661,8 @@ li a:hover {
 		}
 		)
 	</script>
+
+
 
 </body>
 </html>
