@@ -248,6 +248,10 @@ INSERT INTO PETINFO
 VALUES(PET_NUM_SEQ.NEXTVAL, 'Cutie', 'IMG.JPG', 'hi' , 'F', '골든 리트리버', 'Cutie@gmail.com');
 INSERT INTO PETINFO
 VALUES(PET_NUM_SEQ.NEXTVAL, '뭉치', 'IMG.JPG', 'hi' , 'M', '비숑 프리제', 'GaIn@gmail.com');
+INSERT INTO PETINFO
+VALUES(PET_NUM_SEQ.NEXTVAL, '메리', 'IMG.JPG', 'hi' , 'F', '믹스견', 'Baaam@gmail.com');
+INSERT INTO PETINFO
+VALUES(PET_NUM_SEQ.NEXTVAL, '먼지', 'IMG.JPG', 'hi' , 'M', '먼치킨', 'Baaam@gmail.com');
 
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 10, 'imgs/img_section/img01.jpg', '윤선', '1,2,3', 'L', TO_DATE('2017-10-17','YYYY-MM-DD'));

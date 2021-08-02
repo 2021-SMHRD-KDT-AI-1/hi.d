@@ -310,23 +310,19 @@ li a:hover {
 	<section id="container">
 
 		<header id="header">
-			<section class="inner">
 			 <section class="inner" onclick="func()" width="500"> 
 				<h1 class="logo">
-					<a href="index.jsp">
+					<a href="#">
 						<div class="sprite_insta_icon"></div>
 						<div class="sprite_write_logo"></div>
 					</a>
 				</h1>
-
 				<div class="search_box">
 					<input type="text" placeholder="검색" id="search-field">
-
 					<div class="fake_field">
 						<span class="sprite_small_search_icon"></span> <span>검색</span>
 					</div>
 				</div>
-
 				<div class="right_icons">
 					<ul class="menu">
 						<li><a class="trigger" href="#">
@@ -335,14 +331,13 @@ li a:hover {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='likepage.jsp'" href="#">
+						<li><a href="#">
 								<div class="sprite_compass_icon"></div>
 						</a></li>
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='profile3.jsp'
-						" href="#">
+						<li><a  href="#">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 						<li class="bg"></li>
@@ -363,7 +358,6 @@ li a:hover {
 		<section id="main_container">
 			<span style="align-items: center; font-size: 200%;">누구의 계정으로
 				로그인 할까요??</span>
-
 		</section>
 
 
@@ -416,8 +410,7 @@ li a:hover {
 
 									<p class="join_pet_nick">
 										<input class="pet_nick" id="pet_nick" name="pet_nick" type="text" 
-											placeholder="Pet-NickName" style="width: 100%;"
-											>
+											placeholder="Pet-NickName" style="width: 100%;">
 									</p>
 
 
