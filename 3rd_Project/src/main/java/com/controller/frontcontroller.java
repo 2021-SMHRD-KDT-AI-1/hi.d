@@ -33,6 +33,8 @@ public class frontcontroller extends HttpServlet {
 			con = new FeedUploadCon();
 		} else if(result.equals("SpeciesCon.do")) {
 			con = new FeedUploadCon();
+		} else if(result.equals("OneFeedCon.do")) {
+			con = new OneFeedCon();
 		}
 		String moveURL = con.execute(request, response);
 		response.sendRedirect(moveURL);

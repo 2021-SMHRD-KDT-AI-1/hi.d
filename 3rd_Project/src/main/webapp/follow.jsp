@@ -1,3 +1,4 @@
+<%@page import="com.VO.feedVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -165,13 +166,11 @@ li a:hover {
   display: block;
 }
 
- .dropdown-content a:hover {background-color: #ddd;}
-   
+.dropdown-content a:hover {background-color: #ddd;}
+
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover.dropbtn {background-color: #3e8e41;}
-
-
 
 </style>
 
@@ -222,67 +221,46 @@ li a:hover {
                             </a></li>
                         <li class="bg"></li>
                     </ul>
-
                 </div>
-
-
-
-
-
             </section>
-
         </header>
 
-
-
+		<% 
+			feedVO feed = (feedVO)session.getAttribute("feed_info");
+			
+		%>
 		<div id="main_container">
-
 			<section class="b_inner">
-
 				<div class="contents_box">
-
 					 <article class="contents">
-
-
-
-
                         <header class="top">
-
                             <div class="user_container">
-                                <div class="div_profile_img">
-                                    <img class="profile_img"
-                              src="imgs/thumb.jpeg" alt="프로필이미지">
+	                            <div class="div_profile_img">
+		                            <img class="profile_img"
+		                              src="imgs/thumb.jpeg" alt="프로필이미지">
                                 </div>
-                                <div class="user_name">
-                                    <div class="nick_name m_text">KindTiger</div>
-                                    <div class="country s_text">Seoul, South Korea</div>
-                                </div>
-
+                                	<div class="user_name">
+	                                    <div class="nick_name m_text">KindTiger</div>
+	                                    <div class="country s_text">Seoul, South Korea</div>
+                                	</div>
                             </div>
-
-                         <div class ="dropdown">
-               <div class="sprite_more_icon"></div>
-                       <div class="dropdown-content">
-                           <a href="#">게시물 수정</a>
-                           <a href="#">게시물 삭제</a>
-                     </div>                        
-                     </div>
+                        <div class ="dropdown">
+               				<div class="sprite_more_icon"></div>
+                        	<div class="dropdown-content">
+	                        	<a href="#">게시물 수정</a>
+	                        	<a href="#">게시물 삭제</a>
+                     		</div>                        
+                     	</div>
                   </header>
-
-
-
 
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                           <img class="personal_contents" src="imgs/img_section/img01.jpg"
-                              alt="visual01">
-                        </div>
+		                           <img class="personal_contents" src="<%=feed.getImg_addr() %>"
+		                              alt="visual01">
+                        		</div>
                             </div>
                         </div>
-
-
-
 
                         <div class="bottom_icons">
                             <div class="left_icons">
@@ -291,7 +269,7 @@ li a:hover {
                               class="sprite_heart_icon_outline" name="39"
                               data-name="heartbeat"></div>
                                 </div>
-                                <div class="sprite_bubble_icon"></div>
+                                	<div class="sprite_bubble_icon"></div>
                                 <div class="sprite_share_icon"
                            data-name="share"></div>
                             </div>
@@ -300,8 +278,6 @@ li a:hover {
                            data-name="bookmark"></div>
                             </div>
                         </div>
-
-
 
                         <div class="likes m_text">
                             좋아요
@@ -317,7 +293,7 @@ li a:hover {
                         id="comment-list-ajax-post37">
                                 <div class="comment-detail">
                                     <div class="nick_name m_text">danamlee</div>
-                                    <div class="comment_reple">저처럼 너무 귀여워요~!</div>
+                                    <div class="comment_reple"><%= feed.getFeed_content() %></div>
                                 </div>
                             </div>
                             <div class="small_heart">

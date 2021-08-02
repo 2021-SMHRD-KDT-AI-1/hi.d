@@ -453,7 +453,7 @@ textarea {
                 %>
                 <% for (int i = 0; i < feeds.size(); i++) {%>
                     <div class="pic">
-                        <a href="follow.jsp"><img class="like_pic"
+                        <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><img class="like_pic"
 							src="<%= feeds.get(i).getImg_addr() %>" alt=""></a>
                     </div>
                 <%} %>
