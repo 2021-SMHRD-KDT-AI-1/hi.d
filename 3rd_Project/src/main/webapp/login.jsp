@@ -38,12 +38,12 @@
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
 
-    <title>instagram</title>
+    <title>Hi Dear</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="shortcut icon" href="imgs/instagram.png">
+    <link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 
 
@@ -461,10 +461,10 @@ li a:hover {
                         <label for="user_pw">PW:</label>
                         <input type="text" id="user_pw" name="pw">
                     </p>
-
+					
                     <input type="submit" id="submit_btn1" value="´ÙÀ½"
 											class="submit_btn">
-
+			
 
                     </form>
                     </div>
