@@ -225,70 +225,82 @@ insert into species values('아메리칸 불리','D');
 insert into species values('강아지기타','D');
 
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, 'CLOUD', 'IMG.JPG','hi' , 'M', '도베르만','tlffur20@naver.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, 'MadCrown', 'imgs/profile/madcrown','hi' , 'M', '도베르만','tlffur20@naver.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, '구름', 'IMG.JPG', 'hi' , 'M', '말티즈', 'Delkin@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, '구름', 'imgs/profile/cloud.jpg', 'hi' , 'M', '말티즈', 'Delkin@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, 'Green', 'IMG.JPG', 'hi' , 'F', '노르웨이숲', 'LightJoo@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, 'Green', 'imgs/profile/green.jpg', 'hi' , 'F', '노르웨이숲', 'LightJoo@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, 'Blue', 'IMG.JPG', 'hi' , 'M', '러시안블루', 'LightJoo@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, 'Blue', 'imgs/profile/blue.png', 'hi' , 'M', '러시안블루', 'LightJoo@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, 'Chicken', 'IMG.JPG', 'hi' , 'M', '먼치킨','SeaMonkey@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, 'Chicken', 'imgs/profile/chicken.jpg', 'hi' , 'M', '먼치킨','SeaMonkey@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, 'Jjam', 'IMG.JPG', '3대 600' , 'M', '푸들','gmlrud@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, 'Jjam', 'imgs/profile/jjam.jpg', '3대 600' , 'M', '푸들','gmlrud@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, '창식', 'IMG.JPG', 'hi' , 'M', '치와와','gmlrud@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, '창식', 'imgs/profile/changsik.jpg', 'hi' , 'M', '치와와','gmlrud@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, '마룡', 'IMG.JPG', 'hi' , 'M', '시암','TwoDoubleRow@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, '마롱', 'imgs/profile/marong.jpg', 'hi' , 'M', '시암','TwoDoubleRow@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, 'Joohwan_junior', 'IMG.JPG', 'hi' , 'M', '퍼그','ILLONEP@naver.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, 'Joohwan_junior', 'imgs/profile/junior.png', 'hi' , 'M', '퍼그','ILLONEP@naver.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, '윤선', 'IMG.JPG', 'hi' , 'F', '코리안 숏헤어', 'NoYoon@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, '윤선', 'imgs/profile/yoon.jpg', 'hi' , 'F', '코리안 숏헤어', 'NoYoon@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, 'Cutie', 'IMG.JPG', 'hi' , 'F', '골든 리트리버', 'Cutie@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, 'Cutie', 'imgs/profile/cutie.jpg', 'hi' , 'F', '골든 리트리버', 'Cutie@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, '뭉치', 'IMG.JPG', 'hi' , 'M', '비숑 프리제', 'GaIn@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, '뭉치', 'imgs/profile/moongchi.jpg', 'hi' , 'M', '비숑 프리제', 'GaIn@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, '메리', 'IMG.JPG', 'hi' , 'F', '믹스견', 'Baaam@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, '메리', 'imgs/profile/merry.jpg', 'hi' , 'F', '믹스견', 'Baaam@gmail.com');
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, '먼지', 'IMG.JPG', 'hi' , 'M', '먼치킨', 'Baaam@gmail.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, '먼지', 'imgs/profile/munji.jpg', 'hi' , 'M', '먼치킨', 'Baaam@gmail.com');
+INSERT INTO PETINFO
+VALUES(PET_NUM_SEQ.NEXTVAL, '방자', 'imgs/profile/bangja.jpg', 'hi' , 'M', '비숑 프리제', 'tlffur20@naver.com');
+
+
 
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 10, 'imgs/img_section/img01.jpg', '윤선', '1,2,3', 'L', TO_DATE('2017-10-17','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 10, 'videos/yoon01.mp4', '윤선', '1,2,3,4,5,6,7,8,9', 'L', TO_DATE('2017-10-17','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 2, 'imgs/img_section/img02.jpg', '구름', '1,2,3', 'U', TO_DATE('2017-10-21','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 2, 'videos/Cloud1.mp4', '구름', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2017-10-21','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 10, 'imgs/img_section/img03.jpg', '윤선', '1,2,3', 'L', TO_DATE('2017-11-20','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 15, 'videos/bangja01.mp4', '방자', '1,2,3', 'L', TO_DATE('2017-11-20','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 7, 'imgs/img_section/img01.jpg', '창식', '1,2,3', 'L', TO_DATE('2017-12-11','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 7, 'videos/changsik01.mp4', '창식', '1,2,3,4,5,6,7,8,9', 'L', TO_DATE('2017-12-11','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 7, 'imgs/img_section/img02.jpg', '창식', '1,2,3', 'U', TO_DATE('2018-03-25','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji01.mp4', '먼지', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2018-03-25','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 7, 'imgs/img_section/img03.jpg', '창식', '1,2,3', 'L', TO_DATE('2018-09-26','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji02.mp4', '먼지', '1,2,3', 'U', TO_DATE('2018-03-25','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 10, 'imgs/img_section/img01.jpg', '윤선', '1,2,3', 'U', TO_DATE('2018-07-22','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji03.mp4', '먼지', '1,2,3,4,5,6,7,8,9', 'L', TO_DATE('2018-09-26','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 8, 'imgs/img_section/img02.jpg', '마룡', '1,2,3', 'U', TO_DATE('2018-11-19','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 10, 'videos/yoon02.mp4', '윤선', '1,2,3', 'U', TO_DATE('2018-07-22','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 8, 'imgs/img_section/img01.jpg', '마룡', '1,2,3', 'U', TO_DATE('2018-11-20','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 8, 'videos/marong01.mp4', '마롱', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2018-11-19','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 2, 'imgs/img_section/img02.jpg', '구름', '1,2,3', 'L', TO_DATE('2018-11-21','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 8, 'videos/marong02.mp4', '마롱', '1,2,3', 'U', TO_DATE('2018-11-20','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 10, 'imgs/img_section/img03.jpg', '윤선', '1,2,3', 'U', TO_DATE('2019-01-21','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji04.mp4', '먼지', '1,2,3,4,5,6,7,8,9', 'L', TO_DATE('2018-11-21','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 12, 'imgs/img_section/img01.jpg', '뭉치', '1,2,3', 'U', TO_DATE('2019-08-26','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 15, 'videos/bangja02.mp4', '방자', '1,2,3,4,5', 'U', TO_DATE('2019-01-21','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 10, 'imgs/img_section/img02.jpg', '윤선', '1,2,3', 'U', TO_DATE('2019-12-22','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji05.mp4', '먼지', '1,2,3', 'U', TO_DATE('2019-08-26','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 6, 'imgs/img_section/img03.jpg', 'Jjam', '1,2,3', 'U', TO_DATE('2020-06-24','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji06.mp4', '먼지', '1,2,3', 'U', TO_DATE('2019-12-22','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 7, 'imgs/img_section/img01.jpg', '창식', '1,2,3', 'U', TO_DATE('2020-08-15','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 6, 'videos/jjam01.mp4', 'Jjam', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15', 'U', TO_DATE('2020-06-24','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 2, 'imgs/img_section/img02.jpg', '구름', '1,2,3', 'U', TO_DATE('2020-10-13','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 152, 'videos/bangja03.mp4', '방자', '1,2,3', 'U', TO_DATE('2020-10-13','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 10, 'imgs/img_section/img03.jpg', '윤선', '1,2,3', 'U', TO_DATE('2021-05-25','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 8, 'videos/marong03.mp4', '마롱', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2020-11-13','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 2, 'imgs/img_section/img01.jpg', '구름', '1,2,3,4,5,6,7,8,9', 'U', sysdate);
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji07.mp4', '먼지', '1,2,3,4', 'U', TO_DATE('2021-05-25','YYYY-MM-DD'));
+INSERT INTO FEEDINFO
+VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry01.mp4', '메리', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2021-06-01','YYYY-MM-DD'));
+INSERT INTO FEEDINFO
+VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry02.mp4', '메리', '1,2,3', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
+INSERT INTO FEEDINFO
+VALUES(FEED_NUM_SEQ.NEXTVAL, 2, 'videos/Cloud2.mp4', '구름', '1,2,3,4,5,6,7,8,9,10', 'U', sysdate);
+INSERT INTO FEEDINFO
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji08.mp4', '먼지', '1,2,3,4,5,6,7,8,9', 'U', sysdate);
 
 
 INSERT INTO FEED_COMMENT
