@@ -1,11 +1,8 @@
 <%@page import="com.VO.feedVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+
+
 </head>
 <body>
 	<!DOCTYPE html>
@@ -293,7 +290,7 @@ li a:hover {
                         <div class="comment_container">
                             <div class="comment"
                         id="comment-list-ajax-post37">
-                              <form action  = >
+                              <form>
                                 <div class="comment-detail">
                                   
                                     <div class="nick_name m_text">danamlee</div>
@@ -306,18 +303,18 @@ li a:hover {
                            class="sprite_small_heart_icon_outline"></div>
                             </div>
                         </div>
-
+                        
+                        
+                        <div id = reply></div>
 
                         <div class="timer">1시간 전</div>
 
 
-                        <div class="comment_field"
-                     id="add-comment-post37">
-                            <input type="text" class="inputReple"
+                            <input type="text" class="inputReple" id = "inputReple"
                         placeholder="댓글달기...">
-                            <button class="upload_btn" 
-                        data-name="comment" type = "submit">게시</button>
-                        </div>
+                            <input type="button" onclick="ajaxreply()" class="upload_btn" id = "reply_submit"
+                         value= "게시">
+                       
 
 
 
@@ -336,11 +333,43 @@ li a:hover {
 
 
 	</section>
-	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
-	<script src="js/profile.js"></script>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+	<script type="text/javascript">
+	$(".upload_btn").click(
+		function ajaxreply(){
+			var inputReple = $('#inputReple').val();
+			$.ajax({
+				type:'post',
+				url:'replyAjax',
+				data:{inputReple : inputReple},
+				dataType:"json",
+				success : function(data){
+					$("#reply").empty();
+					for(var i = 0; i < Object.keys(data).length; i+=2){
+						var $petname = $("<span>" + data[i] + "</span> ");
+						var $reply = $("<span>" + data[i+1] + "</span>");
+						var $div = $("<div></div>")
+						$div.append($petname);
+						$div.append($reply);
+						
+						$("#reply").append($div);
+					}
+				},
+				error : function(){
+					alert("유야호");
+				}
+				
+				
+			});
+		
+	})
 
-</body>
-</html>
+
+	
+	</script>
+
+
 </body>
 </html>
