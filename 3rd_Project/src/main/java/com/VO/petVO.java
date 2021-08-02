@@ -2,7 +2,7 @@ package com.VO;
 
 public class petVO {
 	
-	String pet_num;
+	int pet_num;
 	String pet_nick;
 	String pet_profile;
 	String pet_introduce;
@@ -10,7 +10,7 @@ public class petVO {
 	String species;
 	String email;
 	
-	public petVO(String pet_num, String pet_nick, String pet_profile, String pet_introduce, String pet_gen,
+	public petVO(int pet_num, String pet_nick, String pet_profile, String pet_introduce, String pet_gen,
 			String species, String email) {
 		super();
 		this.pet_num = pet_num;
@@ -52,7 +52,7 @@ public class petVO {
 	}
 
 
-	public petVO(String email, String pet_num, String pet_nick, String pet_introduce) {
+	public petVO(String email, int pet_num, String pet_nick, String pet_introduce) {
 		this.email = email;
 		this.pet_num = pet_num;
 		this.pet_nick = pet_nick;
@@ -62,11 +62,11 @@ public class petVO {
 
 
 
-	public String getPet_num() {
+	public int getPet_num() {
 		return pet_num;
 	}
 
-	public void setPet_num(String pet_num) {
+	public void setPet_num(int pet_num) {
 		this.pet_num = pet_num;
 	}
 

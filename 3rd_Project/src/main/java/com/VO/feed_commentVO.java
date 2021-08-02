@@ -15,6 +15,15 @@ public class feed_commentVO {
 		this.comment_content = comment_content;
 		this.like_pet = like_pet;
 	}
+	
+	public feed_commentVO(int pet_num, int feed_num, String comment_content, String like_pet) {
+		super();
+		this.pet_num = pet_num;
+		this.feed_num = feed_num;
+		this.comment_content = comment_content;
+		this.like_pet = like_pet;
+	}
+
 	public int getComment_num() {
 		return comment_num;
 	}
