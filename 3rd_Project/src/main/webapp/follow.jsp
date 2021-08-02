@@ -1,10 +1,8 @@
+<%@page import="com.VO.feedVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+
+
 </head>
 <body>
 	<!DOCTYPE html>
@@ -165,11 +163,14 @@ li a:hover {
   display: block;
 }
 
+
 .dropdown-content a:hover {background-color: #ddd;}
-   
+
+
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover.dropbtn {background-color: #3e8e41;}
+
 
 </style>
 
@@ -220,67 +221,46 @@ li a:hover {
                             </a></li>
                         <li class="bg"></li>
                     </ul>
-
                 </div>
-
-
-
-
-
             </section>
-
         </header>
 
-
-
+		<% 
+			feedVO feed = (feedVO)session.getAttribute("feed_info");
+			
+		%>
 		<div id="main_container">
-
 			<section class="b_inner">
-
 				<div class="contents_box">
-
 					 <article class="contents">
-
-
-
-
                         <header class="top">
-
                             <div class="user_container">
-                                <div class="div_profile_img">
-                                    <img class="profile_img"
-                              src="imgs/thumb.jpeg" alt="프로필이미지">
+	                            <div class="div_profile_img">
+		                            <img class="profile_img"
+		                              src="imgs/thumb.jpeg" alt="프로필이미지">
                                 </div>
-                                <div class="user_name">
-                                    <div class="nick_name m_text">KindTiger</div>
-                                    <div class="country s_text">Seoul, South Korea</div>
-                                </div>
-
+                                	<div class="user_name">
+	                                    <div class="nick_name m_text">KindTiger</div>
+	                                    <div class="country s_text">Seoul, South Korea</div>
+                                	</div>
                             </div>
-
-                         <div class ="dropdown">
-               <div class="sprite_more_icon"></div>
-                       <div class="dropdown-content">
-                           <a href="#">게시물 수정</a>
-                           <a href="#">게시물 삭제</a>
-                     </div>                        
-                     </div>
+                        <div class ="dropdown">
+               				<div class="sprite_more_icon"></div>
+                        	<div class="dropdown-content">
+	                        	<a href="#">게시물 수정</a>
+	                        	<a href="#">게시물 삭제</a>
+                     		</div>                        
+                     	</div>
                   </header>
-
-
-
 
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                           <img class="personal_contents" src="imgs/img_section/img01.jpg"
-                              alt="visual01">
-                        </div>
+		                           <img class="personal_contents" src="<%=feed.getImg_addr() %>"
+		                              alt="visual01">
+                        		</div>
                             </div>
                         </div>
-
-
-
 
                         <div class="bottom_icons">
                             <div class="left_icons">
@@ -289,7 +269,7 @@ li a:hover {
                               class="sprite_heart_icon_outline" name="39"
                               data-name="heartbeat"></div>
                                 </div>
-                                <div class="sprite_bubble_icon"></div>
+                                	<div class="sprite_bubble_icon"></div>
                                 <div class="sprite_share_icon"
                            data-name="share"></div>
                             </div>
@@ -298,8 +278,6 @@ li a:hover {
                            data-name="bookmark"></div>
                             </div>
                         </div>
-
-
 
                         <div class="likes m_text">
                             좋아요
@@ -313,28 +291,31 @@ li a:hover {
                         <div class="comment_container">
                             <div class="comment"
                         id="comment-list-ajax-post37">
+                              <form>
                                 <div class="comment-detail">
+                                  
                                     <div class="nick_name m_text">danamlee</div>
-                                    <div class="comment_reple">저처럼 너무 귀여워요~!</div>
+                                    <div class="comment_reple"><%= feed.getFeed_content() %></div>
                                 </div>
+                                </form>
                             </div>
                             <div class="small_heart">
                                 <div
                            class="sprite_small_heart_icon_outline"></div>
                             </div>
                         </div>
-
+                        
+                        
+                        <div id = reply></div>
 
                         <div class="timer">1시간 전</div>
 
 
-                        <div class="comment_field"
-                     id="add-comment-post37">
-                            <input type="text" class="inputReple"
+                            <input type="text" class="inputReple" id = "inputReple"
                         placeholder="댓글달기...">
-                            <div class="upload_btn m_text" 
-                        data-name="comment">게시</div>
-                        </div>
+                            <input type="button" onclick="ajaxreply()" class="upload_btn" id = "reply_submit"
+                         value= "게시">
+                       
 
 
 
@@ -353,9 +334,43 @@ li a:hover {
 
 
 	</section>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+	<script type="text/javascript">
+	$(".upload_btn").click(
+		function ajaxreply(){
+			var inputReple = $('#inputReple').val();
+			$.ajax({
+				type:'post',
+				url:'replyAjax',
+				data:{inputReple : inputReple},
+				dataType:"json",
+				success : function(data){
+					$("#reply").empty();
+					for(var i = 0; i < Object.keys(data).length; i+=2){
+						var $petname = $("<span>" + data[i] + "</span> ");
+						var $reply = $("<span>" + data[i+1] + "</span>");
+						var $div = $("<div></div>")
+						$div.append($petname);
+						$div.append($reply);
+						
+						$("#reply").append($div);
+					}
+				},
+				error : function(){
+					alert("유야호");
+				}
+				
+				
+			});
+		
+	})
 
-	<!--<script src="js/insta.js"></script>-->
-</body>
-</html>
+
+	
+	</script>
+
+
 </body>
 </html>

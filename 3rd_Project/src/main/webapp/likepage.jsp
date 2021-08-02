@@ -1,3 +1,4 @@
+<%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feedVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -6,7 +7,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+
 </head>
 <body>
 	<!DOCTYPE html>
@@ -40,13 +41,12 @@
     <meta itemprop="image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
-
-    <title>instagram</title>
+	<title>Hi Dear</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/profile.css">
-    <link rel="shortcut icon" href="imgs/instagram.png">
+    <link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 
  <!--new_header style-->
@@ -324,6 +324,10 @@ textarea {
 	//ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("search_feed");
 	//System.out.print(feeds.get(0));
 	
+	//petVO pet_vo = new petVO(2, "cloud","img.jpg","hi","F","말티즈","Delkin@gmail.com");
+	//session.setAttribute("pet_vo", pet_vo);
+	petVO vo = (petVO)session.getAttribute("pet_vo");
+	
 %>
 
     <section id="container">
@@ -453,7 +457,7 @@ textarea {
                 %>
                 <% for (int i = 0; i < feeds.size(); i++) {%>
                     <div class="pic">
-                        <a href="follow.jsp"><img class="like_pic"
+                        <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><img class="like_pic"
 							src="<%= feeds.get(i).getImg_addr() %>" alt=""></a>
                     </div>
                 <%} %>

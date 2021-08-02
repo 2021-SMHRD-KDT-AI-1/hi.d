@@ -135,11 +135,7 @@
                     </p>
 
                     <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
-                        
-
-                            <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
-
-                        
+                    <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
                 </form>
 
 
