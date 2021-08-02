@@ -424,4 +424,5 @@ VALUES('HAPPY', 'FELLING IS SO GOOD', 'FUNNY');
 INSERT INTO SITUATION
 VALUES('SNACK', 'EXCITING' , 'HAPPY');
 
+
 select * from (select * from feedinfo order by DBMS_RANDOM.RANDOM) where rownum < 2
