@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-   pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,337 +7,374 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <!DOCTYPE html>
-
+	<!DOCTYPE html>
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-   content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport"
-   content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-    <!-- Facebook Meta Tags / 페이스북 오픈 그래프 -->
-    <meta property="og:url"
-   content="http://kindtiger.dothome.co.kr/insta">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="instagram">
-    <meta property="og:description" content="instagram clone">
-    <meta property="og:image"
-   content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-    
-    <!-- Twitter Meta Tags / 트위터 -->
-    <meta name="twitter:card" content="instagram clone">
-    <meta name="twitter:title" content="instagram">
-    <meta name="twitter:description" content="instagram clone">
-    <meta name="twitter:image"
-   content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
+<!-- Facebook Meta Tags / 페이스북 오픈 그래프 -->
+<meta property="og:url" content="http://kindtiger.dothome.co.kr/insta">
+<meta property="og:type" content="website">
+<meta property="og:title" content="instagram">
+<meta property="og:description" content="instagram clone">
+<meta property="og:image"
+	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
-    <!-- Google / Search Engine Tags / 구글 검색 엔진 -->
-    <meta itemprop="name" content="instagram">
-    <meta itemprop="description" content="instagram clone">
-    <meta itemprop="image"
-   content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
+<!-- Twitter Meta Tags / 트위터 -->
+<meta name="twitter:card" content="instagram clone">
+<meta name="twitter:title" content="instagram">
+<meta name="twitter:description" content="instagram clone">
+<meta name="twitter:image"
+	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
+
+<!-- Google / Search Engine Tags / 구글 검색 엔진 -->
+<meta itemprop="name" content="instagram">
+<meta itemprop="description" content="instagram clone">
+<meta itemprop="image"
+	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
 
-    <title>instagram</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="shortcut icon" href="imgs/instagram.png">
+<title>instagram</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/profile.css">
+<link rel="shortcut icon" href="imgs/instagram.png">
 
 
 
- 
- <!-- 모달네비게이션바 css -->
-    <style type="text/css">
-.modal .body {
-   text-align: center;
-   display: block;
-   margin: 0 auto;
-   font-size: 16px;
-   color: #999;
+
+<!-- 모달네비게이션바 css -->
+<style type="text/css">
+/* newpost 모달창 */
+/* newpost & profile_edit 공통 */
+body {
+	display: block;
+	margin: 0 auto;
+	font-size: 16px;
+
 }
 
-.modal .title {
-   font-family: 'Oswald', sans-serif;
-   margin: 0%;
-   font-size: 30px;
-   color: #353535ea;
+h1 {
+	display: block;
+	font-size: 2em;
+	margin-block-start: 0.67em;
+	margin-block-end: 0.67em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
 }
 
-.modal label {
-   display: block;
-   margin-top: 20px;
-   letter-spacing: 2px;
+label {
+	display: block;
+	margin-top: 15px;
+	letter-spacing: 2px;
 }
 
-/* form {  
- 
-    } */
 input, textarea {
-   width: 439px;
-   height: 27px;
-   background-color: #efefef;
-   border-radius: 6px;
-   border: 1px solid #dedede;
-   padding: 10px;
-   margin-top: 3px;
-   font-size: 0.9em;
-   color: #3a3a3a;
+	width: 439px;
+	height: 27px;
+	background-color: #efefef;
+	border-radius: 6px;
+	border: 1px solid #dedede;
+	padding: 10px;
+	margin-top: 8px;
+	font-size: 0.9em;
+	color: #3a3a3a;
 }
 
-input#chk_open {
-   width: 20px;
-   height: 20px;
+/* post 모달 */
+#post_chk_open {
+	font-size: 0.9em;
 }
 
-textarea {
-   height: 100px;
-   background-color: #efefef;
+/* 행동 분석 버튼 CSS - 화려함*/
+input.behavior_submit_button {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
 }
 
-#submit {
-   width: 127px;
-   height: 48px;
-   text-align: center;
-   border: none;
-   margin-top: 20px;
-   cursor: pointer;
+.behavior_submit_button {
+	width: 230px;
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+	cursor: pointer;
+	margin: 20px;
+	height: 55px;
+	text-align: center;
+	border: none;
+	background-size: 300% 100%;
+	border-radius: 50px;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
 }
 
-#submit:hover {
-   color: #fff;
-   background-color: #353535ea;
-   opacity: 0.9;
+.behavior_submit_button:hover {
+	background-position: 100% 0;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
 }
 
-#cancel {
-   width: 127px;
-   height: 48px;
-   text-align: center;
-   border: none;
-   margin-top: 20px;
-   cursor: pointer;
+.behavior_submit_button:focus {
+	outline: none;
 }
 
-#cancel:hover {
-   color: #fff;
-   background-color: #353535ea;
-   opacity: 0.9;
+.behavior_submit_button {
+	background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+	box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
 }
 
-.modal {
-   z-index: 1;
-   position: fixed;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(0, 0, 0, 0.5);
-   opacity: 0;
-   visibility: hidden;
-   transform: scale(1.1);
-   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform
-      0.25s;
+input.chk_open {
+	width: 15px;
+	height: 15px;
+	margin: 15px 30px 10px 20px;
 }
 
-.modal_check {
-   text-align: center;
+textarea#post_textarea {
+	height: 100px;
+	background-color: #efefef;
 }
 
-.modal-content {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   background-color: white;
-   padding: 1rem 1.5rem;
-   width: 1100px;
-   height: 700px;
-   border-radius: 0.5rem;
+.modal_post {
+	text-align:center;
+	color: #999;
+	z-index: 1;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(1.1);
+	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform
+		0.25s;
 }
 
-.upload {
-   max-width: 550px;
-   width: 450px;
-   height: 450px;
-   border: 1px solid #e6e6e6;
-   margin: 0 auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   /* position: relative; */
-   float: center;
+.post-show-modal {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1.0);
+	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.post-modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 1rem 1.5rem;
+	width: 1100px;
+	height: 700px;
+	border-radius: 0.5rem;
+}
+
+.post-upload {
+	max-width: 550px;
+	width: 450px;
+	height: 450px;
+	border: 1px solid #e6e6e6;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* position: relative; */
+	float: center;
 }
 
 .behavior_analysis {
-   max-width: 350px;
-   height: 350px;
-   border: 1px solid #e6e6e6;
-   margin: 0 auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: relative;
-}
-
-.close-button {
-   float: right;
-   width: 1.5rem;
-   line-height: 1.5rem;
-   text-align: center;
-   cursor: pointer;
-   border-radius: 0.25rem;
-   background-color: lightgray;
-}
-
-.modal-content p, h1, label {
-   text-align: center;
-}
-
-.modal-content input {
-   align-items: center;
-}
-
-.close-button:hover {
-   background-color: darkgray;
-}
-
-.show-modal {
-   z-index: 5;
-   opacity: 1;
-   visibility: visible;
-   transform: scale(1.0);
-   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	max-width: 350px;
+	height: 320px;
+	border: 1px solid #e6e6e6;
+	margin: 3px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
 .upload_form {
-   column-count: 2;
-   column-gap: 100px;
+	column-count: 2;
+	column-gap: 100px;
+}
+
+.post_submit {
+	width: 127px;
+	height: 48px;
+	text-align: center;
+	border: none;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.post_submit:hover {
+	color: #fff;
+	background-color: #353535ea;
+	opacity: 0.9;
+}
+
+.post_cancel {
+	width: 127px;
+	height: 48px;
+	text-align: center;
+	border: none;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.post_cancel:hover {
+	color: #fff;
+	background-color: #353535ea;
+	opacity: 0.9;
+}
+
+.post_closebutton {
+	float: right;
+	width: 1.5rem;
+	line-height: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 0.25rem;
+	background-color: lightgray;
+}
+
+.post_closebutton:hover {
+	background-color: darkgray;
 }
 </style>
-    <style>
+<style>
 /* 스크롤 설정*/
 .recommend {
-   width: auto;
-   padding: 0px 10px 0px 10px;
-   overflow-y: scroll;
-   height: 350px;
-   box-sizing: border-box;
-   margin-right: 0px;
+	width: auto;
+	padding: 0px 10px 0px 10px;
+	overflow-y: scroll;
+	height: 350px;
+	box-sizing: border-box;
+	margin-right: 0px;
 }
 
 /* 스크롤바 설정*/
 .recommend::-webkit-scrollbar {
-   width: 5px;
-   height: 3px;
+	width: 5px;
+	height: 3px;
 }
 
 /* 스크롤바 막대 설정*/
 .recommend::-webkit-scrollbar-thumb {
-   background-color: #7c7b80;
-   border-radius: 70px
+	background-color: #7c7b80;
+	border-radius: 70px
 }
 
 /* 스크롤바 뒷 배경 설정*/
 .recommend::-webkit-scrollbar-track {
-   background-color: #d4cef85e;
-   
+	background-color: #d4cef85e;
 }
 
 /*  new_header style */
 @font-face {
-   font-family: 'HeydingsCommonIconsRegular';
-   src: url('http://ianfarb.com/random/heydings_icons-webfont.eot');
-   src: url('http://ianfarb.com/random/heydings_icons-webfont.eot?#iefix')
-      format('embedded-opentype'),
-      url('http://ianfarb.com/random/heydings_icons-webfont.woff')
-      format('woff'),
-      url('http://ianfarb.com/random/heydings_icons-webfont.ttf')
-      format('truetype'),
-      url('http://ianfarb.com/random/heydings_icons-webfont.svg#HeydingsCommonIconsRegular')
-      format('svg');
-   font-weight: normal;
-   font-style: normal;
+	font-family: 'HeydingsCommonIconsRegular';
+	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot');
+	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot?#iefix')
+		format('embedded-opentype'),
+		url('http://ianfarb.com/random/heydings_icons-webfont.woff')
+		format('woff'),
+		url('http://ianfarb.com/random/heydings_icons-webfont.ttf')
+		format('truetype'),
+		url('http://ianfarb.com/random/heydings_icons-webfont.svg#HeydingsCommonIconsRegular')
+		format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 * {
-   margin: 0;
-   padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-   background: #e5e5e5;
+	background: #e5e5e5;
 }
 
 .bg {
-   position: fixed;
-   z-index: -4;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   transition: .25s;
-   pointer-events: none;
+	position: fixed;
+	z-index: -4;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: .25s;
+	pointer-events: none;
 }
 
 li {
-   list-style: none;
+	list-style: none;
 }
 
 li a {
-   display: block;
-   float: left;
-   width: 20%;
-   text-align: center;
-   font-family: 'HeydingsCommonIconsRegular', Helvetida Neue, sans-serif;
-   font-weight: 700;
-   letter-spacing: 1px;
-   font-size: 40px;
-   color: #fff;
-   background: #ccc;
-   text-decoration: none;
-   text-transform: uppercase;
-   text-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
-   transition: .25s;
+	display: block;
+	float: left;
+	width: 20%;
+	text-align: center;
+	font-family: 'HeydingsCommonIconsRegular', Helvetida Neue, sans-serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-size: 40px;
+	color: #fff;
+	background: #ccc;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
+	transition: .25s;
 }
 
 li a:hover {
-   margin: -10px 0 0 0;
+	margin: -10px 0 0 0;
 }
 
 .menu {
-   width: 500px;
-   border-radius: 10px;
-   overflow: hidden;
+	width: 500px;
+	border-radius: 10px;
+	overflow: hidden;
 }
 
 .right_icons .menu:first-child a {
-   background: transparent !important;
+	background: transparent !important;
 }
 
 .right_icons .menu:nth-child(2) a {
-   background: transparent !important;
+	background: transparent !important;
 }
 
 .right_icons .menu:nth-child(3) a {
-   background: transparent !important;
+	background: transparent !important;
 }
 
 .right_icons .menu:nth-child(4) a {
-   background: transparent !important;
+	background: transparent !important;
 }
 
 .right_icons .menu:nth-child(5) a {
-   background: transparent !important;
+	background: transparent !important;
 }
+
+
 </style>
 
 
@@ -346,123 +383,114 @@ li a:hover {
 <body>
 
 
-    <section id="container">
+	<section id="container">
 
-        <header id="header">
-            <section class="inner">
+		<header id="header">
+			<section class="inner">
 
-                <h1 class="logo">
-                    <a href="index.jsp">
-                        <div class="sprite_insta_icon"></div>
-                        <div class="sprite_write_logo"></div>
-                    </a>
-                </h1>
+				<h1 class="logo">
+					<a href="index.jsp">
+						<div class="sprite_insta_icon"></div>
+						<div class="sprite_write_logo"></div>
+					</a>
+				</h1>
 
-                <div class="search_box">
-                    <input type="text" placeholder="검색"
-                  id="search-field">
+				<div class="search_box">
+					<input type="text" placeholder="검색" id="search-field">
 
-                    <div class="fake_field">
-                        <span class="sprite_small_search_icon"></span>
-                        <span>검색</span>
-                    </div>
-                </div>
+					<div class="fake_field">
+						<span class="sprite_small_search_icon"></span> <span>검색</span>
+					</div>
+				</div>
 
-                <div class="right_icons">
-                    <ul class="menu">
-                        <li><a class="trigger" href="#">
-                                <div class="sprite_camera_icon"></div>
-                            </a></li>
-                        <li class="bg"></li>
-                    </ul>
-                    <ul class="menu">
-                        <li><a
-                     onclick="location.href='likepage.jsp'" href="#">
-                                <div class="sprite_compass_icon"></div>
-                            </a></li>
-                        <li class="bg"></li>
-                    </ul>
-                    <ul class="menu">
-                        <li><a
-                     onclick="location.href='profile3.jsp'" href="#">
-                                <div class="sprite_user_icon_outline"></div>
-                            </a></li>
-                        <li class="bg"></li>
-                    </ul>
+				<div class="right_icons">
+					<ul class="menu">
+						<li><a class="trigger_post" href="#">
+								<div class="sprite_camera_icon"></div>
+						</a></li>
+						<li class="bg"></li>
+					</ul>
+					<ul class="menu">
+						<li><a onclick="location.href='likepage.jsp'" href="#">
+								<div class="sprite_compass_icon"></div>
+						</a></li>
+						<li class="bg"></li>
+					</ul>
+					<ul class="menu">
+						<li><a onclick="location.href='profile3.jsp'" href="#">
+								<div class="sprite_user_icon_outline"></div>
+						</a></li>
+						<li class="bg"></li>
+					</ul>
 
 
 
-                </div>
+				</div>
 
 
 
 
 
-            </section>
+			</section>
 
-        </header>
+		</header>
 
+		<!-- new post모달 -->
+		<div class="modal_post">
+			<div class="post-modal-content">
+				<span class="post_closebutton">&times;</span>
+				<h1 class="title" id="post_title">NEW POST</h1>
+				<label></label>
+				<form class="upload_form" action="#post.php" method="POST">
+					<label></label>
+					<div class="preview">
+						<!-- 이미지 미리보기 영역 -->
+						<div class="post-upload">
+							<div class="post_btn">
+								<div class="logo_icon">
+									<span></span> <span></span>
+								</div>
+								<p>NEW POST</p>
+							</div>
+							<label></label><label></label>
+						</div>
+					</div>
 
-        <h1>업로드 창 띄우기</h1>
-        <!-- 버튼 -->
-        <button class="trigger">게시물 업로드</button>
+					<p>
+						<!-- 첨부파일(이미지파일만 업로드) -->
+						<input type="file" name="photo" id="post_photo" accept="video/*"
+							onchange="setpostthumbnail(event);" />
+					</p>
+					<div>
+						<input type="button" class="behavior_submit_button"
+							value="행동 분석하기">
+					</div>
 
-        <div class="modal">
-            <div class="modal-content">
-                <span class="close-button">&times;</span>
-                <h1 class="title">NEW POST</h1>
-                <label></label>
-                <form class="upload_form" action="FeedUpload.do"
-					method="POST">
-                    <label></label>
-                    <div class="preview">
-                        <!-- 이미지 미리보기 영역 -->
-                        <div class="upload">
-                            <div class="post_btn">
-                                <div class="logo_icon">
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                                <p>NEW POST</p>
-                            </div>
-                        </div>
-                    </div>
+					<label for="behavior_analysis">Hi,Dear!</label>
+					<div class="behavior_analysis"></div>
 
-                    <p>
-                        <!-- 첨부파일(이미지파일만 업로드) -->
-                        <input type="file" name="photo" id="id_photo"
-                     accept="video/*|image/*" onchange="setThumbnail(event);" />
-                    </p>
+					<p id="post_chk_open">
+						<!-- 공개 비공개 -->
+						<div>공개<input type="radio" class="chk_open" name="chk_open"
+							value="공개"> 비공개<input type="radio" class="chk_open"
+							name="chk_open" value="비공개"></div>
+					</p>
 
-                    <label></label>
-                    <p>
-                        <!-- 공개 비공개 -->
-                        <input type="radio" id="chk_open"
-                     name="chk_open" value="U" checked="checked">공개
-                        <input type="radio" id="chk_open"
-                     name="chk_open" value="L">비공개
-                    </p>
-
-                    <label for="behavior_analysis">Hi,Dear!</label>
-                    <div class="behavior_analysis"></div>
-
-                    <label for="contents">Contents</label>
-                    <textarea name="contents" placeholder="#해시태그 & 문구입력"></textarea>
-
-                    <div class="modal_check">
-                        <input type="button" id="cancel" value="취소">
-                        <input type="submit" id="submit" value="업로드">
-                    </div>
-                </form>
-            </div>
-        </div>
+					<label for="contents">Contents</label>
+									<textarea id="post_textarea" name="contents"
+						placeholder="#해시태그 & 문구입력"></textarea>
+									<input type="button" class="post_cancel" value="취소"> <input
+						type="submit" class="post_submit" value="업로드">
+								</form>
+							</div>
+						</div>
 
 
 
 
 
         <section id="main_container">
-            <div class="inner">
+							<div class="inner">
                 <div class="contents_box">
 
                     <article class="contents">
@@ -475,7 +503,7 @@ li a:hover {
                             <div class="user_container">
                                 <div class="div_profile_img">
                                     <img class="profile_img"
-                              src="imgs/thumb.jpeg" alt="프로필이미지">
+														src="imgs/thumb.jpeg" alt="프로필이미지">
                                 </div>
                                 <div class="user_name">
                                     <div class="nick_name m_text">KindTiger</div>
@@ -485,10 +513,10 @@ li a:hover {
                             </div>
 
                             <div class="sprite_more_icon"
-                        data-name="more">
+												data-name="more">
                                 <ul class="toggle_box">
                                     <li><input type="submit"
-                              class="follow" value="팔로우" data-name="follow"></li>
+														class="follow" value="팔로우" data-name="follow"></li>
                                     <li>수정</li>
                                     <li>삭제</li>
                                 </ul>
@@ -501,8 +529,8 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                           <img class="personal_contents" src="imgs/img_section/img01.jpg"
-                              alt="visual01">
+                           <img class="personal_contents"
+														src="imgs/img_section/img01.jpg" alt="visual01">
                         </div>
                             </div>
                         </div>
@@ -513,17 +541,18 @@ li a:hover {
                         <div class="bottom_icons">
                             <div class="left_icons">
                                 <div class="heart_btn">
-                                    <div
-                              class="sprite_heart_icon_outline" name="39"
-                              data-name="heartbeat"></div>
+                                    <div class="sprite_heart_icon_outline" name="39"
+														data-name="heartbeat"></div>
                                 </div>
-                                <div class="sprite_bubble_icon"></div>
+                                <div class="sprite_bubble_icon"
+													id="trigger_all_reply"></div>
+ 
                                 <div class="sprite_share_icon"
-                           data-name="share"></div>
+													data-name="share"></div>
                             </div>
                             <div class="right_icon">
                                 <div class="sprite_bookmark_outline"
-                           data-name="bookmark"></div>
+													data-name="bookmark"></div>
                             </div>
                         </div>
 
@@ -540,7 +569,7 @@ li a:hover {
 
                         <div class="comment_container">
                             <div class="comment"
-                        id="comment-list-ajax-post37">
+												id="comment-list-ajax-post37">
                                 <div class="comment-detail">
                                     <div class="nick_name m_text">dongdong2</div>
                                     <div class="comment_reple">강아지가 너무 귀여워요~!</div>
@@ -548,7 +577,7 @@ li a:hover {
                             </div>
                             <div class="small_heart">
                                 <div
-                           class="sprite_small_heart_icon_outline"></div>
+													class="sprite_small_heart_icon_outline"></div>
                             </div>
                         </div>
 
@@ -559,11 +588,11 @@ li a:hover {
 
 
                         <div class="comment_field"
-                     id="add-comment-post37">
+											id="add-comment-post37">
                             <input type="text" class="inputReple"
-                        placeholder="댓글달기...">
+												placeholder="댓글달기...">
                             <div class="upload_btn m_text"
-                        data-name="comment">게시</div>
+												data-name="comment">게시</div>
                         </div>
 
 
@@ -581,7 +610,7 @@ li a:hover {
                             <div class="user_container">
                                 <div class="div_profile_img">
                                     <img class="profile_img"
-                              src="imgs/thumb.jpeg" alt="프로필이미지">
+														src="imgs/thumb.jpeg" alt="프로필이미지">
                                 </div>
                                 <div class="user_name">
                                     <div class="nick_name m_text">KindTiger</div>
@@ -591,10 +620,10 @@ li a:hover {
                             </div>
 
                             <div class="sprite_more_icon"
-                        data-name="more">
+												data-name="more">
                                 <ul class="toggle_box">
                                     <li><input type="submit"
-                              class="follow" value="팔로우" data-name="follow"></li>
+														class="follow" value="팔로우" data-name="follow"></li>
                                     <li>수정</li>
                                     <li>삭제</li>
                                 </ul>
@@ -608,7 +637,8 @@ li a:hover {
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
                            <video class="personal_contents" controls>
-                           <source src="videos/dog1.mp4" type="video/mp4"/>
+                           <source src="videos/dog1.mp4"
+															type="video/mp4" />
                            </video>
                         </div>
                             </div>
@@ -621,16 +651,16 @@ li a:hover {
                             <div class="left_icons">
                                 <div class="heart_btn">
                                     <div
-                              class="sprite_heart_icon_outline" name="39"
-                              data-name="heartbeat"></div>
+														class="sprite_heart_icon_outline" name="39"
+														data-name="heartbeat"></div>
                                 </div>
                                 <div class="sprite_bubble_icon"></div>
                                 <div class="sprite_share_icon"
-                           data-name="share"></div>
+													data-name="share"></div>
                             </div>
                             <div class="right_icon">
                                 <div class="sprite_bookmark_outline"
-                           data-name="bookmark"></div>
+													data-name="bookmark"></div>
                             </div>
                         </div>
 
@@ -647,7 +677,7 @@ li a:hover {
 
                         <div class="comment_container">
                             <div class="comment"
-                        id="comment-list-ajax-post37">
+												id="comment-list-ajax-post37">
                                 <div class="comment-detail">
                                     <div class="nick_name m_text">dongdong2</div>
                                     <div class="comment_reple">강아지가 너무 귀여워요~!</div>
@@ -655,7 +685,7 @@ li a:hover {
                             </div>
                             <div class="small_heart">
                                 <div
-                           class="sprite_small_heart_icon_outline"></div>
+													class="sprite_small_heart_icon_outline"></div>
                             </div>
                         </div>
 
@@ -666,11 +696,11 @@ li a:hover {
 
 
                         <div class="comment_field"
-                     id="add-comment-post37">
+											id="add-comment-post37">
                             <input type="text" class="inputReple"
-                        placeholder="댓글달기...">
+												placeholder="댓글달기...">
                             <div class="upload_btn m_text"
-                        data-name="comment">게시</div>
+												data-name="comment">게시</div>
                         </div>
 
 
@@ -687,7 +717,7 @@ li a:hover {
                             <div class="user_profile">
                                 <div class="profile_thumb">
                                     <img src="imgs/thumb.jpeg"
-                              alt="프로필사진">
+														alt="프로필사진">
                                 </div>
                                 <div class="detail">
                                     <div class="id m_text">KindTiger</div>
@@ -707,7 +737,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -718,7 +748,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -729,7 +759,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -740,7 +770,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -751,7 +781,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -762,7 +792,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -781,7 +811,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -791,7 +821,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -801,7 +831,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -811,7 +841,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -821,7 +851,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -831,7 +861,7 @@ li a:hover {
                                     <div class="thumb_user">
                                         <div class="profile_thumb">
                                             <img src="imgs/thumb02.jpg"
-                                    alt="프로필사진">
+																alt="프로필사진">
                                         </div>
                                         <div class="detail">
                                             <div class="id">kind_tigerrrr</div>
@@ -849,9 +879,11 @@ li a:hover {
 
 
         
-      </section>
+      
+						</section>
 
-    </section>
+    
+					</section>
 
 
 
@@ -1117,56 +1149,48 @@ li a:hover {
     </script>
 
     <script type="text/javascript">
-        // *모달 스크립트 *
-        var modal = document.querySelector(".modal");
-        var trigger = document.querySelector(".trigger");
-        var closeButton = document.querySelector(".close-button");
-        var cancelButton = document.querySelector("#cancel");
+ 	// *NewPost 모달 스크립트 *
+	var modal_post = document.querySelector(".modal_post");
+	var trigger_post = document.querySelector(".trigger_post");
+	var closeButton_post = document.querySelector(".post_closebutton");
+	var cancelButton_post = document.querySelector(".post_cancel");
 
-        //console.log(modal);
+	//console.log(modal);
 
-        function toggleModal() {
-            modal.classList.toggle("show-modal");
-        }
+	function posttoggleModal() {
+		modal_post.classList.toggle("post-show-modal");
+	}
 
-        function windowOnClick(event) {
-            if (event.target === modal) {
-                toggleModal();
-            }
-        }
+	function postwindowOnClick(event) {
+		if (event.target === modal_post) {
+			posttoggleModal();
+		}
+	}
 
-        trigger.addEventListener("click", toggleModal);
-        closeButton.addEventListener("click", toggleModal);
-        cancel.addEventListener("click", toggleModal);
-        window.addEventListener("click", windowOnClick);
+	trigger_post.addEventListener("click", posttoggleModal);
+	closeButton_post.addEventListener("click", posttoggleModal);
+	cancelButton_post.addEventListener("click", posttoggleModal);
+	window.addEventListener("click", postwindowOnClick);
 
-        // // 편집 이미지 추가 
-        // var fileInput  = document.querySelector( "#id_photo" )
+	// NewPost 이미지 미리보기 
+	function setpostthumbnail(event) {
+		var post_reader = new FileReader();
 
-        //    // Show image
-        //    fileInput.addEventListener('change', handleImage, false);
-        //    var canvas = document.getElementById('imageCanvas');
-        //    var ctx = canvas.getContext('2d');
+		post_reader.onload = function(event) {
+			var post_to_remove = document.querySelector("div.post-upload");
+			while (post_to_remove.firstChild) {
+				post_to_remove.removeChild(post_to_remove.firstChild);
+			}
+			var post_video = document.createElement("video");
+			post_video.setAttribute("src", event.target.result);
+			post_video.style.width = "450px";
+			post_video.style.height = "350px";
+			document.querySelector("div.post-upload").appendChild(post_video);
+		};
 
+		post_reader.readAsDataURL(event.target.files[0]);
+	}
 
-        // 이미지 미리보기 
-        function setThumbnail(event) {
-            var reader = new FileReader();
-
-            reader.onload = function (event) {
-                var to_remove = document.querySelector("div.upload");
-                while (to_remove.firstChild) {
-                    to_remove.removeChild(to_remove.firstChild);
-                }
-                var img = document.createElement("img");
-                img.setAttribute("src", event.target.result);
-                img.style.width = "450px";
-                img.style.height = "450px";
-                document.querySelector("div.upload").appendChild(img);
-            };
-
-            reader.readAsDataURL(event.target.files[0]);
-        }
 
     </script>
 
