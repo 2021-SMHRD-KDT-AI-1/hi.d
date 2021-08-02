@@ -48,13 +48,13 @@
 	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 
 
-<title>instagram</title>
+<title>Hi Dear</title>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/profile.css">
 <link rel="stylesheet" href="css/new_profile.css">
-<link rel="shortcut icon" href="imgs/instagram.png">
+<link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 
 

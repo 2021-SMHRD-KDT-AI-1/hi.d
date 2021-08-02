@@ -36,11 +36,11 @@
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
 
-<title>instagram</title>
+<title>Hi Dear</title>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="shortcut icon" href="imgs/instagram.png">
+<link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 <style>
 .b_inner .contents_box {
@@ -132,6 +132,47 @@ li a:hover {
 	background: transparent !important;
 }
 
+
+/*팔로우게시물 더보기메뉴*/
+.sprite_more_icon{
+  
+  margin: 16px;
+  background-color: white;
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  top: 3px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 43px;
+  right:-20px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+ .dropdown-content a:hover {background-color: #ddd;}
+   
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover.dropbtn {background-color: #3e8e41;}
+
+
+
 </style>
 
 </head>
@@ -200,74 +241,106 @@ li a:hover {
 
 				<div class="contents_box">
 
-					<article class="contents cont01">
-						<header class="top">
-							<div class="user_container">
-								<div class="profile_img">
-									<img src="imgs/thumb.jpeg" alt="">
-								</div>
-								<div class="user_name">
-									<div class="nick_name">KindTiger</div>
-									<div class="country">Seoul, South Korea</div>
-								</div>
-							</div>
-							<div class="sprite_more_icon"></div>
-						</header>
-
-						<div class="img_section">
-							<div class="trans_inner">
-								<div>
-									<img src="imgs/img_section/img02.jpg" alt="">
-								</div>
-							</div>
-						</div>
+					 <article class="contents">
 
 
-						<div class="bottom_icons">
-							<div class="left_icons">
-								<div class="heart_btn">
-									<div class="sprite_heart_icon_outline" data-name="heartbeat"></div>
-								</div>
-								<div>
-									<div class="sprite_bubble_icon"></div>
-								</div>
-								<div>
-									<div class="sprite_share_icon"></div>
-								</div>
-							</div>
-
-							<div class="right_icon">
-								<div class="sprite_bookmark_outline"></div>
-							</div>
-						</div>
-
-						<div class="count_likes">
-							좋아요 <span class="count">2,351</span> 개
-						</div>
-
-						<div class="commet_container">
-
-							<div class="commet">
-								<div class="nick_name">popo213</div>
-								<div>우와...너무 축하해...!!!</div>
-							</div>
-
-							<div class="small_heart">
-								<div class="sprite_small_heart_icon_outline"></div>
-							</div>
-
-						</div>
-
-						<div class="timer">1시간 전</div>
-
-						<div class="commit_field">
-							<input type="text" placeholder="댓글달기..">
-
-							<div class="upload_btn">게시</div>
-						</div>
 
 
-					</article>
+                        <header class="top">
+
+                            <div class="user_container">
+                                <div class="div_profile_img">
+                                    <img class="profile_img"
+                              src="imgs/thumb.jpeg" alt="프로필이미지">
+                                </div>
+                                <div class="user_name">
+                                    <div class="nick_name m_text">KindTiger</div>
+                                    <div class="country s_text">Seoul, South Korea</div>
+                                </div>
+
+                            </div>
+
+                         <div class ="dropdown">
+               <div class="sprite_more_icon"></div>
+                       <div class="dropdown-content">
+                           <a href="#">게시물 수정</a>
+                           <a href="#">게시물 삭제</a>
+                     </div>                        
+                     </div>
+                  </header>
+
+
+
+
+                        <div class="img_section">
+                            <div class="trans_inner">
+                                <div class="trans_inner_inner">
+                           <img class="personal_contents" src="imgs/img_section/img01.jpg"
+                              alt="visual01">
+                        </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="bottom_icons">
+                            <div class="left_icons">
+                                <div class="heart_btn">
+                                    <div
+                              class="sprite_heart_icon_outline" name="39"
+                              data-name="heartbeat"></div>
+                                </div>
+                                <div class="sprite_bubble_icon"></div>
+                                <div class="sprite_share_icon"
+                           data-name="share"></div>
+                            </div>
+                            <div class="right_icon">
+                                <div class="sprite_bookmark_outline"
+                           data-name="bookmark"></div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="likes m_text">
+                            좋아요
+                            <span id="like-count-39">2,346</span>
+                            <span id="bookmark-count-39"></span>
+                            개
+                        </div>
+
+
+
+                        <div class="comment_container">
+                            <div class="comment"
+                        id="comment-list-ajax-post37">
+                                <div class="comment-detail">
+                                    <div class="nick_name m_text">danamlee</div>
+                                    <div class="comment_reple">저처럼 너무 귀여워요~!</div>
+                                </div>
+                            </div>
+                            <div class="small_heart">
+                                <div
+                           class="sprite_small_heart_icon_outline"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="timer">1시간 전</div>
+
+
+                        <div class="comment_field"
+                     id="add-comment-post37">
+                            <input type="text" class="inputReple"
+                        placeholder="댓글달기...">
+                            <div class="upload_btn m_text" 
+                        data-name="comment">게시</div>
+                        </div>
+
+
+
+                    </article>
 
 
 
