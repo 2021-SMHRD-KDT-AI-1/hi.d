@@ -179,6 +179,7 @@ input, textarea {
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
+
 .behavior_submit_button:hover {
 	color: #fff;
 	background-color: #ffa042;
@@ -646,7 +647,7 @@ pic::-webkit-media-controls {
 						<div class="top">
 							<div class="user_name">MY_PET_ID</div>
 							<div class="detail_button" id="trigger_profile_edit"
-								meau-index="0">프로필 편집</div>
+								menu-index="0">프로필 편집</div>
 
 							<!-- 프로필 편집 모달창 -->
 							<div class="modal_profile_edit">
@@ -685,7 +686,7 @@ pic::-webkit-media-controls {
 								</div>
 							</div>
 
-							<div class="detail_button" id="trigger_logout" meau-index="1" onClick="location.href='choice.jsp'">로그아웃</div>
+							<div class="detail_button" id="trigger_logout" menu-index="1" onClick="location.href='choice.jsp'">로그아웃</div>
 						</div>
 
 
@@ -803,7 +804,8 @@ pic::-webkit-media-controls {
 		</div>
 	</section>
 
-	<script src='js/jquery-3.6.0.min.js'></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 	<script src="js/profile.js"></script>
 	<script type="text/javascript">
 		// *NewPost 모달 스크립트 *
@@ -912,7 +914,7 @@ pic::-webkit-media-controls {
 							'clicked_detail_button');
 				}).mouseout(
 				function() {
-					/*클릭된 <div>의 menu-index 값을 index 변수에 할당한다.*/
+					/*마우스에서 떨어졌을때 효과제거*/
 					var index = $(this).attr('menu-index');
 					$('.detail_button[menu-index=' + index + ']').removeClass(
 							'clicked_detail_button');

@@ -3,10 +3,14 @@
 .m_text{
     font-size: 14px;
     font-weight: bold;
+     position: relative;
+    top: 2px;
 }
 
 .s_text{
     font-size: 12px;
+     position: relative;
+    top: 5px;
 }
 
 
@@ -724,11 +728,16 @@ body{
 .m_text{
     font-size: 14px;
     font-weight: bold;
+    position: relative;
+    top: 2px;
 }
 
 .s_text{
     font-size: 12px;
+   position: relative;
+    top: 5px;
 }
+
 
 
 body{

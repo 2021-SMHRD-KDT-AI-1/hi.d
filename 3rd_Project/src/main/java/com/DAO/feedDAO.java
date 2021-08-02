@@ -1,6 +1,7 @@
 package com.DAO;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -113,9 +114,8 @@ public class feedDAO {
 			sql = "select * from ("
 					+ "select * from feedinfo"
 					+ "order by DBMS_RANDOM.RANDOM"
-					+ ") where rownum < " + n;
+					+ ") where rownum < 2";
 			psmt = conn.prepareStatement(sql);
-			
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
@@ -203,16 +203,16 @@ public class feedDAO {
 			getConn();
 			sql = "select * from feedinfo where feed_content like '%" + tag + "%'";
 			psmt = conn.prepareStatement(sql);
-			
 			rs = psmt.executeQuery();
 			while(rs.next()) {
-				one_feed.setFeed_num(rs.getInt(1));
-				one_feed.setPet_num(rs.getInt(2));
-				one_feed.setImg_addr(rs.getString(3));
-				one_feed.setFeed_content(rs.getString(4));
-				one_feed.setLike_pet(rs.getString(5));
-				one_feed.setF_lock(rs.getString(6));
-				one_feed.setUpload_time(rs.getDate(7));
+				int feed_num = rs.getInt(1);
+				int pet_num = rs.getInt(2);
+				String img_addr = rs.getString(3);
+				String feed_content = rs.getString(4);
+				String like_pet = rs.getString(5);
+				String f_lock = rs.getString(6);
+				Date upload_time = rs.getDate(7);
+				one_feed = new feedVO(feed_num, pet_num, img_addr, feed_content, like_pet, f_lock, upload_time);
 				feeds.add(one_feed);
 			}
 		} catch (Exception e) {
@@ -221,6 +221,34 @@ public class feedDAO {
 			close();
 		}
 		return feeds;
+	}
+	
+	public feedVO get_one_feed(int feed_num) {
+		feedVO one_feed = null;
+		try {
+			getConn();
+			sql = "select * from feedinfo where feed_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, feed_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				int pet_num = rs.getInt(2);
+				String img_addr = rs.getString(3);
+				String feed_content = rs.getString(4);
+				String like_pet = rs.getString(5);
+				String f_lock = rs.getString(6);
+				Date upload_time = rs.getDate(7);
+				one_feed = new feedVO(feed_num, pet_num, img_addr, feed_content, like_pet, f_lock, upload_time);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return one_feed;
 	}
 
 	// n번째 글부터 m번째 글까지 가져오기
