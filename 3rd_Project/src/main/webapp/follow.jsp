@@ -1,3 +1,6 @@
+
+팔로우 페이지
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -165,11 +168,13 @@ li a:hover {
   display: block;
 }
 
+
  .dropdown-content a:hover {background-color: #ddd;}
    
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover.dropbtn {background-color: #3e8e41;}
+
 
 
 
@@ -315,10 +320,13 @@ li a:hover {
                         <div class="comment_container">
                             <div class="comment"
                         id="comment-list-ajax-post37">
+                              <form action  = >
                                 <div class="comment-detail">
+                                  
                                     <div class="nick_name m_text">danamlee</div>
                                     <div class="comment_reple">저처럼 너무 귀여워요~!</div>
                                 </div>
+                                </form>
                             </div>
                             <div class="small_heart">
                                 <div
@@ -334,8 +342,8 @@ li a:hover {
                      id="add-comment-post37">
                             <input type="text" class="inputReple"
                         placeholder="댓글달기...">
-                            <div class="upload_btn m_text" 
-                        data-name="comment">게시</div>
+                            <button class="upload_btn" 
+                        data-name="comment" type = "submit">게시</button>
                         </div>
 
 
@@ -355,8 +363,10 @@ li a:hover {
 
 
 	</section>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+	<script src="js/profile.js"></script>
 
-	<!--<script src="js/insta.js"></script>-->
 </body>
 </html>
 </body>
