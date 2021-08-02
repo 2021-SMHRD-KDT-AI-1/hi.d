@@ -14,7 +14,7 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
     <meta name="viewport"
 	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
@@ -339,7 +339,7 @@ textarea {
                 </h1>
 
                 <div class="search_box">
-	                <form action="searchpageCon.do" method="GET">
+	                <form action="searchpageCon.do" method="POST">
 	                    <input type="text" id="search-field" name="search">
 					</form>
 
@@ -444,91 +444,20 @@ textarea {
         <div id="main_container">
 
             <section class="b_inner">
-
-
-
                 <div class="mylist_contents contents_container active">
                 <!-- 탐색페이지 작성!!!! -->
-                <% //for (int i = 0; i < ) %>
+                <% 
+                	//feedVO feed = null;
+                    ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
+					//System.out.print(feeds.get(0).getImg_addr());
+                %>
+                <% for (int i = 0; i < feeds.size(); i++) {%>
                     <div class="pic">
-                        <a href="#"><img class="like_pic"
-							src="imgs/img_section/img01.jpg" alt=""></a>
+                        <a href="follow.jsp"><img class="like_pic"
+							src="<%= feeds.get(i).getImg_addr() %>" alt=""></a>
                     </div>
-                    <div class="pic">
-                        <a href="#"><img class="like_pic"
-							src="imgs/img_section/img02.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href=#"> <img class="like_pic"
-							src="imgs/img_section/img03.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img02.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img03.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img01.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img02.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img03.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img01.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img02.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img03.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img01.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img02.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img03.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img01.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img02.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img03.jpg" alt=""></a>
-                    </div>
-                    <div class="pic">
-                        <a href="#"> <img class="like_pic"
-							src="imgs/img_section/img01.jpg" alt=""></a>
-                    </div>
-                </div>
-
-
-
-
-
-
+                <%} %>
+                
             </section>
         </div>
 
