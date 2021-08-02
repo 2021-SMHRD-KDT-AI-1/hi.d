@@ -1,8 +1,12 @@
+<%@page import="org.apache.tomcat.util.http.fileupload.FileUpload"%>
 <%@page import="com.VO.speciesVO"%>
 <%@page import="com.VO.memberVO"%>
 <%@page import="com.VO.petVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.petDAO"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.io.File"%>
+<%@ page import="java.io.FileOutputStream"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -43,9 +47,11 @@
 <link rel="stylesheet"
 	href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
-<!-- 경고창 css 링크-->    
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+<!-- 경고창 css 링크-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 
 
 <title>Hi Dear</title>
@@ -310,23 +316,19 @@ li a:hover {
 	<section id="container">
 
 		<header id="header">
-			<section class="inner">
 			 <section class="inner" onclick="func()" width="500"> 
 				<h1 class="logo">
-					<a href="index.jsp">
+					<a href="#">
 						<div class="sprite_insta_icon"></div>
 						<div class="sprite_write_logo"></div>
 					</a>
 				</h1>
-
 				<div class="search_box">
 					<input type="text" placeholder="검색" id="search-field">
-
 					<div class="fake_field">
 						<span class="sprite_small_search_icon"></span> <span>검색</span>
 					</div>
 				</div>
-
 				<div class="right_icons">
 					<ul class="menu">
 						<li><a class="trigger" href="#">
@@ -335,14 +337,13 @@ li a:hover {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='likepage.jsp'" href="#">
+						<li><a href="#">
 								<div class="sprite_compass_icon"></div>
 						</a></li>
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='profile3.jsp'
-						" href="#">
+						<li><a  href="#">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 						<li class="bg"></li>
@@ -363,7 +364,6 @@ li a:hover {
 		<section id="main_container">
 			<span style="align-items: center; font-size: 200%;">누구의 계정으로
 				로그인 할까요??</span>
-
 		</section>
 
 
@@ -399,8 +399,7 @@ li a:hover {
 										<div class="upload">
 											<div class="post_btn">
 												<div class="plus_icon">
-													<span></span>
-													<span></span>
+													<span></span> <span></span>
 												</div>
 
 												<p>프로필 이미지 추가</p>
@@ -416,8 +415,7 @@ li a:hover {
 
 									<p class="join_pet_nick">
 										<input class="pet_nick" id="pet_nick" name="pet_nick" type="text" 
-											placeholder="Pet-NickName" style="width: 100%;"
-											>
+											placeholder="Pet-NickName" style="width: 100%;">
 									</p>
 
 
@@ -445,18 +443,19 @@ li a:hover {
 
 
 									<div class="radio-buttons">
-										<label class="custom-radio"> <input type="radio" class="radio_pet"
-											name="radio_pet" value="D" onclick="ajaxSpecies()" /> <span
-											class="radio-btn"> <i class="las la-check"></i>
+										<label class="custom-radio"> <input type="radio"
+											class="radio_pet" name="radio_pet" value="D"
+											onclick="ajaxSpecies()" /> <span class="radio-btn"> <i
+												class="las la-check"></i>
 												<div class="genders-icon">
 													<i class="las la-dog"></i>
 													<h4>Dog</h4>
 												</div>
 										</span>
-										</label> 
-										<label class="custom-radio"> <input type="radio" class="radio_pet"
-											name="radio_pet" value="C" onclick="ajaxSpecies()" /> <span
-											class="radio-btn"> <i class="las la-check"></i>
+										</label> <label class="custom-radio"> <input type="radio"
+											class="radio_pet" name="radio_pet" value="C"
+											onclick="ajaxSpecies()" /> <span class="radio-btn"> <i
+												class="las la-check"></i>
 												<div class="genders-icon">
 													<i class="las la-cat"></i>
 													<h4>cat</h4>
@@ -472,7 +471,8 @@ li a:hover {
                                     </p> -->
 
 									<p class="species">
-										<select class="species" style="width: 100%; height: 25px;">
+										<select class="species" name="species_list"
+											style="width: 100%; height: 25px;">
 
 										</select>
 									</p>
@@ -490,6 +490,7 @@ li a:hover {
 
 					
 					<button class="button">
+
 						<img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">
 					</button>
 					
@@ -564,12 +565,13 @@ li a:hover {
     window.addEventListener("click", windowOnClick); 
 
 	</script>
-	
+
 	<script type="text/javascript">
 	function func() {
 		swal("","로그인을 해주세요","warning");
 	}
 	</script>
+
 	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
@@ -597,6 +599,8 @@ li a:hover {
 		}
 		)
 	</script>
+
+
 
 </body>
 </html>

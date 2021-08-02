@@ -324,8 +324,8 @@ textarea {
 	//ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("search_feed");
 	//System.out.print(feeds.get(0));
 	
-	petVO pet_vo = new petVO(2, "cloud","img.jpg","hi","F","말티즈","Delkin@gmail.com");
-	session.setAttribute("pet_vo", pet_vo);
+	//petVO pet_vo = new petVO(2, "cloud","img.jpg","hi","F","말티즈","Delkin@gmail.com");
+	//session.setAttribute("pet_vo", pet_vo);
 	petVO vo = (petVO)session.getAttribute("pet_vo");
 	
 %>
