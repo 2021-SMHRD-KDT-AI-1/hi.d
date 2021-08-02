@@ -18,9 +18,17 @@ public class searchpageCon implements Command {
 		String moveURL = "";
 		String search = request.getParameter("search");
 		System.out.println("con¡¢º”");
-		
 		feedDAO dao = new feedDAO();
-		ArrayList<feedVO> feed_arr =  dao.search_feed(search);
+		ArrayList<feedVO> feed_arr = new ArrayList<>();
+		if(search.length() < 1) {
+			feed_arr = dao.get_n_feed(2);
+		}
+
+		feed_arr = dao.search_feed(search);
+		if(feed_arr == null) {
+			feed_arr = dao.get_n_feed(2);
+		}
+//		System.out.print(feed_arr.get(0).getFeed_num());
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("search_feed", feed_arr);

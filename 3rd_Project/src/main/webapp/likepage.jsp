@@ -307,6 +307,10 @@ textarea {
 	column-count: 2;
 	column-gap: 100px;
 }
+
+.search_box:hover .fake_field{
+	display: none;
+}
 </style>
 
 
@@ -335,10 +339,9 @@ textarea {
                 </h1>
 
                 <div class="search_box">
-                <form action="searchpage.do nethod="post>
-                    <input type="text" placeholder="검색"
-						id="search-field" name="search">
-						</form>
+	                <form action="searchpageCon.do" method="GET">
+	                    <input type="text" id="search-field" name="search">
+					</form>
 
                     <div class="fake_field">
                         <span class="sprite_small_search_icon"></span>
@@ -445,12 +448,14 @@ textarea {
 
 
                 <div class="mylist_contents contents_container active">
+                <!-- 탐색페이지 작성!!!! -->
+                <% //for (int i = 0; i < ) %>
                     <div class="pic">
                         <a href="#"><img class="like_pic"
 							src="imgs/img_section/img01.jpg" alt=""></a>
                     </div>
                     <div class="pic">
-                        <a href="follow.html"><img class="like_pic"
+                        <a href="#"><img class="like_pic"
 							src="imgs/img_section/img02.jpg" alt=""></a>
                     </div>
                     <div class="pic">
