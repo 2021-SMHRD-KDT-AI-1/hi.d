@@ -189,6 +189,8 @@ public class petDAO {
 		return pets;
 	}
 	
+
+	
 	
 	//프로필 삭제
 	public int delete_pet(petVO petinfo) {
