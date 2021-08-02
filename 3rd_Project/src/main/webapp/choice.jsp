@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+
 
 <meta charset="UTF-8">
 <meta name="viewport"
@@ -309,7 +309,9 @@ li a:hover {
 </head>
 
 <body>
-
+	<%
+	memberVO vo = (memberVO)session.getAttribute("vo");
+%>
 
 	<section id="container">
 
@@ -536,7 +538,7 @@ li a:hover {
         reader.readAsDataURL(e.target.files[0]);
     }
 
- 
+
 </script>
 
 	<script type="text/javascript"> 
@@ -570,8 +572,6 @@ li a:hover {
 	}
 	</script>
 
-	
-	
 	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>

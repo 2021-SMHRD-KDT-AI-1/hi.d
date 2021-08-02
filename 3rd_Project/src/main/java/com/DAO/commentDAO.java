@@ -64,11 +64,11 @@ public class commentDAO {
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				comment.setComment_num(rs.getInt(1));
-				comment.setPet_num(rs.getInt(2));
-				comment.setFeed_num(rs.getInt(3));
-				comment.setComment_content(rs.getString(4));
-				comment.setLike_pet(rs.getString(5));
+				int comment_num = rs.getInt(1);
+				int pet_num = rs.getInt(2);
+				String comment_content = rs.getString(4);
+				String like_pet = rs.getString(5);
+				comment = new feed_commentVO(comment_num, pet_num, feed_num, comment_content, like_pet);
 				comments.add(comment);
 			}
 		} catch (Exception e) {

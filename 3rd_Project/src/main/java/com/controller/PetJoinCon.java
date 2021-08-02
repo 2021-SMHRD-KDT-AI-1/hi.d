@@ -43,7 +43,7 @@ public class PetJoinCon implements Command{
 		System.out.println(species_list);
 		
 		if (cnt > 0) {
-			petVO vo_new  = new petVO(pet_nick, pet_profile, pet_introduce, pet_gen, cord, species_list, email);
+			petVO vo_new  = new petVO(pet_nick, pet_profile, pet_introduce, pet_gen, species_list, email);
 			session.setAttribute("vo", vo_new);
 			moveURL = "choice.jsp";
 		}
