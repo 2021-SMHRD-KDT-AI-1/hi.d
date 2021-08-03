@@ -375,6 +375,7 @@ li a:hover {
 }
 
 
+
 </style>
 
 
@@ -396,8 +397,9 @@ li a:hover {
 				</h1>
 
 				<div class="search_box">
-					<input type="text" placeholder="검색" id="search-field">
-
+					<form action="searchpageCon.do">
+						<input type="text" placeholder="검색" id="search-field">
+					</form>
 					<div class="fake_field">
 						<span class="sprite_small_search_icon"></span> <span>검색</span>
 					</div>
@@ -411,25 +413,19 @@ li a:hover {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='likepage.jsp'" href="#">
+						<li><a href="searchpageCon.do">
 								<div class="sprite_compass_icon"></div>
 						</a></li>
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='hover_video_test.jsp'" href="#">
+						<li><a onclick="location.href='hover_video_test.jsp'">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 						<li class="bg"></li>
 					</ul>
 
-
-
 				</div>
-
-
-
-
 
 			</section>
 
@@ -521,15 +517,12 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                                
-                                <p align = "middle">
-                           <video class="personal_contents" alt="visual01"></video>
-                           </p>
-														
-                        </div>
-		                            <video class="personal_contents">
-		                            	<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4">
-									</video>
+     
+                                	<p align = "middle">
+		                            	<video class="personal_contents" controls>
+		                            		<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4">
+		                            	</video>
+									</p>
                         		</div>
                             </div>
                         </div>
@@ -575,13 +568,18 @@ li a:hover {
                             </div>
                         </div>
                         <div class="timer">1시간 전</div>
-                        <div class="comment_field"
-											id="add-comment-post37">
-                            <input type="text" class="inputReple"
-												placeholder="댓글달기...">
-                            <div class="upload_btn m_text"
-												data-name="comment">게시</div>
+
+
+
+
+  					<div class="comment_field">
+
+                        <div class="comment_field">
+
+                             <input type="text" class="inputReple" placeholder="댓글달기...">
+                            <div class="upload_btn m_text" data-name="comment">게시</div>
                         </div>
+					</div>
                     </article>
 					<%} %>
 
@@ -621,13 +619,10 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                                <p align = "middle">
-                                 <video class="personal_contents" controls>
-                           <source src="videos/dog1.mp4"type="video/mp4" />
-								
+                           <video class="personal_contents" controls>
+                           <source src="videos/dog1.mp4" type="video/mp4" />
                            </video>
-                           </p>
-                        </div>
+                        		</div>
                             </div>
                         </div>
 

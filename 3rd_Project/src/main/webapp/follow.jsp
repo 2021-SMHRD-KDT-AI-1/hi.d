@@ -212,8 +212,10 @@ li a:hover {
 				</h1>
 
                 <div class="search_box">
-                    <input type="text" placeholder="검색"
-						id="search-field">
+	                <form action="searchpageCon.do">
+	                    <input type="text" placeholder="검색"
+							id="search-field">
+					</form>
 
                     <div class="fake_field">
                         <span class="sprite_small_search_icon"></span>
@@ -223,21 +225,19 @@ li a:hover {
 
                 <div class="right_icons">
                     <ul class="menu">
-                        <li><a class="trigger" href="#">
+                        <li><a class="trigger" href="FeedUploadCon.do">
                                 <div class="sprite_camera_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a
-							onclick="location.href='likepage.jsp'" href="#">
+                        <li><a href="searchpageCon.do">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a
-							onclick="location.href='profile3.jsp'" href="#">
+                        <li><a onclick="location.href='hover_video_test.jsp'">
                                 <div class="sprite_user_icon_outline"></div>
                             </a></li>
                         <li class="bg"></li>
@@ -331,7 +331,7 @@ li a:hover {
                         
                         
                         <div id = reply></div>
-
+							
                         <div class="timer">1시간 전</div>
 
 
