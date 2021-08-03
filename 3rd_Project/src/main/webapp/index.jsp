@@ -5,10 +5,6 @@
 <head>
 <meta charset="EUC-KR">
 
-</head>
-<body>
-	<!DOCTYPE html>
-<html lang="en">
 
 <head>
 <meta charset="UTF-8">
@@ -531,8 +527,11 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                           <img class="personal_contents"
-														src="imgs/img_section/img01.jpg" alt="visual01">
+                                
+                                <p align = "middle">
+                           <video class="personal_contents" alt="visual01"></video>
+                           </p>
+														
                         </div>
                             </div>
                         </div>
@@ -638,10 +637,12 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                           <video class="personal_contents" controls>
-                           <source src="videos/dog1.mp4"
-															type="video/mp4" />
+                                <p align = "middle">
+                                 <video class="personal_contents" controls>
+                           <source src="videos/dog1.mp4"type="video/mp4" />
+								
                            </video>
+                           </p>
                         </div>
                             </div>
                         </div>

@@ -138,15 +138,15 @@ li a:hover {
 }
 
 .mylist_contents video{
-	width: 300px;
-	height: 200px;
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 }
 
 .mylist_contents div video{
-	width: 300px;
+	width: 100%;
 	height: auto;
 	border-radius: 40px;
 	-webkit-transition: .3s ease-in-out;
@@ -501,7 +501,7 @@ textarea {
                 %>
                 <% for (int i = 0; i < feeds.size(); i++) {%>
                     <div class="pic">
-                        <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video width='400' height='400'>
+                        <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video >
 							<source src="<%= feeds.get(i).getImg_addr() %>" type="video/mp4"/></video></a>
                     </div>
                 <%} %>
