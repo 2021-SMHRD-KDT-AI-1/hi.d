@@ -658,11 +658,9 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 
 					<div class="detail">
 						<div class="top">
-<<<<<<< HEAD
-							<div class="user_name">gfjhgjhjhgjhg</div>
-=======
-							<div class="user_name">GFJHGJHGHJ</div>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
+
+							<div class="user_name"></div>
+
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 
