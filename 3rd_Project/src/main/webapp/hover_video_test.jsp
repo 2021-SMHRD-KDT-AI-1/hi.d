@@ -529,14 +529,8 @@ pic::-webkit-media-controls {
 </head>
 
 <body>
-
-
-
 <% //반려동물 정보가 담겨있는 곳 : vo
-
-petVO pet_vo = (petVO)session.getAttribute("pet_vo");
-
-
+	petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 %>
 
 	<section id="container">
@@ -632,14 +626,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 
 						<li class="bg"></li>
 					</ul>
-
-
 				</div>
-
-
-
-
-
 			</section>
 
 		</header>
@@ -660,7 +647,9 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 						<div class="top">
 
 
-							<div class="user_name">GFJHGJHGHJ</div>
+
+							<div class="user_name"><%=pet_vo.getPet_nick() %></div>
+
 
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
@@ -714,7 +703,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br>안녕
+							<span>Intro Text<br><%=pet_vo.getPet_introduce() %>
 							</span>
 						</div>
 
