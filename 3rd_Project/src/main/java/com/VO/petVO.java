@@ -59,7 +59,12 @@ public class petVO {
 		this.pet_introduce = pet_introduce;
 	}
 	
-
+	public petVO(int pet_num, String pet_nick, String pet_profile) {
+		super();
+		this.pet_num = pet_num;
+		this.pet_nick = pet_nick;
+		this.pet_profile = pet_profile;
+	}
 
 
 	public int getPet_num() {
