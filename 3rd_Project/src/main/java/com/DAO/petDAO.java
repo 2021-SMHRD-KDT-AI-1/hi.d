@@ -1,10 +1,15 @@
 package com.DAO;
 
+import java.awt.Image;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 import com.VO.emotionVO;
 import com.VO.memberVO;
@@ -20,6 +25,7 @@ public class petDAO {
 	int cnt = 0;
 	String sql = "";
 	petVO vo = null;
+					
 	
 	
 	public void getConn() {
@@ -189,6 +195,8 @@ public class petDAO {
 		return pets;
 	}
 	
+
+	
 	
 	//프로필 삭제
 	public int delete_pet(petVO petinfo) {
@@ -207,6 +215,42 @@ public class petDAO {
 		}
 		return cnt;
 	}
+
+	
+	
+	//마이페이지 프로필 정보 가져오기
+	public ArrayList<petVO> get_pet_pro(){
+		ArrayList<petVO> pets = new ArrayList<>();
+		
+		
+		
+		try {
+			getConn();
+			sql = "select * from petinfo";
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				String Pet_nick = rs.getString(2);
+				String Pet_profile = rs.getString(3);
+				String Pet_introduce = rs.getString(4);
+				
+				
+				petVO vo = new petVO(Pet_nick, Pet_profile, Pet_introduce);
+				pets.add(vo);
+				
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return pets;
+	}
+
 	
 	public String pet_name(int pet_num) {
 		String petName = null;
@@ -229,7 +273,9 @@ public class petDAO {
 		return petName;
 	}
 
-	
 
 	
+	
 }
+
+
