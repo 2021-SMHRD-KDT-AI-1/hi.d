@@ -75,8 +75,8 @@
 
 <body>
 <%
-ArrayList<petVO> pet_profiles = ((ArrayList<petVO>)session.getAttribute("vo_arr"));
-memberVO vo = (memberVO)session.getAttribute("vo");
+	ArrayList<petVO> pet_profiles = ((ArrayList<petVO>)session.getAttribute("vo_arr"));
+	memberVO vo = (memberVO)session.getAttribute("vo");
 %>
 
 	<section id="container">
