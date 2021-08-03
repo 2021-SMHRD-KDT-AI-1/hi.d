@@ -126,6 +126,11 @@ INSERT INTO MEMBERINFO
 VALUES('GaIn@gmail.com', '0000');
 INSERT INTO MEMBERINFO
 VALUES('Cutie@gmail.com', '0000');
+INSERT INTO MEMBERINFO
+VALUES('mino@gmail.com', '0000');
+INSERT INTO MEMBERINFO
+VALUES('maru@gmail.com', '0000');
+
 
 
 insert into species values('코리안 숏헤어','C');
@@ -298,9 +303,9 @@ VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry01.mp4', '메리', '1,2,3,4,5,6,7,8,
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry02.mp4', '메리', '1,2,3', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry03.mp4', '메리', '1,2,3', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry03.mp4', '메리', '1,2,3', 'U', TO_DATE('2021-06-04','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry04.mp4', '메리', '1,2,3', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry04.mp4', '메리', '1,2,3', 'U', TO_DATE('2021-06-05','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 2, 'videos/Cloud2.mp4', '구름', '1,2,3,4,5,6,7,8,9,10', 'U', sysdate);
 INSERT INTO FEEDINFO
