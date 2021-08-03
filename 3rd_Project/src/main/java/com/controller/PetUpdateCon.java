@@ -27,8 +27,8 @@ public class PetUpdateCon implements Command{
 
 		if (cnt > 0) {
 			// 수정된 최신정보로 다시한번 vo를 만들어줘야한다
-			petVO vo_new = new petVO(pet_nick, pet_profile, pet_introduce);
-			session.setAttribute("vo", vo_new);
+			petVO vo_update = new petVO(pet_nick, pet_profile, pet_introduce);
+			session.setAttribute("vo_update", vo_update);
 			moveURL = "profile3.jsp";
 		}
 		

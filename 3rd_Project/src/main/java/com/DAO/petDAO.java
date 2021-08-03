@@ -122,7 +122,7 @@ public class petDAO {
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				String getpet_num = rs.getString(1);
+				int getpet_num = rs.getInt(1);
 				String getpet_nick = rs.getString(2);
 				String pet_profile = rs.getString(3);
 				String getemail = rs.getString(7);
@@ -195,6 +195,8 @@ public class petDAO {
 		return pets;
 	}
 	
+
+	
 	
 	//프로필 삭제
 	public int delete_pet(petVO petinfo) {
@@ -212,6 +214,41 @@ public class petDAO {
 			close();
 		}
 		return cnt;
+	}
+
+	
+	
+	//마이페이지 프로필 정보 가져오기
+	public ArrayList<petVO> get_pet_pro(){
+		ArrayList<petVO> pets = new ArrayList<>();
+		
+		
+		
+		try {
+			getConn();
+			sql = "select * from petinfo";
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				String Pet_nick = rs.getString(2);
+				String Pet_profile = rs.getString(3);
+				String Pet_introduce = rs.getString(4);
+				
+				
+				petVO vo = new petVO(Pet_nick, Pet_profile, Pet_introduce);
+				pets.add(vo);
+				
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return pets;
 	}
 
 	
@@ -235,6 +272,36 @@ public class petDAO {
 		}
 		return petName;
 	}
+
+	public petVO pet_info(int pet_num) {
+		petVO one_pet = null;
+		try {
+			getConn();
+			sql = "select * from petinfo where pet_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				String pet_nick = rs.getString(2);
+				String pet_profile = rs.getString(3);
+				String pet_introduce = rs.getString(4);
+				String pet_gen = rs.getString(5);
+				String species = rs.getString(6);
+				String email = rs.getString(7);
+				one_pet = new petVO(pet_num, pet_nick, pet_profile, pet_introduce, pet_gen, species, email);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return one_pet;
+	}
+
+
+
 
 
 	

@@ -225,7 +225,7 @@ insert into species values('아메리칸 불리','D');
 insert into species values('강아지기타','D');
 
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, 'MadCrown', 'imgs/profile/madcrown','hi' , 'M', '도베르만','tlffur20@naver.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, 'MadCrown', 'imgs/profile/madcrown.jpg','hi' , 'M', '도베르만','tlffur20@naver.com');
 INSERT INTO PETINFO
 VALUES(PET_NUM_SEQ.NEXTVAL, '구름', 'imgs/profile/cloud.jpg', 'hi' , 'M', '말티즈', 'Delkin@gmail.com');
 INSERT INTO PETINFO
