@@ -10,8 +10,10 @@ import com.DAO.feedDAO;
 import com.DAO.memberDAO;
 import com.DAO.petDAO;
 import com.VO.feedVO;
+import com.VO.feed_upload_petVO;
 import com.VO.memberVO;
 import com.VO.petVO;
+import com.VO.speciesVO;
 import com.command.Command;
 
 public class PetSelectCon implements Command{
@@ -20,23 +22,21 @@ public class PetSelectCon implements Command{
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		String moveURL = null;
-		
 		HttpSession session = request.getSession();
+		int pet_num = Integer.parseInt(request.getParameter("pet_num"));
+		petDAO dao = new petDAO();
+		petVO pet_vo = dao.pet_info(pet_num);
+		session.setAttribute("pet_vo", pet_vo);
+
+		feedDAO feeddao = new feedDAO();
+		ArrayList<feed_upload_petVO> feeds = feeddao.following_feed(pet_num);
 		
-		memberVO vo = (memberVO)session.getAttribute("vo");
+		session.setAttribute("feedsinfo", feeds);
 		
-		 session.setAttribute("vo", vo.getEmail());
-		 
-		 petVO vo_new = (petVO)session.getAttribute("vo");
-		 
-		 petDAO dao = new petDAO();
-		 ArrayList<petVO> petInfoList = dao.pet_select(vo_new.getEmail());
-		
-		if (vo_new != null) {
-			session.setAttribute("vo", vo_new);
+		if (pet_vo != null) {
+			session.setAttribute("profile", pet_vo);
 			moveURL = "index.jsp";
 		} else {
-			
 			moveURL = "choice.jsp";
 		}
 		

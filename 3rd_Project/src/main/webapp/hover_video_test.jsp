@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.petDAO"%>
 <%@page import="com.VO.petVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -527,6 +529,9 @@ pic::-webkit-media-controls {
 </head>
 
 <body>
+<% //반려동물 정보가 담겨있는 곳 : vo
+	petVO pet_vo = (petVO)session.getAttribute("pet_vo");
+%>
 
 	<section id="container">
 
@@ -577,7 +582,7 @@ pic::-webkit-media-controls {
 									<p>
 										<!-- 첨부파일(이미지파일만 업로드) -->
 										<input type="file" name="photo" id="post_photo"
-											accept="video/*" onchange="setpostthumbnail(event);" />
+											accept="video/*" onchange="setpostthumbnail(event);">
 									</p>
 									<div>
 										<input type="button" class="behavior_submit_button"
@@ -621,14 +626,7 @@ pic::-webkit-media-controls {
 
 						<li class="bg"></li>
 					</ul>
-
-
 				</div>
-
-
-
-
-
 			</section>
 
 		</header>
@@ -647,7 +645,10 @@ pic::-webkit-media-controls {
 
 					<div class="detail">
 						<div class="top">
-							<div class="user_name">MY_PET_ID</div>
+
+
+							<div class="user_name"><%=pet_vo.getPet_nick() %></div>
+
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 
@@ -684,6 +685,7 @@ pic::-webkit-media-controls {
 											placeholder="소개글 변경"></textarea>
 										<input type="button" class="profile_edit_cancel" value="취소">
 										<input type="submit" class="profile_edit_submit" value="수정">
+										
 									</form>
 								</div>
 							</div>
@@ -699,7 +701,7 @@ pic::-webkit-media-controls {
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br> 안녕하세요 다남입니다.
+							<span>Intro Text<br><%=pet_vo.getPet_introduce() %>
 							</span>
 						</div>
 

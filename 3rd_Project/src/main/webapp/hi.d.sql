@@ -225,7 +225,7 @@ insert into species values('아메리칸 불리','D');
 insert into species values('강아지기타','D');
 
 INSERT INTO PETINFO
-VALUES(PET_NUM_SEQ.NEXTVAL, 'MadCrown', 'imgs/profile/madcrown','hi' , 'M', '도베르만','tlffur20@naver.com');
+VALUES(PET_NUM_SEQ.NEXTVAL, 'MadCrown', 'imgs/profile/madcrown.jpg','hi' , 'M', '도베르만','tlffur20@naver.com');
 INSERT INTO PETINFO
 VALUES(PET_NUM_SEQ.NEXTVAL, '구름', 'imgs/profile/cloud.jpg', 'hi' , 'M', '말티즈', 'Delkin@gmail.com');
 INSERT INTO PETINFO
@@ -288,7 +288,7 @@ VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji06.mp4', '먼지', '1,2,3', 'U', TO_
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 6, 'videos/jjam01.mp4', 'Jjam', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15', 'U', TO_DATE('2020-06-24','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 152, 'videos/bangja03.mp4', '방자', '1,2,3', 'U', TO_DATE('2020-10-13','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 15, 'videos/bangja03.mp4', '방자', '1,2,3', 'U', TO_DATE('2020-10-13','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 8, 'videos/marong03.mp4', '마롱', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2020-11-13','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
@@ -438,3 +438,17 @@ VALUES('SNACK', 'EXCITING' , 'HAPPY');
 
 select * from (select * from feedinfo order by DBMS_RANDOM.RANDOM) where rownum < 2;
 select * from memberinfo;
+
+select * from petinfo;
+select * from FEEDINFO;
+select * from FOLLOWINFO where pet_num = 1;
+select * from feedinfo where pet_num in (select following_pet from FOLLOWINFO where pet_num = 1);
+
+
+select * from feedinfo where feed_num = 16;
+
+select feed.feed_num, pet.pet_num, pet.pet_nick, pet.pet_profile, feed.img_addr, feed.feed_content, feed.like_pet, feed.f_lock, feed.upload_time
+from feedinfo feed, petinfo pet
+where pet.pet_num = feed.pet_num
+and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = 1);
+
