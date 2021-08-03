@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import com.VO.emotionVO;
 import com.VO.memberVO;
 import com.VO.petVO;
+import com.VO.pet_followVO;
 import com.VO.speciesVO;
 
 public class petDAO {
@@ -294,6 +295,73 @@ public class petDAO {
 		return one_pet;
 	}
 	
+	
+	public pet_followVO pet_profile_load(int pet_num) {
+		pet_followVO profile = null;
+		try {
+			getConn();
+			sql = "select pet_nick, pet_profile, pet_introduce from petinfo where pet_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				String pet_nick = rs.getString(1);
+				String pet_profile = rs.getString(2);
+				String pet_intro = rs.getString(3);
+				profile.setPet_nick(pet_nick);
+				profile.setPet_profile(pet_profile);
+				profile.setPet_intro(pet_intro);
+			}
+			sql = "select count(fo1.following_pet)\r\n"
+					+ "from followinfo fo1, petinfo pet\r\n"
+					+ "where fo1.pet_num = pet.pet_num\r\n"
+					+ "and pet.pet_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				int following_pet = rs.getInt(1);
+				profile.setFollowing(following_pet);
+			}
+			sql = "select count(fo2.pet_num)\r\n"
+					+ "from followinfo fo2, petinfo pet\r\n"
+					+ "where fo2.following_pet = pet.pet_num\r\n"
+					+ "and pet.pet_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				int follow = rs.getInt(1);
+				profile.setFollow(follow);
+			}
+			sql = "select count(feed.feed_num)"
+					+ "from feedinfo feed, petinfo pet"
+					+ "where feed.pet_num = pet.pet_num"
+					+ "and pet.pet_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				int feed_count = rs.getInt(1);
+				profile.setFeed_count(feed_count);
+			}
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return profile;
+	}
 	
 }
 

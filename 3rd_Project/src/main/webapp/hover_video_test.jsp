@@ -1,3 +1,5 @@
+<%@page import="com.VO.pet_followVO"%>
+<%@page import="com.VO.feedVO"%>
 <%@page import="com.VO.followVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.petDAO"%>
@@ -533,9 +535,8 @@ pic::-webkit-media-controls {
 <%
 //반려동물 정보가 담겨있는 곳 : vo
 	petVO pet_vo = (petVO)session.getAttribute("pet_vo");
-
-//팔로워 팔로우 정보
-	followVO follow_vo = (followVO)session.getAttribute("follow_vo");
+	
+	pet_followVO profile = (pet_followVO)session.getAttribute("profile");
 
 %>
 
@@ -654,7 +655,7 @@ pic::-webkit-media-controls {
 
 
 
-							<div class="user_name"><%=pet_vo.getPet_nick() %></div>
+							<div class="user_name"><%=profile.getPet_nick() %></div>
 
 
 							<div class="detail_button" id="trigger_profile_edit"
@@ -703,13 +704,13 @@ pic::-webkit-media-controls {
 
 
 						<ul class="middle">
-							<li><span>게시물</span> <span>3</span></li>
-							<li><span>팔로워</span> <span>4</span></li>
-							<li><span>팔로우</span> <span>5</span></li>
+							<li><span>게시물</span> <span><%=profile.getFeed_count() %></span></li>
+							<li><span>팔로워</span> <span><%=profile.getFollow() %></span></li>
+							<li><span>팔로우</span> <span><%=profile.getFollowing() %></span></li>
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br><%=pet_vo.getPet_introduce() %>
+							<span>Intro Text<br><%=profile.getPet_intro() %>
 							</span>
 						</div>
 
@@ -734,12 +735,22 @@ pic::-webkit-media-controls {
 					</div>
 
 				</div>
+				
+				<%
+				
+					ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
+				
+				%>
 
 				<div class="mylist_contents contents_container active">
+				
+				<% for (int i =0; i <feeds.size(); i++){%>
 					<div class="pic">
-						<a href="#"><video width='400'>
-									<source src="videos/dog1.mp4" type="video/mp4"/></video></a>
+						<a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video width='400'>
+									<source src="<%=feeds.get(i).getImg_addr() %>" type="video/mp4"/></video></a>
+									
 					</div>
+				<%} %>
 					<div class="pic">
 						<a href="#"><video width='400'>
 							<source src="videos/dog2.mp4" type="video/mp4"/></video></a>
