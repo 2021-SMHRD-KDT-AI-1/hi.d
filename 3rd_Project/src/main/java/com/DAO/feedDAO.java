@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.VO.feedVO;
+import com.VO.feed_upload_petVO;
 import com.VO.memberVO;
 
 public class feedDAO {
@@ -142,16 +143,15 @@ public class feedDAO {
 	}
 	
 	// 팔로우한 사람들의 피드 가져오기
-	public ArrayList<feedVO> following_feed(int pet_num){
-		ArrayList<feedVO> feeds = new ArrayList<>();
-		feedVO one_feed = null;
+	public ArrayList<feed_upload_petVO> following_feed(int pet_num){
+		ArrayList<feed_upload_petVO> feeds = new ArrayList<>();
+		feed_upload_petVO one_feed = null;
 		try {
 			getConn();
-			sql = "select * from feedinfo "
-					+ "where pet_num in ("
-					+ "select following_pet "
-					+ "from FOLLOWINFO "
-					+ "where pet_num = ?)";
+			sql = "select feed.feed_num, pet.pet_num, pet.pet_nick, pet.pet_profile, feed.img_addr, feed.feed_content, feed.like_pet, feed.f_lock, feed.upload_time"
+					+ "from feedinfo feed, petinfo pet"
+					+ "where pet.pet_num = feed.pet_num"
+					+ "and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = ?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, pet_num);
 			
@@ -159,14 +159,16 @@ public class feedDAO {
 			
 			while(rs.next()) {
 				int feed_num = rs.getInt(1);
-				int feed_pet = rs.getInt(2);
-				String img_addr = rs.getString(3);
-				String feed_content = rs.getString(4);
-				String like_pet = rs.getString(5);
-				String f_lock = rs.getString(6);
-				Date upload_time = rs.getDate(7);
+				int feed_pet_num = rs.getInt(2);
+				String pet_nick = rs.getString(3);
+				String pet_profile = rs.getString(4);
+				String img_addr = rs.getString(5);
+				String feed_content = rs.getString(6);
+				String like_pet = rs.getString(7);
+				String f_lock = rs.getString(8);
+				Date upload_time = rs.getDate(9);
 				
-				one_feed = new feedVO(feed_num, feed_pet, img_addr, feed_content, like_pet, f_lock, upload_time);
+				one_feed = new feed_upload_petVO(feed_num, feed_pet_num, pet_nick, pet_profile, img_addr, feed_content, like_pet, f_lock, upload_time);
 				feeds.add(one_feed);
 			}
 		} catch (Exception e) {

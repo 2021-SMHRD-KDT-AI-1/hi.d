@@ -268,12 +268,6 @@
 						<!-- <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
 					</button></a>
 
-
-
-					
-						
-
-
 						<!--  <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
 					</button>
 					

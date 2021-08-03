@@ -293,11 +293,6 @@ public class petDAO {
 		}
 		return one_pet;
 	}
-
-
-
-
-
 	
 	
 }
