@@ -350,7 +350,7 @@ li a:hover {
 					for(var i = 0; i < Object.keys(data).length; i+=2){
 						var $petname = $("<span>" + data[i] + "</span> ");
 						var $reply = $("<span>" + data[i+1] + "</span>");
-						var $div = $("<div></div>")
+						var $div = $("<div></div>");
 						$div.append($petname);
 						$div.append($reply);
 						
