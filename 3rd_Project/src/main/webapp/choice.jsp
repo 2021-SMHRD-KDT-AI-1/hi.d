@@ -75,8 +75,8 @@
 
 <body>
 <%
-ArrayList<petVO> pet_profiles = ((ArrayList<petVO>)session.getAttribute("vo_arr"));
-memberVO vo = (memberVO)session.getAttribute("vo");
+	ArrayList<petVO> pet_profiles = ((ArrayList<petVO>)session.getAttribute("vo_arr"));
+	memberVO vo = (memberVO)session.getAttribute("vo");
 %>
 
 	<section id="container">
@@ -267,12 +267,6 @@ memberVO vo = (memberVO)session.getAttribute("vo");
 						<img src="<%=pet_profiles.get(i).getPet_profile() %>" width="100px" height="100px">
 						<!-- <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
 					</button></a>
-
-
-
-					
-						
-
 
 						<!--  <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
 					</button>

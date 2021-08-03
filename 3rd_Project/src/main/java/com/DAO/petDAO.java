@@ -25,8 +25,6 @@ public class petDAO {
 	int cnt = 0;
 	String sql = "";
 	petVO vo = null;
-					
-	
 	
 	public void getConn() {
 
@@ -59,10 +57,6 @@ public class petDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	
-
-	
 	//프로필 생성
 	public int PetJoin(petVO vo) {
 		try {
@@ -299,11 +293,6 @@ public class petDAO {
 		}
 		return one_pet;
 	}
-
-
-
-
-
 	
 	
 }

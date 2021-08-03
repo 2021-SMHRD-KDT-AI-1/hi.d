@@ -230,11 +230,11 @@ body{
 }
 
 .contents .img_section img{
-    width: 100%;
+    width: 614px;
 }
 
 .contents .img_section .trans_inner_inner img{
-    width: 100%;
+    width: 614px;
 }
 /*硫붿씤�씠誘몄� �궗�씠利�*/
 .personal_contents{
@@ -713,13 +713,13 @@ body{
 
 
 .contents .img_section .trans_inner_inner img{
-    width: 100%;
+    width: 614px;
 }
 
 
 /*硫붿씤�씠誘몄� �궗�씠利�*/
 .personal_contents{
-    width: inherit;
+   /* width: 100%;*/
     max-width: 100%;
     height: auto;
 }
@@ -884,7 +884,9 @@ body{
 }
 
 .contents_box{
-
+	
+	
+width: 614px
 }
 
 
@@ -953,6 +955,9 @@ body{
 
 .contents .img_section{
     overflow:hidden;
+    height:614px;
+    width:614px;
+    
 }
 
 .contents .img_section img{
