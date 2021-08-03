@@ -176,9 +176,9 @@ ul.emotion_count li, ol.emotion_count li {
 
 .contents_container .pic{
     max-width:300px;
-    max-height:300px;
     overflow:hidden;
     margin-bottom:18px;
+    border-radius:40px;
 
 }
 

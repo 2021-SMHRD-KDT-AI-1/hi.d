@@ -36,7 +36,10 @@
     <meta itemprop="description" content="instagram clone">
     <meta itemprop="image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 
     <title>Hi Dear</title>
     <link rel="stylesheet" href="css/reset.css">
@@ -300,7 +303,12 @@
         reader.readAsDataURL(event.target.files[0]);
     }
 
-</script>
+	</script>
+	<script type="text/javascript">
+	function func() {
+		swal("","로그인을 해주세요","warning");
+	}
+	</script>
 </body>
 </html>
 </body>

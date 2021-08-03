@@ -25,8 +25,6 @@ public class petDAO {
 	int cnt = 0;
 	String sql = "";
 	petVO vo = null;
-					
-	
 	
 	public void getConn() {
 
@@ -59,10 +57,6 @@ public class petDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	
-
-	
 	//프로필 생성
 	public int PetJoin(petVO vo) {
 		try {
@@ -122,7 +116,7 @@ public class petDAO {
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				String getpet_num = rs.getString(1);
+				int getpet_num = rs.getInt(1);
 				String getpet_nick = rs.getString(2);
 				String pet_profile = rs.getString(3);
 				String getemail = rs.getString(7);
@@ -273,7 +267,32 @@ public class petDAO {
 		return petName;
 	}
 
-
+	public petVO pet_info(int pet_num) {
+		petVO one_pet = null;
+		try {
+			getConn();
+			sql = "select * from petinfo where pet_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				String pet_nick = rs.getString(2);
+				String pet_profile = rs.getString(3);
+				String pet_introduce = rs.getString(4);
+				String pet_gen = rs.getString(5);
+				String species = rs.getString(6);
+				String email = rs.getString(7);
+				one_pet = new petVO(pet_num, pet_nick, pet_profile, pet_introduce, pet_gen, species, email);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return one_pet;
+	}
 	
 	
 }

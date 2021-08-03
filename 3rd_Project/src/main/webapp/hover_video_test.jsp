@@ -537,14 +537,8 @@ pic::-webkit-media-controls {
 </head>
 
 <body>
-
-
-
 <% //반려동물 정보가 담겨있는 곳 : vo
-
-petVO pet_vo = (petVO)session.getAttribute("pet_vo");
-
-
+	petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 %>
 
 	<section id="container">
@@ -578,7 +572,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 								<span class="post_closebutton">&times;</span>
 								<h1 class="title">NEW POST</h1>
 								<label></label>
-								<form class="upload_form" action="#post.php" method="POST">
+								<form class="upload_form" action="FeedUploadCon.do" method="POST">
 									<label></label>
 									<div class="preview">
 										<!-- 이미지 미리보기 영역 -->
@@ -610,8 +604,8 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 										<!-- 공개 비공개 -->
 									<div>
 										공개<input type="radio" class="chk_open" name="chk_open"
-											value="공개"> 비공개<input type="radio" class="chk_open"
-											name="chk_open" value="비공개">
+											value="U"> 비공개<input type="radio" class="chk_open"
+											name="chk_open" value="L">
 									</div>
 									</p>
 
@@ -636,20 +630,13 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a href="profile3.html">
+						<li><a href="hover_video_test.jsp">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 
 						<li class="bg"></li>
 					</ul>
-
-
 				</div>
-
-
-
-
-
 			</section>
 
 		</header>
@@ -668,7 +655,9 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 
 					<div class="detail">
 						<div class="top">
-							<div class="user_name">GFJHGJHGHJ</div>
+
+							<div class="user_name"><%=pet_vo.getPet_nick() %></div>
+
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 
@@ -721,7 +710,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br>안녕
+							<span>Intro Text<br><%=pet_vo.getPet_introduce() %>
 							</span>
 						</div>
 

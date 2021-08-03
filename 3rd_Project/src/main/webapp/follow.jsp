@@ -171,7 +171,28 @@ li a:hover {
 
 .dropdown:hover.dropbtn {background-color: #3e8e41;}
 
+.inputReple{
+	width: 500px;
+	height: 35px;
+	margin-left:30px;
+	
 
+
+}
+
+.upload_btn{
+	font-size:14px;
+    margin-left:20px;
+	border: 0;
+	background-color:transparent;
+	color: #7bb1e4;
+	 font-weight: bold;
+}
+
+.upload_btn:hover {
+	background-color:transparent;
+	color:#208aed;
+	}
 </style>
 
 </head>
@@ -208,15 +229,13 @@ li a:hover {
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a
-							onclick="location.href='likepage.jsp'" href="#">
+                        <li><a href="likepage.jsp">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a
-							onclick="location.href='profile3.jsp'" href="#">
+                        <li><a href="hover_video_test.jsp">
                                 <div class="sprite_user_icon_outline"></div>
                             </a></li>
                         <li class="bg"></li>
@@ -256,8 +275,11 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-		                           <img class="personal_contents" src="<%=feed.getImg_addr() %>"
-		                              alt="visual01">
+                                <p align="middle">
+		                           <video class="personal_contents"  width = " 614" height = "614" src="<%=feed.getImg_addr() %>"
+		                              alt="visual01"></video>
+		                              </p>
+		                              
                         		</div>
                             </div>
                         </div>
@@ -311,9 +333,9 @@ li a:hover {
                         <div class="timer">1시간 전</div>
 
 
-                            <input type="text" class="inputReple" id = "inputReple"
+                            <input type="text" style="border:0 solid black" class="inputReple" id = "inputReple"
                         placeholder="댓글달기...">
-                            <input type="button" onclick="ajaxreply()" class="upload_btn" id = "reply_submit"
+                            <input type="button"  onclick="ajaxreply()" class="upload_btn" id = "reply_submit"
                          value= "게시">
                        
 
