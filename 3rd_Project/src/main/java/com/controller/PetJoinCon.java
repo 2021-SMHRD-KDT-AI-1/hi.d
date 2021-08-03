@@ -38,9 +38,6 @@ public class PetJoinCon implements Command{
 		petDAO dao = new petDAO();
 		int cnt = dao.PetJoin(vo_pet);
 		
-		
-		
-		
 		System.out.println(email);
 		System.out.println(pet_profile);
 		System.out.println(pet_nick);

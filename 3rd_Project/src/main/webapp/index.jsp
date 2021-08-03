@@ -492,7 +492,7 @@ li a:hover {
 
 
         <section id="main_container">
-							<div class="inner">
+			<div class="inner">
                 <div class="contents_box">
 
                     <article class="contents">

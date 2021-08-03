@@ -147,7 +147,11 @@ public class feedDAO {
 		feedVO one_feed = null;
 		try {
 			getConn();
-			sql = "select * from feedinfo where pet_num = ?";
+			sql = "select * from feedinfo "
+					+ "where pet_num in ("
+					+ "select following_pet "
+					+ "from FOLLOWINFO "
+					+ "where pet_num = ?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, pet_num);
 			
@@ -155,13 +159,14 @@ public class feedDAO {
 			
 			while(rs.next()) {
 				int feed_num = rs.getInt(1);
+				int feed_pet = rs.getInt(2);
 				String img_addr = rs.getString(3);
 				String feed_content = rs.getString(4);
 				String like_pet = rs.getString(5);
 				String f_lock = rs.getString(6);
 				Date upload_time = rs.getDate(7);
 				
-				one_feed = new feedVO(feed_num, pet_num, img_addr, feed_content, like_pet, f_lock, upload_time);
+				one_feed = new feedVO(feed_num, feed_pet, img_addr, feed_content, like_pet, f_lock, upload_time);
 				feeds.add(one_feed);
 			}
 		} catch (Exception e) {

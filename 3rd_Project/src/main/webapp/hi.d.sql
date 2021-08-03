@@ -288,7 +288,7 @@ VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji06.mp4', '먼지', '1,2,3', 'U', TO_
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 6, 'videos/jjam01.mp4', 'Jjam', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15', 'U', TO_DATE('2020-06-24','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 152, 'videos/bangja03.mp4', '방자', '1,2,3', 'U', TO_DATE('2020-10-13','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 15, 'videos/bangja03.mp4', '방자', '1,2,3', 'U', TO_DATE('2020-10-13','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 8, 'videos/marong03.mp4', '마롱', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2020-11-13','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
@@ -438,3 +438,10 @@ VALUES('SNACK', 'EXCITING' , 'HAPPY');
 
 select * from (select * from feedinfo order by DBMS_RANDOM.RANDOM) where rownum < 2;
 select * from memberinfo;
+
+select * from FEEDINFO
+select * from FOLLOWINFO where pet_num = 1
+select * from feedinfo where pet_num in (select following_pet from FOLLOWINFO where pet_num = 1)
+
+
+select * from feedinfo where feed_num = 16
