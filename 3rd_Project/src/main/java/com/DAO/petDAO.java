@@ -1,10 +1,15 @@
 package com.DAO;
 
+import java.awt.Image;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 import com.VO.emotionVO;
 import com.VO.memberVO;
@@ -20,6 +25,7 @@ public class petDAO {
 	int cnt = 0;
 	String sql = "";
 	petVO vo = null;
+					
 	
 	
 	public void getConn() {
@@ -209,6 +215,7 @@ public class petDAO {
 		}
 		return cnt;
 	}
+
 	
 	
 	//마이페이지 프로필 정보 가져오기
@@ -266,7 +273,9 @@ public class petDAO {
 		return petName;
 	}
 
-	
 
 	
+	
 }
+
+
