@@ -647,7 +647,7 @@ pic::-webkit-media-controls {
 						<div class="top">
 
 
-							<div class="user_name"></div>
+							<div class="user_name"><%=pet_vo.getPet_nick() %></div>
 
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
@@ -701,7 +701,7 @@ pic::-webkit-media-controls {
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br>안녕
+							<span>Intro Text<br><%=pet_vo.getPet_introduce() %>
 							</span>
 						</div>
 
