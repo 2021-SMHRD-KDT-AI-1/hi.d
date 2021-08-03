@@ -11,8 +11,21 @@
      position: relative;
     top: 5px;
 }
+.trans_inner .trans_inner_inner video{
+	height : 614px;
+}
 
-
+.stuff{ /**/
+	  position: absolute;
+  height:inherit;
+  width:inherit;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+	
+	
+}
 body{
     background:#fafafa;
 }
@@ -238,9 +251,10 @@ body{
 }
 /*硫붿씤�씠誘몄� �궗�씠利�*/
 .personal_contents{
+	position:absolute; /**/
+    height:inherit; /**/
     width: inherit;
     max-width: 100%;
-    height: auto;
 }
 /*硫붿씤�씠誘몄� �궗�씠利�*/
 
@@ -951,6 +965,10 @@ width: 614px
 .contents .toggle_box > li input{
     border: none;
     font-size: inherit;
+}
+
+.img_section{
+	position:absolute;
 }
 
 .contents .img_section{

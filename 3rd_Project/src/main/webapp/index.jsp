@@ -375,6 +375,7 @@ li a:hover {
 }
 
 
+
 </style>
 
 
@@ -417,7 +418,7 @@ li a:hover {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='profile3.jsp'" href="#">
+						<li><a onclick="location.href='hover_video_test.jsp'" href="#">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 						<li class="bg"></li>
@@ -521,15 +522,12 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                                
+                                <div class = "stuff">
                                 <p align = "middle">
-                           <video class="personal_contents" alt="visual01"></video>
-                           </p>
-														
-                        </div>
-		                            <video class="personal_contents">
-		                            	<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4">
-									</video>
+		                            <video class="personal_contents"controls>
+		                            	<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4"  ></video>
+									</p>
+									</div>
                         		</div>
                             </div>
                         </div>
@@ -621,12 +619,9 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                                <p align = "middle">
-                                 <video class="personal_contents" controls>
-                           <source src="videos/dog1.mp4"type="video/mp4" />
-								
+                           <video class="personal_contents" controls>
+                           <source src="videos/dog1.mp4" type="video/mp4" />
                            </video>
-                           </p>
                         </div>
                             </div>
                         </div>
