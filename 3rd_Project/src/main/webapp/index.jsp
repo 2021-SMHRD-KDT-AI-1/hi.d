@@ -1,3 +1,5 @@
+<%@page import="com.VO.feed_upload_petVO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -488,32 +490,28 @@ li a:hover {
 						</div>
 
 
-
+<%
+	ArrayList<feed_upload_petVO> feeds = (ArrayList<feed_upload_petVO>)session.getAttribute("feedsinfo");
+%>
 
 
         <section id="main_container">
 			<div class="inner">
                 <div class="contents_box">
-
+                
+                <%for(int i = 0; i < feeds.size(); i++){ %>
                     <article class="contents">
-
-
-
-
                         <header class="top">
-
                             <div class="user_container">
                                 <div class="div_profile_img">
                                     <img class="profile_img"
-														src="imgs/thumb.jpeg" alt="프로필이미지">
+														src="<%=feeds.get(i).getPet_profile() %>" alt="프로필이미지">
                                 </div>
                                 <div class="user_name">
-                                    <div class="nick_name m_text">KindTiger</div>
-                                    <div class="country s_text">Seoul, South Korea</div>
+                                    <div class="nick_name m_text"><%=feeds.get(i).getPet_nick() %></div>
+                                    <!-- <div class="country s_text">Seoul, South Korea</div> -->
                                 </div>
-
                             </div>
-
                             <div class="sprite_more_icon"
 												data-name="more">
                                 <ul class="toggle_box">
@@ -523,23 +521,16 @@ li a:hover {
                                     <li>삭제</li>
                                 </ul>
                             </div>
-
                         </header>
-
-
-
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                           <img class="personal_contents"
-														src="imgs/img_section/img01.jpg" alt="visual01">
-                        </div>
+		                            <video class="personal_contents">
+		                            	<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4">
+									</video>
+                        		</div>
                             </div>
                         </div>
-
-
-
-
                         <div class="bottom_icons">
                             <div class="left_icons">
                                 <div class="heart_btn">
@@ -562,7 +553,7 @@ li a:hover {
 
                         <div class="likes m_text">
                             좋아요
-                            <span id="like-count-39">2,346</span>
+                            <span id="like-count-39"><%=feeds.get(i).getLike_pet().split(",").length %></span>
                             <span id="bookmark-count-39"></span>
                             개
                         </div>
@@ -573,22 +564,15 @@ li a:hover {
                             <div class="comment"
 												id="comment-list-ajax-post37">
                                 <div class="comment-detail">
-                                    <div class="nick_name m_text">dongdong2</div>
-                                    <div class="comment_reple">강아지가 너무 귀여워요~!</div>
+                                    <div class="nick_name m_text"><%=feeds.get(i).getPet_nick() %></div>
+                                    <div class="comment_reple"><%=feeds.get(i).getFeed_content() %></div>
                                 </div>
                             </div>
                             <div class="small_heart">
-                                <div
-													class="sprite_small_heart_icon_outline"></div>
+                                <div class="sprite_small_heart_icon_outline"></div>
                             </div>
                         </div>
-
-
-
                         <div class="timer">1시간 전</div>
-
-
-
                         <div class="comment_field"
 											id="add-comment-post37">
                             <input type="text" class="inputReple"
@@ -596,11 +580,8 @@ li a:hover {
                             <div class="upload_btn m_text"
 												data-name="comment">게시</div>
                         </div>
-
-
-
                     </article>
-
+					<%} %>
 
                     <article class="contents">
 

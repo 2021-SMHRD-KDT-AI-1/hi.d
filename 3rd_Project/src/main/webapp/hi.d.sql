@@ -439,16 +439,16 @@ VALUES('SNACK', 'EXCITING' , 'HAPPY');
 select * from (select * from feedinfo order by DBMS_RANDOM.RANDOM) where rownum < 2;
 select * from memberinfo;
 
-select * from petinfo
-select * from FEEDINFO
-select * from FOLLOWINFO where pet_num = 1
-select * from feedinfo where pet_num in (select following_pet from FOLLOWINFO where pet_num = 1)
+select * from petinfo;
+select * from FEEDINFO;
+select * from FOLLOWINFO where pet_num = 1;
+select * from feedinfo where pet_num in (select following_pet from FOLLOWINFO where pet_num = 1);
 
 
-select * from feedinfo where feed_num = 16
+select * from feedinfo where feed_num = 16;
 
 select feed.feed_num, pet.pet_num, pet.pet_nick, pet.pet_profile, feed.img_addr, feed.feed_content, feed.like_pet, feed.f_lock, feed.upload_time
 from feedinfo feed, petinfo pet
 where pet.pet_num = feed.pet_num
-and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = 1)
+and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = 1);
 
