@@ -501,7 +501,7 @@ textarea {
                 %>
                 <% for (int i = 0; i < feeds.size(); i++) {%>
                     <div class="pic">
-                        <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video >
+                        <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video>
 							<source src="<%= feeds.get(i).getImg_addr() %>" type="video/mp4"/></video></a>
                     </div>
                 <%} %>
