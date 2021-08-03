@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.petDAO"%>
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 <%@page import="com.VO.petVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -530,6 +533,7 @@ pic::-webkit-media-controls {
 
 <body>
 
+<<<<<<< HEAD
 <% //반려동물 정보가 담겨있는 곳 : vo
 
 petVO pet_vo = (petVO)session.getAttribute("pet_vo");
@@ -538,6 +542,8 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 
 %>
 
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 	<section id="container">
 
 		<header id="header">
