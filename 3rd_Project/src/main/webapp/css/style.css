@@ -741,6 +741,12 @@ body{
     top: 2px;
 }
 
+.nick_name m_text{
+	
+	margin: 54
+	
+}
+
 .s_text{
     font-size: 12px;
    position: relative;
@@ -880,7 +886,8 @@ body{
 
 
 #main_container{
-    padding-top: 100px;
+    padding-top: 150px;
+    padding-bottom:100%;
     display: flex;
     justify-content: center;
 }

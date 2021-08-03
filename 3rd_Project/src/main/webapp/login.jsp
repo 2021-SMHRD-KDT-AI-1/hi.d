@@ -121,10 +121,10 @@
     <div id="main_container">
 
         <div class="form_container">
-
+		
             <div class="form">
-
-
+				<div class = "center_form">
+				<img src="imgs/GIF/1.gif" class = "gif_form">
                 <h1 class="sprite_insta_big_logo title"></h1>
 
                 <form action="LoginCon.do" method="post">
@@ -141,7 +141,7 @@
                     <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
                     <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
                 </form>
-
+				</div>
 
 
             </div>

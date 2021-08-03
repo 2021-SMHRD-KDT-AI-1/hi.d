@@ -500,7 +500,7 @@ li a:hover {
                                 </div>
                                 <div class="user_name">
                                     <div class="nick_name m_text"><%=feeds.get(i).getPet_nick() %></div>
-                                    <!-- <div class="country s_text">Seoul, South Korea</div> -->
+                                    <div class="country s_text">Seoul, South Korea</div> 
                                 </div>
                             </div>
                             <div class="sprite_more_icon"
