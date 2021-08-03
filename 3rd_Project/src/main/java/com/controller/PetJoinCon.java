@@ -29,7 +29,7 @@ public class PetJoinCon implements Command{
 		
 		String pet_profile = "C:\\Users\\CGI\\Desktop\\" + request.getParameter("photo");	
 		String pet_nick = request.getParameter("pet_nick");
-		String pet_gen = request.getParameter("radio_gender");	
+		String pet_gen = request.getParameter("radio_gender");
 		String pet_introduce = request.getParameter("content");	
 		String species_list = request.getParameter("species_list");
 		

@@ -195,6 +195,8 @@ public class petDAO {
 		return pets;
 	}
 	
+
+	
 	
 	//프로필 삭제
 	public int delete_pet(petVO petinfo) {
@@ -212,6 +214,41 @@ public class petDAO {
 			close();
 		}
 		return cnt;
+	}
+
+	
+	
+	//마이페이지 프로필 정보 가져오기
+	public ArrayList<petVO> get_pet_pro(){
+		ArrayList<petVO> pets = new ArrayList<>();
+		
+		
+		
+		try {
+			getConn();
+			sql = "select * from petinfo";
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				String Pet_nick = rs.getString(2);
+				String Pet_profile = rs.getString(3);
+				String Pet_introduce = rs.getString(4);
+				
+				
+				petVO vo = new petVO(Pet_nick, Pet_profile, Pet_introduce);
+				pets.add(vo);
+				
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return pets;
 	}
 
 	
@@ -235,6 +272,7 @@ public class petDAO {
 		}
 		return petName;
 	}
+
 	public petVO pet_info(int pet_num) {
 		petVO one_pet = null;
 		try {
@@ -261,6 +299,10 @@ public class petDAO {
 		}
 		return one_pet;
 	}
+
+
+
+
 
 	
 	

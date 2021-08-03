@@ -263,10 +263,19 @@ memberVO vo = (memberVO)session.getAttribute("vo");
 					<% for(int i = 0; i < pet_profiles.size(); i++) {%>
 					<a href="PetSelectCon.do?pet_num=<%=pet_profiles.get(i).getPet_num() %>">
 					<button class="button">
+
 						<img src="<%=pet_profiles.get(i).getPet_profile() %>" width="100px" height="100px">
 						<!-- <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
 					</button></a>
 
+
+
+					
+						
+
+
+						<!--  <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
+					</button>
 					
 					
 					</button>

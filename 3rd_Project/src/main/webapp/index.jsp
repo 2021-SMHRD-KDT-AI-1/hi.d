@@ -639,8 +639,7 @@ li a:hover {
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
                            <video class="personal_contents" controls>
-                           <source src="videos/dog1.mp4"
-															type="video/mp4" />
+                           <source src="videos/dog1.mp4" type="video/mp4" />
                            </video>
                         </div>
                             </div>
@@ -1008,6 +1007,8 @@ li a:hover {
                 var video_source =  document.createElement("source")
                 
                 video_source.src = "videos/dog1.mp4"
+                
+                video_source.type = "video/mp4"
                 
                 //타입부분 어케추가하누 ㅜㅠㅜㅠㅜㅠㅜ
                 //<source src="videos/dog1.mp4" type="video/mp4"/>
