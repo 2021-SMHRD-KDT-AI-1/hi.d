@@ -577,7 +577,7 @@ pic::-webkit-media-controls {
 									<p>
 										<!-- 첨부파일(이미지파일만 업로드) -->
 										<input type="file" name="photo" id="post_photo"
-											accept="video/*" onchange="setpostthumbnail(event);" />
+											accept="video/*" onchange="setpostthumbnail(event);">
 									</p>
 									<div>
 										<input type="button" class="behavior_submit_button"
