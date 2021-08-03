@@ -533,17 +533,15 @@ pic::-webkit-media-controls {
 
 <body>
 
-<<<<<<< HEAD
+
+
 <% //반려동물 정보가 담겨있는 곳 : vo
 
 petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 
 
-
 %>
 
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 	<section id="container">
 
 		<header id="header">
@@ -663,7 +661,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 
 					<div class="detail">
 						<div class="top">
-							<div class="user_name">강아지이름</div>
+							<div class="user_name"><%=pet_vo.getPet_nick()%></div>
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 
@@ -700,6 +698,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 											placeholder="소개글 변경"></textarea>
 										<input type="button" class="profile_edit_cancel" value="취소">
 										<input type="submit" class="profile_edit_submit" value="수정">
+										
 									</form>
 								</div>
 							</div>
@@ -715,7 +714,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br> 안녕하세요 다남입니다.
+							<span>Intro Text<br>
 							</span>
 						</div>
 
