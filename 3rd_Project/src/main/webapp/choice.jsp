@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+
 
 <meta charset="UTF-8">
 <meta name="viewport"
@@ -59,7 +59,7 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/profile.css">
-<link rel="stylesheet" href="css/new_profile.css">
+<link rel="stylesheet" href="css/choice.css">
 <link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 
@@ -69,272 +69,32 @@
 
 <style>
 
-/* ------------------------------------------------------------------------------1안*/
-html, body {
-	height: 100%;
-}
-
-.wrap {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.button {
-	/* max-width : 10% -> 15%*/
-	max-width: 15%;
-	font-family: 'Roboto', sans-serif;
-	font-size: 11px;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	font-weight: 500;
-	color: #000;
-	background-color: #fff;
-	border: none;
-	border-radius: 20%;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease 0s;
-	cursor: pointer;
-	outline: none;
-	margin: 10px;
-}
-/* 프로필편집 추가 버튼 */
-.plus_button {
-	/* max-width : 10% -> 15%*/
-	max-width: 10%;
-	font-family: 'Roboto', sans-serif;
-	font-size: 11px;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	font-weight: 500;
-	color: #000;
-	background-color: #fff;
-	border: none;
-	border-radius: 20%;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease 0s;
-	cursor: pointer;
-	outline: none;
-	margin: 10px;
-}
-
-.plus_button>img {
-	height: 100%;
-	width: 100%;
-}
-
-.button:hover {
-	background-color: rgb(255, 167, 158);
-	box-shadow: 0px 15px 20px rgb(191, 191, 191);
-	color: #fff;
-	transform: translateY(-7px);
-}
-
-.plus_button:hover {
-	background-color: rgb(255, 167, 158);
-	box-shadow: 0px 15px 20px rgb(191, 191, 191);
-	color: #fff;
-	transform: translateY(-7px);
-}
-
-/* 모달창 */
-.modal1 {
-	z-index: 1;
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	opacity: 0;
-	visibility: hidden;
-	transform: scale(1.1);
-	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform
-		0.25s;
-}
-
-.post_form {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	/* background-color 없었음*/
-	background-color: white;
-	padding: 1rem 1.5rem;
-	width: 700px;
-	height: 850px;
-	/* border-radius 없었음 */
-	border-radius: 0.5rem;
-}
-
-.show-modal {
-	opacity: 1;
-	visibility: visible;
-	transform: scale(1.0);
-	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
-
-/* 모달창 스크롤바  */
-.flex {
-	display: flex;
-}
-
-/* post_form 에서 modal-content1으로 클래스 변경*/
-.post_form {
-	width: 650px;
-	padding: 0px 13px 0px 13px;
-	overflow-y: scroll;
-	height: 800px;
-	box-sizing: border-box;
-	margin-right: 50px;
-	
-	/*border-radius: 10px; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-	*/
-}
-/* 스크롤바 설정*/
-/*post_form에서 modal-content1으로 클래스 변경*/
-.post_form::-webkit-scrollbar {
-	width: 8px;
-	/* 스크롤바 길이 안 먹힘 */
-	
-}
-
-/* 스크롤바 막대 설정*/
-/*post_form에서 modal-content1으로 클래스 변경*/
-.post_form::-webkit-scrollbar-thumb {
-	/* border-radius: 10px; 없어짐*/
-	background-color: #8373e6;
-}
-
-/* 스크롤바 뒷 배경 설정*/
-/*post_form에서 modal-content1으로 클래스 변경*/
-.post_form::-webkit-scrollbar-track {
-	background-color: #d4cef85e;
-	/* border-radius: 10px -> 50px;*/
-	border-radius: 50px;
-}
-/*  new_header style */
-@font-face {
-	font-family: 'HeydingsCommonIconsRegular';
-	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot');
-	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot?#iefix')
-		format('embedded-opentype'),
-		url('http://ianfarb.com/random/heydings_icons-webfont.woff')
-		format('woff'),
-		url('http://ianfarb.com/random/heydings_icons-webfont.ttf')
-		format('truetype'),
-		url('http://ianfarb.com/random/heydings_icons-webfont.svg#HeydingsCommonIconsRegular')
-		format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	background: #e5e5e5;
-}
-
-.bg {
-	position: fixed;
-	z-index: -4;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	transition: .25s;
-	pointer-events: none;
-}
-
-li {
-	list-style: none;
-}
-
-li a {
-	display: block;
-	float: left;
-	width: 20%;
-	text-align: center;
-	font-family: 'HeydingsCommonIconsRegular', Helvetida Neue, sans-serif;
-	font-weight: 700;
-	letter-spacing: 1px;
-	font-size: 40px;
-	color: #fff;
-	background: #ccc;
-	text-decoration: none;
-	text-transform: uppercase;
-	text-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
-	transition: .25s;
-}
-
-li a:hover {
-	margin: -10px 0 0 0;
-}
-
-.menu {
-	width: 500px;
-	border-radius: 10px;
-	overflow: hidden;
-}
-
-.right_icons .menu:first-child a {
-	background: transparent !important;
-}
-
-.right_icons .menu:nth-child(2) a {
-	background: transparent !important;
-}
-
-.right_icons .menu:nth-child(3) a {
-	background: transparent !important;
-}
-
-.right_icons .menu:nth-child(4) a {
-	background: transparent !important;
-}
-
-.right_icons .menu:nth-child(5) a {
-	background: transparent !important;
-}
 </style>
 
 </head>
 
 <body>
-
 <%
 ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr"));
+memberVO vo = (memberVO)session.getAttribute("vo");
 %>
 
 	<section id="container">
 
 		<header id="header">
-			<section class="inner">
-
 			 <section class="inner" onclick="func()" width="500"> 
 				<h1 class="logo">
-					<a href="index.jsp">
+					<a href="#">
 						<div class="sprite_insta_icon"></div>
 						<div class="sprite_write_logo"></div>
 					</a>
 				</h1>
-
 				<div class="search_box">
 					<input type="text" placeholder="검색" id="search-field">
-
 					<div class="fake_field">
 						<span class="sprite_small_search_icon"></span> <span>검색</span>
 					</div>
 				</div>
-
 				<div class="right_icons">
 					<ul class="menu">
 						<li><a class="trigger" href="#">
@@ -343,14 +103,13 @@ ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='likepage.jsp'" href="#">
+						<li><a href="#">
 								<div class="sprite_compass_icon"></div>
 						</a></li>
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='profile3.jsp'
-						" href="#">
+						<li><a  href="#">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 						<li class="bg"></li>
@@ -371,7 +130,6 @@ ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr
 		<section id="main_container">
 			<span style="align-items: center; font-size: 200%;">누구의 계정으로
 				로그인 할까요??</span>
-
 		</section>
 
 
@@ -426,8 +184,8 @@ ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr
 									</div>
 
 									<p class="join_pet_nick">
-										<input class="pet_nick" id="pet_nick" name="pet_nick"
-											type="text" placeholder="Pet-NickName" style="width: 100%;">
+										<input class="pet_nick" id="pet_nick" name="pet_nick" type="text" 
+											placeholder="Pet-NickName" style="width: 100%;">
 									</p>
 
 
@@ -455,10 +213,12 @@ ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr
 
 
 									<div class="radio-buttons">
-										<label class="custom-radio"> <input type="radio"
-											class="radio_pet" name="radio_pet" value="D"
-											onclick="ajaxSpecies()" /> <span class="radio-btn"> <i
-												class="las la-check"></i>
+
+										<label class="custom-radio"> <input type="radio" class="radio_pet"
+											name="radio_pet" value="D" onclick="ajaxSpecies()" /> <span class="radio-btn"> 
+											<i class="las la-check"></i>
+
+
 												<div class="genders-icon">
 													<i class="las la-dog"></i>
 													<h4>Dog</h4>
@@ -491,7 +251,7 @@ ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr
 
 									<p>
 										<textarea name="content" id="text_field" cols="50" rows="5"
-											placeholder="140자 까지 등록 가능합니다. #태그명 을 통해서 검색 태그를 등록할 수 있습니다.예시 : I # love # insta!"></textarea>
+											placeholder="80자 까지 등록 가능합니다. #태그명 을 통해서 검색 태그를 등록할 수 있습니다.예시 : I # Hi # Dear!"></textarea>
 									</p>
 									<input class="submit_btn" type="submit" value="저장">
 								</form>
@@ -502,8 +262,14 @@ ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr
 
 					<% for(int i = 0; i < pet_profiles.size(); i++) {%>
 					<button class="button">
+
 					
 						<img src=<%=pet_profiles.get(i).getPet_profile() %> width="100px" height="100px">
+
+
+						<!--  <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
+					</button>
+
 					
 					
 					</button>
@@ -552,7 +318,7 @@ ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr
         reader.readAsDataURL(e.target.files[0]);
     }
 
- 
+
 </script>
 
 	<script type="text/javascript"> 
@@ -586,8 +352,6 @@ ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr
 	}
 	</script>
 
-	
-	
 	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>

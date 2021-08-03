@@ -1,3 +1,4 @@
+<%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feedVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -6,7 +7,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+
 </head>
 <body>
 	<!DOCTYPE html>
@@ -40,13 +41,12 @@
     <meta itemprop="image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
 
-
-    <title>instagram</title>
+	<title>Hi Dear</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/profile.css">
-    <link rel="shortcut icon" href="imgs/instagram.png">
+    <link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 
  <!--new_header style-->
@@ -109,6 +109,53 @@ li a {
 
 li a:hover {
 	margin: -10px 0 0 0;
+}
+.active {
+	padding: 0;
+	border-radius: 20px;
+}
+
+.active:last-child {
+	 padding-bottom: 60px; 
+} 
+
+.active::after {
+	content: ”;
+	clear: both;
+	display: block;
+}
+
+.active div {
+	position: relative;
+	float: left;
+	width: 100%;
+    margin: 0 0 18px 0;
+	padding: 0;
+}
+
+.active div:first-child {
+	margin-left: 0;
+}
+
+.mylist_contents video{
+	width: 300px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.mylist_contents div video{
+	width: 300px;
+	height: auto;
+	border-radius: 40px;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.mylist_contents div:hover video{
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .menu {
@@ -308,9 +355,6 @@ textarea {
 	column-gap: 100px;
 }
 
-.search_box:hover .fake_field{
-	display: none;
-}
 </style>
 
 
@@ -320,6 +364,15 @@ textarea {
 </head>
 
 <body>
+<%
+	//ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("search_feed");
+	//System.out.print(feeds.get(0));
+	
+	//petVO pet_vo = new petVO(2, "cloud","img.jpg","hi","F","말티즈","Delkin@gmail.com");
+	//session.setAttribute("pet_vo", pet_vo);
+	petVO vo = (petVO)session.getAttribute("pet_vo");
+	
+%>
 
     <section id="container">
 
@@ -448,8 +501,8 @@ textarea {
                 %>
                 <% for (int i = 0; i < feeds.size(); i++) {%>
                     <div class="pic">
-                        <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><img class="like_pic"
-							src="<%= feeds.get(i).getImg_addr() %>" alt=""></a>
+                        <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video width='400' height='400'>
+							<source src="<%= feeds.get(i).getImg_addr() %>" type="video/mp4"/></video></a>
                     </div>
                 <%} %>
                 
@@ -527,7 +580,17 @@ textarea {
             }
 
         }
+     // 동영상 호버시 재생되는 스크립트 
+		$('.pic').hover(hoverVideo, hideVideo);
+			function hoverVideo(e) {  
+				$('video', this)[0].play(); 
+				$('.card-top').hide();
+			}
 
+			function hideVideo(e) {
+				$('video', this)[0].pause();
+				$('.card-top').show();
+			}
     </script>
     
 </body>

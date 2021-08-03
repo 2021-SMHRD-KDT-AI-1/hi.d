@@ -529,8 +529,9 @@ textarea#profile_edit_textarea {
 				</h1>
 
 				<div class="search_box">
+				<form action="searchpageCon.do" method="POST">
 					<input type="text" placeholder="검색" id="search-field">
-
+				</form>
 					<div class="fake_field">
 						<span class="sprite_small_search_icon"></span> <span>검색</span>
 					</div>
@@ -784,10 +785,10 @@ textarea#profile_edit_textarea {
 
 
 	</section>
-
 	<script src='js/jquery-3.6.0.min.js'></script>
 	<script src="js/profile.js"></script>
 	<script type="text/javascript">
+	 
 		// *NewPost 모달 스크립트 *
 		var modal_post = document.querySelector(".modal_post");
 		var trigger_post = document.querySelector(".trigger_post");

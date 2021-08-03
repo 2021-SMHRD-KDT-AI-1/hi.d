@@ -20,20 +20,18 @@ public class LoginCon implements Command{
 		String moveURL = null;
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
-		System.out.println("con¡¢º”");
 		memberDAO dao = new memberDAO();
 		memberVO vo = dao.Login(email, pw);
 		
 		
 		if (vo != null) {
-			HttpSession session = request.getSession(); 
+			HttpSession session = request.getSession();
 			session.setAttribute("vo", vo);
 			petDAO dao_pet = new petDAO();
 			ArrayList<petVO> vo_arr = dao_pet.pet_select(vo.getEmail());
 			session.setAttribute("vo_arr", vo_arr);
 			moveURL = "choice.jsp";
 		} else {
-			
 			moveURL = "login.jsp";
 		}
 		

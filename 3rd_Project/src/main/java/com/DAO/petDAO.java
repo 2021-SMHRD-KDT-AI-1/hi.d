@@ -176,7 +176,7 @@ public class petDAO {
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				one_pet.setPet_num(rs.getString(1));
+				one_pet.setPet_num(rs.getInt(1));
 				one_pet.setPet_nick(rs.getString(2));
 				one_pet.setPet_profile(rs.getString(3));
 				one_pet.setPet_introduce(rs.getString(4));
@@ -202,7 +202,7 @@ public class petDAO {
 			getConn();
 			sql = "delete from petinfo where pet_num = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, petinfo.getPet_num());
+			psmt.setInt(1, petinfo.getPet_num());
 			
 			cnt = psmt.executeUpdate();
 			
@@ -213,6 +213,30 @@ public class petDAO {
 		}
 		return cnt;
 	}
+
+	
+	public String pet_name(int pet_num) {
+		String petName = null;
+		try {
+			getConn();
+			sql = "select pet_nick from petinfo where pet_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				petName = rs.getString(1);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return petName;
+	}
+
+
 	
 	
 }
