@@ -57,14 +57,14 @@ public class feedDAO {
 	public int feed_upload(feedVO vo) {
 		try {
 			getConn();
-			sql = "insert into feedinfo values(feed_num_seq.nextval, ?, ?, ?, ?, ?, ?)";
+			sql = "insert into feedinfo values(feed_num_seq.nextval, ?, ?, ?, ?, ?, sysdate)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, vo.getPet_num());
 			psmt.setString(2, vo.getImg_addr());
 			psmt.setString(3, vo.getFeed_content());
 			psmt.setString(4, vo.getLike_pet());
 			psmt.setString(5, vo.getF_lock());
-			psmt.setDate(6, vo.getUpload_time());
+			//psmt.setDate(6, vo.getUpload_time());
 			
 			cnt = psmt.executeUpdate();
 			
