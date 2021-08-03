@@ -646,11 +646,7 @@ pic::-webkit-media-controls {
 					<div class="detail">
 						<div class="top">
 
-
-
-
 							<div class="user_name"><%=pet_vo.getPet_nick() %></div>
-
 
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>

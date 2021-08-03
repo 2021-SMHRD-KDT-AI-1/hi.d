@@ -412,25 +412,19 @@ li a:hover {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='likepage.jsp'" href="#">
+						<li><a href="likepage.jsp">
 								<div class="sprite_compass_icon"></div>
 						</a></li>
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='hover_video_test.jsp'" href="#">
+						<li><a href="hover_video_test.jsp">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 						<li class="bg"></li>
 					</ul>
 
-
-
 				</div>
-
-
-
-
 
 			</section>
 
