@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.petDAO"%>
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 <%@page import="com.VO.petVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -661,7 +658,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 
 					<div class="detail">
 						<div class="top">
-							<div class="user_name"><%=pet_vo.getPet_nick()%></div>
+							<div class="user_name">GFJHGJHGHJ</div>
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 
