@@ -310,6 +310,9 @@ li a:hover {
 
 <body>
 
+<%
+ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr"));
+%>
 
 	<section id="container">
 
@@ -398,7 +401,7 @@ li a:hover {
 					<div class="flex">
 						<div class="modal1">
 							<div>
-								<form action="PetJoinCon.do" class="post_form" method="POST">
+								<form action="PetJoinCon.do" class="post_form" method="POST" >
 									<div class="title">NEW PROFILE</div>
 									<div class="preview">
 										<div class="upload">
@@ -413,10 +416,14 @@ li a:hover {
 											</div>
 										</div>
 									</div>
+									<div>
 									<p>
-										<input type="file" name="photo" id="id_photo"
-											required="required">
+										<input type="file" name="photo" id="id_photo" accept="image/*"
+											required="required" >
+								
 									</p>
+										
+									</div>
 
 									<p class="join_pet_nick">
 										<input class="pet_nick" id="pet_nick" name="pet_nick"
@@ -493,12 +500,14 @@ li a:hover {
 					</div>
 
 
-					
+					<% for(int i = 0; i < pet_profiles.size(); i++) {%>
 					<button class="button">
-
-						<img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">
-					</button>
 					
+						<img src=<%=pet_profiles.get(i).getPet_profile() %> width="100px" height="100px">
+					
+					
+					</button>
+					<%} %>
 				</div>
 
 
@@ -606,6 +615,41 @@ li a:hover {
 		}
 		)
 	</script>
+<!--  <script>
+	$(function() {
+		//이미지 클릭시 업로드창 실행
+		$('#id_photo').click(function() {
+			console.log('fileadd');
+			$("input[name='photo']").click();
+
+		})
+		//업로드 파일체인지가 됐을경우 실행되는 이벤트  form태그에 fileProfile은 hidden으로 넣어줌
+		$("input[name='photo']").change(function(e) {
+
+			//$("#frm_profile_img").submit();
+			$("input[name='photo']").val();
+			var frm = document.getElementById('id_photo');
+			frm.method = 'POST';
+			frm.enctype = 'multipart/form-data';
+			var fileData = new FormData(frm);
+
+			// ajax
+			$.ajax({
+				type : 'POST',
+				url : 'PetJoinCon',
+				data : fileData,
+				processData : false,
+				contentType : false,
+				success : function(data, textStatus, xhr) {
+					console.log('success');
+				},
+				error : function(request, status, error) {
+					alert("code:" + request.status + "\n" + "error:" + error);
+				}
+			});
+		})
+	})
+</script>-->
 
 
 
