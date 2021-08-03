@@ -380,7 +380,7 @@ textarea {
             <section class="inner">
 
                 <h1 class="logo">
-                    <a href="test4.html">
+                    <a href="index.jsp">
                         <div class="sprite_insta_icon"></div>
                         <div class="sprite_write_logo"></div>
                     </a>
@@ -405,13 +405,13 @@ textarea {
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a href="likepage.jsp">
+                        <li><a href="searchpageCon.do">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a href="hover_video_test.jsp">
+                        <li><a onclick="location.href='hover_video_test.jsp'">
                                 <div class="sprite_user_icon_outline"></div>
                             </a></li>
                         <li class="bg"></li>

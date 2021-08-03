@@ -21,7 +21,9 @@ public class frontcontroller extends HttpServlet {
 		
 		if(result.equals("LoginCon.do")) {
 			con = new LoginCon();
-		} else if(result.equals("JoinCon.do")) {
+		} else if(result.equals("LogoutCon.do")) {
+			con = new LogoutCon();
+		}else if(result.equals("JoinCon.do")) {
 			con = new JoinCon();
 		} else if(result.equals("PetJoinCon.do")) {
 			con = new PetJoinCon();

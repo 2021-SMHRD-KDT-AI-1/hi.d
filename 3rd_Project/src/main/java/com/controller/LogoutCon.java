@@ -14,10 +14,8 @@ public class LogoutCon implements Command{
 		String moveURL = "";
 		
 		HttpSession session = request.getSession();
-		session.removeAttribute("vo");
-		moveURL = "login.jsp";
-
-		
+		session.removeAttribute("pet_vo");
+		moveURL = "choice.jsp";
 		
 		return moveURL;
 	}
