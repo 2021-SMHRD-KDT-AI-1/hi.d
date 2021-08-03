@@ -518,7 +518,7 @@ li a:hover {
                                 <div class="trans_inner_inner">
      
                                 	<p align = "middle">
-		                            	<video class="personal_contents" autoplay>
+		                            	<video class="personal_contents" controls>
 		                            		<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4">
 		                            	</video>
 									</p>
@@ -613,7 +613,7 @@ li a:hover {
                         <div class="img_section">
                             <div class="trans_inner">
                                 <div class="trans_inner_inner">
-                           <video class="personal_contents" autoplay>
+                           <video class="personal_contents" controls>
                            <source src="videos/dog1.mp4" type="video/mp4" />
                            </video>
                         		</div>
