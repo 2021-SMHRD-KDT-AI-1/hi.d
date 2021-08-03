@@ -714,7 +714,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br>
+							<span>Intro Text<br>¾È³ç
 							</span>
 						</div>
 
