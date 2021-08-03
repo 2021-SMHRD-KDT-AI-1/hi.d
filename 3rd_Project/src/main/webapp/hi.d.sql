@@ -126,6 +126,11 @@ INSERT INTO MEMBERINFO
 VALUES('GaIn@gmail.com', '0000');
 INSERT INTO MEMBERINFO
 VALUES('Cutie@gmail.com', '0000');
+INSERT INTO MEMBERINFO
+VALUES('mino@gmail.com', '0000');
+INSERT INTO MEMBERINFO
+VALUES('maru@gmail.com', '0000');
+
 
 
 insert into species values('코리안 숏헤어','C');
