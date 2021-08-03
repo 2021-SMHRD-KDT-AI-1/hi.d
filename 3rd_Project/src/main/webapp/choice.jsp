@@ -59,7 +59,7 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/profile.css">
-<link rel="stylesheet" href="css/new_profile.css">
+<link rel="stylesheet" href="css/choice.css">
 <link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 
@@ -69,248 +69,14 @@
 
 <style>
 
-/* ------------------------------------------------------------------------------1안*/
-html, body {
-	height: 100%;
-}
-
-.wrap {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.button {
-	/* max-width : 10% -> 15%*/
-	max-width: 15%;
-	font-family: 'Roboto', sans-serif;
-	font-size: 11px;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	font-weight: 500;
-	color: #000;
-	background-color: #fff;
-	border: none;
-	border-radius: 20%;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease 0s;
-	cursor: pointer;
-	outline: none;
-	margin: 10px;
-}
-/* 프로필편집 추가 버튼 */
-.plus_button {
-	/* max-width : 10% -> 15%*/
-	max-width: 10%;
-	font-family: 'Roboto', sans-serif;
-	font-size: 11px;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	font-weight: 500;
-	color: #000;
-	background-color: #fff;
-	border: none;
-	border-radius: 20%;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease 0s;
-	cursor: pointer;
-	outline: none;
-	margin: 10px;
-}
-
-.plus_button>img {
-	height: 100%;
-	width: 100%;
-}
-
-.button:hover {
-	background-color: rgb(255, 167, 158);
-	box-shadow: 0px 15px 20px rgb(191, 191, 191);
-	color: #fff;
-	transform: translateY(-7px);
-}
-
-.plus_button:hover {
-	background-color: rgb(255, 167, 158);
-	box-shadow: 0px 15px 20px rgb(191, 191, 191);
-	color: #fff;
-	transform: translateY(-7px);
-}
-
-/* 모달창 */
-.modal1 {
-	z-index: 1;
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	opacity: 0;
-	visibility: hidden;
-	transform: scale(1.1);
-	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform
-		0.25s;
-}
-
-.post_form {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	/* background-color 없었음*/
-	background-color: white;
-	padding: 1rem 1.5rem;
-	width: 700px;
-	height: 850px;
-	/* border-radius 없었음 */
-	border-radius: 0.5rem;
-}
-
-.show-modal {
-	opacity: 1;
-	visibility: visible;
-	transform: scale(1.0);
-	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
-
-/* 모달창 스크롤바  */
-.flex {
-	display: flex;
-}
-
-/* post_form 에서 modal-content1으로 클래스 변경*/
-.post_form {
-	width: 650px;
-	padding: 0px 13px 0px 13px;
-	overflow-y: scroll;
-	height: 800px;
-	box-sizing: border-box;
-	margin-right: 50px;
-	
-	/*border-radius: 10px; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-	*/
-}
-/* 스크롤바 설정*/
-/*post_form에서 modal-content1으로 클래스 변경*/
-.post_form::-webkit-scrollbar {
-	width: 8px;
-	/* 스크롤바 길이 안 먹힘 */
-	
-}
-
-/* 스크롤바 막대 설정*/
-/*post_form에서 modal-content1으로 클래스 변경*/
-.post_form::-webkit-scrollbar-thumb {
-	/* border-radius: 10px; 없어짐*/
-	background-color: #8373e6;
-}
-
-/* 스크롤바 뒷 배경 설정*/
-/*post_form에서 modal-content1으로 클래스 변경*/
-.post_form::-webkit-scrollbar-track {
-	background-color: #d4cef85e;
-	/* border-radius: 10px -> 50px;*/
-	border-radius: 50px;
-}
-/*  new_header style */
-@font-face {
-	font-family: 'HeydingsCommonIconsRegular';
-	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot');
-	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot?#iefix')
-		format('embedded-opentype'),
-		url('http://ianfarb.com/random/heydings_icons-webfont.woff')
-		format('woff'),
-		url('http://ianfarb.com/random/heydings_icons-webfont.ttf')
-		format('truetype'),
-		url('http://ianfarb.com/random/heydings_icons-webfont.svg#HeydingsCommonIconsRegular')
-		format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	background: #e5e5e5;
-}
-
-.bg {
-	position: fixed;
-	z-index: -4;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	transition: .25s;
-	pointer-events: none;
-}
-
-li {
-	list-style: none;
-}
-
-li a {
-	display: block;
-	float: left;
-	width: 20%;
-	text-align: center;
-	font-family: 'HeydingsCommonIconsRegular', Helvetida Neue, sans-serif;
-	font-weight: 700;
-	letter-spacing: 1px;
-	font-size: 40px;
-	color: #fff;
-	background: #ccc;
-	text-decoration: none;
-	text-transform: uppercase;
-	text-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
-	transition: .25s;
-}
-
-li a:hover {
-	margin: -10px 0 0 0;
-}
-
-.menu {
-	width: 500px;
-	border-radius: 10px;
-	overflow: hidden;
-}
-
-.right_icons .menu:first-child a {
-	background: transparent !important;
-}
-
-.right_icons .menu:nth-child(2) a {
-	background: transparent !important;
-}
-
-.right_icons .menu:nth-child(3) a {
-	background: transparent !important;
-}
-
-.right_icons .menu:nth-child(4) a {
-	background: transparent !important;
-}
-
-.right_icons .menu:nth-child(5) a {
-	background: transparent !important;
-}
 </style>
 
 </head>
 
 <body>
-	<%
-	memberVO vo = (memberVO)session.getAttribute("vo");
+<%
+ArrayList<petVO> pet_profiles = ((ArrayList<petVO>) session.getAttribute("vo_arr"));
+memberVO vo = (memberVO)session.getAttribute("vo");
 %>
 
 	<section id="container">
@@ -393,7 +159,7 @@ li a:hover {
 					<div class="flex">
 						<div class="modal1">
 							<div>
-								<form action="PetJoinCon.do" class="post_form" method="POST">
+								<form action="PetJoinCon.do" class="post_form" method="POST" >
 									<div class="title">NEW PROFILE</div>
 									<div class="preview">
 										<div class="upload">
@@ -408,10 +174,14 @@ li a:hover {
 											</div>
 										</div>
 									</div>
+									<div>
 									<p>
-										<input type="file" name="photo" id="id_photo"
-											required="required">
+										<input type="file" name="photo" id="id_photo" accept="image/*"
+											required="required" >
+								
 									</p>
+										
+									</div>
 
 									<p class="join_pet_nick">
 										<input class="pet_nick" id="pet_nick" name="pet_nick" type="text" 
@@ -443,10 +213,12 @@ li a:hover {
 
 
 									<div class="radio-buttons">
-										<label class="custom-radio"> <input type="radio"
-											class="radio_pet" name="radio_pet" value="D"
-											onclick="ajaxSpecies()" /> <span class="radio-btn"> <i
-												class="las la-check"></i>
+
+										<label class="custom-radio"> <input type="radio" class="radio_pet"
+											name="radio_pet" value="D" onclick="ajaxSpecies()" /> <span class="radio-btn"> 
+											<i class="las la-check"></i>
+
+
 												<div class="genders-icon">
 													<i class="las la-dog"></i>
 													<h4>Dog</h4>
@@ -479,7 +251,7 @@ li a:hover {
 
 									<p>
 										<textarea name="content" id="text_field" cols="50" rows="5"
-											placeholder="140자 까지 등록 가능합니다. #태그명 을 통해서 검색 태그를 등록할 수 있습니다.예시 : I # love # insta!"></textarea>
+											placeholder="80자 까지 등록 가능합니다. #태그명 을 통해서 검색 태그를 등록할 수 있습니다.예시 : I # Hi # Dear!"></textarea>
 									</p>
 									<input class="submit_btn" type="submit" value="저장">
 								</form>
@@ -488,12 +260,20 @@ li a:hover {
 					</div>
 
 
-					
+					<% for(int i = 0; i < pet_profiles.size(); i++) {%>
 					<button class="button">
 
-						<img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">
-					</button>
 					
+						<img src=<%=pet_profiles.get(i).getPet_profile() %> width="100px" height="100px">
+
+
+						<!--  <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
+					</button>
+
+					
+					
+					</button>
+					<%} %>
 				</div>
 
 
@@ -599,6 +379,41 @@ li a:hover {
 		}
 		)
 	</script>
+<!--  <script>
+	$(function() {
+		//이미지 클릭시 업로드창 실행
+		$('#id_photo').click(function() {
+			console.log('fileadd');
+			$("input[name='photo']").click();
+
+		})
+		//업로드 파일체인지가 됐을경우 실행되는 이벤트  form태그에 fileProfile은 hidden으로 넣어줌
+		$("input[name='photo']").change(function(e) {
+
+			//$("#frm_profile_img").submit();
+			$("input[name='photo']").val();
+			var frm = document.getElementById('id_photo');
+			frm.method = 'POST';
+			frm.enctype = 'multipart/form-data';
+			var fileData = new FormData(frm);
+
+			// ajax
+			$.ajax({
+				type : 'POST',
+				url : 'PetJoinCon',
+				data : fileData,
+				processData : false,
+				contentType : false,
+				success : function(data, textStatus, xhr) {
+					console.log('success');
+				},
+				error : function(request, status, error) {
+					alert("code:" + request.status + "\n" + "error:" + error);
+				}
+			});
+		})
+	})
+</script>-->
 
 
 

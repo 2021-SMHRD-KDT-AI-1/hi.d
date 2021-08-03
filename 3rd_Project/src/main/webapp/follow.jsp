@@ -41,7 +41,7 @@
 <link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 <style>
-.b_inner .contents_box {
+b_inner .contents_box {
 	float: none;
 	display: flex;
 	justify-content: center;
@@ -165,6 +165,7 @@ li a:hover {
 
 
 .dropdown-content a:hover {background-color: #ddd;}
+
 
 .dropdown:hover .dropdown-content {display: block;}
 

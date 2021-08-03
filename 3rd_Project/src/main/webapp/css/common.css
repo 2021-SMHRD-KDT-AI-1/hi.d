@@ -286,6 +286,9 @@ body {
 #main_container .b_inner{
     width:935px;
     position: relative;
+    float: none;
+    display: flex;
+    justify-content: center;
 }
 
 

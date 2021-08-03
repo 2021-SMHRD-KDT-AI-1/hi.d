@@ -1,5 +1,4 @@
 
-
 .form_container{
     width: 350px;
     margin: 0 auto
@@ -44,8 +43,8 @@
 }
 
 .form .submit_btn{
-    background: #3897f0;
-    border-color: #3897f0;
+    background:#dbdbdb;
+    border-color: #dbdbdb;
     color: #fff;
     border-radius: 3px;
     border-style: solid;
@@ -55,6 +54,7 @@
     line-height: 28px;
     outline: none;
     width: 100%;
+    height: 45px;
     padding: 0;
     margin-top: 10px;
     cursor: pointer;
@@ -62,9 +62,8 @@
 
 
 .join_form .submit_btn{
-    background: #3897f0;
-    border-color: #3897f0;
-    color: #fff;
+    background: #dbdbdb;
+    border-color: #dbdbdb;
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
@@ -126,3 +125,298 @@
     text-align: center;
 }
 
+.modal .body {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	font-size: 16px;
+	color: #999;
+}
+
+.modal .title {
+	font-family: 'Oswald', sans-serif;
+	margin: 0%;
+	font-size: 30px;
+	color: #353535ea;
+}
+
+.modal label {
+	display: block;
+	margin-top: 20px;
+	letter-spacing: 2px;
+}
+
+/* form {  
+ 
+    } */
+input, textarea {
+	width: 439px;
+	height: 27px;
+	background-color: #efefef;
+	border-radius: 6px;
+	border: 1px solid #dedede;
+	padding: 10px;
+	margin-top: 3px;
+	font-size: 0.9em;
+	color: #3a3a3a;
+}
+
+input#chk_open {
+	width: 20px;
+	height: 20px;
+}
+
+textarea {
+	height: 100px;
+	background-color: #efefef;
+}
+
+#submit {
+	width: 127px;
+	height: 48px;
+	text-align: center;
+	border: none;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#submit:hover {
+	color: #fff;
+	background-color: #353535ea;
+	opacity: 0.9;
+}
+
+#cancel {
+	width: 127px;
+	height: 48px;
+	text-align: center;
+	border: none;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#cancel:hover {
+	color: #fff;
+	background-color: #353535ea;
+	opacity: 0.9;
+}
+
+.modal {
+	z-index: 1;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(1.1);
+	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform
+		0.25s;
+}
+
+.modal_check {
+	text-align: center;
+}
+
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 1rem 1.5rem;
+	width: 1100px;
+	height: 700px;
+	border-radius: 0.5rem;
+}
+
+.upload {
+	max-width: 550px;
+	width: 450px;
+	height: 450px;
+	border: 1px solid #e6e6e6;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* position: relative; */
+	float: center;
+}
+
+.behavior_analysis {
+	max-width: 350px;
+	height: 350px;
+	border: 1px solid #e6e6e6;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.close-button {
+	float: right;
+	width: 1.5rem;
+	line-height: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 0.25rem;
+	background-color: lightgray;
+}
+
+.modal-content p, h1, label {
+	text-align: center;
+}
+
+.modal-content input {
+	align-items: center;
+}
+
+.close-button:hover {
+	background-color: darkgray;
+}
+
+.show-modal {
+	z-index: 5;
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1.0);
+	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.upload_form {
+	column-count: 2;
+	column-gap: 100px;
+}
+
+/*  new_header style */
+@font-face {
+	font-family: 'HeydingsCommonIconsRegular';
+	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot');
+	src: url('http://ianfarb.com/random/heydings_icons-webfont.eot?#iefix')
+		format('embedded-opentype'),
+		url('http://ianfarb.com/random/heydings_icons-webfont.woff')
+		format('woff'),
+		url('http://ianfarb.com/random/heydings_icons-webfont.ttf')
+		format('truetype'),
+		url('http://ianfarb.com/random/heydings_icons-webfont.svg#HeydingsCommonIconsRegular')
+		format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #e5e5e5;
+}
+
+.bg {
+	position: fixed;
+	z-index: -4;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: .25s;
+	pointer-events: none;
+}
+
+li {
+	list-style: none;
+}
+
+li a {
+	display: block;
+	float: left;
+	width: 20%;
+	text-align: center;
+	font-family: 'HeydingsCommonIconsRegular', Helvetida Neue, sans-serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-size: 40px;
+	color: #fff;
+	background: #ccc;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
+	transition: .25s;
+}
+
+li a:hover {
+	margin: -10px 0 0 0;
+}
+
+.menu {
+	width: 500px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.right_icons .menu:first-child a {
+	background: transparent !important;
+}
+
+.right_icons .menu:nth-child(2) a {
+	background: transparent !important;
+}
+
+.right_icons .menu:nth-child(3) a {
+	background: transparent !important;
+}
+
+.right_icons .menu:nth-child(4) a {
+	background: transparent !important;
+}
+
+.right_icons .menu:nth-child(5) a {
+	background: transparent !important;
+}
+
+/*로그인버튼 CSS*/
+.form input .login_button{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.login_button{
+    width: 230px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.login_button:hover{
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.login_button:focus{
+    outline: none;
+}
+
+.login_button_button{
+    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
