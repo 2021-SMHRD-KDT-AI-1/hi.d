@@ -245,6 +245,14 @@ textarea#post_textarea {
 	background-color: #efefef;
 }
 
+
+mini-editor {
+  height:7em;
+  font-family:sans-serif;
+}
+
+
+
 .modal_post {
 	z-index: 1;
 	position: fixed;
@@ -608,8 +616,10 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 									</p>
 
 									<label for="contents">Contents</label>
+									<label></label>
 									<textarea id="post_textarea" name="contents"
 										placeholder="#해시태그 & 문구입력"></textarea>
+										
 									<input type="button" class="post_cancel" value="취소"> <input
 										type="submit" class="post_submit" value="업로드">
 								</form>
@@ -908,6 +918,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 			profile_edit_reader.readAsDataURL(event.target.files[0]);
 		}
 
+		
 		//* 버튼 이벤트 스크립트*
 		$('.detail_button').each(function(index) {
 			$(this).attr('menu-index', index);
@@ -949,7 +960,6 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 
 			//textarea 텍스트 데이터를 가져오는 코드
 		})
-		
 
 
 		// 동영상 호버시 재생되는 스크립트 
@@ -963,6 +973,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				$('video', this)[0].pause();
 				$('.card-top').show();
 			}
+			
 	</script>
 
 </body>

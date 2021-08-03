@@ -568,13 +568,18 @@ li a:hover {
                             </div>
                         </div>
                         <div class="timer">1시간 전</div>
-                        <div class="comment_field"
-											id="add-comment-post37">
-                            <input type="text" class="inputReple"
-												placeholder="댓글달기...">
-                            <div class="upload_btn m_text"
-												data-name="comment">게시</div>
+
+
+
+
+  					<div class="comment_field">
+
+                        <div class="comment_field">
+
+                             <input type="text" class="inputReple" placeholder="댓글달기...">
+                            <div class="upload_btn m_text" data-name="comment">게시</div>
                         </div>
+					</div>
                     </article>
 					<%} %>
 
