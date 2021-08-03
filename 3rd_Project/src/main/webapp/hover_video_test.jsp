@@ -570,7 +570,7 @@ pic::-webkit-media-controls {
 								<span class="post_closebutton">&times;</span>
 								<h1 class="title">NEW POST</h1>
 								<label></label>
-								<form class="upload_form" action="#post.php" method="POST">
+								<form class="upload_form" action="FeedUploadCon.do" method="POST">
 									<label></label>
 									<div class="preview">
 										<!-- 이미지 미리보기 영역 -->
@@ -602,8 +602,8 @@ pic::-webkit-media-controls {
 										<!-- 공개 비공개 -->
 									<div>
 										공개<input type="radio" class="chk_open" name="chk_open"
-											value="공개"> 비공개<input type="radio" class="chk_open"
-											name="chk_open" value="비공개">
+											value="U"> 비공개<input type="radio" class="chk_open"
+											name="chk_open" value="L">
 									</div>
 									</p>
 
@@ -653,7 +653,9 @@ pic::-webkit-media-controls {
 						<div class="top">
 
 
+
 							<div class="user_name"><%=pet_vo.getPet_nick() %></div>
+
 
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>

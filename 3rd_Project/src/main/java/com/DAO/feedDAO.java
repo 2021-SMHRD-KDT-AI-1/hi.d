@@ -57,14 +57,14 @@ public class feedDAO {
 	public int feed_upload(feedVO vo) {
 		try {
 			getConn();
-			sql = "insert into feedinfo values(feed_num_seq.nextval, ?, ?, ?, ?, ?, ?)";
+			sql = "insert into feedinfo values(feed_num_seq.nextval, ?, ?, ?, ?, ?, sysdate)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, vo.getPet_num());
 			psmt.setString(2, vo.getImg_addr());
 			psmt.setString(3, vo.getFeed_content());
 			psmt.setString(4, vo.getLike_pet());
 			psmt.setString(5, vo.getF_lock());
-			psmt.setDate(6, vo.getUpload_time());
+			//psmt.setDate(6, vo.getUpload_time());
 			
 			cnt = psmt.executeUpdate();
 			
@@ -115,8 +115,8 @@ public class feedDAO {
 		try {
 			getConn();
 			sql = "select * from ("
-					+ "select * from feedinfo"
-					+ "order by DBMS_RANDOM.RANDOM"
+					+ "select * from feedinfo "
+					+ "order by DBMS_RANDOM.RANDOM "
 					+ ") where rownum < " + n;
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -148,9 +148,9 @@ public class feedDAO {
 		feed_upload_petVO one_feed = null;
 		try {
 			getConn();
-			sql = "select feed.feed_num, pet.pet_num, pet.pet_nick, pet.pet_profile, feed.img_addr, feed.feed_content, feed.like_pet, feed.f_lock, feed.upload_time"
-					+ "from feedinfo feed, petinfo pet"
-					+ "where pet.pet_num = feed.pet_num"
+			sql = "select feed.feed_num, pet.pet_num, pet.pet_nick, pet.pet_profile, feed.img_addr, feed.feed_content, feed.like_pet, feed.f_lock, feed.upload_time\r\n"
+					+ "from feedinfo feed, petinfo pet\r\n"
+					+ "where pet.pet_num = feed.pet_num\r\n"
 					+ "and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = ?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, pet_num);
@@ -167,7 +167,6 @@ public class feedDAO {
 				String like_pet = rs.getString(7);
 				String f_lock = rs.getString(8);
 				Date upload_time = rs.getDate(9);
-				
 				one_feed = new feed_upload_petVO(feed_num, feed_pet_num, pet_nick, pet_profile, img_addr, feed_content, like_pet, f_lock, upload_time);
 				feeds.add(one_feed);
 			}
