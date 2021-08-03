@@ -588,7 +588,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 									<p>
 										<!-- 첨부파일(이미지파일만 업로드) -->
 										<input type="file" name="photo" id="post_photo"
-											accept="video/*" onchange="setpostthumbnail(event);" />
+											accept="video/*" onchange="setpostthumbnail(event);">
 									</p>
 									<div>
 										<input type="button" class="behavior_submit_button"
@@ -658,7 +658,11 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 
 					<div class="detail">
 						<div class="top">
+<<<<<<< HEAD
 							<div class="user_name">gfjhgjhjhgjhg</div>
+=======
+							<div class="user_name">GFJHGJHGHJ</div>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 
