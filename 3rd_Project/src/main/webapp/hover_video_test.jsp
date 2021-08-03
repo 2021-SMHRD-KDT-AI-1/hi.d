@@ -530,7 +530,13 @@ pic::-webkit-media-controls {
 
 <body>
 
+<% //반려동물 정보가 담겨있는 곳 : vo
 
+petVO pet_vo = (petVO)session.getAttribute("pet_vo");
+
+
+
+%>
 
 	<section id="container">
 
@@ -651,7 +657,7 @@ pic::-webkit-media-controls {
 
 					<div class="detail">
 						<div class="top">
-							<div class="user_name">MY_PET_ID</div>
+							<div class="user_name">강아지이름</div>
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 
