@@ -620,7 +620,7 @@ pic::-webkit-media-controls {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a href="profile3.html">
+						<li><a href="hover_video_test.jsp">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 

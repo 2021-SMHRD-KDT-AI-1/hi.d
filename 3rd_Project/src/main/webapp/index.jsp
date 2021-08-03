@@ -417,7 +417,7 @@ li a:hover {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='profile3.jsp'" href="#">
+						<li><a onclick="location.href='hover_video_test.jsp'" href="#">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 						<li class="bg"></li>
