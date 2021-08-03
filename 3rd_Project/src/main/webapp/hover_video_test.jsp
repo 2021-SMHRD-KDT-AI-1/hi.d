@@ -1,3 +1,4 @@
+<%@page import="com.VO.followVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.petDAO"%>
 <%@page import="com.VO.petVO"%>
@@ -529,8 +530,13 @@ pic::-webkit-media-controls {
 </head>
 
 <body>
-<% //반려동물 정보가 담겨있는 곳 : vo
+<%
+//반려동물 정보가 담겨있는 곳 : vo
 	petVO pet_vo = (petVO)session.getAttribute("pet_vo");
+
+//팔로워 팔로우 정보
+	followVO follow_vo = (followVO)session.getAttribute("follow_vo");
+
 %>
 
 	<section id="container">
@@ -696,8 +702,8 @@ pic::-webkit-media-controls {
 
 						<ul class="middle">
 							<li><span>게시물</span> <span>3</span></li>
-							<li><span>팔로워</span> <span>3</span></li>
-							<li><span>팔로우</span> <span>3</span></li>
+							<li><span>팔로워</span> <span>4</span></li>
+							<li><span>팔로우</span> <span>5</span></li>
 						</ul>
 
 						<div class="bottom">
