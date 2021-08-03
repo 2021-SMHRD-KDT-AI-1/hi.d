@@ -570,7 +570,7 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 								<span class="post_closebutton">&times;</span>
 								<h1 class="title">NEW POST</h1>
 								<label></label>
-								<form class="upload_form" action="#post.php" method="POST">
+								<form class="upload_form" action="FeedUploadCon.do" method="POST">
 									<label></label>
 									<div class="preview">
 										<!-- 이미지 미리보기 영역 -->
@@ -602,8 +602,8 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 										<!-- 공개 비공개 -->
 									<div>
 										공개<input type="radio" class="chk_open" name="chk_open"
-											value="공개"> 비공개<input type="radio" class="chk_open"
-											name="chk_open" value="비공개">
+											value="U"> 비공개<input type="radio" class="chk_open"
+											name="chk_open" value="L">
 									</div>
 									</p>
 
@@ -658,11 +658,10 @@ petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 
 					<div class="detail">
 						<div class="top">
-<<<<<<< HEAD
-							<div class="user_name">gfjhgjhjhgjhg</div>
-=======
+
+
 							<div class="user_name">GFJHGJHGHJ</div>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
+
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 
