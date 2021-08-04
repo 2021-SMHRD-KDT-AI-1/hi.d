@@ -485,3 +485,40 @@ from feedinfo feed, petinfo pet
 where pet.pet_num = feed.pet_num
 and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = 1);
 
+
+select * from feedinfo where pet_num = 2;
+
+--오너 사진, 오너 이름, 오너가 팔로우한사람 수, 오너를 팔로우한 사람 수, 게시글 수, 소개글
+
+select o.pet_profile, o.pet_nick, o.pet_introduce
+from PETINFO o
+where o.pet_num = 2;
+
+select fo1.following_pet, fo2.pet_num
+from FOLLOWINFO fo1, followinfo fo2, PETINFO pet
+where fo1.pet_num = pet.pet_num
+and fo2.following_pet = pet.pet_num
+and pet.pet_num = 2;
+
+select fo1.following_pet
+from followinfo fo1, petinfo pet
+where fo1.pet_num = pet.pet_num
+and pet.pet_num = 2
+
+
+select fo2.pet_num
+from followinfo fo2, petinfo pet
+where fo2.following_pet = pet.pet_num
+and pet.pet_num = 2
+
+select pet_nick, pet_profile, pet_introduce from petinfo where pet_num = 2
+
+select count(feed.feed_num)
+from feedinfo feed, petinfo pet
+where feed.pet_num = pet.pet_num
+and pet.pet_num = 2
+
+
+
+
+
