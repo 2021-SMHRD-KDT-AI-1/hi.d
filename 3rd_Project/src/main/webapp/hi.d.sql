@@ -517,8 +517,3 @@ select count(feed.feed_num)
 from feedinfo feed, petinfo pet
 where feed.pet_num = pet.pet_num
 and pet.pet_num = 2
-
-
-
-
-

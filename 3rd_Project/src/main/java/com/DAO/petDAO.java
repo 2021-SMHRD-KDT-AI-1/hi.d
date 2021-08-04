@@ -388,6 +388,30 @@ public class petDAO {
 		return f_count;
 	}
 	
+
+	public String find_email(int pet_num) {
+		String email = "";
+		try {
+			getConn();
+			sql = "select email from petinfo where pet_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				email = rs.getString(1);
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return email;
+	}
+
+	
 }
 
 

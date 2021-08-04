@@ -276,7 +276,7 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
                                 	<a class="profile_visit" href="profileCon.do?owner=<%=feed.getPet_num() %>">
 	                                    <div class="nick_name m_text"><%=pet_info.getPet_nick() %></div>
 	                                </a>
-	                                <div class="country s_text">Seoul, South Korea</div>
+	                                <div class="country s_text"><%=pet_dao.find_email(feed.getPet_num()) %></div>
                                	</div>
                             </div>
                         <div class ="dropdown">
@@ -319,7 +319,7 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 
                         <div class="likes m_text">
                             좋아요
-                            <span id="like-count-39">2,346</span>
+                            <span id="like-count-39"><%=feed.getLike_pet().split(",").length %></span>
                             <span id="bookmark-count-39"></span>
                             개
                         </div>

@@ -1,3 +1,4 @@
+<%@page import="com.DAO.petDAO"%>
 <%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feed_upload_petVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -493,8 +494,9 @@ div.user_name a.profile_visit:visited {
 
 
 		<%
-	ArrayList<feed_upload_petVO> feeds = (ArrayList<feed_upload_petVO>)session.getAttribute("feedsinfo");
-%>
+			ArrayList<feed_upload_petVO> feeds = (ArrayList<feed_upload_petVO>)session.getAttribute("feedsinfo");
+			petDAO pet_dao = new petDAO();
+		%>
 
 
 		<section id="main_container">
@@ -517,7 +519,7 @@ div.user_name a.profile_visit:visited {
 										href="profileCon.do?owner=<%=feeds.get(i).getPet_num() %>">
 										<div class="nick_name m_text"><%=feeds.get(i).getPet_nick() %></div>
 									</a>
-									<div class="country s_text">Seoul, South Korea</div>
+									<div class="country s_text"><%=pet_dao.find_email(feeds.get(i).getPet_num()) %></div>
 								</div>
 							</div>
 							<div class="sprite_more_icon" data-name="more">
