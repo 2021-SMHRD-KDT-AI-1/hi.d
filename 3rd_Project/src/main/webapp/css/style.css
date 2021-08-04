@@ -887,7 +887,6 @@ body{
 
 #main_container{
     padding-top: 150px;
-    padding-bottom:100%;
     display: flex;
     justify-content: center;
 }
