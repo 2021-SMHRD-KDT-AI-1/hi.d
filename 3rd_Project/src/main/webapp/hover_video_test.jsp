@@ -245,6 +245,14 @@ textarea#post_textarea {
 	background-color: #efefef;
 }
 
+
+mini-editor {
+  height:7em;
+  font-family:sans-serif;
+}
+
+
+
 .modal_post {
 	z-index: 1;
 	position: fixed;
@@ -524,6 +532,12 @@ pic::-webkit-media-controls {
     display:none !important;
 }
 
+a.logout:link { color: black; text-decoration: none;}
+a.logout:visited { color: black; text-decoration: none;}
+div.detail_button:hover a.logout{ color: #ec7600; }
+
+
+
 </style>
 
 </head>
@@ -546,8 +560,9 @@ pic::-webkit-media-controls {
 				</h1>
 
 				<div class="search_box">
-					<input type="text" placeholder="검색" id="search-field">
-
+					<form action="searchpageCon.do">
+						<input type="text" placeholder="검색" id="search-field">
+					</form>
 					<div class="fake_field">
 						<span class="sprite_small_search_icon"></span> <span>검색</span>
 					</div>
@@ -558,7 +573,6 @@ pic::-webkit-media-controls {
 						<li><a class="trigger_post">
 								<div class="sprite_camera_icon"></div>
 						</a></li>
-
 						<div class="modal_post">
 							<div class="post-modal-content">
 								<span class="post_closebutton">&times;</span>
@@ -602,8 +616,10 @@ pic::-webkit-media-controls {
 									</p>
 
 									<label for="contents">Contents</label>
+									<label></label>
 									<textarea id="post_textarea" name="contents"
 										placeholder="#해시태그 & 문구입력"></textarea>
+										
 									<input type="button" class="post_cancel" value="취소"> <input
 										type="submit" class="post_submit" value="업로드">
 								</form>
@@ -614,13 +630,13 @@ pic::-webkit-media-controls {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a href="likepage.jsp">
-								<div class="sprite_compass_icon"></div>
+						<li><a href="searchpageCon.do">
+							<div class="sprite_compass_icon"></div>
 						</a></li>
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a href="hover_video_test.jsp">
+						<li><a onclick = "location.href='hover_video_test.jsp'">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 
@@ -689,7 +705,7 @@ pic::-webkit-media-controls {
 								</div>
 							</div>
 
-							<div class="detail_button" id="trigger_logout" menu-index="1" onClick="location.href='choice.jsp'">로그아웃</div>
+							<div class="detail_button" id="trigger_logout" menu-index="1"><a class="logout" href="LogoutCon.do">로그아웃</a></div>
 						</div>
 
 
@@ -902,6 +918,7 @@ pic::-webkit-media-controls {
 			profile_edit_reader.readAsDataURL(event.target.files[0]);
 		}
 
+		
 		//* 버튼 이벤트 스크립트*
 		$('.detail_button').each(function(index) {
 			$(this).attr('menu-index', index);
@@ -943,7 +960,6 @@ pic::-webkit-media-controls {
 
 			//textarea 텍스트 데이터를 가져오는 코드
 		})
-		
 
 
 		// 동영상 호버시 재생되는 스크립트 
@@ -957,6 +973,7 @@ pic::-webkit-media-controls {
 				$('video', this)[0].pause();
 				$('.card-top').show();
 			}
+			
 	</script>
 
 </body>

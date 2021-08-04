@@ -20,10 +20,15 @@ public class searchpageCon implements Command {
 		feedDAO dao = new feedDAO();
 		ArrayList<feedVO> feed_arr = new ArrayList<>();
 		
-		feed_arr = dao.search_feed(search);
+		if(search == null) {
+			feed_arr = dao.get_n_feed(12);
+		}
+		else {
+			feed_arr = dao.search_feed(search);
+		}
 		
 		if(feed_arr == null) {
-			feed_arr = dao.get_n_feed(2);
+			feed_arr = dao.get_n_feed(12);
 		}
 		
 		HttpSession session = request.getSession();

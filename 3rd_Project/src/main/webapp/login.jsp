@@ -68,16 +68,16 @@
         <section class="inner">
 
             <h1 class="logo">
-                <a href="test4.html">
+                <a href="#">
                     <div class="sprite_insta_icon"></div>
                     <div class="sprite_write_logo"></div>
                 </a>
             </h1>
 
             <div class="search_box">
-                <input type="text" placeholder="검색" id="search-field">
-
-                <div class="fake_field">
+            	<input type="text" placeholder="검색" id="search-field">
+			
+            <div class="fake_field">
                 
                     <span class="sprite_small_search_icon"></span>
                     <span>검색</span>

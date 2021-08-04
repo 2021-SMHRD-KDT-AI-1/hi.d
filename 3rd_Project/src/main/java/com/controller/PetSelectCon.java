@@ -34,7 +34,6 @@ public class PetSelectCon implements Command{
 		session.setAttribute("feedsinfo", feeds);
 		
 		if (pet_vo != null) {
-			session.setAttribute("pet_vo", pet_vo);
 			moveURL = "index.jsp";
 		} else {
 			moveURL = "choice.jsp";
