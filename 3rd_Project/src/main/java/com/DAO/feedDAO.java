@@ -236,6 +236,36 @@ public class feedDAO {
 		return feeds;
 	}
 	
+	//  마이 피드 전부 가져오기
+	public ArrayList<feedVO> my_feed(int pet_num){
+		ArrayList<feedVO> feeds = new ArrayList<>();
+		feedVO one_feed = null;
+		try {
+			getConn();
+			sql = "select * from feedinfo where pet_num = ? ";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				int feed_num = rs.getInt(1);
+				String img_addr = rs.getString(3);
+				String feed_content = rs.getString(4);
+				String like_pet = rs.getString(5);
+				String f_lock = rs.getString(6);
+				Date upload_time = rs.getDate(7);
+				one_feed = new feedVO(feed_num, pet_num, img_addr, feed_content, like_pet, f_lock, upload_time);
+				feeds.add(one_feed);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return feeds;
+	}
+	
+	
+	
+	
 	public feedVO get_one_feed(int feed_num) {
 		feedVO one_feed = null;
 		try {

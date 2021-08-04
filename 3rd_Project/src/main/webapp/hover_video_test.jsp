@@ -1,3 +1,6 @@
+<%@page import="com.VO.pet_followVO"%>
+<%@page import="com.VO.feedVO"%>
+<%@page import="com.VO.followVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.petDAO"%>
 <%@page import="com.VO.petVO"%>
@@ -543,8 +546,10 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 </head>
 
 <body>
-<% //반려동물 정보가 담겨있는 곳 : vo
-	petVO pet_vo = (petVO)session.getAttribute("pet_vo");
+<%
+//반려동물 정보가 담겨있는 곳 : vo
+	petVO pet_vo = (petVO) session.getAttribute("pet_vo");
+	pet_followVO profile = (pet_followVO) session.getAttribute("profile");
 %>
 
 	<section id="container">
@@ -635,7 +640,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick = "location.href='hover_video_test.jsp'">
+						<li><a href = "profileCon.do?owner=<%=pet_vo.getPet_num() %>">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 
@@ -654,14 +659,14 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				<div class="hori_cont">
 					<div class="profile_wrap">
 						<div class="profile_img">
-							<img src="imgs/icons/profile_example.png" alt="프로필사진">
+							<img src=<%=profile.getPet_profile() %> alt="프로필사진">
 						</div>
 					</div>
 
 					<div class="detail">
 						<div class="top">
 
-							<div class="user_name"><%=pet_vo.getPet_nick() %></div>
+							<div class="user_name"><%=profile.getPet_nick() %></div>
 
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
@@ -709,13 +714,13 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 
 
 						<ul class="middle">
-							<li><span>게시물</span> <span>3</span></li>
-							<li><span>팔로워</span> <span>3</span></li>
-							<li><span>팔로우</span> <span>3</span></li>
+							<li><span>게시물</span> <span><%=profile.getFeed_count() %></span></li>
+							<li><span>팔로워</span> <span><%=profile.getFollow() %></span></li>
+							<li><span>팔로우</span> <span><%=profile.getFollowing() %></span></li>
 						</ul>
 
 						<div class="bottom">
-							<span>Intro Text<br><%=pet_vo.getPet_introduce() %>
+							<span>Intro Text<br><%=profile.getPet_intro() %>
 							</span>
 						</div>
 
@@ -740,12 +745,16 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 					</div>
 
 				</div>
+				
+				<%
+				
+					//ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
+				
+				%>
 
 				<div class="mylist_contents contents_container active">
-					<div class="pic">
-						<a href="#"><video width='400'>
-									<source src="videos/dog1.mp4" type="video/mp4"/></video></a>
-					</div>
+				
+				
 					<div class="pic">
 						<a href="#"><video width='400'>
 							<source src="videos/dog2.mp4" type="video/mp4"/></video></a>
