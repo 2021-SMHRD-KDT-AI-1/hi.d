@@ -604,8 +604,8 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 											accept="video/*" onchange="setpostthumbnail(event);">
 									</p>
 									<div>
-										<input type="button" class="behavior_submit_button"
-											value="행동 분석하기">
+										<button name="filename" class="behavior_submit_button"
+											value="">행동 분석하기</button>
 									</div>
 									
 									<label for="behavior_analysis">Hi,Dear!</label>

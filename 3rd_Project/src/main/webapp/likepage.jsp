@@ -355,6 +355,12 @@ textarea {
 	column-gap: 100px;
 }
 
+
+/* Hide Play button + controls on iOS */
+pic::-webkit-media-controls {
+    display:none !important;
+}
+
 </style>
 
 
@@ -491,6 +497,7 @@ textarea {
 
             <section class="b_inner">
                 <div class="mylist_contents contents_container active">
+                 
                 <!-- 탐색페이지 작성!!!! -->
                 <% 
                 	//feedVO feed = null;
@@ -498,13 +505,14 @@ textarea {
 					//System.out.print(feeds.get(0).getImg_addr());
                 %>
                 <% for (int i = 0; i < feeds.size(); i++) {%>
-                    <div class="pic">
+                   <div class="pic">
                         <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video>
 							<source src="<%= feeds.get(i).getImg_addr() %>" type="video/mp4"/></video></a>
                     </div>
                 <%} %>
                 
             </section>
+         
         </div>
 
 

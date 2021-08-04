@@ -1,5 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.VO.feed_commentVO"%>
+<%@page import="com.DAO.petDAO"%>
 <%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feedVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -145,13 +146,13 @@ li a:hover {
 .dropdown {
   position: relative;
   display: inline-block;
-  top: 3px;
+  top: 5px;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 43px;
+  top: 40px;
   right:-20px;
   background-color: #f1f1f1;
   min-width: 160px;
@@ -196,6 +197,12 @@ li a:hover {
 	background-color:transparent;
 	color:#208aed;
 	}
+	
+div.user_name a.profile_visit:link { color: black; text-decoration: none;}
+div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
+
+
+	
 </style>
 
 </head>
@@ -255,21 +262,27 @@ li a:hover {
 		<% 
 			feedVO feed = (feedVO)session.getAttribute("feed_info");
 			ArrayList<String[]> comments = (ArrayList<String[]>) session.getAttribute("comment_info");
+			petDAO pet_dao = new petDAO();
+			petVO pet_info = pet_dao.pet_profile_load(feed.getPet_num());
 		%>
 		<div id="main_container">
-			<section class="b_inner">
+			<section class="1_inner">
 				<div class="contents_box">
 					 <article class="contents">
                         <header class="top">
                             <div class="user_container">
 	                            <div class="div_profile_img">
-		                            <img class="profile_img"
-		                              src="imgs/thumb.jpeg" alt="프로필이미지">
+	                            	<a class="profile_visit" href="profileCon.do?owner=<%=feed.getPet_num() %>">
+			                            <img class="profile_img"
+			                              src=<%=pet_info.getPet_profile() %> alt="프로필이미지">
+			                        </a>
                                 </div>
-                                	<div class="user_name">
-	                                    <div class="nick_name m_text">KindTiger</div>
-	                                    <div class="country s_text">Seoul, South Korea</div>
-                                	</div>
+                                <div class="user_name">
+                                	<a class="profile_visit" href="profileCon.do?owner=<%=feed.getPet_num() %>">
+	                                    <div class="nick_name m_text"><%=pet_info.getPet_nick() %></div>
+	                                </a>
+	                                <div class="country s_text"><%=pet_dao.find_email(feed.getPet_num()) %></div>
+                               	</div>
                             </div>
                         <div class ="dropdown">
                				<div class="sprite_more_icon"></div>
@@ -285,7 +298,7 @@ li a:hover {
                                 <div class="trans_inner_inner">
                                 <p align="middle">
 		                           <video class="personal_contents"  width = " 614" height = "614" src="<%=feed.getImg_addr() %>"
-		                              alt="visual01"></video>
+		                              alt="visual01" controls></video>
 		                              </p>
 		                              
                         		</div>
@@ -297,7 +310,10 @@ li a:hover {
                                 <div class="heart_btn">
                                     <div
                               class="sprite_heart_icon_outline" name="39"
-                              data-name="heartbeat"></div>
+                              data-name="heartbeat" id = "img1"></div>
+                             
+                             <div class="sprite_like_icon_outline" name="39"
+                              data-name="heartbeat"id = "img2"></div>
                                 </div>
                                 	<div class="sprite_bubble_icon"></div>
                                 <div class="sprite_share_icon"
@@ -311,7 +327,7 @@ li a:hover {
 
                         <div class="likes m_text">
                             좋아요
-                            <span id="like-count-39">2,346</span>
+                            <span id="like-count-39"><%=feed.getLike_pet().split(",").length %></span>
                             <span id="bookmark-count-39"></span>
                             개
                         </div>
@@ -405,9 +421,27 @@ li a:hover {
 			});
 		
 	})
-
-
 	
+	</script>
+	<script>
+	/*paw click -> color change*/
+	   $(document).ready(function(){
+            /*웹페이지 열었을 때*/
+            $(".sprite_heart_icon_outline").show();
+            $(".sprite_like_icon_outline").hide();
+ 
+            /*img1을 클릭했을 때 img2를 보여줌*/
+            $(".sprite_heart_icon_outline").click(function(){
+                $(".sprite_heart_icon_outline").hide();
+                $(".sprite_like_icon_outline").show();
+            });
+ 
+            /*img2를 클릭했을 때 img1을 보여줌*/
+            $(".sprite_like_icon_outline").click(function(){
+                $(".sprite_heart_icon_outline").show();
+                $(".sprite_like_icon_outline").hide();
+            });
+        })
 	</script>
 
 

@@ -216,9 +216,6 @@ public class petDAO {
 	//마이페이지 프로필 정보 가져오기
 	public ArrayList<petVO> get_pet_pro(){
 		ArrayList<petVO> pets = new ArrayList<>();
-		
-		
-		
 		try {
 			getConn();
 			sql = "select * from petinfo";
@@ -231,11 +228,8 @@ public class petDAO {
 				String Pet_profile = rs.getString(3);
 				String Pet_introduce = rs.getString(4);
 				
-				
 				petVO vo = new petVO(Pet_nick, Pet_profile, Pet_introduce);
 				pets.add(vo);
-				
-				
 			}
 			
 		} catch (Exception e) {
@@ -393,6 +387,30 @@ public class petDAO {
 		}
 		return f_count;
 	}
+	
+
+	public String find_email(int pet_num) {
+		String email = "";
+		try {
+			getConn();
+			sql = "select email from petinfo where pet_num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				email = rs.getString(1);
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return email;
+	}
+
 	
 }
 

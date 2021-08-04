@@ -104,13 +104,7 @@
                     <li class="bg"></li>
                 </ul>
 
-
-
             </div>
-
-
-
-
 
         </section>
 
@@ -121,10 +115,10 @@
     <div id="main_container">
 
         <div class="form_container">
-
+		
             <div class="form">
-
-
+				<div class = "center_form">
+				<img src="imgs/GIF/1.gif" class = "gif_form">
                 <h1 class="sprite_insta_big_logo title"></h1>
 
                 <form action="LoginCon.do" method="post">
@@ -135,13 +129,13 @@
 
                     <p class="login_user_password">
                         <label for="user_password">비밀번호:</label>
-                        <input type="text" id="user_password" name="pw">
+                        <input type="password" id="user_password" name="pw">
                     </p>
 
                     <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
                     <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
                 </form>
-
+				</div>
 
 
             </div>
@@ -170,34 +164,19 @@
 					
                     <input type="submit" id="submit_btn1" value="다음"
 											class="submit_btn">
-			
-
                     </form>
                     </div>
                     </div>
                     </div>
-            
-
-
-
                 </div>
-
             </div>
-
-
         </div>
-
     </div>
-
-
 </section>
 
 
 <script src="js/insta.js"></script>
-
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-
 <script type="text/javascript">
     $(window).scroll(function (event) {
 
