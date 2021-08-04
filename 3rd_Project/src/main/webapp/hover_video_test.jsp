@@ -548,10 +548,8 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 <body>
 <%
 //반려동물 정보가 담겨있는 곳 : vo
-	petVO pet_vo = (petVO)session.getAttribute("pet_vo");
-	
-	pet_followVO profile = (pet_followVO)session.getAttribute("profile");
-
+	petVO pet_vo = (petVO) session.getAttribute("pet_vo");
+	pet_followVO profile = (pet_followVO) session.getAttribute("profile");
 %>
 
 	<section id="container">
@@ -643,7 +641,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick = "location.href='hover_video_test.jsp'">
+						<li><a href = "profileCon.do?owner=<%=pet_vo.getPet_num() %>">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 
@@ -662,7 +660,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				<div class="hori_cont">
 					<div class="profile_wrap">
 						<div class="profile_img">
-							<img src="imgs/icons/profile_example.png" alt="프로필사진">
+							<img src=<%=profile.getPet_profile() %> alt="프로필사진">
 						</div>
 					</div>
 
@@ -751,19 +749,13 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				
 				<%
 				
-					ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
+					//ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
 				
 				%>
 
 				<div class="mylist_contents contents_container active">
 				
-				<% for (int i =0; i <feeds.size(); i++){%>
-					<div class="pic">
-						<a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video width='400'>
-									<source src="<%=feeds.get(i).getImg_addr() %>" type="video/mp4"/></video></a>
-									
-					</div>
-				<%} %>
+				
 					<div class="pic">
 						<a href="#"><video width='400'>
 							<source src="videos/dog2.mp4" type="video/mp4"/></video></a>

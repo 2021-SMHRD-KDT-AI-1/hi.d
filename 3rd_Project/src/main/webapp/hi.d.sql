@@ -500,8 +500,6 @@ where fo1.pet_num = pet.pet_num
 and fo2.following_pet = pet.pet_num
 and pet.pet_num = 2;
 
-
-
 select fo1.following_pet
 from followinfo fo1, petinfo pet
 where fo1.pet_num = pet.pet_num
@@ -512,4 +510,15 @@ select fo2.pet_num
 from followinfo fo2, petinfo pet
 where fo2.following_pet = pet.pet_num
 and pet.pet_num = 2
+
+select pet_nick, pet_profile, pet_introduce from petinfo where pet_num = 2
+
+select count(feed.feed_num)
+from feedinfo feed, petinfo pet
+where feed.pet_num = pet.pet_num
+and pet.pet_num = 2
+
+
+
+
 
