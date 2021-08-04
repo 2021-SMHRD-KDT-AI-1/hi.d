@@ -17,11 +17,14 @@ public class MyFeedCon implements Command{
 		
 		int pet_num = Integer.parseInt(request.getParameter("pet_num"));
 		feedDAO dao = new feedDAO();
-		ArrayList<feedVO> feed = dao.my_feed(pet_num);
+
+
+		ArrayList<feedVO> feed_arr = new ArrayList<>();
+		
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("feed_info", feed);
-		moveURL = "follow.jsp";
+		session.setAttribute("get_my_feed", feed_arr);
+		moveURL = "hover_video_test.jsp";
 		
 		return moveURL;
 	}

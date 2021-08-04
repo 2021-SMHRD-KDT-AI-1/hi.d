@@ -236,17 +236,22 @@ public class feedDAO {
 		return feeds;
 	}
 	
+	
+	
 	//  마이 피드 전부 가져오기
-	public ArrayList<feedVO> my_feed(int pet_num){
+	public ArrayList<feedVO> get_my_feeds(int pet_num){
 		ArrayList<feedVO> feeds = new ArrayList<>();
 		feedVO one_feed = null;
 		try {
 			getConn();
-			sql = "select * from feedinfo where pet_num = ? ";
+			sql = "select * from feedinfo where pet_num = ?";
 			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			
 			rs = psmt.executeQuery();
 			while(rs.next()) {
 				int feed_num = rs.getInt(1);
+		
 				String img_addr = rs.getString(3);
 				String feed_content = rs.getString(4);
 				String like_pet = rs.getString(5);
@@ -264,6 +269,8 @@ public class feedDAO {
 	}
 	
 	
+
+
 	
 	
 	public feedVO get_one_feed(int feed_num) {
@@ -293,6 +300,43 @@ public class feedDAO {
 		}
 		return one_feed;
 	}
+	
+	
+//	
+//	//마이피드 가져오기
+//	public feedVO get_my_feed(int pet_num) {
+//		feedVO my_feed = null;
+//		try {
+//			getConn();
+//			sql = "select * from feedinfo where pet_num = ?";
+//			psmt = conn.prepareStatement(sql);
+//			psmt.setInt(2, pet_num);
+//			
+//			rs = psmt.executeQuery();
+//			
+//			if(rs.next()) {
+//				int feed_num = rs.getInt(1);
+//				String img_addr = rs.getString(3);
+//				String feed_content = rs.getString(4);
+//				String like_pet = rs.getString(5);
+//				String f_lock = rs.getString(6);
+//				Date upload_time = rs.getDate(7);
+//				my_feed = new feedVO(feed_num, pet_num, img_addr, feed_content, like_pet, f_lock, upload_time);
+//			}
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//		return my_feed;
+//	}
+	
+	
+	
+	
+	
+	
 
 	// n번째 글부터 m번째 글까지 가져오기
 	public ArrayList<feedVO> get_feed_n_to_m(int n, int m){

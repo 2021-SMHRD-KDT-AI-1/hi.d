@@ -495,9 +495,12 @@ textarea {
                 <% 
                 	//feedVO feed = null;
                     ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
-					//System.out.print(feeds.get(0).getImg_addr());
+					
                 %>
-                <% for (int i = 0; i < feeds.size(); i++) {%>
+                <% for (int i = 0; i < feeds.size(); i++) {
+                	System.out.print(feeds.get(0).getImg_addr());
+                
+                %>
                     <div class="pic">
                         <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video>
 							<source src="<%= feeds.get(i).getImg_addr() %>" type="video/mp4"/></video></a>
