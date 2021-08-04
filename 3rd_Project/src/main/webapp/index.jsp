@@ -37,8 +37,12 @@
 <meta itemprop="description" content="instagram clone">
 <meta itemprop="image"
 	content="http://kindtiger.dothome.co.kr/insta/imgs/instagram.jpeg">
-
-
+	
+<!-- 경고창 css 링크-->
+<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 
 
 <title>Hi Dear</title>
@@ -381,7 +385,49 @@ div.user_name a.profile_visit:link {
 div.user_name a.profile_visit:visited {
 	color: black;
 	text-decoration: none;
+		
 }
+
+sprite_more_icon{
+  
+  margin: 16px;
+  background-color: white;
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  top: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right:-20px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover.dropbtn {background-color: #3e8e41;}
+
+
 </style>
 
 
@@ -520,14 +566,12 @@ div.user_name a.profile_visit:visited {
 									<div class="country s_text">Seoul, South Korea</div>
 								</div>
 							</div>
-							<div class="sprite_more_icon" data-name="more">
-								<ul class="toggle_box">
-									<li><input type="submit" class="follow" value="팔로우"
-										data-name="follow"></li>
-									<li>수정</li>
-									<li>삭제</li>
-								</ul>
-							</div>
+							  <div class ="dropdown"  onclick="ale()" width="300" >
+               				<div class="sprite_more_icon" ></div>
+                        	<div class="dropdown-content">
+	                        	<a href="#">게시물 신고</a>
+                     		</div>                        
+                     	</div>
 						</header>
 						<div class="img_section">
 							<div class="trans_inner">
@@ -545,13 +589,15 @@ div.user_name a.profile_visit:visited {
 							<div class="left_icons">
 								<div class="heart_btn">
 									<div class="sprite_heart_icon_outline" name="39"
-										data-name="heartbeat"></div>
+										data-name="heartbeat" id ="img1"></div>
+										<div class="sprite_like_icon_outline" name="39"
+                              data-name="heartbeat"id = "img2"></div>
 								</div>
 								<div class="sprite_bubble_icon" id="trigger_all_reply"></div>
 
 								<div class="sprite_share_icon" data-name="share"></div>
 							</div>
-							<div class="right_icon">
+							<div class="right_icon" onclick="book()">
 								<div class="sprite_bookmark_outline" data-name="bookmark"></div>
 							</div>
 						</div>
@@ -572,9 +618,7 @@ div.user_name a.profile_visit:visited {
 									<div class="comment_reple"><%=feeds.get(i).getFeed_content() %></div>
 								</div>
 							</div>
-							<div class="small_heart">
-								<div class="sprite_small_heart_icon_outline"></div>
-							</div>
+							
 						</div>
 						<div class="timer">1시간 전</div>
 
@@ -640,7 +684,7 @@ div.user_name a.profile_visit:visited {
 							<div class="left_icons">
 								<div class="heart_btn">
 									<divclass ="sprite_heart_icon_outline" name="39"
-										data-name="heartbeat">
+										data-name="heartbeat" id ="img1">
 								</div>
 							</div>
 							<div class="sprite_bubble_icon"></div>
@@ -859,7 +903,7 @@ div.user_name a.profile_visit:visited {
             if (jQuery(window).scrollTop() > jQuery(".side_box").offset().top) {
                 jQuery(".chase").css("position", "fixed");
                 jQuery(".chase").css("top", "15%");
-                jQuery(".chase").css("right", "25%");
+                jQuery(".chase").css("right", "26%");
             }
             else if ((jQuery(window).scrollTop() < jQuery(".side_box").offset().top)) {
                 jQuery(".chase").css("position", "fixed");
@@ -867,7 +911,7 @@ div.user_name a.profile_visit:visited {
         });
     jQuery(".chase").css("position", "fixed");
     jQuery(".chase").css("top", "15%");
-    jQuery(".chase").css("right", "25%");
+    jQuery(".chase").css("right", "26%");
     </script>
 
 
@@ -1161,7 +1205,39 @@ div.user_name a.profile_visit:visited {
 
 
     </script>
+	<script>
+	/*paw click -> color change*/
+	   $(document).ready(function(){
+            /*웹페이지 열었을 때*/
+            $(".sprite_heart_icon_outline").show();
+            $(".sprite_like_icon_outline").hide();
+ 
+            /*img1을 클릭했을 때 img2를 보여줌*/
+            $(".sprite_heart_icon_outline").click(function(){
+                $(".sprite_heart_icon_outline").hide();
+                $(".sprite_like_icon_outline").show();
+            });
+ 
+            /*img2를 클릭했을 때 img1을 보여줌*/
+            $(".sprite_like_icon_outline").click(function(){
+                $(".sprite_heart_icon_outline").show();
+                $(".sprite_like_icon_outline").hide();
+            });
+        })
+	</script>
 
+<script type="text/javascript">
+	function ale() {
+		swal("","신고되었습니다.","warning");
+	}
+	</script>
+	
+	
+	<script type="text/javascript">
+	function book() {
+		swal("","저장되었습니다.","success");
+	}
+	</script>
 
 
 </body>

@@ -142,7 +142,9 @@
 
 .profile_wrap_right{
     width: 20%;
-
+	position: absolute;
+    right: 55px;
+    top: 5px;
 }
 
 .profile_wrap_right .emotion_counts{
