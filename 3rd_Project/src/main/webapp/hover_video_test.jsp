@@ -748,13 +748,16 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				
 				<%
 				
-					//ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
+					//feedVO feed = null;
+	                //ArrayList<feedVO> feeds=(ArrayList<feedVO>)session.getAttribute("search_feed");
+					//System.out.print(feeds.get(0).getImg_addr());
 				
 				%>
 
 				<div class="mylist_contents contents_container active">
 				
-				
+				<!-- 마이페이지(공개 게시물)>> follow.jsp -->
+
 					<div class="pic">
 						<a href="#"><video width='400'>
 							<source src="videos/dog2.mp4" type="video/mp4"/></video></a>
@@ -790,6 +793,9 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				</div>
 
 				<div class="bookmark_contents contents_container active">
+				
+				<!-- 마이페이지(다이어리)>> follow.jsp -->
+				
 					<div class="pic">
 						<a href="#"><video width='400'>
 							<source src="videos/cat1.mp4" type="video/mp4"/></video></a>

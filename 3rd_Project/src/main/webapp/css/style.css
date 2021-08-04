@@ -887,15 +887,13 @@ body{
 
 #main_container .inner{
     width: 935px;
-    /*height: 500px;*/
+    /*height: 700px;*/
     /*background: red;*/
     position: relative;
 
 }
 
 .contents_box{
-	
-	
 width: 614px
 }
 

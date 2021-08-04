@@ -134,8 +134,7 @@
 
 
 
-
-		<section id="main_container">
+		<section id="choice_main_container">
 			<div class="inner">
 				<!--이너 초이스로 엘리언 센터 css 만들고 하위 정사각 버튼 -->
 
@@ -264,7 +263,7 @@
 					<a href="PetSelectCon.do?pet_num=<%=pet_profiles.get(i).getPet_num() %>">
 					<button class="button">
 
-						<img src="<%=pet_profiles.get(i).getPet_profile() %>" width="100px" height="100px">
+						<img src="<%=pet_profiles.get(i).getPet_profile() %>" width="150px" height="150px">
 						<!-- <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
 					</button></a>
 

@@ -273,7 +273,6 @@ html, body {
 }
 
 .wrap {
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -281,7 +280,8 @@ html, body {
 
 .button {
 	/* max-width : 10% -> 15%*/
-	max-width: 15%;
+	width:150px;
+	height:150px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 11px;
 	text-transform: uppercase;
@@ -438,7 +438,7 @@ html, body {
 }
 
 body {
-	background: #e5e5e5;
+	background: #fafafa;
 }
 
 .bg {
@@ -501,4 +501,18 @@ li a:hover {
 
 .right_icons .menu:nth-child(5) a {
 	background: transparent !important;
+}
+
+#choice_main_container{
+	padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#choice_main_container .inner{
+    width: 935px;
+    /*height: 500px;*/
+    /*background: red;*/
+    position: relative;
+
 }
