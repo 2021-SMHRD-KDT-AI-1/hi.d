@@ -1,3 +1,4 @@
+<%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feed_upload_petVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -382,7 +383,9 @@ li a:hover {
 </head>
 
 <body>
-
+<%
+	petVO pet_vo = (petVO) session.getAttribute("pet_vo");
+%>
 
 	<section id="container">
 
@@ -419,7 +422,7 @@ li a:hover {
 						<li class="bg"></li>
 					</ul>
 					<ul class="menu">
-						<li><a onclick="location.href='hover_video_test.jsp'">
+						<li><a href="profileCon.do?owner=<%=pet_vo.getPet_num() %>">
 								<div class="sprite_user_icon_outline"></div>
 						</a></li>
 						<li class="bg"></li>

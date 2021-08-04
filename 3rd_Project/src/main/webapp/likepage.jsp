@@ -370,7 +370,7 @@ textarea {
 	
 	//petVO pet_vo = new petVO(2, "cloud","img.jpg","hi","F","¸»Æ¼Áî","Delkin@gmail.com");
 	//session.setAttribute("pet_vo", pet_vo);
-	petVO vo = (petVO)session.getAttribute("pet_vo");
+	petVO pet_vo = (petVO)session.getAttribute("pet_vo");
 	
 %>
 
@@ -411,7 +411,7 @@ textarea {
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a onclick="location.href='hover_video_test.jsp'">
+                        <li><a href="profileCon.do?owner=<%=pet_vo.getPet_num() %>">
                                 <div class="sprite_user_icon_outline"></div>
                             </a></li>
                         <li class="bg"></li>

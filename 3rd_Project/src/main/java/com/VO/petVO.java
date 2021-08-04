@@ -66,7 +66,6 @@ public class petVO {
 		this.pet_profile = pet_profile;
 	}
 
-
 	public int getPet_num() {
 		return pet_num;
 	}
