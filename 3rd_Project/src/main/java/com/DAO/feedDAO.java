@@ -151,7 +151,7 @@ public class feedDAO {
 			sql = "select feed.feed_num, pet.pet_num, pet.pet_nick, pet.pet_profile, feed.img_addr, feed.feed_content, feed.like_pet, feed.f_lock, feed.upload_time\r\n"
 					+ "from feedinfo feed, petinfo pet\r\n"
 					+ "where pet.pet_num = feed.pet_num\r\n"
-					+ "and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = ?)";
+					+ "and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = ?) order by feed.upload_time desc";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, pet_num);
 			

@@ -483,7 +483,8 @@ select * from feedinfo where feed_num = 16;
 select feed.feed_num, pet.pet_num, pet.pet_nick, pet.pet_profile, feed.img_addr, feed.feed_content, feed.like_pet, feed.f_lock, feed.upload_time
 from feedinfo feed, petinfo pet
 where pet.pet_num = feed.pet_num
-and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = 1);
+and pet.pet_num in (select following_pet from FOLLOWINFO where pet_num = 1)
+order by feed.upload_time desc;
 
 
 select * from feedinfo where pet_num = 2;
@@ -519,6 +520,12 @@ where feed.pet_num = pet.pet_num
 and pet.pet_num = 2
 
 
+select pet.pet_nick, comm.comment_content
+from petinfo pet, FEED_COMMENT comm, FEEDINFO feed
+where feed.feed_num = comm.feed_num
+and pet.pet_num = comm.pet_num
+and feed.feed_num = 1
 
 
 
+select * from FEEDINFO where pet_num = 2 order by upload_time desc

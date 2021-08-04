@@ -45,6 +45,7 @@ body {
     height: 26px;
 }
 
+
 .sprite_heart_icon_outline {
     display: inline-block;
     background: url('../imgs/icons/like_icon.png'); 
@@ -52,6 +53,15 @@ body {
     width: 21px;
     height: 24px;
 }
+
+.sprite_like_icon_outline{
+ display: inline-block;
+    background: url('../imgs/icons/real_pink.png');
+    background-size: 21px 24px;
+    width: 21px;
+    height: 24px;
+}
+
 
 .sprite_small_search_icon {
     display: inline-block;
@@ -65,7 +75,10 @@ body {
     background: url('../imgs/background01.png') no-repeat -301px -218px;
     width: 15px;
     height: 3px;
+     margin: 16px;
+    background-color: white;
 }
+
 
 .sprite_bubble_icon {
     display: inline-block;

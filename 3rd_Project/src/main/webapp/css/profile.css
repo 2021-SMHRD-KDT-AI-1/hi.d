@@ -142,7 +142,9 @@
 
 .profile_wrap_right{
     width: 20%;
-
+	position: absolute;
+    right: 55px;
+    top: 5px;
 }
 
 .profile_wrap_right .emotion_counts{
@@ -191,7 +193,7 @@ ul.emotion_count li, ol.emotion_count li {
 @media screen and (min-width:300px) and (max-width:1000px) {
 
     .contents_container {
-        justify-content: space-between;
+        /*justify-content: space-between;*/
     }
 
 

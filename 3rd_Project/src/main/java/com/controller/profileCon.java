@@ -1,10 +1,14 @@
 package com.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.DAO.feedDAO;
 import com.DAO.petDAO;
+import com.VO.feedVO;
 import com.VO.petVO;
 import com.VO.pet_followVO;
 import com.command.Command;
@@ -15,15 +19,19 @@ public class profileCon implements Command{
 		String moveURL = "";
 		HttpSession session = request.getSession();
 		int profile_owner_num = Integer.parseInt(request.getParameter("owner"));
-		petDAO dao = new petDAO();
-		petVO pet_info = dao.pet_profile_load(profile_owner_num);
-		int following_cnt = dao.following_pet(profile_owner_num);
-		int follow_cnt = dao.follow_pet(profile_owner_num);
-		int feed_cnt = dao.feedCount(profile_owner_num);
+		petDAO pet_dao = new petDAO();
+		feedDAO feed_dao = new feedDAO();
+		petVO pet_info = pet_dao.pet_profile_load(profile_owner_num);
+		
+		int following_cnt = pet_dao.following_pet(profile_owner_num);
+		int follow_cnt = pet_dao.follow_pet(profile_owner_num);
+		int feed_cnt = pet_dao.feedCount(profile_owner_num);
 		
 		pet_followVO profile = new pet_followVO(profile_owner_num, pet_info.getPet_profile(), pet_info.getPet_nick(), following_cnt, follow_cnt, feed_cnt, pet_info.getPet_introduce());
+		ArrayList<feedVO> feeds = feed_dao.get_my_feeds(profile_owner_num);
 		
 		session.setAttribute("profile", profile);
+		session.setAttribute("profile_feed", feeds);
 		moveURL = "hover_video_test.jsp";
 		
 		return moveURL;

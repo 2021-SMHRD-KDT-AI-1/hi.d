@@ -41,9 +41,7 @@ public class frontcontroller extends HttpServlet {
 			con = new OneFeedCon();
 		} else if(result.equals("profileCon.do")) {
 			con = new profileCon();
-		} else if(result.equals("MyFeedCon.do")) {
-			con = new MyFeedCon();
-		}
+		} 
 		
 		String moveURL = con.execute(request, response);
 		response.sendRedirect(moveURL);

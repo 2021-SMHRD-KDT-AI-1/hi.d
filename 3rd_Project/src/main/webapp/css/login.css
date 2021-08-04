@@ -1,5 +1,6 @@
 
 .form_container{
+	heigh: 1000px;
     width: 350px;
     margin: 0 auto
 
@@ -10,7 +11,7 @@
     border: 1px solid #e6e6e6;
     padding: 0 40px 25px 40px;
     margin-bottom: 30px;
-    border-radius: 30px
+    border-radius: 20px
 }
 
 
@@ -61,7 +62,15 @@
     cursor: pointer;
 }
 
-
+.form .submit_btn:hover{
+	
+	color: #fff;
+    background-color: #353535ea;
+    opacity: 0.9;
+	
+	
+}
+	
 .join_form .submit_btn{
     background: #dbdbdb;
     border-color: #dbdbdb;
@@ -78,6 +87,16 @@
     cursor: pointer;
 }
 
+
+.join_form .submit_btn:hover{
+	color: #fff;
+    background-color: #353535ea;
+    opacity: 0.9;
+	
+	
+}
+
+
 .bottom_box{
     text-align: center;
     /*height: 290px;*/
@@ -87,6 +106,7 @@
     border-radius: 20px;
     /*display: flex;*/
     /*align-items: center;*/
+      border-radius: 10px;
 }
 
 
@@ -398,7 +418,6 @@ li a:hover {
     text-align:center;
     border: none;
     background-size: 300% 100%;
-
     border-radius: 50px;
     moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
@@ -421,4 +440,11 @@ li a:hover {
 .login_button_button{
     background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
     box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+.gif_form{
+    width: 500px;
+    position: absolute;
+    display: flex;
+    margin-left: -600px;
+    margin-top: 100px
 }
