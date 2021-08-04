@@ -616,7 +616,6 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 									</p>
 
 									<label for="contents">Contents</label>
-									<label></label>
 									<textarea id="post_textarea" name="contents"
 										placeholder="#해시태그 & 문구입력"></textarea>
 										
@@ -944,7 +943,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 
 
 		$('.post_submit').on('click', function() {
-			//servlet -> database -> choice.jsp(a태그로 만들기)
+			//servlet -> database -> follow.jsp(a태그로 만들기)
 			// 보내줄 데이터를 json구조로 만들어주기
 			// split함수를 사용해서 데이터를 구조화하기!
 			let data = {
