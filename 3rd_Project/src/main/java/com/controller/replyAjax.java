@@ -43,7 +43,6 @@ public class replyAjax extends HttpServlet {
 		
 		JSONObject tempJson = new JSONObject();
 		
-		
 		int j = 0;
 		for(int i = 0; i < comments.size(); i++) {
 			String pet_name = pet_dao.pet_name(comments.get(i).getPet_num());

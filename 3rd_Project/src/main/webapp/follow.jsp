@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.VO.feed_commentVO"%>
 <%@page import="com.DAO.petDAO"%>
 <%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feedVO"%>
@@ -144,13 +146,13 @@ li a:hover {
 .dropdown {
   position: relative;
   display: inline-block;
-  top: 3px;
+  top: 5px;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 43px;
+  top: 40px;
   right:-20px;
   background-color: #f1f1f1;
   min-width: 160px;
@@ -197,6 +199,8 @@ li a:hover {
 	
 div.user_name a.profile_visit:link { color: black; text-decoration: none;}
 div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
+
+
 	
 </style>
 
@@ -233,13 +237,13 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 
                 <div class="right_icons">
                     <ul class="menu">
-                        <li><a class="trigger" href="FeedUploadCon.do">
+						<li><a class="trigger" href="FeedUploadCon.do">
                                 <div class="sprite_camera_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a href="searchpageCon.do">
+						<li><a href="searchpageCon.do">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
@@ -256,11 +260,12 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 
 		<% 
 			feedVO feed = (feedVO)session.getAttribute("feed_info");
+			ArrayList<String[]> comments = (ArrayList<String[]>) session.getAttribute("comment_info");
 			petDAO pet_dao = new petDAO();
 			petVO pet_info = pet_dao.pet_profile_load(feed.getPet_num());
 		%>
 		<div id="main_container">
-			<section class="b_inner">
+			<section class="1_inner">
 				<div class="contents_box">
 					 <article class="contents">
                         <header class="top">
@@ -292,7 +297,7 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
                                 <div class="trans_inner_inner">
                                 <p align="middle">
 		                           <video class="personal_contents"  width = " 614" height = "614" src="<%=feed.getImg_addr() %>"
-		                              alt="visual01"></video>
+		                              alt="visual01" controls></video>
 		                              </p>
 		                              
                         		</div>
@@ -304,7 +309,10 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
                                 <div class="heart_btn">
                                     <div
                               class="sprite_heart_icon_outline" name="39"
-                              data-name="heartbeat"></div>
+                              data-name="heartbeat" id = "img1"></div>
+                             
+                             <div class="sprite_like_icon_outline" name="39"
+                              data-name="heartbeat"id = "img2"></div>
                                 </div>
                                 	<div class="sprite_bubble_icon"></div>
                                 <div class="sprite_share_icon"
@@ -342,9 +350,18 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
                             </div>
                         </div>
                         
-                        
-                        <div id = reply></div>
-							
+                        <div id = "reply">
+                   		<%for(int i = 0; i < comments.size(); i++) {%>
+	                        <div>
+		                        <span>
+		                        	<%=comments.get(i)[0] %>
+		                        </span>
+		                        <span>
+		                        	<%=comments.get(i)[1] %>
+		                        </span>
+	                        </div>
+	                    <%} %>
+						</div>	
                         <div class="timer">1시간 전</div>
 
 
@@ -403,9 +420,27 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 			});
 		
 	})
-
-
 	
+	</script>
+	<script>
+	/*paw click -> color change*/
+	   $(document).ready(function(){
+            /*웹페이지 열었을 때*/
+            $(".sprite_heart_icon_outline").show();
+            $(".sprite_like_icon_outline").hide();
+ 
+            /*img1을 클릭했을 때 img2를 보여줌*/
+            $(".sprite_heart_icon_outline").click(function(){
+                $(".sprite_heart_icon_outline").hide();
+                $(".sprite_like_icon_outline").show();
+            });
+ 
+            /*img2를 클릭했을 때 img1을 보여줌*/
+            $(".sprite_like_icon_outline").click(function(){
+                $(".sprite_heart_icon_outline").show();
+                $(".sprite_like_icon_outline").hide();
+            });
+        })
 	</script>
 
 

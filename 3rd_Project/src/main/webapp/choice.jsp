@@ -435,41 +435,7 @@
 		}
 		)
 	</script>
-<!--  <script>
-	$(function() {
-		//이미지 클릭시 업로드창 실행
-		$('#id_photo').click(function() {
-			console.log('fileadd');
-			$("input[name='photo']").click();
 
-		})
-		//업로드 파일체인지가 됐을경우 실행되는 이벤트  form태그에 fileProfile은 hidden으로 넣어줌
-		$("input[name='photo']").change(function(e) {
-
-			//$("#frm_profile_img").submit();
-			$("input[name='photo']").val();
-			var frm = document.getElementById('id_photo');
-			frm.method = 'POST';
-			frm.enctype = 'multipart/form-data';
-			var fileData = new FormData(frm);
-
-			// ajax
-			$.ajax({
-				type : 'POST',
-				url : 'PetJoinCon',
-				data : fileData,
-				processData : false,
-				contentType : false,
-				success : function(data, textStatus, xhr) {
-					console.log('success');
-				},
-				error : function(request, status, error) {
-					alert("code:" + request.status + "\n" + "error:" + error);
-				}
-			});
-		})
-	})
-</script>-->
 
 
 
