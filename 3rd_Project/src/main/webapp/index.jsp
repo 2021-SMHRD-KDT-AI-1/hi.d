@@ -698,11 +698,11 @@ div.user_name a.profile_visit:visited {
 
 						<div class="user_profile">
 							<div class="profile_thumb">
-								<img src="imgs/thumb.jpeg" alt="프로필사진">
+								<img src=<%=pet_vo.getPet_profile() %>  alt="프로필사진">
 							</div>
 							<div class="detail">
-								<div class="id m_text">KindTiger</div>
-								<div class="ko_name">심선범</div>
+								<div class="id m_text"><%=pet_vo.getPet_nick() %></div>
+								<div class="ko_name"><%=pet_dao.find_email(pet_vo.getPet_num()) %></div>
 							</div>
 
 						</div>
