@@ -1,3 +1,4 @@
+<%@page import="com.DAO.petDAO"%>
 <%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feedVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -193,6 +194,10 @@ li a:hover {
 	background-color:transparent;
 	color:#208aed;
 	}
+	
+div.user_name a.profile_visit:link { color: black; text-decoration: none;}
+div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
+	
 </style>
 
 </head>
@@ -251,7 +256,8 @@ li a:hover {
 
 		<% 
 			feedVO feed = (feedVO)session.getAttribute("feed_info");
-			
+			petDAO pet_dao = new petDAO();
+			petVO pet_info = pet_dao.pet_profile_load(feed.getPet_num());
 		%>
 		<div id="main_container">
 			<section class="b_inner">
@@ -260,13 +266,17 @@ li a:hover {
                         <header class="top">
                             <div class="user_container">
 	                            <div class="div_profile_img">
-		                            <img class="profile_img"
-		                              src="imgs/thumb.jpeg" alt="프로필이미지">
+	                            	<a class="profile_visit" href="profileCon.do?owner=<%=feed.getPet_num() %>">
+			                            <img class="profile_img"
+			                              src=<%=pet_info.getPet_profile() %> alt="프로필이미지">
+			                        </a>
                                 </div>
-                                	<div class="user_name">
-	                                    <div class="nick_name m_text">KindTiger</div>
-	                                    <div class="country s_text">Seoul, South Korea</div>
-                                	</div>
+                                <div class="user_name">
+                                	<a class="profile_visit" href="profileCon.do?owner=<%=feed.getPet_num() %>">
+	                                    <div class="nick_name m_text"><%=pet_info.getPet_nick() %></div>
+	                                </a>
+	                                <div class="country s_text"><%=pet_dao.find_email(feed.getPet_num()) %></div>
+                               	</div>
                             </div>
                         <div class ="dropdown">
                				<div class="sprite_more_icon"></div>
@@ -308,7 +318,7 @@ li a:hover {
 
                         <div class="likes m_text">
                             좋아요
-                            <span id="like-count-39">2,346</span>
+                            <span id="like-count-39"><%=feed.getLike_pet().split(",").length %></span>
                             <span id="bookmark-count-39"></span>
                             개
                         </div>

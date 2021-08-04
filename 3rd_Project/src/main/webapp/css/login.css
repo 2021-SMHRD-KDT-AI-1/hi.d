@@ -1,5 +1,6 @@
 
 .form_container{
+	heigh: 1000px;
     width: 350px;
     margin: 0 auto
 
@@ -10,7 +11,7 @@
     border: 1px solid #e6e6e6;
     padding: 0 40px 25px 40px;
     margin-bottom: 30px;
-    border-radius: 30px
+    border-radius: 20px
 }
 
 
@@ -61,7 +62,15 @@
     cursor: pointer;
 }
 
-
+.form .submit_btn:hover{
+	
+	color: #fff;
+    background-color: #353535ea;
+    opacity: 0.9;
+	
+	
+}
+	
 .join_form .submit_btn{
     background: #dbdbdb;
     border-color: #dbdbdb;
@@ -79,6 +88,16 @@
     cursor: pointer;
 }
 
+
+.join_form .submit_btn:hover{
+	color: #fff;
+    background-color: #353535ea;
+    opacity: 0.9;
+	
+	
+}
+
+
 .bottom_box{
     text-align: center;
     /*height: 290px;*/
@@ -88,6 +107,7 @@
     border-radius: 20px;
     /*display: flex;*/
     /*align-items: center;*/
+      border-radius: 10px;
 }
 
 
@@ -115,20 +135,6 @@
     color: #262626;
     font-size: 14px;
     padding: 7px 8px 7px;
-}
-
-.modal-content2 .join_closebutton {
-	float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
-}
-
-.join_closebutton:hover {
-	background-color: darkgray;
 }
 
 .form p{
@@ -415,7 +421,6 @@ li a:hover {
     text-align:center;
     border: none;
     background-size: 300% 100%;
-
     border-radius: 50px;
     moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
@@ -440,9 +445,30 @@ li a:hover {
     box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
 }
 
+.gif_form{
+    width: 500px;
+    position: absolute;
+    display: flex;
+    margin-left: -600px;
+    margin-top: 100px
+}
+
 #login_main_container{
 	padding-top: 180px;
     display: flex;
     vertical-align: middle;
     justify-content: center;
+}
+.modal-content2 .join_closebutton {
+	float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.join_closebutton:hover {
+	background-color: darkgray;
 }

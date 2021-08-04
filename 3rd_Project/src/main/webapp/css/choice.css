@@ -90,7 +90,7 @@
     transform: translateX(-50%) scale(1);
   }
   #main-container {
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -273,11 +273,13 @@ html, body {
 }
 
 .wrap {
+	height:100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+/*반려동물 이미지 버튼 css*/
 .button {
 	/* max-width : 10% -> 15%*/
 	width:150px;

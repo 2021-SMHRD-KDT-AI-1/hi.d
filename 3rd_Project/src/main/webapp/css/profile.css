@@ -191,7 +191,7 @@ ul.emotion_count li, ol.emotion_count li {
 @media screen and (min-width:300px) and (max-width:1000px) {
 
     .contents_container {
-        justify-content: space-between;
+        /*justify-content: space-between;*/
     }
 
 

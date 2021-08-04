@@ -68,7 +68,46 @@
 
 
 <style>
+	@import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
+		
+		
+		.main_text { display:inline-block; animation:float .2s ease-in-out infinite; }
+		 @keyframes float {
+		  0%,100%{ transform:none; }
+		  33%{ transform:translateY(-1px) rotate(-1deg); }
+		  66%{ transform:translateY(1px) rotate(2deg); }
+		}
+		body:hover .main_text { animation:bounce .6s; }
+		@keyframes bounce {
+		  0%,100%{ transform:translate(0); }
+		  25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+		  50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+		}
+		
+		/*.main_text:nth-child(4n) { color:hsl(1, 90%, 69%);}
+		.main_text:nth-child(4n-1) { color:hsl(1, 85%, 79%);}
+		.main_text:nth-child(4n-2) { color:hsl(29, 87%, 79%);}
+		.main_text:nth-child(4n-3) { color:hsl(29, 90%, 67%);}*/
+		
+		.main_text:nth-child(4n) { color:hsl(60,0%,60%);}
+		.main_text:nth-child(4n-1) { color:hsl(60,0%,60%);}
+		.main_text:nth-child(4n-2) { color:hsl(60,0%,60%);}
+		.main_text:nth-child(4n-3) { color:hsl(60,0%,60%);}
 
+		
+		.main_text:nth-child(2){ animation-delay:.05s; }
+		.main_text:nth-child(3){ animation-delay:.15s; }
+		.main_text:nth-child(4){ animation-delay:.5s; }
+		.main_text:nth-child(5){ animation-delay:.25s; }
+		.main_text:nth-child(6){ animation-delay:.3s; }
+		.main_text:nth-child(7){ animation-delay:.35s; }
+		.main_text:nth-child(8){ animation-delay:.4s; }
+		.main_text:nth-child(9){ animation-delay:.45s; }
+		.main_text:nth-child(10){ animation-delay:.5s; }
+		.main_text:nth-child(11){ animation-delay:.55s; }
+		.main_text:nth-child(12){ animation-delay:.6s; }
+		.main_text:nth-child(13){ animation-delay:.65s; }
+		.main_text:nth-child(14){ animation-delay:.7s; }	
 </style>
 
 </head>
@@ -126,10 +165,28 @@
 			</section>
 
 		</header>
-
+	</section>
 		<section id="main_container">
-			<span style="align-items: center; font-size: 200%;">누구의 계정으로
-				로그인 할까요??</span>
+			<!-- <span id = "main_container_text" style="align-items: center; font-size: 200%;">누구의 계정으로
+				로그인 할까요??</span> -->
+			<span class="main_text" style="font-size: 250%;">누</span>
+			<span class="main_text" style="font-size: 250%;">구</span>
+			<span class="main_text" style="font-size: 250%;">의</span>
+			<span class="main_text" style="font-size: 250%;">&nbsp</span>
+			<span class="main_text" style="font-size: 250%;">계</span>
+			<span class="main_text" style="font-size: 250%;">정</span>
+			<span class="main_text" style="font-size: 250%;">으</span>
+			<span class="main_text" style="font-size: 250%;">로</span>
+			<span class="main_text" style="font-size: 250%;">&nbsp</span>
+			<span class="main_text" style="font-size: 250%;">로</span>
+			<span class="main_text" style="font-size: 250%;">그</span>
+			<span class="main_text" style="font-size: 250%;">인</span>
+			<span class="main_text" style="font-size: 250%;">&nbsp</span>
+			<span class="main_text" style="font-size: 250%;">할</span>
+			<span class="main_text" style="font-size: 250%;">까</span>
+			<span class="main_text" style="font-size: 250%;">요</span>
+			<span class="main_text" style="font-size: 250%;">?</span>
+			
 		</section>
 
 
@@ -263,7 +320,7 @@
 					<a href="PetSelectCon.do?pet_num=<%=pet_profiles.get(i).getPet_num() %>">
 					<button class="button">
 
-						<img src="<%=pet_profiles.get(i).getPet_profile() %>" width="150px" height="150px">
+						<img src="<%=pet_profiles.get(i).getPet_profile() %>" width="150px" height="150px" style="border-radius: 20%;">
 						<!-- <img src="imgs/Black-Dog-PNG.png" width="100px" height="100px">-->
 					</button></a>
 
@@ -283,7 +340,7 @@
 			</div>
 		</section>
 
-	</section>
+
 
 
 
