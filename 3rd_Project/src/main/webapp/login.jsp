@@ -135,7 +135,7 @@
 
                     <p class="login_user_password">
                         <label for="user_password">비밀번호:</label>
-                        <input type="text" id="user_password" name="pw">
+                        <input type="password" id="user_password" name="pw">
                     </p>
 
                     <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->

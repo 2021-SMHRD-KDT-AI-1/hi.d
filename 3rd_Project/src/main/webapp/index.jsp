@@ -286,6 +286,7 @@ textarea#post_textarea {
 /* 스크롤바 뒷 배경 설정*/
 .recommend::-webkit-scrollbar-track {
 	background-color: #d4cef85e;
+	border-radius: 200px
 }
 
 /*  new_header style */
@@ -697,7 +698,7 @@ li a:hover {
 
 
                     <div class="side_box">
-                        <div class="chase">
+                        <div class="chase" >
 
                             <div class="user_profile">
                                 <div class="profile_thumb">
@@ -880,13 +881,16 @@ li a:hover {
         $(window).scroll(function (event) {
             if (jQuery(window).scrollTop() > jQuery(".side_box").offset().top) {
                 jQuery(".chase").css("position", "fixed");
-                jQuery(".chase").css("top", "10%");
-                jQuery(".chase").css("right", "10%");
+                jQuery(".chase").css("top", "15%");
+                jQuery(".chase").css("right", "25%");
             }
             else if ((jQuery(window).scrollTop() < jQuery(".side_box").offset().top)) {
                 jQuery(".chase").css("position", "fixed");
             }
         });
+    jQuery(".chase").css("position", "fixed");
+    jQuery(".chase").css("top", "15%");
+    jQuery(".chase").css("right", "25%");
     </script>
 
 
