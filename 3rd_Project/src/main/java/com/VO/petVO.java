@@ -23,6 +23,13 @@ public class petVO {
 	}//
 	
 	
+	public petVO(int pet_num, String pet_nick) {
+		super();
+		this.pet_num = pet_num;
+		this.pet_nick = pet_nick;
+	}
+
+
 	public petVO(String pet_nick, String pet_profile, String pet_introduce, String pet_gen, String species,
 			String email) {
 		this.pet_nick = pet_nick;

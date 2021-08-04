@@ -13,7 +13,6 @@ public class feedVO {
 	
 	public feedVO(int feed_num, int pet_num, String img_addr, String feed_content, String like_pet, String f_lock,
 			Date upload_time) {
-		super();
 		this.feed_num = feed_num;
 		this.pet_num = pet_num;
 		this.img_addr = img_addr;
@@ -22,9 +21,10 @@ public class feedVO {
 		this.f_lock = f_lock;
 		this.upload_time = upload_time;
 	}
+
+	
 	
 	public feedVO(int pet_num, String img_addr, String feed_content, String like_pet, String f_lock, Date upload_time) {
-		super();
 		this.pet_num = pet_num;
 		this.img_addr = img_addr;
 		this.feed_content = feed_content;
@@ -34,7 +34,6 @@ public class feedVO {
 	}
 	
 	public feedVO(int pet_num, String img_addr, String feed_content, String f_lock) {
-		super();
 		this.pet_num = pet_num;
 		this.img_addr = img_addr;
 		this.feed_content = feed_content;
@@ -42,7 +41,6 @@ public class feedVO {
 	}
 
 	public feedVO(int feed_num) {
-		super();
 		this.feed_num = feed_num;
 	}
 

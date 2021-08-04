@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.VO.feed_commentVO;
 import com.VO.memberVO;
+import com.VO.petVO;
 
 public class commentDAO {
 
@@ -17,7 +18,7 @@ public class commentDAO {
 
 	int cnt = 0;
 	String sql = "";
-	memberVO vo = null;
+	petVO vo = null;
 
 	public void getConn() {
 
@@ -57,7 +58,7 @@ public class commentDAO {
 		
 		try {
 			getConn();
-			sql = "select * from feed_comment where feed_num = ?";
+			sql = "select * from feed_comment where feed_num = ? order by comment_num asc";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, feed_num);
 			
@@ -70,7 +71,9 @@ public class commentDAO {
 				String like_pet = rs.getString(5);
 				comment = new feed_commentVO(comment_num, pet_num, feed_num, comment_content, like_pet);
 				comments.add(comment);
+				
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -99,6 +102,37 @@ public class commentDAO {
 		return cnt;
 	}
 	
-	
+	public ArrayList<String[]> comment_info(int feed_num){
+		ArrayList<String[]> arr = new ArrayList<>();
+		String p_nick = "";
+		String content = "";
+		try {
+			getConn();
+			
+			sql = "select pet.pet_nick, comm.comment_content\n"
+					+ "from petinfo pet, FEED_COMMENT comm, FEEDINFO feed\n"
+					+ "where feed.feed_num = comm.feed_num\n"
+					+ "and pet.pet_num = comm.pet_num\n"
+					+ "and feed.feed_num = ? "
+					+ "order by comm.comment_num asc";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, feed_num);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				p_nick = rs.getString(1);
+				content = rs.getString(2);
+				String[] comment_one = {p_nick, content};
+				arr.add(comment_one);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return arr;
+		
+	}
 	
 }

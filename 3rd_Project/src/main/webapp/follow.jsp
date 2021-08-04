@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.VO.feed_commentVO"%>
 <%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feedVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -229,13 +231,13 @@ li a:hover {
 
                 <div class="right_icons">
                     <ul class="menu">
-                        <li><a class="trigger" href="FeedUploadCon.do">
+						<li><a class="trigger" href="FeedUploadCon.do">
                                 <div class="sprite_camera_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a href="searchpageCon.do">
+						<li><a href="searchpageCon.do">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
@@ -252,7 +254,7 @@ li a:hover {
 
 		<% 
 			feedVO feed = (feedVO)session.getAttribute("feed_info");
-			
+			ArrayList<String[]> comments = (ArrayList<String[]>) session.getAttribute("comment_info");
 		%>
 		<div id="main_container">
 			<section class="b_inner">
@@ -333,9 +335,18 @@ li a:hover {
                             </div>
                         </div>
                         
-                        
-                        <div id = reply></div>
-							
+                        <div id = "reply">
+                   		<%for(int i = 0; i < comments.size(); i++) {%>
+	                        <div>
+		                        <span>
+		                        	<%=comments.get(i)[0] %>
+		                        </span>
+		                        <span>
+		                        	<%=comments.get(i)[1] %>
+		                        </span>
+	                        </div>
+	                    <%} %>
+						</div>	
                         <div class="timer">1½Ã°£ Àü</div>
 
 

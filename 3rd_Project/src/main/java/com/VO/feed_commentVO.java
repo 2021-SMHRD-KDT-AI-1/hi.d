@@ -4,11 +4,11 @@ public class feed_commentVO {
 	int comment_num;
 	int pet_num;
 	int feed_num;
+	String pet_nick;
 	String comment_content;
 	String like_pet;
 	
 	public feed_commentVO(int comment_num, int pet_num, int feed_num, String comment_content, String like_pet) {
-		super();
 		this.comment_num = comment_num;
 		this.pet_num = pet_num;
 		this.feed_num = feed_num;
@@ -17,11 +17,20 @@ public class feed_commentVO {
 	}
 	
 	public feed_commentVO(int pet_num, int feed_num, String comment_content, String like_pet) {
-		super();
 		this.pet_num = pet_num;
 		this.feed_num = feed_num;
 		this.comment_content = comment_content;
 		this.like_pet = like_pet;
+	}
+	
+	
+
+	public String getPet_nick() {
+		return pet_nick;
+	}
+
+	public void setPet_nick(String pet_nick) {
+		this.pet_nick = pet_nick;
 	}
 
 	public int getComment_num() {
