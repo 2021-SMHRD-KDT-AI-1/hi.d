@@ -216,9 +216,6 @@ public class petDAO {
 	//마이페이지 프로필 정보 가져오기
 	public ArrayList<petVO> get_pet_pro(){
 		ArrayList<petVO> pets = new ArrayList<>();
-		
-		
-		
 		try {
 			getConn();
 			sql = "select * from petinfo";
@@ -231,11 +228,8 @@ public class petDAO {
 				String Pet_profile = rs.getString(3);
 				String Pet_introduce = rs.getString(4);
 				
-				
 				petVO vo = new petVO(Pet_nick, Pet_profile, Pet_introduce);
 				pets.add(vo);
-				
-				
 			}
 			
 		} catch (Exception e) {

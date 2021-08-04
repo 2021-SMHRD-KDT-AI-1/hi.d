@@ -375,7 +375,8 @@ li a:hover {
 	background: transparent !important;
 }
 
-
+div.user_name a.profile_visit:link { color: black; text-decoration: none;}
+div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 
 </style>
 
@@ -499,12 +500,16 @@ li a:hover {
                         <header class="top">
                             <div class="user_container">
                                 <div class="div_profile_img">
-                                    <img class="profile_img"
+                                	<a class="profile_visit" href="profileCon.do?owner=<%=feeds.get(i).getPet_num() %>">
+                                    	<img class="profile_img"
 														src="<%=feeds.get(i).getPet_profile() %>" alt="프로필이미지">
+									</a>
                                 </div>
                                 <div class="user_name">
-                                    <div class="nick_name m_text"><%=feeds.get(i).getPet_nick() %></div>
+                                	<a class="profile_visit" href="profileCon.do?owner=<%=feeds.get(i).getPet_num() %>">
+                                    	<div class="nick_name m_text"><%=feeds.get(i).getPet_nick() %></div>
                                     <!-- <div class="country s_text">Seoul, South Korea</div> -->
+                                    </a>
                                 </div>
                             </div>
                             <div class="sprite_more_icon"

@@ -104,13 +104,7 @@
                     <li class="bg"></li>
                 </ul>
 
-
-
             </div>
-
-
-
-
 
         </section>
 
@@ -170,34 +164,19 @@
 					
                     <input type="submit" id="submit_btn1" value="´ÙÀ½"
 											class="submit_btn">
-			
-
                     </form>
                     </div>
                     </div>
                     </div>
-            
-
-
-
                 </div>
-
             </div>
-
-
         </div>
-
     </div>
-
-
 </section>
 
 
 <script src="js/insta.js"></script>
-
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-
 <script type="text/javascript">
     $(window).scroll(function (event) {
 
