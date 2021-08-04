@@ -1,3 +1,4 @@
+<%@page import="com.DAO.petDAO"%>
 <%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feed_upload_petVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -539,8 +540,9 @@ sprite_more_icon{
 
 
 		<%
-	ArrayList<feed_upload_petVO> feeds = (ArrayList<feed_upload_petVO>)session.getAttribute("feedsinfo");
-%>
+			ArrayList<feed_upload_petVO> feeds = (ArrayList<feed_upload_petVO>)session.getAttribute("feedsinfo");
+			petDAO pet_dao = new petDAO();
+		%>
 
 
 		<section id="main_container">
@@ -563,7 +565,7 @@ sprite_more_icon{
 										href="profileCon.do?owner=<%=feeds.get(i).getPet_num() %>">
 										<div class="nick_name m_text"><%=feeds.get(i).getPet_nick() %></div>
 									</a>
-									<div class="country s_text">Seoul, South Korea</div>
+									<div class="country s_text"><%=pet_dao.find_email(feeds.get(i).getPet_num()) %></div>
 								</div>
 							</div>
 							  <div class ="dropdown"  onclick="ale()" width="300" >
@@ -740,11 +742,11 @@ sprite_more_icon{
 
 						<div class="user_profile">
 							<div class="profile_thumb">
-								<img src="imgs/thumb.jpeg" alt="프로필사진">
+								<img src=<%=pet_vo.getPet_profile() %>  alt="프로필사진">
 							</div>
 							<div class="detail">
-								<div class="id m_text">KindTiger</div>
-								<div class="ko_name">심선범</div>
+								<div class="id m_text"><%=pet_vo.getPet_nick() %></div>
+								<div class="ko_name"><%=pet_dao.find_email(pet_vo.getPet_num()) %></div>
 							</div>
 
 						</div>
