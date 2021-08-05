@@ -428,7 +428,9 @@ sprite_more_icon{
 
 .dropdown:hover.dropbtn {background-color: #3e8e41;}
 
-
+.swal-wide{
+    width:270px !important;
+}
 </style>
 
 
@@ -905,7 +907,7 @@ sprite_more_icon{
             if (jQuery(window).scrollTop() > jQuery(".side_box").offset().top) {
                 jQuery(".chase").css("position", "fixed");
                 jQuery(".chase").css("top", "15%");
-                jQuery(".chase").css("right", "26%");
+                jQuery(".chase").css("right", "25%");
             }
             else if ((jQuery(window).scrollTop() < jQuery(".side_box").offset().top)) {
                 jQuery(".chase").css("position", "fixed");
@@ -913,7 +915,7 @@ sprite_more_icon{
         });
     jQuery(".chase").css("position", "fixed");
     jQuery(".chase").css("top", "15%");
-    jQuery(".chase").css("right", "26%");
+    jQuery(".chase").css("right", "25%");
     </script>
 
 
@@ -1230,15 +1232,35 @@ sprite_more_icon{
 
 <script type="text/javascript">
 	function ale() {
-		swal("","신고되었습니다.","warning");
-	}
+		swal({
+			
+		       title:'',
+		       text: "신고가 접수되었습니다",
+		       html: true,
+		       type: "warning",
+		       customClass: 'swal-wide',
+		       showConfirmButton:true
+			 
+			
+		});
+	};
 	</script>
 	
 	
 	<script type="text/javascript">
 	function book() {
-		swal("","저장되었습니다.","success");
-	}
+		swal({
+			
+		       title:'',
+		       text: "게시물이 저장되었습니다.",
+		       html: true,
+		       type: "success",
+		       customClass: 'swal-wide',
+		       showConfirmButton:true
+			 
+			
+		});
+	};
 	</script>
 
 

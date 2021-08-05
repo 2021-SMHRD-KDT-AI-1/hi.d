@@ -1106,6 +1106,9 @@ width: 614px
     align-items: center;
     font-size: 14px;
     color:#262626;
+    position: relative;
+    bottom: 10px;
+    
 }
 .side_box .detail .id{
     margin-bottom: 5px;
