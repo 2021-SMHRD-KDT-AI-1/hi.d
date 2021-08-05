@@ -1,3 +1,4 @@
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.VO.feed_commentVO"%>
 <%@page import="com.DAO.petDAO"%>
@@ -134,85 +135,95 @@ li a:hover {
 	background: transparent !important;
 }
 
-
 /*팔로우게시물 더보기메뉴*/
-.sprite_more_icon{
-  
-  margin: 16px;
-  background-color: white;
-
+.sprite_more_icon {
+	margin: 16px;
+	background-color: white;
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
-  top: 5px;
+	position: relative;
+	display: inline-block;
+	top: 5px;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 40px;
-  right:-20px;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+	display: none;
+	position: absolute;
+	top: 40px;
+	right: -20px;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {
+	display: block;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover.dropbtn {
+	background-color: #3e8e41;
+}
 
-.dropdown:hover.dropbtn {background-color: #3e8e41;}
-
-.inputReple{
+.inputReple {
 	width: 500px;
 	height: 35px;
-	margin-left:30px;
-	
-
-
+	margin-left: 30px;
 }
 
-.upload_btn{
-	font-size:14px;
-    margin-left:20px;
+.upload_btn {
+	font-size: 14px;
+	margin-left: 20px;
 	border: 0;
-	background-color:transparent;
+	background-color: transparent;
 	color: #7bb1e4;
-	 font-weight: bold;
+	font-weight: bold;
 }
 
 .upload_btn:hover {
-	background-color:transparent;
-	color:#208aed;
-	}
-	
-div.user_name a.profile_visit:link { color: black; text-decoration: none;}
-div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
+	background-color: transparent;
+	color: #208aed;
+}
 
+div.user_name a.profile_visit:link {
+	color: black;
+	text-decoration: none;
+}
 
-	
+div.user_name a.profile_visit:visited {
+	color: black;
+	text-decoration: none;
+}
+/* 해시태그 css */
+.hashtag_style {
+color: #f7a960;
+text-decoration: none;
+font-weight: bold;
+}
+
 </style>
 
 </head>
 <body>
-<%
-	petVO pet_vo = (petVO) session.getAttribute("pet_vo");
-%>
+	<%
+		petVO pet_vo = (petVO) session.getAttribute("pet_vo");
+	%>
 	<section id="container">
 
-        <header id="header">
-            <section class="inner">
+		<header id="header">
+			<section class="inner">
 
 				<h1 class="logo">
 					<a href="index.jsp">
@@ -223,40 +234,38 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 					</a>
 				</h1>
 
-                <div class="search_box">
-	                <form action="searchpageCon.do">
-	                    <input type="text" placeholder="검색"
-							id="search-field">
+				<div class="search_box">
+					<form action="searchpageCon.do">
+						<input type="text" placeholder="검색" id="search-field">
 					</form>
 
-                    <div class="fake_field">
-                        <span class="sprite_small_search_icon"></span>
-                        <span>검색</span>
-                    </div>
-                </div>
+					<div class="fake_field">
+						<span class="sprite_small_search_icon"></span> <span>검색</span>
+					</div>
+				</div>
 
-                <div class="right_icons">
-                    <ul class="menu">
+				<div class="right_icons">
+					<ul class="menu">
 						<li><a class="trigger" href="FeedUploadCon.do">
-                                <div class="sprite_camera_icon"></div>
-                            </a></li>
-                        <li class="bg"></li>
-                    </ul>
-                    <ul class="menu">
+								<div class="sprite_camera_icon"></div>
+						</a></li>
+						<li class="bg"></li>
+					</ul>
+					<ul class="menu">
 						<li><a href="searchpageCon.do">
-                                <div class="sprite_compass_icon"></div>
-                            </a></li>
-                        <li class="bg"></li>
-                    </ul>
-                    <ul class="menu">
-                        <li><a href="profileCon.do?owner=<%=pet_vo.getPet_num() %>">
-                                <div class="sprite_user_icon_outline"></div>
-                            </a></li>
-                        <li class="bg"></li>
-                    </ul>
-                </div>
-            </section>
-        </header>
+								<div class="sprite_compass_icon"></div>
+						</a></li>
+						<li class="bg"></li>
+					</ul>
+					<ul class="menu">
+						<li><a href="profileCon.do?owner=<%=pet_vo.getPet_num() %>">
+								<div class="sprite_user_icon_outline"></div>
+						</a></li>
+						<li class="bg"></li>
+					</ul>
+				</div>
+			</section>
+		</header>
 
 		<% 
 			feedVO feed = (feedVO)session.getAttribute("feed_info");
@@ -267,113 +276,131 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 		<div id="main_container">
 			<section class="1_inner">
 				<div class="contents_box">
-					 <article class="contents">
-                        <header class="top">
-                            <div class="user_container">
-	                            <div class="div_profile_img">
-	                            	<a class="profile_visit" href="profileCon.do?owner=<%=feed.getPet_num() %>">
-			                            <img class="profile_img"
-			                              src=<%=pet_info.getPet_profile() %> alt="프로필이미지">
-			                        </a>
-                                </div>
-                                <div class="user_name">
-                                	<a class="profile_visit" href="profileCon.do?owner=<%=feed.getPet_num() %>">
-	                                    <div class="nick_name m_text"><%=pet_info.getPet_nick() %></div>
-	                                </a>
-	                                <div class="country s_text"><%=pet_dao.find_email(feed.getPet_num()) %></div>
-                               	</div>
-                            </div>
-                        <div class ="dropdown">
-               				<div class="sprite_more_icon"></div>
-                        	<div class="dropdown-content">
-	                        	<a href="#">게시물 수정</a>
-	                        	<a href="#">게시물 삭제</a>
-                     		</div>                        
-                     	</div>
-                  </header>
+					<article class="contents">
+						<header class="top">
+							<div class="user_container">
+								<div class="div_profile_img">
+									<a class="profile_visit"
+										href="profileCon.do?owner=<%=feed.getPet_num() %>"> <img
+										class="profile_img" src=<%=pet_info.getPet_profile() %>
+										alt="프로필이미지">
+									</a>
+								</div>
+								<div class="user_name">
+									<a class="profile_visit"
+										href="profileCon.do?owner=<%=feed.getPet_num() %>">
+										<div class="nick_name m_text"><%=pet_info.getPet_nick() %></div>
+									</a>
+									<div class="country s_text"><%=pet_dao.find_email(feed.getPet_num()) %></div>
+								</div>
+							</div>
+							<div class="dropdown">
+								<div class="sprite_more_icon"></div>
+								<div class="dropdown-content">
+									<a href="#">게시물 수정</a> <a href="#">게시물 삭제</a>
+								</div>
+							</div>
+						</header>
 
-                        <div class="img_section">
-                            <div class="trans_inner">
-                                <div class="trans_inner_inner">
-                                <p align="middle">
-		                           <video class="personal_contents"  width = " 614" height = "614" src="<%=feed.getImg_addr() %>"
-		                              alt="visual01" controls></video>
-		                              </p>
-		                              
-                        		</div>
-                            </div>
-                        </div>
+						<div class="img_section">
+							<div class="trans_inner">
+								<div class="trans_inner_inner">
+									<p align="middle">
+										<video class="personal_contents" width=" 614" height="614"
+											src="<%=feed.getImg_addr() %>" alt="visual01" controls></video>
+									</p>
 
-                        <div class="bottom_icons">
-                            <div class="left_icons">
-                                <div class="heart_btn">
-                                    <div
-                              class="sprite_heart_icon_outline" name="39"
-                              data-name="heartbeat" id = "img1"></div>
-                             
-                             <div class="sprite_like_icon_outline" name="39"
-                              data-name="heartbeat"id = "img2"></div>
-                                </div>
-                                	<div class="sprite_bubble_icon"></div>
-                                <div class="sprite_share_icon"
-                           data-name="share"></div>
-                            </div>
-                            <div class="right_icon">
-                                <div class="sprite_bookmark_outline"
-                           data-name="bookmark"></div>
-                            </div>
-                        </div>
+								</div>
+							</div>
+						</div>
 
-                        <div class="likes m_text">
-                            좋아요
-                            <span id="like-count-39"><%=feed.getLike_pet().split(",").length %></span>
-                            <span id="bookmark-count-39"></span>
-                            개
-                        </div>
+						<div class="bottom_icons">
+							<div class="left_icons">
+								<div class="heart_btn">
+									<div class="sprite_heart_icon_outline" name="39"
+										data-name="heartbeat" id="img1"></div>
+
+									<div class="sprite_like_icon_outline" name="39"
+										data-name="heartbeat" id="img2"></div>
+								</div>
+								<div class="sprite_bubble_icon"></div>
+								<div class="sprite_share_icon" data-name="share"></div>
+							</div>
+							<div class="right_icon">
+								<div class="sprite_bookmark_outline" data-name="bookmark"></div>
+							</div>
+						</div>
+
+						<div class="likes m_text">
+							좋아요 <span id="like-count-39"><%=feed.getLike_pet().split(",").length %></span>
+							<span id="bookmark-count-39"></span> 개
+						</div>
 
 
 
-                        <div class="comment_container">
-                            <div class="comment"
-                        id="comment-list-ajax-post37">
-                              <form>
-                                <div class="comment-detail">
-                                  
-                                    <div class="nick_name m_text">danamlee</div>
-                                    <div class="comment_reple"><%= feed.getFeed_content() %></div>
-                                </div>
-                                </form>
-                            </div>
-                            <div class="small_heart">
-                                <div
-                           class="sprite_small_heart_icon_outline"></div>
-                            </div>
-                        </div>
-                        
-                        <div id = "reply">
-                   		<%for(int i = 0; i < comments.size(); i++) {%>
-	                        <div>
-		                        <span>
-		                        	<%=comments.get(i)[0] %>
-		                        </span>
-		                        <span>
-		                        	<%=comments.get(i)[1] %>
-		                        </span>
-	                        </div>
-	                    <%} %>
-						</div>	
-                        <div class="timer">1시간 전</div>
+						<div class="comment_container">
+							<div class="comment" id="comment-list-ajax-post37">
+								<form>
+									<div class="comment-detail">
+
+										<div class="nick_name m_text"><%=pet_info.getPet_nick() %></div>
+
+										<div class="comment_reple">
+
+										<% 
+											String str = feed.getFeed_content(); //content 불러오기 
+											String[] array = str.split(" "); //공백을 기준으로 문자열을 자른다.
+											String[] linked_content;
+											
+											String new_str = str.replace("#", "" );
+											
+											
+											%><span><%=new_str%></span><br><%
+											
+											for( int i=0; i < array.length; i++){
+												//System.out.println(array[i]);
+												
+												
+												if(array[i].indexOf("#")==0){
+													%><a href="#" class="hashtag_style"><%=array[i] %></a>&nbsp;<%
+												}
+											}
+							
+										%>
+										
+										</div>
+
+									</div>
+								</form>
+							</div>
+							<!-- <div class="small_heart">
+								<div class="sprite_small_heart_icon_outline"></div>
+							</div> -->
+						</div>
+						
+						<div class="comment_container">
+						<div id="reply">
+							<%for(int i = 0; i < comments.size(); i++) {%>
+							<div class="comment-detail">
+								<span class="nick_name m_text"> <%=comments.get(i)[0] %></span> 
+								<span class="comment_reple"> <%=comments.get(i)[1] %></span>
+							</div>
+							<%} %>
+						</div>
+						</div>
+						<div class="timer">1시간 전</div>
+						
 
 
-                            <input type="text" style="border:0 solid black" class="inputReple" id = "inputReple"
-                        placeholder="댓글달기...">
-                            <input type="button"  onclick="ajaxreply()" class="upload_btn" id = "reply_submit"
-                         value= "게시">
-                       
+						<input type="text" style="border: 0 solid black"
+							class="inputReple" id="inputReple" placeholder="댓글달기...">
+						<input type="button" onclick="ajaxreply()" class="upload_btn"
+							id="reply_submit" value="게시">
 
 
 
-                    </article>
+
+					</article>
 
 
 
@@ -388,9 +415,11 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 
 
 	</section>
-	
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
 	<script type="text/javascript">
 	$(".upload_btn").click(
 		function ajaxreply(){

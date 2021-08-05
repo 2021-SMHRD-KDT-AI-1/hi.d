@@ -289,7 +289,7 @@ VALUES(FEED_NUM_SEQ.NEXTVAL, 8, 'videos/marong02.mp4', '마롱', '1,2,3', 'U', TO_
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 16, 'videos/kkami01.mp4', '까미', '1,2,3', 'U', TO_DATE('2018-11-20','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 17, 'videos/maru01.mp4', '마루', '1,2,3', 'U', TO_DATE('2018-11-20','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 17, 'videos/maru01.mp4', '오늘 저녁은 뭐먹지? #장난감 #간식 #즐거워 #신난다 오늘 점심 오점무?', '1,2,3', 'U', TO_DATE('2018-11-20','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji04.mp4', '먼지', '1,2,3,4,5,6,7,8,9', 'L', TO_DATE('2018-11-21','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
@@ -529,3 +529,5 @@ and feed.feed_num = 1
 
 
 select * from FEEDINFO where pet_num = 2 order by upload_time desc
+
+select * from feedinfo where pet_num = 17
