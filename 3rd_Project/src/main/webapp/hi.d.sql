@@ -529,3 +529,6 @@ and feed.feed_num = 1
 
 
 select * from FEEDINFO where pet_num = 2 order by upload_time desc
+
+
+select cord from SPECIES where SPECIES = '∏ª∆º¡Ó'
