@@ -27,6 +27,7 @@ public class PetSelectCon implements Command{
 		petDAO dao = new petDAO();
 		petVO pet_vo = dao.pet_info(pet_num);
 		session.setAttribute("pet_vo", pet_vo);
+		session.setAttribute("cord", dao.cat_or_dog(pet_vo.getSpecies()));
 
 		feedDAO feeddao = new feedDAO();
 		ArrayList<feed_upload_petVO> feeds = feeddao.following_feed(pet_num);

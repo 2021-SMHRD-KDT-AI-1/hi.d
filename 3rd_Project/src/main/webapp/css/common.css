@@ -124,11 +124,11 @@ body {
 
 .sprite_insta_big_logo {
     display: inline-block;
-    background: url('../imgs/icons/imagelogo.png');
+    /*background: url('../imgs/icons/profile_example.png');*/
     text-align: center;
-    background-size: 200px 80px;
+    background-size: 200px 200px;
     width: 200px;
-    height: 80px;
+    height: 180px;
 }
 
 .sprite_plus_icon {
