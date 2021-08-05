@@ -742,9 +742,6 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 								</div>
 							</div>
 
-<<<<<<< HEAD
-							<div class="detail_button" id="trigger_logout" menu-index="1"><a class="logout" href="LogoutCon.do">·Î±×¾Æ¿ô</a></div>
-=======
 
 
 							<%
@@ -766,10 +763,6 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 							}
 							%>
 
-
-
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 						</div>
 
 
@@ -813,7 +806,6 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				%>
 
 				<div class="mylist_contents contents_container active">
-				
 				
 					<div class="pic">
 						<a href="#"><video width='400'>

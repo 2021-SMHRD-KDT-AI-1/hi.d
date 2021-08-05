@@ -507,9 +507,9 @@ pic::-webkit-media-controls {
                    <div class="pic">
                         <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video>
 							<source src="<%= feeds.get(i).getImg_addr() %>" type="video/mp4"/></video></a>
-                    </div>
+                   </div>
                 <%} %>
-                
+                </div>
             </section>
          
         </div>
@@ -519,7 +519,8 @@ pic::-webkit-media-controls {
 
     <!--<script src="js/insta.js"></script>-->
     <script src="js/profile.js"></script>
-
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
     <script type="text/javascript">
         // *모달 스크립트 *
         var modal = document.querySelector(".modal");
