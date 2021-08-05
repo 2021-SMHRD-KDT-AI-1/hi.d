@@ -687,11 +687,20 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 								<%// if(ÆÈ·Î¿ìÀÎÆ÷¿¡ Æ÷ÀÕÆê ³Ñ¹ö°¡ °°À¸¸é ) %>
 								
 								<%if (follow_dao.i_follow_u(pet_vo.getPet_num(), profile.getPet_num())){ %>
-							<div class="detail_button" id="trigger_profile_edit"
-								menu-index="0">unfollow</div>
+								
+								
+							<div class="detail_button" id="trigger_profile_edit"menu-index="0">
+								<a class="unfollow" href="UnfollowCon.do">ÆÈ·Î¿ì Ãë¼Ò</a>
+							</div>
+								
 								<%} else { %>
-							<div class="detail_button" id="trigger_profile_edit"
-								menu-index="0">follow</div>
+								
+							<div class="detail_button" id="trigger_profile_edit"menu-index="0">
+							<a class="follow" href="followCon.do">ÆÈ·Î¿ì</a>
+							</div>
+								
+								
+								
 							<%
 							}//}
 							%>
