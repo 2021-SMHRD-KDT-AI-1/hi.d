@@ -81,9 +81,10 @@
     font-weight: 600;
     line-height: 28px;
     outline: none;
-    width: 100%;
+    width: 80%;
+    height: 45px;
     padding: 0;
-    margin-top: 10px;
+    margin-top: 30px;
     cursor: pointer;
 }
 
@@ -167,6 +168,8 @@
 	margin-top: 20px;
 	letter-spacing: 2px;
 }
+
+
 
 /* form {  
  
@@ -335,7 +338,7 @@ textarea {
 }
 
 body {
-	background: #e5e5e5;
+	background: #fafafa;
 }
 
 .bg {
@@ -441,10 +444,31 @@ li a:hover {
     background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
     box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
 }
+
 .gif_form{
     width: 500px;
     position: absolute;
     display: flex;
     margin-left: -600px;
     margin-top: 100px
+}
+
+#login_main_container{
+	padding-top: 180px;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+}
+.modal-content2 .join_closebutton {
+	float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.join_closebutton:hover {
+	background-color: darkgray;
 }
