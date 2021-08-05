@@ -199,9 +199,8 @@ public class petDAO {
 			psmt.setString(1, species);
 			
 			rs = psmt.executeQuery();
-			
 			if(rs.next()) {
-				cord = rs.getString(rs.getInt(1));
+				cord = rs.getString(1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

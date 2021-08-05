@@ -46,7 +46,7 @@
 <link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 <style>
-b_inner .contents_box {
+.contents_box {
 	float: none;
 	display: flex;
 	justify-content: center;
@@ -227,10 +227,8 @@ font-weight: bold;
 
 				<h1 class="logo">
 					<a href="index.jsp">
-						<div>
-							<div class="sprite_insta_icon"></div>
-							<div class="sprite_write_logo"></div>
-						</div>
+						<div class="sprite_insta_icon"></div>
+						<div class="sprite_write_logo"></div>
 					</a>
 				</h1>
 
@@ -238,6 +236,10 @@ font-weight: bold;
 					<form action="searchpageCon.do">
 						<input type="text" placeholder="검색" id="search-field">
 					</form>
+					<div class="fake_field">
+						<span class="sprite_small_search_icon"></span> <span>검색</span>
+					</div>
+				</div>
 
 					<div class="fake_field">
 						<span class="sprite_small_search_icon"></span> <span>검색</span>
@@ -263,8 +265,10 @@ font-weight: bold;
 						</a></li>
 						<li class="bg"></li>
 					</ul>
+
 				</div>
 			</section>
+
 		</header>
 
 		<% 
