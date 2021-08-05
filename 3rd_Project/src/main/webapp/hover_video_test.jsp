@@ -681,7 +681,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 							<%
-							} else {
+							//} else {
 							%>
 				
 								<%// if(팔로우인포에 포잇펫 넘버가 같으면 ) %>
@@ -693,7 +693,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">follow</div>
 							<%
-							}}
+							}//}
 							%>
 							<!-- 프로필 편집 모달창 -->
 							<div class="modal_profile_edit">
