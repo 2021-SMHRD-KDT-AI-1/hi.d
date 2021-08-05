@@ -955,23 +955,27 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 		$('.behavior_submit_button').click(
 			function ajaxEstimation() {
 				var filename = $("#post_photo").val();
-				var cord = '<%= (String)session.getAttribute("cord") %>';
-				
+				var cord = '<%=(String)session.getAttribute("cord") %>';
 				var address = "http://211.223.136.21:7000/detectvid?filename=" + filename + "&cord=" + cord;
+
 				
 				$.ajax({
-					type: 'GET',
-					url: address,
-					data: {},
-					dataType: "text",
-					success: function(data){
-						alert("success!");
+					type : 'post',
+					url : address,
+					data : {
+						filename : filename,
+						cord : cord
+					},
+					dataType:"JSON",
+					
+					success : function(data){
+						alert("hi");
 					},
 					error : function(){
 						alert("error!");
-					},
-				})
-			});
+					}
+				});
+			})
 
 		
 		
