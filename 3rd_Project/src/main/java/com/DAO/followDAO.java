@@ -95,6 +95,9 @@ public class followDAO {
 		return following;
 	}
 	
+	
+	
+	
 	public int follow(int pet_num, int following_pet) {
 		try {
 			getConn();
@@ -112,6 +115,28 @@ public class followDAO {
 		}
 		return cnt;
 	}
+	
+	
+	
+	//언팔로우기능
+	public int unfollow(int pet_num, int following_pet) {
+		try {
+			getConn();
+			sql = "delete from followinfo where pet_num=? and following_pet=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, pet_num);
+			psmt.setInt(2, following_pet);
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
 	
 	public boolean i_follow_u(int pet_num, int following_pet) {
 		try {

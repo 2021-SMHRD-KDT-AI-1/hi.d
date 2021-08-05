@@ -116,25 +116,32 @@
         <div class="form_container">
 		
             <div class="form">
-				<div class = "center_form">
-				<img src="imgs/GIF/1.gif" class = "gif_form">
-                <h1 class="sprite_insta_big_logo title"></h1>
-
-                <form action="LoginCon.do" method="post">
-                    <p class="login_user_name">
-                        <label for="user_name">사용자명:</label>
-                        <input type="text" id="user_name" name="email">
-                    </p>
-
-                    <p class="login_user_password">
-                        <label for="user_password">비밀번호:</label>
-                        <input type="password" id="user_password" name="pw">
-                    </p>
-
-                    <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
-                    <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
-                </form>
-				</div>
+				
+					<div class="center_gif_from">
+						<img src="imgs/GIF/login.gif" class = "gif_form">
+		                <!-- <h1 class="sprite_insta_big_logo title"></h1> -->
+					</div>
+					
+					<div class="center_login_form">
+					 <h1 class="sprite_insta_big_logo title"></h1>
+		                <form action="LoginCon.do" method="post">
+		                    <p class="login_user_name">
+		                        <label for="user_name">사용자명:</label>
+		                        <input type="text" id="user_name" name="email">
+		                    </p>
+		
+		                    <p class="login_user_password">
+		                        <label for="user_password">비밀번호:</label>
+		                        <input type="password" id="user_password" name="pw">
+		                    </p>
+		
+		                    <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
+		                    <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
+		                    
+		                </form>
+	                </div>
+	                
+			
 
 
             </div>
@@ -203,22 +210,32 @@
 
 
  // *모달 스크립트 *
- var modal2 = document.querySelector(".modal2"); 
- var join_closeButton = document.querySelector(".join_closebutton");
- var join_btn = document.querySelector(".join_btn"); 
- var submit_btn1 = document.querySelector(".submit_btn1"); 
+	var modal2 = document.querySelector(".modal2"); 
+	var join_closeButton = document.querySelector(".join_closebutton");
+	var join_btn = document.querySelector(".join_btn"); 
+	var submit_btn1 = document.querySelector(".submit_btn1"); 
 
+    var modal_post = document.querySelector(".modal_post");
+    var trigger = document.querySelector(".trigger");
+    var closeButton = document.querySelector(".close-button");
+    var cancelButton = document.querySelector("#cancel");
 
 //    console.log(modal1);
 
    function toggleModal() { 
         modal2.classList.toggle("show-modal1"); 
     }
+   function posttoggleModal() {
+		modal_post.classList.toggle("post-show-modal");
+	}
 
    function windowOnClick(event) { 
         if (event.target === modal2) { 
             toggleModal(); 
         } 
+        if (event.target === modal_post) {
+			posttoggleModal();
+		}
     }
 
     join_btn.addEventListener("click", toggleModal); 
@@ -226,31 +243,16 @@
     submit_btn1.addEventListener("click", toggleModal); 
     window.addEventListener("click", windowOnClick); 
 
-
-
-
-
-
 </script>
 <script type="text/javascript">
     // *모달 스크립트 *
-    var modal = document.querySelector(".modal");
-    var trigger = document.querySelector(".trigger");
-    var closeButton = document.querySelector(".close-button");
-    var cancelButton = document.querySelector("#cancel");
 
     //console.log(modal);
 
     function toggleModal() {
         modal.classList.toggle("show-modal");
     }
-
-    function windowOnClick(event) {
-        if (event.target === modal) {
-            toggleModal();
-        }
-    }
-
+    
     trigger.addEventListener("click", toggleModal);
     closeButton.addEventListener("click", toggleModal);
     cancel.addEventListener("click", toggleModal);
@@ -286,10 +288,19 @@
     }
 
 	</script>
-	<script type="text/javascript">
-	function func() {
-		swal("","로그인을 해주세요","warning");
-	}
+	
+	<script>
+	$(document).ready(function(){
+	$("#submit_btn1").click(function(){
+		if($("#user_id").val().length==0){swal("","아이디를 입력해주세요.","warning");$("#user_id").focus();return false;}
+		if($("#user_pw").val().length==0){swal("","비밀번호를 입력해주세요","warning");$("#user_pw").focus();return false;}
+		
+	});
+		
+	});
+	
+	
+	
 	</script>
 </body>
 </html>
