@@ -116,25 +116,32 @@
         <div class="form_container">
 		
             <div class="form">
-				<div class = "center_form">
-				<img src="imgs/GIF/1.gif" class = "gif_form">
-                <h1 class="sprite_insta_big_logo title"></h1>
-
-                <form action="LoginCon.do" method="post">
-                    <p class="login_user_name">
-                        <label for="user_name">사용자명:</label>
-                        <input type="text" id="user_name" name="email">
-                    </p>
-
-                    <p class="login_user_password">
-                        <label for="user_password">비밀번호:</label>
-                        <input type="password" id="user_password" name="pw">
-                    </p>
-
-                    <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
-                    <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
-                </form>
-				</div>
+				
+					<div class="center_gif_from">
+						<img src="imgs/GIF/login.gif" class = "gif_form">
+		                <!-- <h1 class="sprite_insta_big_logo title"></h1> -->
+					</div>
+					
+					<div class="center_login_form">
+					 <h1 class="sprite_insta_big_logo title"></h1>
+		                <form action="LoginCon.do" method="post">
+		                    <p class="login_user_name">
+		                        <label for="user_name">사용자명:</label>
+		                        <input type="text" id="user_name" name="email">
+		                    </p>
+		
+		                    <p class="login_user_password">
+		                        <label for="user_password">비밀번호:</label>
+		                        <input type="password" id="user_password" name="pw">
+		                    </p>
+		
+		                    <!--  <a onclick="location.href='choice.jsp'" href="#">로그인 -->
+		                    <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
+		                    
+		                </form>
+	                </div>
+	                
+			
 
 
             </div>
