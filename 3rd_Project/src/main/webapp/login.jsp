@@ -274,6 +274,7 @@
             while (to_remove.firstChild) {
                 to_remove.removeChild(to_remove.firstChild);
             }
+            
             var img = document.createElement("img");
             img.setAttribute("src", event.target.result);
             img.style.width = "450px";

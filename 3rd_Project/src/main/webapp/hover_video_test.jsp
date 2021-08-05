@@ -550,6 +550,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 //반려동물 정보가 담겨있는 곳 : vo
 	petVO pet_vo = (petVO) session.getAttribute("pet_vo");
 	pet_followVO profile = (pet_followVO) session.getAttribute("profile");
+	ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("profile_feed");
 %>
 
 	<section id="container">
@@ -604,8 +605,8 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 											accept="video/*" onchange="setpostthumbnail(event);">
 									</p>
 									<div>
-										<button name="filename" class="behavior_submit_button"
-											value="">행동 분석하기</button>
+										<input type="button" class="behavior_submit_button"
+											value="행동 분석하기">
 									</div>
 									
 									<label for="behavior_analysis">Hi,Dear!</label>
@@ -757,11 +758,12 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				<div class="mylist_contents contents_container active">
 				
 				<!-- 마이페이지(공개 게시물)>> follow.jsp -->
-
+				<%for(int i = 0; i < feeds.size(); i++) {%>
 					<div class="pic">
-						<a href="#"><video width='400'>
-							<source src="videos/dog2.mp4" type="video/mp4"/></video></a>
+						<a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video width='400'>
+							<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4"/></video></a>
 					</div>
+				<%} %>
 					<div class="pic">
 						<a href="#"><video width='400'>
 							<source src="videos/dog3.mp4" type="video/mp4"/></video></a>

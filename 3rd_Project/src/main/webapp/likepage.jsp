@@ -502,7 +502,6 @@ pic::-webkit-media-controls {
                 <% 
                 	//feedVO feed = null;
                     ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
-					//System.out.print(feeds.get(0).getImg_addr());
                 %>
                 <% for (int i = 0; i < feeds.size(); i++) {%>
                    <div class="pic">
