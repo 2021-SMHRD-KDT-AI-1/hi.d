@@ -265,7 +265,7 @@ body{
 }
 
 .contents .bottom_icons .left_icons > div{
-    margin-right: 10px;
+    -right: 10px;
     cursor:pointer;
 }
 
