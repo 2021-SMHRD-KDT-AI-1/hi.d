@@ -45,7 +45,7 @@
 <link rel="shortcut icon" href="imgs/icons/imagelogo.png">
 
 <style>
-b_inner .contents_box {
+.contents_box {
 	float: none;
 	display: flex;
 	justify-content: center;
@@ -211,52 +211,50 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 %>
 	<section id="container">
 
-        <header id="header">
-            <section class="inner">
+		<header id="header">
+			<section class="inner">
 
 				<h1 class="logo">
 					<a href="index.jsp">
-						<div>
-							<div class="sprite_insta_icon"></div>
-							<div class="sprite_write_logo"></div>
-						</div>
+						<div class="sprite_insta_icon"></div>
+						<div class="sprite_write_logo"></div>
 					</a>
 				</h1>
 
-                <div class="search_box">
-	                <form action="searchpageCon.do">
-	                    <input type="text" placeholder="검색"
-							id="search-field">
+				<div class="search_box">
+					<form action="searchpageCon.do">
+						<input type="text" placeholder="검색" id="search-field">
 					</form>
+					<div class="fake_field">
+						<span class="sprite_small_search_icon"></span> <span>검색</span>
+					</div>
+				</div>
 
-                    <div class="fake_field">
-                        <span class="sprite_small_search_icon"></span>
-                        <span>검색</span>
-                    </div>
-                </div>
-
-                <div class="right_icons">
-                    <ul class="menu">
-						<li><a class="trigger" href="FeedUploadCon.do">
-                                <div class="sprite_camera_icon"></div>
-                            </a></li>
-                        <li class="bg"></li>
-                    </ul>
-                    <ul class="menu">
+				<div class="right_icons">
+					<ul class="menu">
+						<li><a class="trigger_post" href="#">
+								<div class="sprite_camera_icon"></div>
+						</a></li>
+						<li class="bg"></li>
+					</ul>
+					<ul class="menu">
 						<li><a href="searchpageCon.do">
-                                <div class="sprite_compass_icon"></div>
-                            </a></li>
-                        <li class="bg"></li>
-                    </ul>
-                    <ul class="menu">
-                        <li><a href="profileCon.do?owner=<%=pet_vo.getPet_num() %>">
-                                <div class="sprite_user_icon_outline"></div>
-                            </a></li>
-                        <li class="bg"></li>
-                    </ul>
-                </div>
-            </section>
-        </header>
+								<div class="sprite_compass_icon"></div>
+						</a></li>
+						<li class="bg"></li>
+					</ul>
+					<ul class="menu">
+						<li><a href="profileCon.do?owner=<%=pet_vo.getPet_num() %>">
+								<div class="sprite_user_icon_outline"></div>
+						</a></li>
+						<li class="bg"></li>
+					</ul>
+
+				</div>
+
+			</section>
+
+		</header>
 
 		<% 
 			feedVO feed = (feedVO)session.getAttribute("feed_info");

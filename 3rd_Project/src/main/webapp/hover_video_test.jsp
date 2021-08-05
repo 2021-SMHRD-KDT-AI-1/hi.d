@@ -1,3 +1,4 @@
+<%@page import="com.DAO.followDAO"%>
 <%@page import="com.VO.pet_followVO"%>
 <%@page import="com.VO.feedVO"%>
 <%@page import="com.VO.followVO"%>
@@ -550,7 +551,14 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 //반려동물 정보가 담겨있는 곳 : vo
 	petVO pet_vo = (petVO) session.getAttribute("pet_vo");
 	pet_followVO profile = (pet_followVO) session.getAttribute("profile");
-%>
+	ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("profile_feed");
+	
+	followVO follow_vo = (followVO) session.getAttribute("follow_vo");
+	
+	followDAO follow_dao = new followDAO();
+	
+	
+	%>
 
 	<section id="container">
 
@@ -672,7 +680,21 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
-
+							<%
+							} else {
+							%>
+				
+								<%// if(팔로우인포에 포잇펫 넘버가 같으면 ) %>
+								
+								<%if (follow_dao.i_follow_u(pet_vo.getPet_num(), profile.getPet_num())){ %>
+							<div class="detail_button" id="trigger_profile_edit"
+								menu-index="0">unfollow</div>
+								<%} else { %>
+							<div class="detail_button" id="trigger_profile_edit"
+								menu-index="0">follow</div>
+							<%
+							}}
+							%>
 							<!-- 프로필 편집 모달창 -->
 							<div class="modal_profile_edit">
 								<div class="profile-edit-modal-content">
@@ -711,7 +733,34 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 								</div>
 							</div>
 
+<<<<<<< HEAD
 							<div class="detail_button" id="trigger_logout" menu-index="1"><a class="logout" href="LogoutCon.do">로그아웃</a></div>
+=======
+
+
+							<%
+							if ( profile.getPet_nick().equals(pet_vo.getPet_nick())) {
+							%>
+
+							<div class="detail_button" id="trigger_logout" menu-index="1">
+								<a class="logout" href="LogoutCon.do">로그아웃</a>
+							</div>
+							
+							<%
+							} else {
+							%>
+
+							<div class="detail_button" id="trigger_logout" menu-index="1">
+								<a class="logout" href="LogoutCon.do">메시지 보내기</a>
+							</div>
+							<%
+							}
+							%>
+
+
+
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 						</div>
 
 

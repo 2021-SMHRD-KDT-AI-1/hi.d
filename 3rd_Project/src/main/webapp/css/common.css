@@ -90,19 +90,21 @@ body {
 
 .sprite_share_icon {
     display: inline-block;
-    background: url('../imgs/background01.png') no-repeat -324px -52px;
-    width: 21px;
+    background: url('../imgs/icons/save.png');
+   background-size: 23px 24px;
+    width: 23px;
     height: 24px;
 }
 
 .sprite_bookmark_outline {
     display: inline-block;
-    background: url('../imgs/background01.png') no-repeat -237px -286px;
-    width: 19px;
+    background: url('../imgs/icons/bookmark.png');
+    background-size:24px 24px;
+    width: 24px;
     height: 24px;
 }
 .sprite_bookmark_outline.on {
-    background: url('../imgs/background01.png') no-repeat -159px -286px;
+    background: url('../imgs/icons/bookmark.png') no-repeat -159px -286px;
     width: 19px;
     height: 24px;
 }
@@ -152,11 +154,11 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 9999;
-    border-bottom: 1px solid rgba(0, 0, 0, .0975);
+    z-index: 999;
+    border-bottom:1px solid rgba(0,0,0,0.1);
     background: #fff;
-    display: flex;
-    order: 0;
+   /*display: flex;
+    order: 0;*/
 
 }
 
@@ -223,17 +225,17 @@ body {
 }
 
 #header .search_field input {
-    width: 185px;
+     width: 185px;
     height: 28px;
-    background: #fafafa;
-    border: solid 1px #dbdbdb;
-    border-radius: 3px;
-    padding: 3px 30px 3px 30px;
-    color: #999;
+    background:#fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 15px;
+    padding:3px 30px;
+    color:#999;
     font-weight: 400;
     text-align: left;
     font-size: 14px;
-    outline: none;
+    outline:none;
 }
 
 #header .search_field input:focus ~ .fake_field span:nth-child(1){

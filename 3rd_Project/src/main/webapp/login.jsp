@@ -281,10 +281,19 @@
     }
 
 	</script>
-	<script type="text/javascript">
-	function func() {
-		swal("","로그인을 해주세요","warning");
-	}
+	
+	<script>
+	$(document).ready(function(){
+	$("#submit_btn1").click(function(){
+		if($("#user_id").val().length==0){swal("","아이디를 입력해주세요.","warning");$("#user_id").focus();return false;}
+		if($("#user_pw").val().length==0){swal("","비밀번호를 입력해주세요","warning");$("#user_pw").focus();return false;}
+		
+	});
+		
+	});
+	
+	
+	
 	</script>
 </body>
 </html>
