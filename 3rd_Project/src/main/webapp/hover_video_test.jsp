@@ -551,6 +551,11 @@ div.detail_button:hover a.logout {
 	petVO pet_vo = (petVO) session.getAttribute("pet_vo");
 	pet_followVO profile = (pet_followVO) session.getAttribute("profile");
 	ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("profile_feed");
+	
+	followVO follow_vo = (followVO) session.getAttribute("follow_vo");
+	
+	
+	
 	%>
 
 	<section id="container">
@@ -680,7 +685,8 @@ div.detail_button:hover a.logout {
 							<%
 							} else {
 							%>
-
+				
+								<%// if(팔로우인포에 포잇펫 넘버가 같으면 ) %>
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">팔로우</div>
 
@@ -740,7 +746,7 @@ div.detail_button:hover a.logout {
 							%>
 
 							<div class="detail_button" id="trigger_logout" menu-index="1">
-								<a class="logout" href="LogoutCon.do">팔로우 취소</a>
+								<a class="logout" href="LogoutCon.do">메시지 보내기</a>
 							</div>
 							<%
 							}
