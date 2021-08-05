@@ -1002,6 +1002,28 @@ div.detail_button:hover a.logout {
 
 			profile_edit_reader.readAsDataURL(event.target.files[0]);
 		}
+		
+		//영상분석.. 플라스크 서버로 데이터 전송
+		$('.behavior_submit_button').click(
+			function {
+				var filename = $("#post_photo").val();
+				var cord = sessionStorage.getItem("cord");
+				var address = "http://211.223.136.21:7000/detectvid?filename=" + filename + "&cord=" + cord;
+				
+				$.ajax({
+					type: 'GET',
+					url: address,
+					data: {},
+					dataType: "text",
+					success: function(data){
+						
+					},
+					error : function(){
+						alert("error!");
+					},
+				})
+			}
+		)
 
 		//* 버튼 이벤트 스크립트*
 		$('.detail_button').each(function(index) {
@@ -1022,9 +1044,7 @@ div.detail_button:hover a.logout {
 					var index = $(this).attr('menu-index');
 					$('.detail_button[menu-index=' + index + ']').removeClass(
 							'clicked_detail_button');
-				})
-
-		;
+				});
 
 		$('.post_submit').on('click', function() {
 			//servlet -> database -> follow.jsp(a태그로 만들기)

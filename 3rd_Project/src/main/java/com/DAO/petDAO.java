@@ -190,7 +190,26 @@ public class petDAO {
 		return pets;
 	}
 	
-
+	public String cat_or_dog(String species) {
+		String cord = "";
+		try {
+			getConn();
+			sql = "select cord from species where species = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, species);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				cord = rs.getString(rs.getInt(1));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cord;
+	}
 	
 	
 	//프로필 삭제
