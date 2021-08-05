@@ -1,3 +1,4 @@
+<%@page import="com.DAO.followDAO"%>
 <%@page import="com.VO.pet_followVO"%>
 <%@page import="com.VO.feedVO"%>
 <%@page import="com.VO.followVO"%>
@@ -554,6 +555,7 @@ div.detail_button:hover a.logout {
 	
 	followVO follow_vo = (followVO) session.getAttribute("follow_vo");
 	
+	followDAO follow_dao = new followDAO();
 	
 	
 	%>
@@ -687,11 +689,15 @@ div.detail_button:hover a.logout {
 							%>
 				
 								<%// if(팔로우인포에 포잇펫 넘버가 같으면 ) %>
+								
+								<%if (follow_dao.i_follow_u(pet_vo.getPet_num(), profile.getPet_num())){ %>
 							<div class="detail_button" id="trigger_profile_edit"
-								menu-index="0">팔로우</div>
-
+								menu-index="0">unfollow</div>
+								<%} else { %>
+							<div class="detail_button" id="trigger_profile_edit"
+								menu-index="0">follow</div>
 							<%
-							}
+							}}
 							%>
 							<!-- 프로필 편집 모달창 -->
 							<div class="modal_profile_edit">
