@@ -622,8 +622,15 @@ sprite_more_icon{
 									<div class="comment_reple"><%=feeds.get(i).getFeed_content() %></div>
 								</div>
 							</div>
-							
+							<div class="small_heart">
+                                <div
+                           class="sprite_small_heart_icon_outline"></div>
+                            </div>
+						
 						</div>
+						
+						
+						
 						<div class="timer">1½Ã°£ Àü</div>
 
 
