@@ -755,7 +755,7 @@ sprite_more_icon{
 
 						<article class="story">
 							<header class="story_header">
-								<div>스토리</div>
+								<div>BEST 5</div>
 								<div class="more">모두 보기</div>
 							</header>
 

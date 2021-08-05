@@ -550,6 +550,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 //반려동물 정보가 담겨있는 곳 : vo
 	petVO pet_vo = (petVO) session.getAttribute("pet_vo");
 	pet_followVO profile = (pet_followVO) session.getAttribute("profile");
+	ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("profile_feed");
 %>
 
 	<section id="container">
@@ -604,8 +605,8 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 											accept="video/*" onchange="setpostthumbnail(event);">
 									</p>
 									<div>
-										<button name="filename" class="behavior_submit_button"
-											value="">행동 분석하기</button>
+										<input type="button" class="behavior_submit_button"
+											value="행동 분석하기">
 									</div>
 									
 									<label for="behavior_analysis">Hi,Dear!</label>
@@ -621,7 +622,6 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 									</p>
 
 									<label for="contents">Contents</label>
-									<label></label>
 									<textarea id="post_textarea" name="contents"
 										placeholder="#해시태그 & 문구입력"></textarea>
 										
@@ -749,17 +749,21 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				
 				<%
 				
-					//ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
+					//feedVO feed = null;
+	                //ArrayList<feedVO> feeds=(ArrayList<feedVO>)session.getAttribute("search_feed");
+					//System.out.print(feeds.get(0).getImg_addr());
 				
 				%>
 
 				<div class="mylist_contents contents_container active">
 				
-				
+				<!-- 마이페이지(공개 게시물)>> follow.jsp -->
+				<%for(int i = 0; i < feeds.size(); i++) {%>
 					<div class="pic">
-						<a href="#"><video width='400'>
-							<source src="videos/dog2.mp4" type="video/mp4"/></video></a>
+						<a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video width='400'>
+							<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4"/></video></a>
 					</div>
+				<%} %>
 					<div class="pic">
 						<a href="#"><video width='400'>
 							<source src="videos/dog3.mp4" type="video/mp4"/></video></a>
@@ -791,6 +795,9 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 				</div>
 
 				<div class="bookmark_contents contents_container active">
+				
+				<!-- 마이페이지(다이어리)>> follow.jsp -->
+				
 					<div class="pic">
 						<a href="#"><video width='400'>
 							<source src="videos/cat1.mp4" type="video/mp4"/></video></a>
@@ -953,7 +960,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 
 
 		$('.post_submit').on('click', function() {
-			//servlet -> database -> choice.jsp(a태그로 만들기)
+			//servlet -> database -> follow.jsp(a태그로 만들기)
 			// 보내줄 데이터를 json구조로 만들어주기
 			// split함수를 사용해서 데이터를 구조화하기!
 			let data = {

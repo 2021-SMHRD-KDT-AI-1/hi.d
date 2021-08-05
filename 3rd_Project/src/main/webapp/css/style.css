@@ -202,10 +202,10 @@ body{
     width: 100%;
 }
 
-
 .contents .top .user_container{
     display: flex;
 }
+
 .contents .sprite_more_icon{
     position: relative;
 }
@@ -893,15 +893,13 @@ body{
 
 #main_container .inner{
     width: 935px;
-    /*height: 500px;*/
+    /*height: 700px;*/
     /*background: red;*/
     position: relative;
 
 }
 
 .contents_box{
-	
-	
 width: 614px
 }
 

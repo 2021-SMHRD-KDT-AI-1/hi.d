@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.VO.feed_commentVO"%>
 <%@page import="com.DAO.petDAO"%>
 <%@page import="com.VO.petVO"%>
 <%@page import="com.VO.feedVO"%>
@@ -168,7 +170,6 @@ li a:hover {
 
 .dropdown-content a:hover {background-color: #ddd;}
 
-
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover.dropbtn {background-color: #3e8e41;}
@@ -236,13 +237,13 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 
                 <div class="right_icons">
                     <ul class="menu">
-                        <li><a class="trigger" href="FeedUploadCon.do">
+						<li><a class="trigger" href="FeedUploadCon.do">
                                 <div class="sprite_camera_icon"></div>
                             </a></li>
                         <li class="bg"></li>
                     </ul>
                     <ul class="menu">
-                        <li><a href="searchpageCon.do">
+						<li><a href="searchpageCon.do">
                                 <div class="sprite_compass_icon"></div>
                             </a></li>
                         <li class="bg"></li>
@@ -259,6 +260,7 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
 
 		<% 
 			feedVO feed = (feedVO)session.getAttribute("feed_info");
+			ArrayList<String[]> comments = (ArrayList<String[]>) session.getAttribute("comment_info");
 			petDAO pet_dao = new petDAO();
 			petVO pet_info = pet_dao.pet_profile_load(feed.getPet_num());
 		%>
@@ -348,9 +350,18 @@ div.user_name a.profile_visit:visited { color: black; text-decoration: none;}
                             </div>
                         </div>
                         
-                        
-                        <div id = reply></div>
-							
+                        <div id = "reply">
+                   		<%for(int i = 0; i < comments.size(); i++) {%>
+	                        <div>
+		                        <span>
+		                        	<%=comments.get(i)[0] %>
+		                        </span>
+		                        <span>
+		                        	<%=comments.get(i)[1] %>
+		                        </span>
+	                        </div>
+	                    <%} %>
+						</div>	
                         <div class="timer">1½Ã°£ Àü</div>
 
 

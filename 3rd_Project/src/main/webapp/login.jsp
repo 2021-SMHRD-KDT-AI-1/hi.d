@@ -50,7 +50,6 @@
 
 
 
-    <!-- 모달네비게이션바 css -->
     <style type="text/css">
 
 
@@ -112,7 +111,7 @@
 
 
 
-    <div id="main_container">
+    <div id="login_main_container">
 
         <div class="form_container">
 		
@@ -148,9 +147,10 @@
                     <div class="flex1">
                         <div class="modal2"> 
                            <div class="modal-content2">
-                    <form action="JoinCon.do" class="join_form"
-										method="POST">
-                    <div class="title1">JOIN</div>
+                           <span class="join_closebutton">&times;</span>
+                           <div class="title1">JOIN</div>
+                    <form action="JoinCon.do" class="join_form" method="POST">
+                    
                         
                     <p class="join_user_name">
                         <label for="user_id">EMAIL:</label>
@@ -204,6 +204,7 @@
 
  // *모달 스크립트 *
  var modal2 = document.querySelector(".modal2"); 
+ var join_closeButton = document.querySelector(".join_closebutton");
  var join_btn = document.querySelector(".join_btn"); 
  var submit_btn1 = document.querySelector(".submit_btn1"); 
 
@@ -221,6 +222,7 @@
     }
 
     join_btn.addEventListener("click", toggleModal); 
+    join_closeButton.addEventListener("click", toggleModal);
     submit_btn1.addEventListener("click", toggleModal); 
     window.addEventListener("click", windowOnClick); 
 
@@ -272,6 +274,7 @@
             while (to_remove.firstChild) {
                 to_remove.removeChild(to_remove.firstChild);
             }
+            
             var img = document.createElement("img");
             img.setAttribute("src", event.target.result);
             img.style.width = "450px";
