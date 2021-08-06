@@ -1,12 +1,13 @@
 
 .form_container{
 	heigh: 1000px;
-    width: 350px;
+    width: 1000px;
     margin: 0 auto
 
 }
 
 .form_container .form{
+	height: 600px;
     background-color: #fff;
     border: 1px solid #e6e6e6;
     padding: 0 40px 25px 40px;
@@ -14,15 +15,25 @@
     border-radius: 20px
 }
 
+div.center_gif_from{
+	width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
 
+div.center_login_form{
+	width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
 .form .title {
     overflow: hidden;
     text-indent: 110%;
     margin: 22px auto 8px;
 }
 
-
 .form label{
+	margin-left: 60px;
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
@@ -30,7 +41,8 @@
 }
 
 .form input{
-    width: 100%;
+    width: 300px;
+    height: 36px;
     background: 0 0;
     border: 1px solid #efefef;
     border-radius: 3px;
@@ -38,6 +50,7 @@
     color: #262626;
     font-size: 14px;
     padding: 7px 8px 7px;
+    margin-bottom: 21px;
 }
 
 .form p{
@@ -55,10 +68,11 @@
     font-weight: 600;
     line-height: 28px;
     outline: none;
-    width: 100%;
+    width: 300px;
     height: 45px;
     padding: 0;
     margin-top: 10px;
+    margin-left: 125px;
     cursor: pointer;
 }
 
@@ -446,15 +460,13 @@ li a:hover {
 }
 
 .gif_form{
-    width: 500px;
-    position: absolute;
+    width: 550px;
     display: flex;
-    margin-left: -600px;
     margin-top: 100px
 }
 
 #login_main_container{
-	padding-top: 180px;
+	padding-top: 150px;
     display: flex;
     vertical-align: middle;
     justify-content: center;

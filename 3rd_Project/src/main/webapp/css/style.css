@@ -739,6 +739,7 @@ body{
     font-weight: bold;
     position: relative;
     top: 2px;
+    margin-right: 10px;
 }
 
 .nick_name m_text{
@@ -1014,6 +1015,7 @@ width: 614px
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
+    font-size: 14px;
 }
 .contents .comment_container .comment{
     display:flex;
