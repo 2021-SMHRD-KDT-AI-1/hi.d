@@ -1009,7 +1009,7 @@ div.detail_button:hover a.logout {
 		$('.behavior_submit_button').click(
 			function ajaxExtimation() {
 				var filename = $("#post_photo").val();
-				var cord = '<%=(String)session.getAttribute("cord")%>';
+				var cord = '<%=(String)session.getAttribute("cord") %>';
 				var address = "http://211.223.136.21:7000/detectvid?filename=" + filename + "&cord=" + cord;
 				
 				$.ajax({
@@ -1021,7 +1021,7 @@ div.detail_button:hover a.logout {
 					},
 					dataType: "JSON",
 					success: function(data){
-						alert()
+						alert(Object.values(data));
 					},
 					error : function(){
 						alert("error!");
@@ -1065,7 +1065,6 @@ div.detail_button:hover a.logout {
 					console.log("데이터 보내기 성공!")
 				}
 			})
-
 			//textarea 텍스트 데이터를 가져오는 코드
 		})
 
