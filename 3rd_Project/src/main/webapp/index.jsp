@@ -583,7 +583,7 @@ sprite_more_icon{
 							  <div class ="dropdown"  onclick="ale()" width="300" >
                				<div class="sprite_more_icon" ></div>
                         	<div class="dropdown-content">
-	                        	<a href="#">게시물 신고</a>
+	                        	<a href="#" onclick="return false;">게시물 신고</a>
                      		</div>                        
                      	</div>
 						</header>
