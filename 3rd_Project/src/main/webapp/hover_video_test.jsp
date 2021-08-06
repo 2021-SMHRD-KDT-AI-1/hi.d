@@ -619,7 +619,7 @@ div.detail_button:hover a.logout {
 										
 										<label for="behavior_analysis">Hi,Dear!</label>
 										<div class="behavior_analysis" style="width: 280px; height: 280px;">
-											<canvas id="myChart"></canvas>
+											
 										</div>
 	
 										<p id="post_chk_open">
@@ -1013,6 +1013,13 @@ div.detail_button:hover a.logout {
 				var cord = '<%=(String)session.getAttribute("cord") %>';
 				var address = "http://211.223.136.21:7000/detectvid?filename=" + filename + "&cord=" + cord;
 				
+				var estimation_div = $(".behavior_analysis");
+				estimation_div.empty();
+				var loading_gif = $("<img src='imgs/GIF/estimation_loading01.gif' style='width: 280px; height:280px'>");
+				estimation_div.append(loading_gif);
+								
+				//<canvas id="myChart"></canvas>
+				
 				$.ajax({
 					type: 'post',
 					url: address,
@@ -1025,7 +1032,12 @@ div.detail_button:hover a.logout {
 						var emotions = Object.keys(data);
 						var frequency = Object.values(data);
 						
+						estimation_div.empty();
+						var canv_section = $("<canvas id='myChart'></canvas>");
+						estimation_div.append(canv_section);
+						
 						var context = document.getElementById('myChart').getContext('2d');
+						// 차트 그리는 함수
 						var myChart = new Chart(context, {
 							type: 'doughnut',
 							data: {
@@ -1045,6 +1057,13 @@ div.detail_button:hover a.logout {
 								}]
 							}
 						});
+						
+						// filename 세션에 저장
+						window.sessionStorage.setItem("filename", filename.split("\\")[2]);
+						
+						// textarea에 텍스트 입력
+						//$('#post_textarea')
+						
 					},
 					error : function(){
 						alert("error!");
