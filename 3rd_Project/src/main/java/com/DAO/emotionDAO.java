@@ -55,7 +55,7 @@ public class emotionDAO {
 			
 			getConn();
 			
-			sql= "select * from emotion where = emotion";
+			sql= "select * from emotion ";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			if (rs.next()) {

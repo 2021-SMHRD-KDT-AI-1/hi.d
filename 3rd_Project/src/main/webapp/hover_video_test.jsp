@@ -773,10 +773,12 @@ div.detail_button:hover a.logout {
 						</div>
 
 						<br> <br>
-						<p class="about">
-							<span class="nick_name">공개 게시물</span> <span class="book_mark">다이어리</span>
-						</p>
-
+							<p class="about">
+								
+								<span class="nick_name">공개 게시물</span> 
+								
+								<span class="book_mark">다이어리</span>
+							</p>
 					</div>
 
 					<div class="profile_wrap_right">

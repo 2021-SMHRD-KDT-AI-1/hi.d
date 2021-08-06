@@ -302,6 +302,34 @@ public class feedDAO {
 		return one_feed;
 	}
 	
+	public feedVO get_lock_feed(String f_lock) {
+		feedVO lock_feed = null;
+		try {
+			getConn();
+			sql = "select * from feedinfo where f_lock = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, f_lock);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				int feed_num = rs.getInt(1);
+				int pet_num = rs.getInt(2);
+				String img_addr = rs.getString(3);
+				String feed_content = rs.getString(4);
+				String like_pet = rs.getString(5);
+				Date upload_time = rs.getDate(7);
+				lock_feed = new feedVO(feed_num, pet_num, img_addr, feed_content, like_pet, f_lock, upload_time);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return lock_feed;
+	}
+	
 	
 //	
 //	//마이피드 가져오기
