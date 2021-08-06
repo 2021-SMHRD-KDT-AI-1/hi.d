@@ -617,7 +617,9 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 									<form action="FeedUploadCon.do" method="POST">
 										
 										<label for="behavior_analysis">Hi,Dear!</label>
-										<div class="behavior_analysis"></div>
+										<div class="behavior_analysis">
+										<img src="imgs/cap.JPG" width="350px" height="320px">
+										</div>
 	
 										<p id="post_chk_open">
 											<!-- 공개 비공개 -->
@@ -681,7 +683,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">프로필 편집</div>
 							<%
-							} else {
+							//} else {
 							%>
 				
 								<%// if(팔로우인포에 포잇펫 넘버가 같으면 ) %>
@@ -693,7 +695,7 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 							<div class="detail_button" id="trigger_profile_edit"
 								menu-index="0">follow</div>
 							<%
-							}}
+							}//}
 							%>
 							<!-- 프로필 편집 모달창 -->
 							<div class="modal_profile_edit">
@@ -733,9 +735,6 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 								</div>
 							</div>
 
-<<<<<<< HEAD
-							<div class="detail_button" id="trigger_logout" menu-index="1"><a class="logout" href="LogoutCon.do">로그아웃</a></div>
-=======
 
 
 							<%
@@ -758,9 +757,6 @@ div.detail_button:hover a.logout{ color: #ec7600; }
 							%>
 
 
-
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-1/hi.d.git
 						</div>
 
 
