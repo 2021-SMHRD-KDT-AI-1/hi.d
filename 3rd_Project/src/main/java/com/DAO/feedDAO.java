@@ -115,8 +115,7 @@ public class feedDAO {
 		try {
 			getConn();
 			sql = "select * from ("
-					+ "select * from feedinfo"
-					+ " "
+					+ "select * from feedinfo "
 					+ "order by DBMS_RANDOM.RANDOM "
 					+ ") where rownum < " + n;
 			psmt = conn.prepareStatement(sql);

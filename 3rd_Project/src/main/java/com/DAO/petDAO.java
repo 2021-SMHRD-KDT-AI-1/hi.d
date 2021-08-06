@@ -356,6 +356,7 @@ public class petDAO {
 		}
 		return fing_pet;
 	}
+	
 	public int follow_pet(int pet_num) {
 		int f_pet = 0;
 		try {
@@ -380,6 +381,7 @@ public class petDAO {
 		}
 		return f_pet;
 	}
+	
 	public int feedCount(int pet_num) {
 		int f_count = 0;
 		try {
@@ -406,7 +408,7 @@ public class petDAO {
 		return f_count;
 	}
 	
-
+	// 주인 이메일 불러오기
 	public String find_email(int pet_num) {
 		String email = "";
 		try {
@@ -429,6 +431,66 @@ public class petDAO {
 		return email;
 	}
 
+	// 랜덤한 펫 정보 가져오기 ===> 10마리
+	public ArrayList<petVO> pet_recommend(){
+		ArrayList<petVO> pets = new ArrayList<>();
+		petVO one_pet = null;
+		try {
+			getConn();
+			sql = "select * from (select * from petinfo order by DBMS_RANDOM.RANDOM) where rownum < 11";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int pet_num = rs.getInt(1);
+				String pet_nick = rs.getString(2);
+				String pet_profile = rs.getString(3);
+				one_pet = new petVO(pet_num, pet_nick, pet_profile);
+				pets.add(one_pet);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return pets;
+	}
+	
+	// 강아지면 강아지 계정, 고양이면 고양이 계정 가져오기 ===> 5마리
+	public ArrayList<petVO> cord_pets(String cord){
+		ArrayList<petVO> pets = new ArrayList<>();
+		petVO one_pet = null;
+		try {
+			getConn();
+			sql = "select * from "
+					+ "(select * from petinfo "
+					+ "where SPECIES in "
+					+ "(select species "
+					+ "from species "
+					+ "where cord = ?) "
+					+ "order by DBMS_RANDOM.RANDOM) "
+					+ "where rownum < 6";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, cord);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int pet_num = rs.getInt(1);
+				String pet_nick = rs.getString(2);
+				String pet_profile = rs.getString(3);
+				one_pet = new petVO(pet_num, pet_nick, pet_profile);
+				
+				pets.add(one_pet);
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return pets;
+	}
 	
 }
 
