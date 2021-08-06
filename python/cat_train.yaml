@@ -1,0 +1,6 @@
+train: ./dataset/images/train  # train images (relative to 'path') 118287 images
+val: ./dataset/images/valid  # train images (relative to 'path') 5000 images
+
+# Classes
+nc: 4  # number of classes
+names: ['comfortable','happy,'angry','aggressive']  # class names
