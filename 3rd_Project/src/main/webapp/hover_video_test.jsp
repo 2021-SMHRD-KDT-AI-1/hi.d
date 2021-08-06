@@ -618,8 +618,8 @@ div.detail_button:hover a.logout {
 									<form action="FeedUploadCon.do" method="POST">
 										
 										<label for="behavior_analysis">Hi,Dear!</label>
-										<div class="behavior_analysis">
-										<img src="imgs/cap.JPG" width="350px" height="320px">
+										<div class="behavior_analysis" style="width: 280px; height: 280px;">
+											
 										</div>
 	
 										<p id="post_chk_open">
@@ -911,6 +911,7 @@ div.detail_button:hover a.logout {
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
 		integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
 		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script src="js/profile.js"></script>
 	<script type="text/javascript">
 		// *NewPost 모달 스크립트 *
@@ -1012,6 +1013,13 @@ div.detail_button:hover a.logout {
 				var cord = '<%=(String)session.getAttribute("cord") %>';
 				var address = "http://211.223.136.21:7000/detectvid?filename=" + filename + "&cord=" + cord;
 				
+				var estimation_div = $(".behavior_analysis");
+				estimation_div.empty();
+				var loading_gif = $("<img src='imgs/GIF/estimation_loading01.gif' style='width: 280px; height:280px'>");
+				estimation_div.append(loading_gif);
+								
+				//<canvas id="myChart"></canvas>
+				
 				$.ajax({
 					type: 'post',
 					url: address,
@@ -1021,7 +1029,41 @@ div.detail_button:hover a.logout {
 					},
 					dataType: "JSON",
 					success: function(data){
-						alert(Object.values(data));
+						var emotions = Object.keys(data);
+						var frequency = Object.values(data);
+						
+						estimation_div.empty();
+						var canv_section = $("<canvas id='myChart'></canvas>");
+						estimation_div.append(canv_section);
+						
+						var context = document.getElementById('myChart').getContext('2d');
+						// 차트 그리는 함수
+						var myChart = new Chart(context, {
+							type: 'doughnut',
+							data: {
+								labels: [emotions[0], emotions[1], emotions[2], emotions[3]],
+								datasets: [{
+									label: 'estimation_result',
+									data: [
+										frequency[0], frequency[1], frequency[2], frequency[3]
+									],
+									backgroundColor:[
+										'rgb(255, 154, 158)',
+										'rgb(209, 112, 147)',
+										'rgb(155, 78, 135)',
+										'rgb(94, 52, 117)'
+									],
+									hoverOffset: 10
+								}]
+							}
+						});
+						
+						// filename 세션에 저장
+						window.sessionStorage.setItem("filename", filename.split("\\")[2]);
+						
+						// textarea에 텍스트 입력
+						//$('#post_textarea')
+						
 					},
 					error : function(){
 						alert("error!");

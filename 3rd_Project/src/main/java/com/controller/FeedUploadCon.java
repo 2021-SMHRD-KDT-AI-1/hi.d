@@ -25,12 +25,12 @@ public class FeedUploadCon implements Command{
 		
 		
 		
-		String img_addr = "C:\\Users\\CGI\\Desktop\\" + request.getParameter("photo");	
+		String img_addr = "C:\\Users\\CGI\\Desktop\\" + (String)session.getAttribute("filename");	
 		String f_lock = request.getParameter("chk_open");
 		String feed_content = request.getParameter("contents");	
 		
 		feedDAO dao = new feedDAO();
-		feedVO vo_feed = new feedVO(getPet_num, img_addr, feed_content, f_lock );
+		feedVO vo_feed = new feedVO(getPet_num, img_addr, feed_content, "0", f_lock );
 		int cnt = dao.feed_upload(vo_feed);
 		
         

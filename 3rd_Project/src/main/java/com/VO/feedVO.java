@@ -33,6 +33,18 @@ public class feedVO {
 		this.upload_time = upload_time;
 	}
 	
+	
+	public feedVO(int pet_num, String img_addr, String feed_content, String like_pet, String f_lock) {
+		super();
+		this.pet_num = pet_num;
+		this.img_addr = img_addr;
+		this.feed_content = feed_content;
+		this.like_pet = like_pet;
+		this.f_lock = f_lock;
+	}
+
+
+
 	public feedVO(int pet_num, String img_addr, String feed_content, String f_lock) {
 		this.pet_num = pet_num;
 		this.img_addr = img_addr;
