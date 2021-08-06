@@ -618,8 +618,8 @@ div.detail_button:hover a.logout {
 									<form action="FeedUploadCon.do" method="POST">
 										
 										<label for="behavior_analysis">Hi,Dear!</label>
-										<div class="behavior_analysis">
-										<img src="imgs/cap.JPG" width="350px" height="320px">
+										<div class="behavior_analysis" style="width: 280px; height: 280px;">
+											<canvas id="myChart"></canvas>
 										</div>
 	
 										<p id="post_chk_open">
@@ -911,6 +911,7 @@ div.detail_button:hover a.logout {
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
 		integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
 		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script src="js/profile.js"></script>
 	<script type="text/javascript">
 		// *NewPost 모달 스크립트 *
@@ -1021,7 +1022,29 @@ div.detail_button:hover a.logout {
 					},
 					dataType: "JSON",
 					success: function(data){
-						alert(Object.values(data));
+						var emotions = Object.keys(data);
+						var frequency = Object.values(data);
+						
+						var context = document.getElementById('myChart').getContext('2d');
+						var myChart = new Chart(context, {
+							type: 'doughnut',
+							data: {
+								labels: [emotions[0], emotions[1], emotions[2], emotions[3]],
+								datasets: [{
+									label: 'estimation_result',
+									data: [
+										frequency[0], frequency[1], frequency[2], frequency[3]
+									],
+									backgroundColor:[
+										'rgb(255, 154, 158)',
+										'rgb(209, 112, 147)',
+										'rgb(155, 78, 135)',
+										'rgb(94, 52, 117)'
+									],
+									hoverOffset: 10
+								}]
+							}
+						});
 					},
 					error : function(){
 						alert("error!");
