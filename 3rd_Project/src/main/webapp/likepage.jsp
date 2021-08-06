@@ -496,7 +496,7 @@ pic::-webkit-media-controls {
         <div id="main_container">
 
             <section class="b_inner">
-                <div class="mylist_contents contents_container active">
+                <div class="mylist_contents active" style = "column-count: 3;column-gap: 30px;">
                  
                 <!-- 탐색페이지 작성!!!! -->
                 <% 
@@ -568,24 +568,24 @@ pic::-webkit-media-controls {
     </script>
      <script>
 
-        window.onscroll = function () {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight * 0.9) {
+//        window.onscroll = function () {
+//            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight * 0.9) {
+//
+//                var new_pic_div = document.createElement("div");
+//                new_pic_div.classList.add("pic")
+//                
+//                document.querySelector('.mylist_contents').append(new_pic_div)//;
+//
+//                var new_pic = document.createElement("img")
+//                new_pic.classList.add("like_pic")
+//                new_pic.src="imgs/img_section/img01.jpg"
+//                new_pic_div.append(new_pic)
+//
+// 
+//
+//            }
 
-                var new_pic_div = document.createElement("div");
-                new_pic_div.classList.add("pic")
-                
-                document.querySelector('.mylist_contents').append(new_pic_div);
-
-                var new_pic = document.createElement("img")
-                new_pic.classList.add("like_pic")
-                new_pic.src="imgs/img_section/img01.jpg"
-                new_pic_div.append(new_pic)
-
- 
-
-            }
-
-        }
+//       }
      // 동영상 호버시 재생되는 스크립트 
 		$('.pic').hover(hoverVideo, hideVideo);
 			function hoverVideo(e) {  
