@@ -26,13 +26,24 @@ public class PetSelectCon implements Command{
 		int pet_num = Integer.parseInt(request.getParameter("pet_num"));
 		petDAO dao = new petDAO();
 		petVO pet_vo = dao.pet_info(pet_num);
+		
 		session.setAttribute("pet_vo", pet_vo);
-		session.setAttribute("cord", dao.cat_or_dog(pet_vo.getSpecies()));
-				
+		String cord = dao.cat_or_dog(pet_vo.getSpecies());
+		session.setAttribute("cord", cord);
+		
 		feedDAO feeddao = new feedDAO();
 		ArrayList<feed_upload_petVO> feeds = feeddao.following_feed(pet_num);
 		
 		session.setAttribute("feedsinfo", feeds);
+		
+		ArrayList<petVO> random_pet = new ArrayList<>();
+		ArrayList<petVO> same_cord = new ArrayList<>();
+		
+		random_pet = dao.pet_recommend();
+		same_cord = dao.cord_pets(cord);
+		
+		session.setAttribute("random_pet", random_pet);
+		session.setAttribute("same_cord", same_cord);
 		
 		if (pet_vo != null) {
 			moveURL = "index.jsp";

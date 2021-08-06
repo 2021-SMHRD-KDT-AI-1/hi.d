@@ -385,8 +385,15 @@ div.user_name a.profile_visit:link {
 
 div.user_name a.profile_visit:visited {
 	color: black;
+	text-decoration: none;	
+}
+.side_box a:visited {
+	color: black;
 	text-decoration: none;
-		
+}
+.side_box a:link {
+	color: black;
+	text-decoration: none;
 }
 
 sprite_more_icon{
@@ -423,10 +430,10 @@ sprite_more_icon{
 
 .dropdown-content a:hover {background-color: #ddd;}
 
-
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover.dropbtn {background-color: #3e8e41;}
+
 
 .swal-wide{
     width:270px !important;
@@ -544,6 +551,9 @@ sprite_more_icon{
 		<%
 			ArrayList<feed_upload_petVO> feeds = (ArrayList<feed_upload_petVO>)session.getAttribute("feedsinfo");
 			petDAO pet_dao = new petDAO();
+			ArrayList<petVO> random_pet = (ArrayList<petVO>) session.getAttribute("random_pet");
+			ArrayList<petVO> same_cord = (ArrayList<petVO>) session.getAttribute("same_cord");
+			String cord = (String) session.getAttribute("cord");
 		%>
 
 
@@ -762,134 +772,54 @@ sprite_more_icon{
 
 						<article class="story">
 							<header class="story_header">
-								<div>BEST 5</div>
+							<%if(cord.equals("C")) {%>
+								<div>고양이들!</div>
+							<%} else {%>
+								<div>강아지들!</div>
+							<%} %>
 								<div class="more">모두 보기</div>
 							</header>
 
 							<div class="scroll_inner recommend">
-
+							<%for(int i = 0 ; i < same_cord.size(); i++){ %>
 								<div class="thumb_user">
 									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
+										<a href="profileCon.do?owner=<%=same_cord.get(i).getPet_num() %>">
+											<img src=<%=same_cord.get(i).getPet_profile() %> alt="프로필사진">
+										</a>
 									</div>
 									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
+										<a href="profileCon.do?owner=<%=same_cord.get(i).getPet_num() %>">
+											<div class="id"><%=same_cord.get(i).getPet_nick() %></div>
+										</a>
+										<div class="time"><%=pet_dao.find_email(same_cord.get(i).getPet_num())%></div>
 									</div>
 								</div>
-
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
-
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
-
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
-
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
-
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
+							<%} %>
 							</div>
 						</article>
 
 						<article>
 							<header class="reco_header">
-								<div>회원님을 위한 추천</div>
+								<div>PETS!</div>
 								<div class="more">모두 보기</div>
 							</header>
 							<div class="recommend">
+							<%for(int i = 0; i < random_pet.size(); i++){%>
 								<div class="thumb_user">
 									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
+										<a href="profileCon.do?owner=<%=random_pet.get(i).getPet_num() %>">
+											<img src=<%=random_pet.get(i).getPet_profile() %> alt="프로필사진">
+										</a>
 									</div>
 									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
+										<a href="profileCon.do?owner=<%=random_pet.get(i).getPet_num() %>">
+											<div class="id"><%=random_pet.get(i).getPet_nick() %></div>
+										</a>
+										<div class="time"><%=pet_dao.find_email(random_pet.get(i).getPet_num()) %></div>
 									</div>
 								</div>
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
-								<div class="thumb_user">
-									<div class="profile_thumb">
-										<img src="imgs/thumb02.jpg" alt="프로필사진">
-									</div>
-									<div class="detail">
-										<div class="id">kind_tigerrrr</div>
-										<div class="time">1시간 전</div>
-									</div>
-								</div>
+							<%} %>
 							</div>
 
 						</article>
@@ -920,9 +850,9 @@ sprite_more_icon{
                 jQuery(".chase").css("position", "fixed");
             }
         });
-    jQuery(".chase").css("position", "fixed");
-    jQuery(".chase").css("top", "15%");
-    jQuery(".chase").css("right", "25%");
+	    jQuery(".chase").css("position", "fixed");
+	    jQuery(".chase").css("top", "15%");
+	    jQuery(".chase").css("right", "25%");
     </script>
 
 

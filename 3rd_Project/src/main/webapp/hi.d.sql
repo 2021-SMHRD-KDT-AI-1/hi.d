@@ -510,29 +510,33 @@ and pet.pet_num = 2;
 select fo1.following_pet
 from followinfo fo1, petinfo pet
 where fo1.pet_num = pet.pet_num
-and pet.pet_num = 2
+and pet.pet_num = 2;
 
 
 select fo2.pet_num
 from followinfo fo2, petinfo pet
 where fo2.following_pet = pet.pet_num
-and pet.pet_num = 2
+and pet.pet_num = 2;
 
-select pet_nick, pet_profile, pet_introduce from petinfo where pet_num = 2
+select pet_nick, pet_profile, pet_introduce from petinfo where pet_num = 2;
 
 select count(feed.feed_num)
 from feedinfo feed, petinfo pet
 where feed.pet_num = pet.pet_num
-and pet.pet_num = 2
+and pet.pet_num = 2;
 
 
 select pet.pet_nick, comm.comment_content
 from petinfo pet, FEED_COMMENT comm, FEEDINFO feed
 where feed.feed_num = comm.feed_num
 and pet.pet_num = comm.pet_num
-and feed.feed_num = 1
+and feed.feed_num = 1;
 
 
 
-select * from FEEDINFO where pet_num = 2 order by upload_time desc
+select * from FEEDINFO where pet_num = 2 order by upload_time desc;
+
+select * from (select * from petinfo where SPECIES in (select species from species where cord = 'D') order by DBMS_RANDOM.RANDOM) where rownum < 6;
+
+select * from (select * from petinfo order by DBMS_RANDOM.RANDOM) where rownum < 11;
 
