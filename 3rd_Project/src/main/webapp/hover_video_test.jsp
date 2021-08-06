@@ -673,7 +673,7 @@ div.detail_button:hover a.logout {
 				<div class="hori_cont">
 					<div class="profile_wrap">
 						<div class="profile_img">
-							<img src=<%=profile.getPet_profile()%> alt="프로필사진">
+							<img src=<%=profile.getPet_profile()%> alt="프로필사진" >
 						</div>
 					</div>
 
@@ -800,7 +800,7 @@ div.detail_button:hover a.logout {
 				//System.out.print(feeds.get(0).getImg_addr());
 				%>
 
-				<div class="mylist_contents contents_container active">
+				<div class="mylist_contents active" style="column-count: 3; column-gap: 30px;">
 
 
 					<!-- 마이페이지(공개 게시물)>> follow.jsp -->
@@ -813,93 +813,12 @@ div.detail_button:hover a.logout {
 							</video></a>
 					</div>
 					<%} %>
-
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/dog3.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/dog2.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/dog1.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/dog3.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/dog3.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/dog2.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/dog1.mp4" type="video/mp4" />
-							</video></a>
-					</div>
 				</div>
 
 				<div class="bookmark_contents contents_container active">
 
 					<!-- 마이페이지(다이어리)>> follow.jsp -->
 
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/cat1.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/cat1.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/cat1.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/cat2.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/cat2.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/cat2.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/cat3.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/cat3.mp4" type="video/mp4" />
-							</video></a>
-					</div>
-					<div class="pic">
-						<a href="#"><video width='400'>
-								<source src="videos/cat3.mp4" type="video/mp4" />
-							</video></a>
-					</div>
 				</div>
 			</section>
 		</div>
