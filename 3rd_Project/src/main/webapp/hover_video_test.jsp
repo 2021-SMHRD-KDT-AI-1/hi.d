@@ -531,24 +531,20 @@ pic::-webkit-media-controls {
 	display: none !important;
 }
 
-a.logout:link {
+a:link {
 	color: black;
 	text-decoration: none;
 }
 
-a.logout:visited {
+a:visited {
 	color: black;
 	text-decoration: none;
 }
 
-div.detail_button:hover a.logout {
+div.detail_button:hover a {
 	color: #ec7600;
 }
-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
+
 </style>
 
 </head>
@@ -690,23 +686,32 @@ button {
 							<%
 							if ( profile.getPet_nick().equals(pet_vo.getPet_nick())) {
 							%>
-
-							<div class="detail_button" id="trigger_profile_edit"
-								menu-index="0">프로필 편집</div>
+								<div class="detail_button trigger_profile_edit" id="trigger_profile_edit"
+									menu-index="0">
+									<a class="profile_edit">프로필 편집</a>
+								</div>
+								<div class="detail_button" id="trigger_logout" menu-index="1">
+									<a class="logout" href="LogoutCon.do">로그아웃</a>
+								</div>
 							<%
 							} else {
 							%>
 								<%if (follow_dao.i_follow_u(pet_vo.getPet_num(), profile.getPet_num())){ %>
-									<div class="detail_button follow_btn" id="trigger_profile_edit"
-										menu-index="0">
-										<a class="follow" onclick="change_follow()" val>팔로우 취소</a>
+									<div class="detail_button trigger_profile_edit" id="trigger_follow"
+										menu-index="0" onclick="change_follow()" style="width:105px;">
+										<a class="follow" href="#">팔로우 취소</a>
 									</div>
 								<%} else { %>
-									<div class="detail_button follow_btn" id="trigger_profile_edit" menu-index="0">
-										<a class="follow" onclick="change_follow()">팔로우</a>
+									<div class="detail_button trigger_profile_edit" id="trigger_follow" 
+										menu-index="0" onclick="change_follow()" style="width:105px;">
+										<a class="follow" href="#">팔로우</a>
 									</div>
+								<%} %>
+								<div class="detail_button" id="trigger_logout" menu-index="1">
+									<a class="logout" href="LogoutCon.do">메시지 보내기</a>
+								</div>
 							<%
-							}}
+							}
 							%>
 							<!-- 프로필 편집 모달창 -->
 							<div class="modal_profile_edit">
@@ -745,27 +750,6 @@ button {
 									</form>
 								</div>
 							</div>
-
-
-
-							<%
-							if ( profile.getPet_nick().equals(pet_vo.getPet_nick())) {
-							%>
-
-							<div class="detail_button" id="trigger_logout" menu-index="1">
-								<a class="logout" href="LogoutCon.do">로그아웃</a>
-							</div>
-							
-							<%
-							} else {
-							%>
-
-							<div class="detail_button" id="trigger_logout" menu-index="1">
-								<a class="logout" href="LogoutCon.do">메시지 보내기</a>
-							</div>
-							<%
-							}
-							%>
 						</div>
 
 
@@ -904,8 +888,9 @@ button {
 				profile_edittoggleModal();
 			}
 		}
-
-		trigger_profile_edit.addEventListener("click", profile_edittoggleModal);
+		if(trigger_profile_edit){
+			trigger_profile_edit.addEventListener("click", profile_edittoggleModal);
+		}
 		closeButton_profile_edit.addEventListener("click",
 				profile_edittoggleModal);
 		cancelButton_profile_edit.addEventListener("click",
@@ -1058,11 +1043,27 @@ button {
 				});
 
 		// 팔로우 기능
-//		$('.follow').click(
-//			function change_follow(){
-//				var followinfo = $(this).val
-//			}
-//		)
+		$('#trigger_follow').click(
+			function change_follow(){
+				var followinfo = $('.follow').text();
+				
+				$.ajax({
+					type: 'post',
+					url: "followAjax",
+					data : {
+						followinfo:followinfo
+					},
+					dataType: "text",
+					success : function(result){
+						$('.follow').text(result);
+					},
+					error: function(){
+						alert("error!");
+					}
+					
+				})
+			}
+		)
 		
 		
 		$('.post_submit').on('click', function() {
