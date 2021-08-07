@@ -43,7 +43,6 @@
     font-weight: 200;
     display: inline-block;
     padding-right: 25px;
-    margin-top: 10px;
 }
 
 .detail_button{ /*기본 menu 버튼 style 속성*/   
@@ -63,17 +62,15 @@
       background: #ffe2c6;
    }
 
-.detail .top #trigger_profile_edit{
-    font-size: 15px;
+.detail .top .trigger_profile_edit{
+    font-size: 16px;
     display: inline-block;
-    margin-top: 20px;
     margin-right:5px;
 }
 
-.detail .top #trigger_logout{
+.detail .top .trigger_logout{
     font-size: 15px;
     display: inline-block;
-    margin-top: 20px;
 }
 
 .detail .top > a{
