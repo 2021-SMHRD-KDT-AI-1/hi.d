@@ -323,25 +323,25 @@ VALUES(FEED_NUM_SEQ.NEXTVAL, 12, 'videos/moongchi05.mp4', '잉? #궁금해', '1,2,3,
 INSERT INTO FEEDINFO
 VALUES(FEED_NUM_SEQ.NEXTVAL, 8, 'videos/marong03.mp4', '이게뭐지? 장난감인가?? #놀아줘 #장난감', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2020-11-13','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji07.mp4', '먼지', '1,2,3,4', 'U', TO_DATE('2021-05-25','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji07.mp4', '저여저여! #간식', '1,2,3,4', 'U', TO_DATE('2021-05-25','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry01.mp4', '메리', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2021-06-01','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry01.mp4', '안녕? 나 귀엽지!', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2021-06-01','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry02.mp4', '메리', '1,2,3', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry02.mp4', '카메라 저리 치워!! #화남 #귀찮아', '1,2,3', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 15, 'videos/bangja05.mp4', '방자', '1,2,3', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 15, 'videos/bangja05.mp4', '너랑 함께 있어서 행복해', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 17, 'videos/maru03.mp4', '마루', '1,2,3', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 17, 'videos/maru03.mp4', '나 따라오고 있지? #산책 #궁금', '1,2,3', 'U', TO_DATE('2021-06-03','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 12, 'videos/moongchi06.mp4', '뭉치', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2021-06-04','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 12, 'videos/moongchi06.mp4', '나랑 눈싸움 하자 #찌릿', '1,2,3,4,5,6,7,8,9', 'U', TO_DATE('2021-06-04','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry03.mp4', '메리', '1,2,3', 'U', TO_DATE('2021-06-04','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry03.mp4', '나도 그거 먹을래', '1,2,3', 'U', TO_DATE('2021-06-04','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry04.mp4', '메리', '1,2,3', 'U', TO_DATE('2021-06-05','YYYY-MM-DD'));
+VALUES(FEED_NUM_SEQ.NEXTVAL, 13, 'videos/merry04.mp4', ' 나 심심해...장난감 던져줘! #심심해 #장난감 #친구', '1,2,3', 'U', TO_DATE('2021-06-05','YYYY-MM-DD'));
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 2, 'videos/Cloud2.mp4', '구름', '1,2,3,4,5,6,7,8,9,10', 'U', sysdate);
+VALUES(FEED_NUM_SEQ.NEXTVAL, 2, 'videos/Cloud2.mp4', '빨리와! 빨리~ #산책 #호기심', '1,2,3,4,5,6,7,8,9,10', 'U', sysdate);
 INSERT INTO FEEDINFO
-VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji08.mp4', '먼지', '1,2,3,4,5,6,7,8,9', 'U', sysdate);
+VALUES(FEED_NUM_SEQ.NEXTVAL, 14, 'videos/munji08.mp4', '내일은 뭐하고 놀징?', '1,2,3,4,5,6,7,8,9', 'U', sysdate);
 
 
 INSERT INTO FEED_COMMENT
