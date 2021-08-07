@@ -544,6 +544,11 @@ a.logout:visited {
 div.detail_button:hover a.logout {
 	color: #ec7600;
 }
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 </style>
 
 </head>
@@ -614,7 +619,7 @@ div.detail_button:hover a.logout {
 											accept="video/*" onchange="setpostthumbnail(event);">
 									</p>
 									<div>
-										<button name="filename" onclick="ajaxEstimation" class="behavior_submit_button"
+										<button name="filename" onclick="ajaxEstimation()" class="behavior_submit_button"
 											value="">행동 분석하기</button>
 									</div>
 									<form action="FeedUploadCon.do" method="POST">
@@ -692,12 +697,13 @@ div.detail_button:hover a.logout {
 							} else {
 							%>
 								<%if (follow_dao.i_follow_u(pet_vo.getPet_num(), profile.getPet_num())){ %>
-									<div class="detail_button" id="trigger_profile_edit"
+									<div class="detail_button follow_btn" id="trigger_profile_edit"
 										menu-index="0">
-									<a class="unfollow" href="UnfollowCon.do">팔로우 취소</a>
+										<a class="follow" onclick="change_follow()" val>팔로우 취소</a>
 									</div>
 								<%} else { %>
-									<div class="detail_button" id="trigger_profile_edit"menu-index="0">
+									<div class="detail_button follow_btn" id="trigger_profile_edit" menu-index="0">
+										<a class="follow" onclick="change_follow()">팔로우</a>
 									</div>
 							<%
 							}}
@@ -1051,6 +1057,14 @@ div.detail_button:hover a.logout {
 							'clicked_detail_button');
 				});
 
+		// 팔로우 기능
+//		$('.follow').click(
+//			function change_follow(){
+//				var followinfo = $(this).val
+//			}
+//		)
+		
+		
 		$('.post_submit').on('click', function() {
 			//servlet -> database -> follow.jsp(a태그로 만들기)
 			// 보내줄 데이터를 json구조로 만들어주기

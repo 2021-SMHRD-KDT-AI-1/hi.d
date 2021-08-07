@@ -28,8 +28,9 @@ public class LoginCon implements Command{
 			HttpSession session = request.getSession();
 			session.setAttribute("vo", vo);
 			petDAO dao_pet = new petDAO();
-			ArrayList<petVO> vo_arr = dao_pet.pet_select(vo.getEmail());
-			session.setAttribute("vo_arr", vo_arr);
+			
+			ArrayList<petVO> pets = dao_pet.pet_select(vo.getEmail());
+			session.setAttribute("pets", pets);
 			moveURL = "choice.jsp";
 		} else {
 			moveURL = "login.jsp";
