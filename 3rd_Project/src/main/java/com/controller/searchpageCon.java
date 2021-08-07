@@ -21,14 +21,16 @@ public class searchpageCon implements Command {
 		ArrayList<feedVO> feed_arr = new ArrayList<>();
 		
 		if(search == null) {
-			feed_arr = dao.get_n_feed(12);
+			//feed_arr = dao.get_n_feed(12);
+			feed_arr = dao.get_feed();
 		}
 		else {
 			feed_arr = dao.search_feed(search);
 		}
 		
 		if(feed_arr == null) {
-			feed_arr = dao.get_n_feed(12);
+			//feed_arr = dao.get_n_feed(12);
+			feed_arr = dao.get_feed();
 		}
 		
 		HttpSession session = request.getSession();

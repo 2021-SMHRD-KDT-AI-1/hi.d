@@ -1,0 +1,15 @@
+기본적인 yolov5환경의 설치를 권장한다.(requirements.txt)
+
+
+
+이클립스 톰캣 서버에서 파일이름(C:\fakepath\filename.mp4)과 강아지인지 고양이인지의 정보를 filename, cord로 받아온다
+
+받아온 정보를 통해 분석한 뒤 return을 json타입으로 적어준다.
+
+response를 사용하지 않는 이유는 비동기 통신(Ajax)방식을 사용하고 있기 때문이다.
+
+주소창에 직접 http://0.0.0.0:port_num/route?filename=...&cord=... 을 적어보며 결과를 확인할 수 있다.
+
+Ajax통신을 하는 부분은 자바파일의 hover_video_test.jsp에서 사용하고 있으며
+
+jsp 파일의 아래부분에서 찾아볼 수 있으나 받아온 정보를 곧바로 그래프를 그리는데 사용하므로 원하는 정보를 잘 찾길 바란다.

@@ -1,3 +1,5 @@
+<%@page import="org.apache.catalina.Session"%>
+<%@page import="com.VO.emotionVO"%>
 <%@page import="com.DAO.followDAO"%>
 <%@page import="com.VO.pet_followVO"%>
 <%@page import="com.VO.feedVO"%>
@@ -557,7 +559,7 @@ div.detail_button:hover a.logout {
 	
 	followDAO follow_dao = new followDAO();
 	
-	
+	ArrayList<emotionVO> emotions = (ArrayList<emotionVO>)session.getAttribute("emotions");
 	%>
 
 	<section id="container">
@@ -616,7 +618,7 @@ div.detail_button:hover a.logout {
 											value="">행동 분석하기</button>
 									</div>
 									<form action="FeedUploadCon.do" method="POST">
-										
+										<input type="hidden" class="filename" name="filename">
 										<label for="behavior_analysis">Hi,Dear!</label>
 										<div class="behavior_analysis" style="width: 280px; height: 280px;">
 											
@@ -939,8 +941,6 @@ div.detail_button:hover a.logout {
 				var loading_gif = $("<img src='imgs/GIF/estimation_loading01.gif' style='width: 280px; height:280px'>");
 				estimation_div.append(loading_gif);
 								
-				//<canvas id="myChart"></canvas>
-				
 				$.ajax({
 					type: 'post',
 					url: address,
@@ -979,11 +979,50 @@ div.detail_button:hover a.logout {
 							}
 						});
 						
-						// filename 세션에 저장
-						window.sessionStorage.setItem("filename", filename.split("\\")[2]);
+						// filename 히든인풋에 저장
+						$(".filename").val(filename.split("\\")[2]);
+						
+						var max_freq = 0;
+						var target_emoti = "";
+						// 가장 높은 빈도의 감정 추출
+						for(var i = 0; i < 4; i++){
+							if (max_freq < frequency[i]){
+								max_freq = frequency[i];
+								target_emoti = emotions[i];
+							}
+						}
+						
+						//감정에 대한 피드내용과 태그 가져오기
+						var emotion_content = [];
+						var emotion_tag = [];
+						<%for(int i = 0; i < emotions.size(); i++) {%>
+							if(target_emoti == '<%=emotions.get(i).getEmotion() %>') {
+								emotion_content.push('<%=emotions.get(i).getE_comment()%>');
+								emotion_tag.push('<%=emotions.get(i).getTag()%>');
+							}
+						<%} %>
+						// 태그와 코멘트 개수 제한 2개
+						var content_guide = [];
+						var tag_guide = [];
+						for(var i = 0; i < 2; i++){
+							var random_content =  emotion_content[Math.floor(Math.random()*emotion_content.length)];
+							if(content_guide.indexOf(random_content) === -1){
+								content_guide.push(random_content);
+							} else {
+								i--;
+							}
+						}
+						for(var i = 0; i < 2; i++){
+							var random_tag = emotion_tag[Math.floor(Math.random()*emotion_tag.length)];
+							if(tag_guide.indexOf(random_tag) === -1){
+								tag_guide.push(random_tag)
+							} else {
+								i--;
+							}
+						}
 						
 						// textarea에 텍스트 입력
-						//$('#post_textarea')
+						$('#post_textarea').val(content_guide[0]+" "+content_guide[1]+"\n"+tag_guide[0]+" "+tag_guide[1]);
 						
 					},
 					error : function(){

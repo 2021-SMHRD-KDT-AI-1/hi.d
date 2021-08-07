@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.VO.emotionVO;
 import com.VO.memberVO;
@@ -71,6 +72,30 @@ public class emotionDAO {
 		return vo;
 	}
 	
+	public ArrayList<emotionVO> get_All_emoti() {
+		emotionVO emoti = null;
+		ArrayList<emotionVO> emotions = new ArrayList<>();
+		try {
+			getConn();
+			sql = "select * from emotion";
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				String emotion = rs.getString(1);
+				String comment = rs.getString(2);
+				String tag = rs.getString(3);
+				emoti = new emotionVO(emotion, comment, tag);
+				emotions.add(emoti);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return emotions;
+	}
 	
 	
 	
