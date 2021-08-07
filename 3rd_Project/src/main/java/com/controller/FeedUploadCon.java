@@ -1,5 +1,7 @@
 package com.controller;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,22 +22,17 @@ public class FeedUploadCon implements Command{
 		
 		String moveURL = "";
 		HttpSession session = request.getSession();
-		int getPet_num = ((petVO) session.getAttribute("profile")).getPet_num();
-		System.out.println(getPet_num);
-		
-		
-		
-		String img_addr = "C:\\Users\\CGI\\Desktop\\" + (String)session.getAttribute("filename");	
+		int getPet_num = ((petVO)session.getAttribute("pet_vo")).getPet_num();
+		String img_addr = "videos/" + request.getParameter("filename");
 		String f_lock = request.getParameter("chk_open");
 		String feed_content = request.getParameter("contents");	
 		
 		feedDAO dao = new feedDAO();
-		feedVO vo_feed = new feedVO(getPet_num, img_addr, feed_content, "0", f_lock );
+		feedVO vo_feed = new feedVO(getPet_num, img_addr, feed_content, "", f_lock );
 		int cnt = dao.feed_upload(vo_feed);
 		
         
 		if (cnt > 0) {
-			session.setAttribute("vo_feed", vo_feed);
 			moveURL = "hover_video_test.jsp";
 		}else {
 			moveURL = "choice.jsp";

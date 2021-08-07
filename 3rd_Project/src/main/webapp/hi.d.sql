@@ -482,35 +482,35 @@ INSERT INTO FOLLOWINFO
 VALUES(5,12);
 
 INSERT INTO EMOTION
-VALUES('COMFORTABLE', '잠온다..', '#잠와');
+VALUES('comfortable', '잠온다..', '#잠와');
 INSERT INTO EMOTION
-VALUES('COMFORTABLE', '구름을 타고있는 기분이야', '#구름속');
+VALUES('comfortable', '구름을 타고있는 기분이야', '#구름속');
 INSERT INTO EMOTION
-VALUES('COMFORTABLE', '평안한 기분이 들어', '#편-안');
+VALUES('comfortable', '평안한 기분이 들어', '#편-안');
 INSERT INTO EMOTION
-VALUES('COMFORTABLE', '지금 딱좋아', '#편안그자체');
+VALUES('comfortable', '지금 딱좋아', '#편안그자체');
 INSERT INTO EMOTION
-VALUES('SAD', '내 거친생각과 불안한 눈빛과 그걸 지켜보는 너', '#너를위해');
+VALUES('sad', '내 거친생각과 불안한 눈빛과 그걸 지켜보는 너', '#너를위해');
 INSERT INTO EMOTION
-VALUES('SAD', '난... ㄱ ㅏ끔... 눈물을 흘린 ㄷ ㅏ .... ', '#눈물');
+VALUES('sad', '난... ㄱ ㅏ끔... 눈물을 흘린 ㄷ ㅏ .... ', '#눈물');
 INSERT INTO EMOTION
-VALUES('SAD', '모래를 삼킨 듯이 가슴이 먹먹한 날이 있지 ', '#먹먹');
+VALUES('sad', '모래를 삼킨 듯이 가슴이 먹먹한 날이 있지 ', '#먹먹');
 INSERT INTO EMOTION
-VALUES('HAPPY', '아 너무좋아!', '#행복그자체');
+VALUES('happy', '아 너무좋아!', '#행복그자체');
 INSERT INTO EMOTION
-VALUES('HAPPY', '이 시간이 제일 행복해', '#HAPPY!!!');
+VALUES('happy', '이 시간이 제일 행복해', '#HAPPY!!!');
 INSERT INTO EMOTION
-VALUES('HAPPY', '항상 새로워, 짜릿해', '#감전');
+VALUES('happy', '항상 새로워, 짜릿해', '#짜릿');
 INSERT INTO EMOTION
-VALUES('ANGRY', '빨리 간식을 달라', '#4딸라');
+VALUES('angry', '빨리 간식을 달라', '#4딸라');
 INSERT INTO EMOTION
-VALUES('ANGRY', '내 이름 그만 불러', '#이미삐졌으');
+VALUES('angry', '내 이름 그만 불러', '#이미삐졌으');
 INSERT INTO EMOTION
-VALUES('ANGRY', '흐즈믈르그흣드', '#뜨르흐즈므르');
+VALUES('angry', '흐즈믈르그흣드', '#뜨르흐즈므르');
 INSERT INTO EMOTION
-VALUES('AGGRESSIVE', '뭘봐', '#저리가');
+VALUES('aggressive', '뭘봐', '#저리가');
 INSERT INTO EMOTION
-VALUES('AGGRESSIVE', '혼날래?', '#일촉즉발');
+VALUES('aggressive', '혼날래?', '#일촉즉발');
 
 
 INSERT INTO SITUATION
