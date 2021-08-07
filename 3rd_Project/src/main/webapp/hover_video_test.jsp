@@ -544,6 +544,11 @@ a.logout:visited {
 div.detail_button:hover a.logout {
 	color: #ec7600;
 }
+
+.active {
+	display: none;
+}
+
 </style>
 
 </head>
@@ -554,6 +559,7 @@ div.detail_button:hover a.logout {
 	petVO pet_vo = (petVO) session.getAttribute("pet_vo");
 	pet_followVO profile = (pet_followVO) session.getAttribute("profile");
 	ArrayList<feedVO> feeds = (ArrayList<feedVO>) session.getAttribute("profile_feed");
+	ArrayList<feedVO> lock_feeds = (ArrayList<feedVO>) session.getAttribute("lock_feeds");
 	
 	followVO follow_vo = (followVO) session.getAttribute("follow_vo");
 	
@@ -775,12 +781,13 @@ div.detail_button:hover a.logout {
 						</div>
 
 						<br> <br>
+						<form action="profileCon.do" method="post">
 							<p class="about">
+								<span class="nick_name" name = "lock" value="U">공개 게시물</span> 
 								
-								<span class="nick_name">공개 게시물</span> 
-								
-								<span class="book_mark">다이어리</span>
+								<span class="book_mark" name = "lcok" value="L">다이어리</span>
 							</p>
+						</form>
 					</div>
 
 					<div class="profile_wrap_right">
@@ -804,26 +811,30 @@ div.detail_button:hover a.logout {
 				//System.out.print(feeds.get(0).getImg_addr());
 				%>
 
-				<div class="mylist_contents active" style="column-count: 3; column-gap: 30px;">
-
-
+				<div class="mylist_contents boxxx" style="column-count: 3; column-gap: 30px;">
 					<!-- 마이페이지(공개 게시물)>> follow.jsp -->
-					<%
-					for (int i = 0; i < feeds.size(); i++) {
-					%>
+					<%for (int i = 0; i < feeds.size(); i++) {%>
+						<%if(feeds.get(i).getF_lock().equals("U")){%>
 					<div class="pic">
 						<a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num()%>"><video width='400'>
 								<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4" />
 							</video></a>
 					</div>
-					<%} %>
+					<%} 
+					}%>
 				</div>
 
-				<div class="bookmark_contents contents_container active">
-
+				<div class="bookmark_contents boxxx active" style="column-count: 3; column-gap: 30px;">
 					<!-- 마이페이지(다이어리)>> follow.jsp -->
-
+					<%for (int i = 0; i < feeds.size(); i++) {%>
+						<%if(feeds.get(i).getF_lock().equals("L")){%>
+						<div class="pic">
+					<a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num()%>"><video width='400'>
+								<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4" />
+							</video></a>
 				</div>
+				<%} 
+					}%>
 			</section>
 		</div>
 	</section>
@@ -1059,6 +1070,7 @@ div.detail_button:hover a.logout {
 			// split함수를 사용해서 데이터를 구조화하기!
 			let data = {
 				"tag" : $('#post_textarea').val()
+				
 			};
 			$.ajax({
 				url : "servlet주소!",

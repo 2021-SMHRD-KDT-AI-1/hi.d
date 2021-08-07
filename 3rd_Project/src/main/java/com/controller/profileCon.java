@@ -21,6 +21,7 @@ public class profileCon implements Command{
 		String moveURL = "";
 		HttpSession session = request.getSession();
 		int profile_owner_num = Integer.parseInt(request.getParameter("owner"));
+		String lock = request.getParameter("lcok");
 		petDAO pet_dao = new petDAO();
 		feedDAO feed_dao = new feedDAO();
 		emotionDAO emotion_dao = new emotionDAO();
@@ -33,10 +34,12 @@ public class profileCon implements Command{
 		pet_followVO profile = new pet_followVO(profile_owner_num, pet_info.getPet_profile(), pet_info.getPet_nick(), following_cnt, follow_cnt, feed_cnt, pet_info.getPet_introduce());
 		ArrayList<feedVO> feeds = feed_dao.get_my_feeds(profile_owner_num);
 		ArrayList<emotionVO> emotions = emotion_dao.get_All_emoti();
+		ArrayList<feedVO> lock_feeds = feed_dao.get_lock_feed(lock);
 		
 		session.setAttribute("profile", profile);
 		session.setAttribute("profile_feed", feeds);
 		session.setAttribute("emotions", emotions);
+		session.setAttribute("lock_feeds", lock_feeds);
 		moveURL = "hover_video_test.jsp";
 		
 		return moveURL;

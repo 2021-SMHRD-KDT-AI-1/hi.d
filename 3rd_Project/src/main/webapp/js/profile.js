@@ -1,6 +1,6 @@
 const tapContainer = document.querySelector('.about');
-const flex_Container = document.querySelectorAll('.contents_container');
-const taps = document.querySelectorAll('.about > span');
+const flex_Container = document.querySelectorAll('.boxxx');
+const taps = document.querySelectorAll('.about span');
 
 
 function openCity(e){
@@ -13,12 +13,12 @@ function openCity(e){
     
     if(elem.matches('[class="nick_name"]')){
         
-        flex_Container[0].classList.add('active');
+        flex_Container[1].classList.add('active');
         taps[0].classList.add('on');
         
     }else if(elem.matches('[class="book_mark"]')){
         
-        flex_Container[1].classList.add('active');
+        flex_Container[0].classList.add('active');
         taps[1].classList.add('on');
         
     }

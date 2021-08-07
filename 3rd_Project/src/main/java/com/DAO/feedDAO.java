@@ -301,7 +301,9 @@ public class feedDAO {
 		return one_feed;
 	}
 	
-	public feedVO get_lock_feed(String f_lock) {
+	// 공개&비공개 피드 모아보기
+	public ArrayList<feedVO> get_lock_feed(String f_lock) {
+		ArrayList<feedVO> lock_feeds = new ArrayList<>();
 		feedVO lock_feed = null;
 		try {
 			getConn();
@@ -319,6 +321,7 @@ public class feedDAO {
 				String like_pet = rs.getString(5);
 				Date upload_time = rs.getDate(7);
 				lock_feed = new feedVO(feed_num, pet_num, img_addr, feed_content, like_pet, f_lock, upload_time);
+				lock_feeds.add(lock_feed);
 			}
 			
 		} catch (Exception e) {
@@ -326,7 +329,7 @@ public class feedDAO {
 		} finally {
 			close();
 		}
-		return lock_feed;
+		return lock_feeds;
 	}
 	
 	
