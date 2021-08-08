@@ -76,7 +76,7 @@
             <div class="search_box">
             	<input type="text" placeholder="검색" id="search-field">
 			
-            <div class="fake_field">
+            	<div class="fake_field">
                 
                     <span class="sprite_small_search_icon"></span>
                     <span>검색</span>

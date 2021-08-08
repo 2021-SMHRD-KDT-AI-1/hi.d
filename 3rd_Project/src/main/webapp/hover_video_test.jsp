@@ -583,10 +583,10 @@ div.detail_button:hover a {
 				<div class="search_box">
 					<form action="searchpageCon.do">
 						<input type="text" placeholder="검색" id="search-field">
+						<div class="fake_field">
+							<span class="sprite_small_search_icon"></span> <span>검색</span>
+						</div>
 					</form>
-					<div class="fake_field">
-						<span class="sprite_small_search_icon"></span> <span>검색</span>
-					</div>
 				</div>
 
 				<div class="right_icons">

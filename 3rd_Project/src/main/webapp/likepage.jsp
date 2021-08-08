@@ -394,13 +394,13 @@ pic::-webkit-media-controls {
 
                 <div class="search_box">
 	                <form action="searchpageCon.do" method="POST">
-	                    <input type="text" id="search-field" name="search">
-					</form>
+	                    <input type="text" placeholder="검색" id="search-field" name="search">
 
-                    <div class="fake_field">
-                        <span class="sprite_small_search_icon"></span>
-                        <span>검색</span>
-                    </div>
+	                    <div class="fake_field">
+	                        <span class="sprite_small_search_icon"></span>
+	                        <span>검색</span>
+	                    </div>
+					</form>
                 </div>
 
                 <div class="right_icons">
@@ -496,7 +496,7 @@ pic::-webkit-media-controls {
         <div id="main_container">
 
             <section class="b_inner">
-                <div class="mylist_contents active" style = "column-count: 3;column-gap: 30px;">
+                <div class="mylist_contents" style = "column-count: 3;column-gap: 30px;">
                  
                 <!-- 탐색페이지 작성!!!! -->
                 <% 
@@ -504,7 +504,7 @@ pic::-webkit-media-controls {
                     ArrayList<feedVO> feeds = (ArrayList<feedVO>)session.getAttribute("search_feed");
                 %>
                 <% for (int i = 0; i < feeds.size(); i++) {%>
-                   <div class="pic">
+                   <div class="pic" style="margin-top : 30px;">
                         <a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num() %>"><video>
 							<source src="<%= feeds.get(i).getImg_addr() %>" type="video/mp4"/></video></a>
                    </div>
