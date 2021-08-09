@@ -559,7 +559,7 @@ sprite_more_icon{
 
 		<section id="main_container">
 			<div class="inner">
-				<div class="contents_box">
+				<div class="contents_box" style="margin-top:20px;">
 
 					<%for(int i = 0; i < feeds.size(); i++){ %>
 					<article class="contents">
@@ -843,7 +843,7 @@ sprite_more_icon{
         $(window).scroll(function (event) {
             if (jQuery(window).scrollTop() > jQuery(".side_box").offset().top) {
                 jQuery(".chase").css("position", "fixed");
-                jQuery(".chase").css("top", "15%");
+                jQuery(".chase").css("top", "12%");
                 jQuery(".chase").css("right", "25%");
             }
             else if ((jQuery(window).scrollTop() < jQuery(".side_box").offset().top)) {

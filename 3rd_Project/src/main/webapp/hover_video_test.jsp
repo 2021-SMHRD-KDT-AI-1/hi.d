@@ -674,7 +674,7 @@ div.detail_button:hover a {
 		</header>
 
 
-		<div id="main_container">
+		<div id="main_container" style="margin-top: 40px;">
 
 			<section class="b_inner">
 
@@ -805,7 +805,7 @@ div.detail_button:hover a {
 					<%for (int i = 0; i < feeds.size(); i++) {%>
 						<%if(feeds.get(i).getF_lock().equals("U")){%>
 					<div class="pic">
-						<a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num()%>"><video width='400'>
+						<a href="OneFeedCon.do?feed_num=<%=feeds.get(i).getFeed_num()%>"><video width='400' style="margin-bottom: 30px;">
 								<source src=<%=feeds.get(i).getImg_addr() %> type="video/mp4" />
 							</video></a>
 					</div>
