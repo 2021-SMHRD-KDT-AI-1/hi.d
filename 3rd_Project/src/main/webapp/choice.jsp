@@ -166,7 +166,7 @@
 
 		</header>
 	</section>
-		<section id="main_container">
+		<section id="main_container" style="margin-top: 200px;">
 			<!-- <span id = "main_container_text" style="align-items: center; font-size: 200%;">누구의 계정으로
 				로그인 할까요??</span> -->
 			<span class="main_text" style="font-size: 250%;">누</span>
