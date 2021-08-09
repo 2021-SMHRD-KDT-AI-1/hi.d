@@ -28,7 +28,7 @@ public class searchpageCon implements Command {
 			feed_arr = dao.search_feed(search);
 		}
 		
-		if(feed_arr == null) {
+		if(feed_arr.size() < 1) {
 			//feed_arr = dao.get_n_feed(12);
 			feed_arr = dao.get_feed();
 		}

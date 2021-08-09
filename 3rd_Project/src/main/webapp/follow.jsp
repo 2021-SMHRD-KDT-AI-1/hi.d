@@ -273,7 +273,7 @@ font-weight: bold;
 			petVO pet_info = pet_dao.pet_profile_load(feed.getPet_num());
 		%>
 		<div id="main_container">
-			<section class="1_inner">
+			<section class="inner">
 				<div class="contents_box">
 					<article class="contents">
 						<header class="top">

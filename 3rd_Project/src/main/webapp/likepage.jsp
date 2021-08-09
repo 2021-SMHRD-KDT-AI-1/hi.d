@@ -395,7 +395,6 @@ pic::-webkit-media-controls {
                 <div class="search_box">
 	                <form action="searchpageCon.do" method="POST">
 	                    <input type="text" placeholder="검색" id="search-field" name="search">
-
 	                    <div class="fake_field">
 	                        <span class="sprite_small_search_icon"></span>
 	                        <span>검색</span>
